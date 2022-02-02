@@ -157,6 +157,13 @@
 			path = EditProfilePageViewController;
 			sourceTree = "<group>";
 		};
+		8C250DDA27AB38B800A280B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B9AB0102E4EC48168B0C7CCF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +199,7 @@
 				CE641A7827A8904A00766C59 /* GoogleService-Info.plist */,
 				CE641A7227A88E0700766C59 /* Info.plist */,
 				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
+				8C250DDA27AB38B800A280B3 /* Views */,
 				8C250DB327AB338C00A280B3 /* ViewControllers */,
 			);
 			path = tasker;
