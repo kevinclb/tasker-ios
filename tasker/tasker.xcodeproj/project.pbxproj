@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C250DAF27AB331200A280B3 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DAD27AB331200A280B3 /* LoggedOutViewController.swift */; };
+		8C250DB027AB331200A280B3 /* LoggedOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DAE27AB331200A280B3 /* LoggedOutViewController.xib */; };
+		8C250DB627AB33E800A280B3 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DB427AB33E800A280B3 /* RegisterPageViewController.swift */; };
+		8C250DB727AB33E800A280B3 /* RegisterPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DB527AB33E800A280B3 /* RegisterPageViewController.xib */; };
+		8C250DBE27AB34CE00A280B3 /* HomeExplorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DBC27AB34CE00A280B3 /* HomeExplorePageViewController.swift */; };
+		8C250DBF27AB34CE00A280B3 /* HomeExplorePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DBD27AB34CE00A280B3 /* HomeExplorePageViewController.xib */; };
+		8C250DC227AB34EC00A280B3 /* EmployeeExplorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DC027AB34EC00A280B3 /* EmployeeExplorePageViewController.swift */; };
+		8C250DC327AB34EC00A280B3 /* EmployeeExplorePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DC127AB34EC00A280B3 /* EmployeeExplorePageViewController.xib */; };
+		8C250DC727AB351B00A280B3 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DC527AB351B00A280B3 /* MessagesViewController.swift */; };
+		8C250DC827AB351B00A280B3 /* MessagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DC627AB351B00A280B3 /* MessagesViewController.xib */; };
+		8C250DD327AB37A400A280B3 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DD127AB37A400A280B3 /* SettingsPageViewController.swift */; };
+		8C250DD427AB37A400A280B3 /* SettingsPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DD227AB37A400A280B3 /* SettingsPageViewController.xib */; };
+		8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DD527AB380E00A280B3 /* EditProfileViewController.swift */; };
+		8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DD627AB380E00A280B3 /* EditProfileViewController.xib */; };
 		CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */; };
 		CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */; };
 		CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6427A88E0500766C59 /* AppDelegate.swift */; };
@@ -19,6 +33,20 @@
 /* Begin PBXFileReference section */
 		0CA7F196D3098A70BEF3A25D /* Pods_tasker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tasker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDF5D68BCEF519EC1696766 /* Pods-tasker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.release.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.release.xcconfig"; sourceTree = "<group>"; };
+		8C250DAD27AB331200A280B3 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
+		8C250DAE27AB331200A280B3 /* LoggedOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoggedOutViewController.xib; sourceTree = "<group>"; };
+		8C250DB427AB33E800A280B3 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
+		8C250DB527AB33E800A280B3 /* RegisterPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPageViewController.xib; sourceTree = "<group>"; };
+		8C250DBC27AB34CE00A280B3 /* HomeExplorePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeExplorePageViewController.swift; sourceTree = "<group>"; };
+		8C250DBD27AB34CE00A280B3 /* HomeExplorePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeExplorePageViewController.xib; sourceTree = "<group>"; };
+		8C250DC027AB34EC00A280B3 /* EmployeeExplorePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeExplorePageViewController.swift; sourceTree = "<group>"; };
+		8C250DC127AB34EC00A280B3 /* EmployeeExplorePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeExplorePageViewController.xib; sourceTree = "<group>"; };
+		8C250DC527AB351B00A280B3 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		8C250DC627AB351B00A280B3 /* MessagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesViewController.xib; sourceTree = "<group>"; };
+		8C250DD127AB37A400A280B3 /* SettingsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageViewController.swift; sourceTree = "<group>"; };
+		8C250DD227AB37A400A280B3 /* SettingsPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsPageViewController.xib; sourceTree = "<group>"; };
+		8C250DD527AB380E00A280B3 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		8C250DD627AB380E00A280B3 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		B7F263A0E495878F4758FEE1 /* Pods-tasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.debug.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.debug.xcconfig"; sourceTree = "<group>"; };
 		CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
@@ -42,6 +70,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C250DB127AB336800A280B3 /* LaunchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */,
+				CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */,
+			);
+			path = LaunchViewController;
+			sourceTree = "<group>";
+		};
+		8C250DB227AB337E00A280B3 /* LoggedOutViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C250DAD27AB331200A280B3 /* LoggedOutViewController.swift */,
+				8C250DAE27AB331200A280B3 /* LoggedOutViewController.xib */,
+			);
+			path = LoggedOutViewController;
+			sourceTree = "<group>";
+		};
+		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C250DD027AB378000A280B3 /* SettingsPageViewController */,
+				8C250DBB27AB34B300A280B3 /* HomeExplorePageViewController */,
+				8C250DB127AB336800A280B3 /* LaunchViewController */,
+				8C250DB227AB337E00A280B3 /* LoggedOutViewController */,
+				8C250DB827AB33F200A280B3 /* RegisterPageViewController */,
+				8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */,
+				8C250DC927AB352E00A280B3 /* MessagesViewController */,
+				8C250DD927AB381200A280B3 /* EditProfilePageViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8C250DB827AB33F200A280B3 /* RegisterPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C250DB427AB33E800A280B3 /* RegisterPageViewController.swift */,
+				8C250DB527AB33E800A280B3 /* RegisterPageViewController.xib */,
+			);
+			path = RegisterPageViewController;
+			sourceTree = "<group>";
+		};
+		8C250DBB27AB34B300A280B3 /* HomeExplorePageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C250DBC27AB34CE00A280B3 /* HomeExplorePageViewController.swift */,
+				8C250DBD27AB34CE00A280B3 /* HomeExplorePageViewController.xib */,
+			);
+			path = HomeExplorePageViewController;
+			sourceTree = "<group>";
+		};
+		8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C250DC027AB34EC00A280B3 /* EmployeeExplorePageViewController.swift */,
+				8C250DC127AB34EC00A280B3 /* EmployeeExplorePageViewController.xib */,
+			);
+			path = EmployeeExplorePageViewController;
+			sourceTree = "<group>";
+		};
+		8C250DC927AB352E00A280B3 /* MessagesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C250DC527AB351B00A280B3 /* MessagesViewController.swift */,
+				8C250DC627AB351B00A280B3 /* MessagesViewController.xib */,
+			);
+			path = MessagesViewController;
+			sourceTree = "<group>";
+		};
+		8C250DD027AB378000A280B3 /* SettingsPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C250DD127AB37A400A280B3 /* SettingsPageViewController.swift */,
+				8C250DD227AB37A400A280B3 /* SettingsPageViewController.xib */,
+			);
+			path = SettingsPageViewController;
+			sourceTree = "<group>";
+		};
+		8C250DD927AB381200A280B3 /* EditProfilePageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C250DD527AB380E00A280B3 /* EditProfileViewController.swift */,
+				8C250DD627AB380E00A280B3 /* EditProfileViewController.xib */,
+			);
+			path = EditProfilePageViewController;
+			sourceTree = "<group>";
+		};
 		B9AB0102E4EC48168B0C7CCF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,11 +189,10 @@
 			children = (
 				CE641A6427A88E0500766C59 /* AppDelegate.swift */,
 				CE641A6627A88E0500766C59 /* SceneDelegate.swift */,
-				CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */,
-				CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */,
 				CE641A7827A8904A00766C59 /* GoogleService-Info.plist */,
-				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
 				CE641A7227A88E0700766C59 /* Info.plist */,
+				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
+				8C250DB327AB338C00A280B3 /* ViewControllers */,
 			);
 			path = tasker;
 			sourceTree = "<group>";
@@ -152,8 +266,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */,
+				8C250DB027AB331200A280B3 /* LoggedOutViewController.xib in Resources */,
+				8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */,
+				8C250DC827AB351B00A280B3 /* MessagesViewController.xib in Resources */,
 				CE641A7927A8904A00766C59 /* GoogleService-Info.plist in Resources */,
+				8C250DB727AB33E800A280B3 /* RegisterPageViewController.xib in Resources */,
+				8C250DBF27AB34CE00A280B3 /* HomeExplorePageViewController.xib in Resources */,
 				CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */,
+				8C250DC327AB34EC00A280B3 /* EmployeeExplorePageViewController.xib in Resources */,
+				8C250DD427AB37A400A280B3 /* SettingsPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,8 +328,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */,
+				8C250DAF27AB331200A280B3 /* LoggedOutViewController.swift in Sources */,
 				CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */,
+				8C250DC227AB34EC00A280B3 /* EmployeeExplorePageViewController.swift in Sources */,
 				CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */,
+				8C250DD327AB37A400A280B3 /* SettingsPageViewController.swift in Sources */,
+				8C250DBE27AB34CE00A280B3 /* HomeExplorePageViewController.swift in Sources */,
+				8C250DC727AB351B00A280B3 /* MessagesViewController.swift in Sources */,
+				8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */,
+				8C250DB627AB33E800A280B3 /* RegisterPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
