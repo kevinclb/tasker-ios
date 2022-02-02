@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */; };
+		CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */; };
 		CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6427A88E0500766C59 /* AppDelegate.swift */; };
 		CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6627A88E0500766C59 /* SceneDelegate.swift */; };
-		CE641A6927A88E0500766C59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6827A88E0500766C59 /* ViewController.swift */; };
-		CE641A6C27A88E0500766C59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE641A6A27A88E0500766C59 /* Main.storyboard */; };
 		CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE641A6D27A88E0700766C59 /* Assets.xcassets */; };
-		CE641A7127A88E0700766C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE641A6F27A88E0700766C59 /* LaunchScreen.storyboard */; };
 		CE641A7927A8904A00766C59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE641A7827A8904A00766C59 /* GoogleService-Info.plist */; };
 		F95B9875A59DE0E9011EFDF8 /* Pods_tasker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA7F196D3098A70BEF3A25D /* Pods_tasker.framework */; };
 /* End PBXBuildFile section */
@@ -21,13 +20,12 @@
 		0CA7F196D3098A70BEF3A25D /* Pods_tasker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tasker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDF5D68BCEF519EC1696766 /* Pods-tasker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.release.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.release.xcconfig"; sourceTree = "<group>"; };
 		B7F263A0E495878F4758FEE1 /* Pods-tasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.debug.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.debug.xcconfig"; sourceTree = "<group>"; };
+		CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		CE641A6127A88E0500766C59 /* tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE641A6427A88E0500766C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE641A6627A88E0500766C59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE641A6827A88E0500766C59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE641A6B27A88E0500766C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE641A6D27A88E0700766C59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE641A7027A88E0700766C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE641A7227A88E0700766C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE641A7827A8904A00766C59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,11 +74,10 @@
 			children = (
 				CE641A6427A88E0500766C59 /* AppDelegate.swift */,
 				CE641A6627A88E0500766C59 /* SceneDelegate.swift */,
-				CE641A6827A88E0500766C59 /* ViewController.swift */,
+				CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */,
+				CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */,
 				CE641A7827A8904A00766C59 /* GoogleService-Info.plist */,
-				CE641A6A27A88E0500766C59 /* Main.storyboard */,
 				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
-				CE641A6F27A88E0700766C59 /* LaunchScreen.storyboard */,
 				CE641A7227A88E0700766C59 /* Info.plist */,
 			);
 			path = tasker;
@@ -154,10 +151,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE641A7127A88E0700766C59 /* LaunchScreen.storyboard in Resources */,
+				CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */,
 				CE641A7927A8904A00766C59 /* GoogleService-Info.plist in Resources */,
 				CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */,
-				CE641A6C27A88E0500766C59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,32 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE641A6927A88E0500766C59 /* ViewController.swift in Sources */,
 				CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */,
+				CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */,
 				CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		CE641A6A27A88E0500766C59 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE641A6B27A88E0500766C59 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CE641A6F27A88E0700766C59 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE641A7027A88E0700766C59 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CE641A7327A88E0700766C59 /* Debug */ = {
@@ -366,7 +343,6 @@
 				INFOPLIST_FILE = tasker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -394,7 +370,6 @@
 				INFOPLIST_FILE = tasker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
