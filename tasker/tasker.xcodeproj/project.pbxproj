@@ -21,6 +21,7 @@
 		8C250DD427AB37A400A280B3 /* SettingsPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DD227AB37A400A280B3 /* SettingsPageViewController.xib */; };
 		8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DD527AB380E00A280B3 /* EditProfileViewController.swift */; };
 		8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DD627AB380E00A280B3 /* EditProfileViewController.xib */; };
+		8C250DDC27AB3A5200A280B3 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DDB27AB3A5200A280B3 /* RegisterButton.swift */; };
 		CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */; };
 		CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */; };
 		CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6427A88E0500766C59 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		8C250DD227AB37A400A280B3 /* SettingsPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsPageViewController.xib; sourceTree = "<group>"; };
 		8C250DD527AB380E00A280B3 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8C250DD627AB380E00A280B3 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
+		8C250DDB27AB3A5200A280B3 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
 		B7F263A0E495878F4758FEE1 /* Pods-tasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.debug.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.debug.xcconfig"; sourceTree = "<group>"; };
 		CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8C250DDD27AB3A6700A280B3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8C250DDB27AB3A5200A280B3 /* RegisterButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B9AB0102E4EC48168B0C7CCF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +209,7 @@
 				CE641A7827A8904A00766C59 /* GoogleService-Info.plist */,
 				CE641A7227A88E0700766C59 /* Info.plist */,
 				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
+				8C250DDD27AB3A6700A280B3 /* Components */,
 				8C250DDA27AB38B800A280B3 /* Views */,
 				8C250DB327AB338C00A280B3 /* ViewControllers */,
 			);
@@ -344,6 +355,7 @@
 				8C250DBE27AB34CE00A280B3 /* HomeExplorePageViewController.swift in Sources */,
 				8C250DC727AB351B00A280B3 /* MessagesViewController.swift in Sources */,
 				8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */,
+				8C250DDC27AB3A5200A280B3 /* RegisterButton.swift in Sources */,
 				8C250DB627AB33E800A280B3 /* RegisterPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
