@@ -13,17 +13,27 @@ import UIKit
 class LoggedOutViewController: UIViewController {
 
     private var registerButton: RegisterButton = {
-        let button = RegisterButton(frame: CGRect(x: 0, y: 0, width: 167, height: 52))
+        let button = RegisterButton(frame: CGRect(x: 204, y: 702, width: 167, height: 52))
         return button
     }()
     
-    
+    private var loginButton: LoginButton = {
+        let button = LoginButton(frame: CGRect(x: 21, y: 702, width: 167, height: 52))
+        return button
+    }()
     
     override func viewDidLoad() {
+        
+        //I'm giving these views a set x and y coordinate for now,
+        //however, the correct way to lay these buttons vertical to one another
+        //is to use a vertical UIStackView.
+        
         super.viewDidLoad()
         view.addSubview(registerButton)
-        registerButton.center = view.center
         registerButton.gradientLayer.cornerRadius = 6
+        
+        view.addSubview(loginButton)
+        loginButton.gradientLayer.cornerRadius = 6
     }
 
 
