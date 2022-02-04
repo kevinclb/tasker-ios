@@ -22,6 +22,7 @@
 		8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DD527AB380E00A280B3 /* EditProfileViewController.swift */; };
 		8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DD627AB380E00A280B3 /* EditProfileViewController.xib */; };
 		8C250DDC27AB3A5200A280B3 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DDB27AB3A5200A280B3 /* RegisterButton.swift */; };
+		8C30117627ABA61B00DDA117 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30117527ABA61B00DDA117 /* LoginButton.swift */; };
 		CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */; };
 		CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */; };
 		CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6427A88E0500766C59 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		8C250DD527AB380E00A280B3 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8C250DD627AB380E00A280B3 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		8C250DDB27AB3A5200A280B3 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		8C30117527ABA61B00DDA117 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		B7F263A0E495878F4758FEE1 /* Pods-tasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.debug.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.debug.xcconfig"; sourceTree = "<group>"; };
 		CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				8C250DDB27AB3A5200A280B3 /* RegisterButton.swift */,
+				8C30117527ABA61B00DDA117 /* LoginButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */,
+				8C30117627ABA61B00DDA117 /* LoginButton.swift in Sources */,
 				8C250DAF27AB331200A280B3 /* LoggedOutViewController.swift in Sources */,
 				CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */,
 				8C250DC227AB34EC00A280B3 /* EmployeeExplorePageViewController.swift in Sources */,

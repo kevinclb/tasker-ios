@@ -1,5 +1,5 @@
 //
-//  RegisterButton.swift
+//  LoginButton.swift
 //  tasker
 //
 //  Created by Kevin Babou on 2/2/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterButton: UIButton {
+class LoginButton: UIButton {
     
     var shadowLayer: CAShapeLayer!
     
@@ -22,14 +22,18 @@ class RegisterButton: UIButton {
     }()
 }
 
-extension RegisterButton {
+extension LoginButton {
     func setGradientLayer(_ l: CAGradientLayer) -> CAGradientLayer {
         l.frame = self.bounds
         l.colors = [
-            UIColor(red: 0, green: 0.712, blue: 0.632, alpha: 0.71).cgColor,
-            UIColor(red: 0.009, green: 0.683, blue: 0.607, alpha: 1).cgColor
-        ]
-        l.locations = [0, 1]
+            UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor,
+            UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor,
+            UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1).cgColor,
+            UIColor(red: 0.942, green: 0.942, blue: 0.942, alpha: 1).cgColor,
+            UIColor(red: 0.942, green: 0.942, blue: 0.942, alpha: 1).cgColor,
+            UIColor(red: 0.917, green: 0.917, blue: 0.917, alpha: 1).cgColor
+          ]
+        l.locations = [0, 0.19, 1, 1, 1, 1]
         l.startPoint = CGPoint(x: 0.25, y: 0.5)
         l.endPoint = CGPoint(x: 0.75, y: 0.5)
         l.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 1, c: -1, d: 0, tx: 1, ty: 0))
