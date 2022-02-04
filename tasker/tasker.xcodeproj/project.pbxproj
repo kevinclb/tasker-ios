@@ -161,13 +161,6 @@
 			path = EditProfilePageViewController;
 			sourceTree = "<group>";
 		};
-		8C250DDA27AB38B800A280B3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		8C250DDD27AB3A6700A280B3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +206,6 @@
 				CE641A7227A88E0700766C59 /* Info.plist */,
 				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
 				8C250DDD27AB3A6700A280B3 /* Components */,
-				8C250DDA27AB38B800A280B3 /* Views */,
 				8C250DB327AB338C00A280B3 /* ViewControllers */,
 			);
 			path = tasker;
