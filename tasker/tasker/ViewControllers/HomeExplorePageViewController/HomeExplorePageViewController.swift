@@ -9,6 +9,7 @@ import UIKit
 
 class HomeExplorePageViewController: UIViewController {
 
+    @IBOutlet weak var exploreButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
