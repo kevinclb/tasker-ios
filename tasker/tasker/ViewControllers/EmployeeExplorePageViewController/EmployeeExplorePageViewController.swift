@@ -9,6 +9,7 @@ import UIKit
 
 class EmployeeExplorePageViewController: UIViewController {
 
+    @IBOutlet weak var CollectionCellView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
