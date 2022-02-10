@@ -62,16 +62,32 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="navBarRoundedRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="avx-sP-Im8">
-                            <rect key="frame" x="0.0" y="786" width="422" height="110"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demoAviHomePage" translatesAutoresizingMaskIntoConstraints="NO" id="550-fu-mea">
+                            <rect key="frame" x="311" y="40" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="1D8-EO-kbb"/>
+                                <constraint firstAttribute="height" constant="44" id="4vR-jp-iua"/>
+                            </constraints>
                         </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Menu" translatesAutoresizingMaskIntoConstraints="NO" id="Gt1-u4-BRR">
+                            <rect key="frame" x="30" y="40" width="44" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p6p-5p-lvr">
+                            <rect key="frame" x="56" y="123" width="42" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="550-fu-mea" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="40" id="I5L-lT-iMM"/>
                         <constraint firstItem="hGC-f6-MlX" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" constant="125" id="NEE-qN-Q6g"/>
+                        <constraint firstItem="550-fu-mea" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" constant="311" id="To5-0u-M3Q"/>
                         <constraint firstItem="sgA-ib-GEm" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" constant="22" id="WDB-dQ-zty"/>
+                        <constraint firstItem="550-fu-mea" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="40" id="YA1-Qd-tVK"/>
                         <constraint firstItem="sgA-ib-GEm" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="106" id="ijd-Ky-kIs"/>
                         <constraint firstItem="hGC-f6-MlX" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="40" id="qFR-al-ngD"/>
                     </constraints>
@@ -90,12 +106,10 @@
     </objects>
     <resources>
         <image name="HeaderTextandLogo-1" width="123" height="47"/>
+        <image name="Menu" width="44" height="44"/>
         <image name="SearchBar" width="274" height="62"/>
         <image name="addButton" width="54" height="54"/>
-        <image name="navBarRoundedRectangle" width="399" height="78"/>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="demoAviHomePage" width="44" height="44"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
