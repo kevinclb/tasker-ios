@@ -1,11 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeExplorePageViewController" customModule="tasker" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeExplorePageViewController" customModule="tasker" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mjo-7u-MRE">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchBar" translatesAutoresizingMaskIntoConstraints="NO" id="sgA-ib-GEm">
+                            <rect key="frame" x="22" y="106" width="266" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="266" id="d89-jg-Tzx"/>
+                                <constraint firstAttribute="height" constant="54" id="f20-Et-ipE"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Aoo-Q8-tdY">
+                            <rect key="frame" x="309" y="99" width="78" height="68"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="addButton" title=""/>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderTextandLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="hGC-f6-MlX">
+                            <rect key="frame" x="125" y="40" width="122.5" height="47"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46.770000000000003" id="evA-1K-C8V"/>
+                                <constraint firstAttribute="width" constant="122.72" id="rmB-OD-k2f"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recommended" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGc-La-t74">
+                            <rect key="frame" x="45" y="187" width="124" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Highly Rated Near You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MD-wZ-212">
+                            <rect key="frame" x="45" y="338" width="182" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Taskers With Certifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-hi-TeR">
+                            <rect key="frame" x="45" y="556" width="214" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demoAviHomePage" translatesAutoresizingMaskIntoConstraints="NO" id="550-fu-mea">
+                            <rect key="frame" x="311" y="40" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="1D8-EO-kbb"/>
+                                <constraint firstAttribute="height" constant="44" id="4vR-jp-iua"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Menu" translatesAutoresizingMaskIntoConstraints="NO" id="Gt1-u4-BRR">
+                            <rect key="frame" x="30" y="40" width="44" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p6p-5p-lvr">
+                            <rect key="frame" x="56" y="123" width="42" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="550-fu-mea" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="40" id="I5L-lT-iMM"/>
+                        <constraint firstItem="hGC-f6-MlX" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" constant="125" id="NEE-qN-Q6g"/>
+                        <constraint firstItem="550-fu-mea" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" constant="311" id="To5-0u-M3Q"/>
+                        <constraint firstItem="sgA-ib-GEm" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" constant="22" id="WDB-dQ-zty"/>
+                        <constraint firstItem="550-fu-mea" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="40" id="YA1-Qd-tVK"/>
+                        <constraint firstItem="sgA-ib-GEm" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="106" id="ijd-Ky-kIs"/>
+                        <constraint firstItem="hGC-f6-MlX" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="40" id="qFR-al-ngD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Mjo-7u-MRE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FhD-eF-bF4"/>
+                <constraint firstAttribute="trailing" secondItem="Mjo-7u-MRE" secondAttribute="trailing" id="chL-2T-rKh"/>
+                <constraint firstItem="Mjo-7u-MRE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eyb-Ca-hv9"/>
+                <constraint firstAttribute="bottom" secondItem="Mjo-7u-MRE" secondAttribute="bottom" id="zqH-gb-BKU"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="55.580357142857139"/>
+        </view>
     </objects>
+    <resources>
+        <image name="HeaderTextandLogo-1" width="123" height="47"/>
+        <image name="Menu" width="44" height="44"/>
+        <image name="SearchBar" width="274" height="62"/>
+        <image name="addButton" width="54" height="54"/>
+        <image name="demoAviHomePage" width="44" height="44"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
