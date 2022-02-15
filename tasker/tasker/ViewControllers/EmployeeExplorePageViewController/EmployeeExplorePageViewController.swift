@@ -7,24 +7,41 @@
 
 import UIKit
 
-class EmployeeExplorePageViewController: UIViewController {
-
-    @IBOutlet weak var CollectionCellView: UICollectionView!
+class EmployeeExplorePageViewController: UIViewController{
+    
+    
+    
+    @IBOutlet var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        collectionView.register(MyCollectionViewCell.self/*nib()*/, forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension EmployeeExplorePageViewController: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+     collectionView.deselectItem(at: indexPath, animated: true)
+    print("You tapped me")
+    }
+}
+
+extension EmployeeExplorePageViewController: UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
+//        cell.configure(with: UIImage(systemName: "house")!)
+//        cell.configure(with: UILabel(frame: ))
+        return cell
+    }
+}
+

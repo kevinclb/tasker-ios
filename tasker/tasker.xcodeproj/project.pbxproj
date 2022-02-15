@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		889DC85A27B32F7C0023F9C8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889DC85927B32F7C0023F9C8 /* CollectionViewCell.swift */; };
+		880C8A5D27B9C080001710B7 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880C8A5B27B9C080001710B7 /* MyCollectionViewCell.swift */; };
+		880C8A5E27B9C080001710B7 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880C8A5C27B9C080001710B7 /* MyCollectionViewCell.xib */; };
 		8C250DAF27AB331200A280B3 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DAD27AB331200A280B3 /* LoggedOutViewController.swift */; };
 		8C250DB027AB331200A280B3 /* LoggedOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DAE27AB331200A280B3 /* LoggedOutViewController.xib */; };
 		8C250DB627AB33E800A280B3 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DB427AB33E800A280B3 /* RegisterPageViewController.swift */; };
@@ -36,7 +37,8 @@
 /* Begin PBXFileReference section */
 		0CA7F196D3098A70BEF3A25D /* Pods_tasker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tasker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDF5D68BCEF519EC1696766 /* Pods-tasker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.release.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.release.xcconfig"; sourceTree = "<group>"; };
-		889DC85927B32F7C0023F9C8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		880C8A5B27B9C080001710B7 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		880C8A5C27B9C080001710B7 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 		8C250DAD27AB331200A280B3 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
 		8C250DAE27AB331200A280B3 /* LoggedOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoggedOutViewController.xib; sourceTree = "<group>"; };
 		8C250DB427AB33E800A280B3 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
@@ -131,8 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				8C250DC027AB34EC00A280B3 /* EmployeeExplorePageViewController.swift */,
-				889DC85927B32F7C0023F9C8 /* CollectionViewCell.swift */,
 				8C250DC127AB34EC00A280B3 /* EmployeeExplorePageViewController.xib */,
+				880C8A5B27B9C080001710B7 /* MyCollectionViewCell.swift */,
+				880C8A5C27B9C080001710B7 /* MyCollectionViewCell.xib */,
 			);
 			path = EmployeeExplorePageViewController;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880C8A5E27B9C080001710B7 /* MyCollectionViewCell.xib in Resources */,
 				CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */,
 				8C250DB027AB331200A280B3 /* LoggedOutViewController.xib in Resources */,
 				8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */,
@@ -360,10 +364,10 @@
 				CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */,
 				8C250DD327AB37A400A280B3 /* SettingsPageViewController.swift in Sources */,
 				8C250DBE27AB34CE00A280B3 /* HomeExplorePageViewController.swift in Sources */,
-				889DC85A27B32F7C0023F9C8 /* CollectionViewCell.swift in Sources */,
 				8C250DC727AB351B00A280B3 /* MessagesViewController.swift in Sources */,
 				8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */,
 				8C250DDC27AB3A5200A280B3 /* RegisterButton.swift in Sources */,
+				880C8A5D27B9C080001710B7 /* MyCollectionViewCell.swift in Sources */,
 				8C250DB627AB33E800A280B3 /* RegisterPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
