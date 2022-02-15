@@ -1,17 +1,17 @@
 //
-//  MessagesViewController.swift
+//  PublicProfileViewController.swift
 //  tasker
 //
-//  Created by Kevin Babou on 2/2/22.
+//  Created by Kevin Babou on 2/14/22.
 //
 
 import UIKit
 
-class MessagesViewController: UIViewController {
+class PublicProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray
+        view.backgroundColor = .systemBlue
         // Do any additional setup after loading the view.
     }
 
