@@ -15,7 +15,6 @@ class RegisterButton: UIButton {
         super.layoutSubviews()
         setShadowAndGradient()
     }
-    
     lazy var gradientLayer: CAGradientLayer = {
         let l = CAGradientLayer()
         return setGradientLayer(l)
