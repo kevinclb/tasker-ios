@@ -29,6 +29,7 @@
 		8C30117627ABA61B00DDA117 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30117527ABA61B00DDA117 /* LoginButton.swift */; };
 		CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */; };
 		CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */; };
+		CE4C4B5227B5D8AF001EF283 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C4B5127B5D8AF001EF283 /* MenuView.xib */; };
 		CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6427A88E0500766C59 /* AppDelegate.swift */; };
 		CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6627A88E0500766C59 /* SceneDelegate.swift */; };
 		CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE641A6D27A88E0700766C59 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		B7F263A0E495878F4758FEE1 /* Pods-tasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.debug.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.debug.xcconfig"; sourceTree = "<group>"; };
 		CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
+		CE4C4B5127B5D8AF001EF283 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		CE641A6127A88E0500766C59 /* tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE641A6427A88E0500766C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE641A6627A88E0500766C59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				8C250DBC27AB34CE00A280B3 /* HomeExplorePageViewController.swift */,
 				8C250DBD27AB34CE00A280B3 /* HomeExplorePageViewController.xib */,
+				CE4C4B5127B5D8AF001EF283 /* MenuView.xib */,
 			);
 			path = HomeExplorePageViewController;
 			sourceTree = "<group>";
@@ -187,13 +190,6 @@
 				8C250DD627AB380E00A280B3 /* EditProfileViewController.xib */,
 			);
 			path = EditProfilePageViewController;
-			sourceTree = "<group>";
-		};
-		8C250DDA27AB38B800A280B3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		8C250DDD27AB3A6700A280B3 /* Components */ = {
@@ -241,7 +237,6 @@
 				CE641A7227A88E0700766C59 /* Info.plist */,
 				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
 				8C250DDD27AB3A6700A280B3 /* Components */,
-				8C250DDA27AB38B800A280B3 /* Views */,
 				8C250DB327AB338C00A280B3 /* ViewControllers */,
 			);
 			path = tasker;
@@ -316,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */,
+				CE4C4B5227B5D8AF001EF283 /* MenuView.xib in Resources */,
 				8C250DB027AB331200A280B3 /* LoggedOutViewController.xib in Resources */,
 				8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */,
 				8C250DC827AB351B00A280B3 /* MessagesViewController.xib in Resources */,
