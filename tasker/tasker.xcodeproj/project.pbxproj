@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		880C8A5D27B9C080001710B7 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880C8A5B27B9C080001710B7 /* MyCollectionViewCell.swift */; };
 		880C8A5E27B9C080001710B7 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880C8A5C27B9C080001710B7 /* MyCollectionViewCell.xib */; };
+		8810281027BCAF5400C34A66 /* taskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810280F27BCAF5400C34A66 /* taskModel.swift */; };
 		8C250DAF27AB331200A280B3 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DAD27AB331200A280B3 /* LoggedOutViewController.swift */; };
 		8C250DB027AB331200A280B3 /* LoggedOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DAE27AB331200A280B3 /* LoggedOutViewController.xib */; };
 		8C250DB627AB33E800A280B3 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DB427AB33E800A280B3 /* RegisterPageViewController.swift */; };
@@ -39,6 +40,7 @@
 		7BDF5D68BCEF519EC1696766 /* Pods-tasker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.release.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.release.xcconfig"; sourceTree = "<group>"; };
 		880C8A5B27B9C080001710B7 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		880C8A5C27B9C080001710B7 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
+		8810280F27BCAF5400C34A66 /* taskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskModel.swift; sourceTree = "<group>"; };
 		8C250DAD27AB331200A280B3 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
 		8C250DAE27AB331200A280B3 /* LoggedOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoggedOutViewController.xib; sourceTree = "<group>"; };
 		8C250DB427AB33E800A280B3 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				8C250DC127AB34EC00A280B3 /* EmployeeExplorePageViewController.xib */,
 				880C8A5B27B9C080001710B7 /* MyCollectionViewCell.swift */,
 				880C8A5C27B9C080001710B7 /* MyCollectionViewCell.xib */,
+				8810280F27BCAF5400C34A66 /* taskModel.swift */,
 			);
 			path = EmployeeExplorePageViewController;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */,
 				8C250DDC27AB3A5200A280B3 /* RegisterButton.swift in Sources */,
 				880C8A5D27B9C080001710B7 /* MyCollectionViewCell.swift in Sources */,
+				8810281027BCAF5400C34A66 /* taskModel.swift in Sources */,
 				8C250DB627AB33E800A280B3 /* RegisterPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

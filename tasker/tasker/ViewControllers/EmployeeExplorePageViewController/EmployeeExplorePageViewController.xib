@@ -68,8 +68,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0eT-xO-EOk">
-                                    <rect key="frame" x="8" y="35" width="374" height="162"/>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0eT-xO-EOk">
+                                    <rect key="frame" x="8" y="35" width="374" height="186"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="tintColor" red="0.32813924550000001" green="0.62398320439999999" blue="0.58823502059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
@@ -79,7 +79,7 @@
                                     <viewLayoutGuide key="contentLayoutGuide" id="pf1-ER-kLa"/>
                                     <viewLayoutGuide key="frameLayoutGuide" id="mWH-bK-bLl"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uL5-oE-uwf">
-                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="itemSize" width="208" height="186"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -128,6 +128,7 @@
                                 <constraint firstAttribute="trailing" secondItem="34W-tH-dLw" secondAttribute="trailing" constant="232" id="3TJ-zz-RIe"/>
                                 <constraint firstItem="34W-tH-dLw" firstAttribute="top" secondItem="0eT-xO-EOk" secondAttribute="bottom" constant="21" id="3w7-Me-Khk"/>
                                 <constraint firstItem="34W-tH-dLw" firstAttribute="leading" secondItem="jQG-SH-ovs" secondAttribute="leading" constant="23" id="8Le-qq-Cq0"/>
+                                <constraint firstItem="TI4-8B-9bE" firstAttribute="leading" secondItem="jQG-SH-ovs" secondAttribute="leading" constant="23" id="9EV-cX-7LB"/>
                                 <constraint firstAttribute="trailing" secondItem="0eT-xO-EOk" secondAttribute="trailing" constant="8" id="9K3-rU-liB"/>
                                 <constraint firstItem="0eT-xO-EOk" firstAttribute="top" secondItem="8fS-qg-OGo" secondAttribute="bottom" constant="7.6699999999999999" id="9L2-jd-2Do"/>
                                 <constraint firstItem="TI4-8B-9bE" firstAttribute="leading" secondItem="jQG-SH-ovs" secondAttribute="leading" constant="23" id="DLP-P4-T8C"/>
@@ -150,6 +151,7 @@
                                 <constraint firstItem="VbB-YV-1sc" firstAttribute="top" secondItem="34W-tH-dLw" secondAttribute="bottom" constant="8" symbolic="YES" id="m52-p1-qHh"/>
                                 <constraint firstItem="8fS-qg-OGo" firstAttribute="leading" secondItem="jQG-SH-ovs" secondAttribute="leading" constant="23" id="nDJ-yX-kS0"/>
                                 <constraint firstAttribute="height" constant="1000" id="rbA-Mg-1FI"/>
+                                <constraint firstAttribute="trailing" secondItem="TI4-8B-9bE" secondAttribute="trailing" constant="194" id="xZY-8x-j73"/>
                                 <constraint firstAttribute="trailing" secondItem="TI4-8B-9bE" secondAttribute="trailing" constant="194" id="xvi-B8-41k"/>
                             </constraints>
                         </view>
@@ -176,21 +178,28 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="GoBTN"/>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="demoAviHomePage" translatesAutoresizingMaskIntoConstraints="NO" id="1XI-5Z-6mZ">
+                    <rect key="frame" x="313" y="51" width="44" height="44"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tnA-mQ-iUK" secondAttribute="trailing" constant="126" id="3jl-ex-pND"/>
                 <constraint firstItem="3ab-QA-FSJ" firstAttribute="leading" secondItem="3VE-EB-UXS" secondAttribute="trailing" id="9Mg-Vd-qT6"/>
+                <constraint firstItem="3ab-QA-FSJ" firstAttribute="top" secondItem="1XI-5Z-6mZ" secondAttribute="bottom" constant="17" id="Fgg-0K-qDl"/>
                 <constraint firstAttribute="trailing" secondItem="buV-Jq-AGr" secondAttribute="trailing" id="G4K-Jv-BCE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3ab-QA-FSJ" secondAttribute="trailing" constant="16" id="HEW-jB-zeK"/>
                 <constraint firstItem="qbD-pa-9by" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="380" id="Lab-o0-cvU"/>
                 <constraint firstItem="qbD-pa-9by" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="M9N-qB-Sfq"/>
                 <constraint firstAttribute="bottom" secondItem="buV-Jq-AGr" secondAttribute="bottom" constant="101" id="SRa-5R-tUI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1XI-5Z-6mZ" secondAttribute="trailing" constant="33" id="aGA-pt-1q1"/>
+                <constraint firstItem="1XI-5Z-6mZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="7" id="cOL-jc-OQ3"/>
                 <constraint firstItem="3VE-EB-UXS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dPN-dv-9cp"/>
                 <constraint firstItem="3VE-EB-UXS" firstAttribute="top" secondItem="tnA-mQ-iUK" secondAttribute="bottom" constant="23" id="ebk-TC-r1X"/>
                 <constraint firstItem="tnA-mQ-iUK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="7" id="j44-pR-qbt"/>
                 <constraint firstItem="3ab-QA-FSJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="68" id="n4n-ni-v4W"/>
+                <constraint firstItem="1XI-5Z-6mZ" firstAttribute="leading" secondItem="tnA-mQ-iUK" secondAttribute="trailing" constant="49" id="qZa-Pu-uhe"/>
                 <constraint firstItem="buV-Jq-AGr" firstAttribute="top" secondItem="3VE-EB-UXS" secondAttribute="bottom" constant="19" id="rw2-Nm-Ats"/>
                 <constraint firstItem="buV-Jq-AGr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="191" id="xX2-JQ-ZWE"/>
                 <constraint firstItem="buV-Jq-AGr" firstAttribute="top" secondItem="3ab-QA-FSJ" secondAttribute="bottom" constant="11" id="ycr-pL-Lez"/>
@@ -202,6 +211,7 @@
     <resources>
         <image name="GoBTN" width="54" height="54"/>
         <image name="HeaderTextandLogo" width="123" height="47"/>
+        <image name="demoAviHomePage" width="44" height="44"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
