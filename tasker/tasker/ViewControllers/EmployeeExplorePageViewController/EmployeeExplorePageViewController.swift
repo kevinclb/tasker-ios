@@ -59,4 +59,6 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
             let task = tasks[indexPath.row]
             print("\(indexPath.row) - \(task.name!)")
         }
+    
+    //fixing an issue
 }
