@@ -11,8 +11,6 @@
 		8C224DA327BB14AA00E486C7 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C224DA127BB14AA00E486C7 /* RootViewController.xib */; };
 		8C224DA627BB15B100E486C7 /* PublicProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C224DA427BB15B100E486C7 /* PublicProfileViewController.swift */; };
 		8C224DA727BB15B100E486C7 /* PublicProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C224DA527BB15B100E486C7 /* PublicProfileViewController.xib */; };
-		8C250DAF27AB331200A280B3 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DAD27AB331200A280B3 /* LoggedOutViewController.swift */; };
-		8C250DB027AB331200A280B3 /* LoggedOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DAE27AB331200A280B3 /* LoggedOutViewController.xib */; };
 		8C250DB627AB33E800A280B3 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DB427AB33E800A280B3 /* RegisterPageViewController.swift */; };
 		8C250DB727AB33E800A280B3 /* RegisterPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DB527AB33E800A280B3 /* RegisterPageViewController.xib */; };
 		8C250DBE27AB34CE00A280B3 /* HomeExplorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DBC27AB34CE00A280B3 /* HomeExplorePageViewController.swift */; };
@@ -44,8 +42,6 @@
 		8C224DA127BB14AA00E486C7 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		8C224DA427BB15B100E486C7 /* PublicProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProfileViewController.swift; sourceTree = "<group>"; };
 		8C224DA527BB15B100E486C7 /* PublicProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicProfileViewController.xib; sourceTree = "<group>"; };
-		8C250DAD27AB331200A280B3 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
-		8C250DAE27AB331200A280B3 /* LoggedOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoggedOutViewController.xib; sourceTree = "<group>"; };
 		8C250DB427AB33E800A280B3 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		8C250DB527AB33E800A280B3 /* RegisterPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPageViewController.xib; sourceTree = "<group>"; };
 		8C250DBC27AB34CE00A280B3 /* HomeExplorePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeExplorePageViewController.swift; sourceTree = "<group>"; };
@@ -111,15 +107,6 @@
 			path = LaunchViewController;
 			sourceTree = "<group>";
 		};
-		8C250DB227AB337E00A280B3 /* LoggedOutViewController */ = {
-			isa = PBXGroup;
-			children = (
-				8C250DAD27AB331200A280B3 /* LoggedOutViewController.swift */,
-				8C250DAE27AB331200A280B3 /* LoggedOutViewController.xib */,
-			);
-			path = LoggedOutViewController;
-			sourceTree = "<group>";
-		};
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +115,6 @@
 				8C250DD027AB378000A280B3 /* SettingsPageViewController */,
 				8C250DBB27AB34B300A280B3 /* HomeExplorePageViewController */,
 				8C250DB127AB336800A280B3 /* LaunchViewController */,
-				8C250DB227AB337E00A280B3 /* LoggedOutViewController */,
 				8C250DB827AB33F200A280B3 /* RegisterPageViewController */,
 				8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */,
 				8C250DC927AB352E00A280B3 /* MessagesViewController */,
@@ -312,7 +298,6 @@
 			files = (
 				CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */,
 				CE4C4B5227B5D8AF001EF283 /* MenuView.xib in Resources */,
-				8C250DB027AB331200A280B3 /* LoggedOutViewController.xib in Resources */,
 				8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */,
 				8C250DC827AB351B00A280B3 /* MessagesViewController.xib in Resources */,
 				CE641A7927A8904A00766C59 /* GoogleService-Info.plist in Resources */,
@@ -377,7 +362,6 @@
 			files = (
 				CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */,
 				8C30117627ABA61B00DDA117 /* LoginButton.swift in Sources */,
-				8C250DAF27AB331200A280B3 /* LoggedOutViewController.swift in Sources */,
 				CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */,
 				8C224DA227BB14AA00E486C7 /* RootViewController.swift in Sources */,
 				8C250DC227AB34EC00A280B3 /* EmployeeExplorePageViewController.swift in Sources */,
