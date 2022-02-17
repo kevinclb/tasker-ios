@@ -11,29 +11,24 @@
 import UIKit
 
 class LoggedOutViewController: UIViewController {
-
-    private var registerButton: RegisterButton = {
-        let button = RegisterButton(frame: CGRect(x: 204, y: 702, width: 167, height: 52))
-        return button
-    }()
     
-    private var loginButton: LoginButton = {
-        let button = LoginButton(frame: CGRect(x: 21, y: 702, width: 167, height: 52))
-        return button
-    }()
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var registerButton: UIButton!
+    
+    let loginVC = LoginPageViewController()
+    let registrationVC = RegisterPageStep1ViewController()
+    
     
     override func viewDidLoad() {
+   
         
         //I'm giving these views a set x and y coordinate for now,
         //however, the correct way to lay these buttons vertical to one another
         //is to use a vertical UIStackView.
         
         super.viewDidLoad()
-        view.addSubview(registerButton)
-        registerButton.gradientLayer.cornerRadius = 6
         
-        view.addSubview(loginButton)
-        loginButton.gradientLayer.cornerRadius = 6
     }
 
 
@@ -46,5 +41,16 @@ class LoggedOutViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func loginPressed(_ sender: Any) {
+        let loginVC = LoginPageViewController()
+        present(loginVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func registerPressed(_ sender: Any) {
+        let registerStep1VC = RegisterPageStep1ViewController()
+        present(registerStep1VC, animated: true, completion: nil)
+    }
+    
 
 }

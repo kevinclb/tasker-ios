@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginPageViewController" customModule="tasker" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="u3r-U5-jcD" id="el7-WB-fMA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="u3r-U5-jcD">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpi-Bw-rBe">
+                    <rect key="frame" x="16" y="81" width="44" height="34"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="arrow_back_ios_24px" imagePadding="0.0"/>
+                    <connections>
+                        <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="mXi-77-x1m"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider" translatesAutoresizingMaskIntoConstraints="NO" id="Qsu-Ki-gUN">
+                    <rect key="frame" x="42" y="517" width="306" height="12"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Yf0-IM-ns2">
+                    <rect key="frame" x="16" y="562" width="353" height="110"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gn-yW-tvv">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="3JD-ue-aJZ"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Register with Google Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1g-Uj-J06">
+                            <rect key="frame" x="0.0" y="70" width="353" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Lsi-gU-Ib8"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Register with Apple Button"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Y1g-Uj-J06" firstAttribute="height" secondItem="9Gn-yW-tvv" secondAttribute="height" id="Jhq-MZ-NHI"/>
+                        <constraint firstItem="Y1g-Uj-J06" firstAttribute="width" secondItem="9Gn-yW-tvv" secondAttribute="width" id="zpu-bg-sOY"/>
+                    </constraints>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tasker Logo" translatesAutoresizingMaskIntoConstraints="NO" id="jwU-F5-2lW">
+                    <rect key="frame" x="116" y="680" width="141" height="93"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Ler-mX-NXQ">
+                    <rect key="frame" x="29" y="167" width="332" height="363"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DO4-OP-Rqf">
+                            <rect key="frame" x="0.0" y="0.0" width="332" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="332" id="6gM-gg-eE7"/>
+                                <constraint firstAttribute="height" constant="20" id="S0N-47-RzS"/>
+                            </constraints>
+                            <attributedString key="attributedText">
+                                <fragment content="Email Address:">
+                                    <attributes>
+                                        <color key="NSColor" red="0.411719799" green="0.43532106279999999" blue="0.47444945570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="17" name="Inter-Regular_Medium"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="youremail@address.here" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SNw-qS-6sj">
+                            <rect key="frame" x="0.0" y="60" width="332" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="zri-7z-GQt"/>
+                            </constraints>
+                            <attributedString key="attributedText"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDf-Jb-y9F">
+                            <rect key="frame" x="0.0" y="134" width="332" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="reB-dy-INW"/>
+                            </constraints>
+                            <attributedString key="attributedText">
+                                <fragment content="Password:">
+                                    <attributes>
+                                        <color key="NSColor" red="0.411719799" green="0.43532106279999999" blue="0.47444945570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" metaFont="system" size="17"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="yourPasswordHere123!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aeg-xC-1bZ">
+                            <rect key="frame" x="0.0" y="194" width="332" height="34"/>
+                            <attributedString key="attributedText"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNL-IX-NSO">
+                            <rect key="frame" x="0.0" y="268" width="332" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="DOz-eW-Mfz"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Continue Button"/>
+                            <connections>
+                                <action selector="continueTapped:" destination="-1" eventType="touchUpInside" id="1uj-SB-xVb"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnv-vS-Imo">
+                            <rect key="frame" x="0.0" y="348" width="332" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="363" id="Io4-ex-jCb"/>
+                        <constraint firstAttribute="width" constant="332" id="VXL-ms-Vtz"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="0xJ-O4-QOB"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Ler-mX-NXQ" firstAttribute="top" secondItem="u3r-U5-jcD" secondAttribute="top" constant="167" id="2Yy-bG-16g"/>
+                <constraint firstItem="gpi-Bw-rBe" firstAttribute="leading" secondItem="u3r-U5-jcD" secondAttribute="leadingMargin" id="5mn-du-Tiy"/>
+                <constraint firstItem="jwU-F5-2lW" firstAttribute="top" secondItem="Yf0-IM-ns2" secondAttribute="bottom" constant="8" id="BfR-5c-q2d"/>
+                <constraint firstItem="Ler-mX-NXQ" firstAttribute="centerX" secondItem="u3r-U5-jcD" secondAttribute="centerX" id="Xtl-EP-QFm"/>
+                <constraint firstItem="Ler-mX-NXQ" firstAttribute="centerX" secondItem="Qsu-Ki-gUN" secondAttribute="centerX" id="btl-9I-BRw"/>
+                <constraint firstItem="gpi-Bw-rBe" firstAttribute="leading" secondItem="Yf0-IM-ns2" secondAttribute="leading" id="dO4-im-cYE"/>
+                <constraint firstItem="Ler-mX-NXQ" firstAttribute="top" secondItem="gpi-Bw-rBe" secondAttribute="bottom" constant="52" id="pKu-eW-Xng"/>
+                <constraint firstItem="Yf0-IM-ns2" firstAttribute="top" secondItem="Qsu-Ki-gUN" secondAttribute="bottom" constant="33" id="tfr-3x-vBE"/>
+                <constraint firstItem="jwU-F5-2lW" firstAttribute="leading" secondItem="0xJ-O4-QOB" secondAttribute="leading" constant="116" id="u5b-4T-sW9"/>
+                <constraint firstItem="Yf0-IM-ns2" firstAttribute="top" secondItem="Ler-mX-NXQ" secondAttribute="bottom" constant="32" id="wh0-wM-8YA"/>
+                <constraint firstItem="0xJ-O4-QOB" firstAttribute="trailing" secondItem="jwU-F5-2lW" secondAttribute="trailing" constant="133" id="z5r-Cj-Cou"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="120.14218009478672"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Continue Button" width="308" height="46"/>
+        <image name="Divider" width="306" height="12"/>
+        <image name="Register with Apple Button" width="329" height="66"/>
+        <image name="Register with Google Button" width="329" height="66"/>
+        <image name="Tasker Logo" width="257" height="93"/>
+        <image name="arrow_back_ios_24px" width="20" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
