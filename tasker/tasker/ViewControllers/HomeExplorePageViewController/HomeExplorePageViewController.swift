@@ -11,7 +11,14 @@ class HomeExplorePageViewController: UIViewController {
 
     //Outlets for each button on the menu
     @IBOutlet weak var exploreButton: UIButton!
-    
+    @IBOutlet weak var recentTasks: UIButton!
+    @IBOutlet weak var favoriteTaskers: UIButton!
+    @IBOutlet weak var needboards: UIButton!
+    @IBOutlet weak var communityButton: UIButton!
+    @IBOutlet weak var helpCenter: UIButton!
+    @IBOutlet weak var employeeProfile: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     // Outlets for the menu for animation purposes
     @IBOutlet weak var menuScroll: UIScrollView!
@@ -66,5 +73,33 @@ class HomeExplorePageViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func exploreTapped(_ sender: Any) {
+    }
+    
+    @IBAction func recentTasksTapped(_ sender: Any) {
+    }
+    
+    @IBAction func favoriteTasksTapped(_ sender: Any) {
+    }
+    
+    @IBAction func needboardsTapped(_ sender: Any) {
+    }
+    
+    @IBAction func communityTapped(_ sender: Any) {
+    }
+    
+    @IBAction func helpCenterTapped(_ sender: Any) {
+    }
+    
+    @IBAction func employeeProfileTapped(_ sender: Any) {
+    }
+    
+    @IBAction func settingsTapped(_ sender: Any) {
+    }
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+    }
+    
     
 }

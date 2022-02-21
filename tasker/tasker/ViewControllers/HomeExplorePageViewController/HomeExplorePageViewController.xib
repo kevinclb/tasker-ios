@@ -10,11 +10,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeExplorePageViewController" customModule="tasker" customModuleProvider="target">
             <connections>
+                <outlet property="communityButton" destination="Q2s-2z-TnB" id="Fi1-cW-CrG"/>
+                <outlet property="employeeProfile" destination="IBs-FY-D0Y" id="CLU-o7-kNp"/>
                 <outlet property="exploreButton" destination="fJJ-c1-zFr" id="adn-3y-k3P"/>
+                <outlet property="favoriteTaskers" destination="EoJ-al-08S" id="ziN-xV-1iT"/>
+                <outlet property="helpCenter" destination="Rz4-8p-AsX" id="7rO-aI-hW5"/>
+                <outlet property="logoutButton" destination="RC7-xq-zw8" id="cn2-mZ-jKB"/>
                 <outlet property="menuLeading" destination="44B-Vn-2vy" id="PLW-fd-2Wf"/>
                 <outlet property="menuScroll" destination="9kO-ID-s2V" id="0bC-eO-a4N"/>
                 <outlet property="menuTrailing" destination="g6M-5h-hgH" id="NmG-cE-Phw"/>
                 <outlet property="menuView" destination="KO2-dK-lJN" id="HaY-qS-alE"/>
+                <outlet property="needboards" destination="Y5F-RY-Mzc" id="IgR-GC-svZ"/>
+                <outlet property="recentTasks" destination="Ug3-l5-fkd" id="q0N-Yo-Ns8"/>
+                <outlet property="settingsButton" destination="lkW-wH-2SY" id="4aa-2e-qo9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="cJj-IV-DRQ"/>
             </connections>
         </placeholder>
@@ -186,6 +194,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="exploreTapped:" destination="-1" eventType="touchUpInside" id="KS2-zB-5hV"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="Ugs-wF-kYu" userLabel="divider2">
                                     <rect key="frame" x="38" y="172" width="205" height="18"/>
@@ -198,6 +209,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="recentTasksTapped:" destination="-1" eventType="touchUpInside" id="wWi-KT-vyB"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="divider" id="R6Z-v6-sId" userLabel="divider3">
                                     <rect key="frame" x="38" y="243" width="205" height="18"/>
@@ -210,6 +224,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="favoriteTasksTapped:" destination="-1" eventType="touchUpInside" id="co8-0j-CzX"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="VeO-d5-g6Q" userLabel="divider4">
                                     <rect key="frame" x="38" y="310" width="205" height="18"/>
@@ -222,6 +239,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="needboardsTapped:" destination="-1" eventType="touchUpInside" id="qnY-JO-2Tp"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="kyL-N0-hta" userLabel="divider4">
                                     <rect key="frame" x="38" y="379" width="205" height="18"/>
@@ -234,6 +254,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="communityTapped:" destination="-1" eventType="touchUpInside" id="GTi-mJ-WZ0"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="rr3-df-oLx" userLabel="divider5">
                                     <rect key="frame" x="38" y="451" width="205" height="18"/>
@@ -246,6 +269,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="helpCenterTapped:" destination="-1" eventType="touchUpInside" id="RkZ-uY-bqA"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="6qa-iS-RZT" userLabel="divider6">
                                     <rect key="frame" x="38" y="523" width="205" height="18"/>
@@ -255,16 +281,25 @@
                                     <rect key="frame" x="15" y="545" width="145" height="66"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="employeeProfile_Button"/>
+                                    <connections>
+                                        <action selector="employeeProfileTapped:" destination="-1" eventType="touchUpInside" id="2Mx-gT-Hdg"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkW-wH-2SY" userLabel="SettingsButton">
                                     <rect key="frame" x="169" y="544" width="77" height="68"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Settings_Button"/>
+                                    <connections>
+                                        <action selector="settingsTapped:" destination="-1" eventType="touchUpInside" id="ORL-s1-9h3"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RC7-xq-zw8" userLabel="LogoutButton">
                                     <rect key="frame" x="71" y="619" width="169" height="77"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="LogOut_Button"/>
+                                    <connections>
+                                        <action selector="logoutTapped:" destination="-1" eventType="touchUpInside" id="dwW-rH-xZd"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <viewLayoutGuide key="safeArea" id="Kze-yr-g95"/>
