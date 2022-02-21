@@ -288,6 +288,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="recentTasksTapped:" destination="-1" eventType="touchUpInside" id="yyC-Zv-cha"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="O6K-Ej-9gi" userLabel="divider2">
                                     <rect key="frame" x="38" y="172" width="205" height="18"/>
@@ -300,6 +303,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="recentClientsTapped:" destination="-1" eventType="touchUpInside" id="rvW-wx-zF1"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="hZM-j1-MQ0" userLabel="divider3">
                                     <rect key="frame" x="38" y="243" width="205" height="18"/>
@@ -312,6 +318,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="workPreferencesTapped:" destination="-1" eventType="touchUpInside" id="KhT-Og-wUf"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="UtW-el-Fil" userLabel="divider4">
                                     <rect key="frame" x="38" y="310" width="205" height="18"/>
@@ -324,6 +333,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="communityTapped:" destination="-1" eventType="touchUpInside" id="6H5-DF-KV4"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="3Yy-qn-bou" userLabel="divider4">
                                     <rect key="frame" x="38" y="379" width="205" height="18"/>
@@ -336,6 +348,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="ratingsTapped:" destination="-1" eventType="touchUpInside" id="grO-84-KEN"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="gVm-x4-4ko" userLabel="divider5">
                                     <rect key="frame" x="38" y="451" width="205" height="18"/>
@@ -348,6 +363,9 @@
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="helpCenterTapped:" destination="-1" eventType="touchUpInside" id="GSF-Db-KCm"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="GZ8-kV-30v" userLabel="divider6">
                                     <rect key="frame" x="38" y="523" width="205" height="18"/>
@@ -357,16 +375,25 @@
                                     <rect key="frame" x="15" y="545" width="145" height="66"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="clientProfile_Button"/>
+                                    <connections>
+                                        <action selector="clientProfileTapped:" destination="-1" eventType="touchUpInside" id="VS0-eH-wnL"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8Q-eR-Pho" userLabel="SettingsButton">
                                     <rect key="frame" x="169" y="544" width="77" height="68"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Settings_Button"/>
+                                    <connections>
+                                        <action selector="settingsTapped:" destination="-1" eventType="touchUpInside" id="X3o-13-Wll"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKA-JW-qQ1" userLabel="LogoutButton">
                                     <rect key="frame" x="71" y="619" width="169" height="77"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="LogOut_Button"/>
+                                    <connections>
+                                        <action selector="logoutTapped:" destination="-1" eventType="touchUpInside" id="VuH-El-8B1"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <viewLayoutGuide key="safeArea" id="fe0-AY-lEj"/>

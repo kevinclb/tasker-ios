@@ -90,6 +90,29 @@ class EmployeeExplorePageViewController: UIViewController {
             }
         }
     }
+    
+    // IB Actions for menu buttons
+    
+    @IBAction func recentTasksTapped(_ sender: Any) {
+    }
+    @IBAction func recentClientsTapped(_ sender: Any) {
+    }
+    @IBAction func workPreferencesTapped(_ sender: Any) {
+    }
+    @IBAction func communityTapped(_ sender: Any) {
+    }
+    @IBAction func ratingsTapped(_ sender: Any) {
+    }
+    @IBAction func helpCenterTapped(_ sender: Any) {
+    }
+    @IBAction func clientProfileTapped(_ sender: Any) {
+    }
+    @IBAction func settingsTapped(_ sender: Any) {
+    }
+    @IBAction func logoutTapped(_ sender: Any) {
+    }
+    
+    
 }
 
 extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollectionViewDataSource {
