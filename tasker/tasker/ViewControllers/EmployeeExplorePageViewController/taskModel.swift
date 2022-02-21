@@ -7,12 +7,10 @@
 
 import Foundation
 
-class task{
+struct task{
     var name: String?
     var city: String?
     var taskInfo: String?
     var price: String?
     var category: String?
-    
-    required init(){}
 }

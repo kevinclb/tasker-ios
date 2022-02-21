@@ -17,9 +17,10 @@ class MyCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.layer.cornerRadius = 2.0
+        self.contentView.layer.cornerRadius = 1.0
         self.contentView.layer.borderWidth = 1.0
         self.contentView.layer.borderColor = UIColor.clear.cgColor
         self.contentView.layer.masksToBounds = true
+        lbPrice.frame = CGRect(x:0,y:0,width:100,height:100)
         }
 }
