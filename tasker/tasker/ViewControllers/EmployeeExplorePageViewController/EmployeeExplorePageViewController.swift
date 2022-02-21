@@ -4,12 +4,14 @@
 //
 //  Created by Kevin Babou on 2/2/22.
 //
-
+import Firebase
+import FirebaseFirestore
 import UIKit
 
-class EmployeeExplorePageViewController: UIViewController{
-    
-    
+let db = Firestore.firestore()
+
+class EmployeeExplorePageViewController: UIViewController {
+        
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -38,16 +40,20 @@ class EmployeeExplorePageViewController: UIViewController{
         collectionView.delegate = self
         collectionView.dataSource = self
         MyCollectionViewCell.awakeFromNib()
-        for _ in 1...25{
-            let task = task()
-            task.name = "Name"
-            task.city = "City"
-            task.taskInfo = "Task Description will go here"
-            task.price = "Price"
-            task.category = "Category"
-            tasks.append(task)
-        }
-        collectionView.reloadData()
+        
+        db.collection("tasks").getDocuments { (snapshot, error) in
+                    if error != nil {
+                        print(error)
+                    } else {
+                        for d in (snapshot?.documents)! {
+                            self.tasks.append(task(name: d["name"] as? String ?? "", city: d["city"] as? String ?? "", taskInfo: d["desc"] as? String ?? "", price: d["rate"] as? String ?? "", category: d["category"] as? String ?? ""))
+                                DispatchQueue.main.async {
+                                    self.collectionView.reloadData()
+                                }
+                            }
+                        }
+                    }
+        //collectionView.reloadData()
     }
     // functions for slide out menu
     
