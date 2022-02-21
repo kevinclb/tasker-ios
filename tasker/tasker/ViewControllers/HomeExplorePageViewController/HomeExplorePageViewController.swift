@@ -9,16 +9,14 @@ import UIKit
 
 class HomeExplorePageViewController: UIViewController {
 
+    //Outlets for each button on the menu
     @IBOutlet weak var exploreButton: UIButton!
     
     
-    
+    // Outlets for the menu for animation purposes
     @IBOutlet weak var menuScroll: UIScrollView!
-    
     @IBOutlet weak var menuView: UIView!
-    
     @IBOutlet weak var menuLeading: NSLayoutConstraint!
-    
     @IBOutlet weak var menuTrailing: NSLayoutConstraint!
     
     
@@ -28,10 +26,6 @@ class HomeExplorePageViewController: UIViewController {
         menuScroll.bounces = false
         menuScroll.showsVerticalScrollIndicator = false
         menuScroll.showsHorizontalScrollIndicator = false
-        // Do any additional setup after loading the view.
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
-        rightSwipe.direction = .right
-        view.addGestureRecognizer(rightSwipe)
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
         leftSwipe.direction = .left
@@ -62,31 +56,15 @@ class HomeExplorePageViewController: UIViewController {
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer){
         if sender.state == .ended {
-          switch sender.direction {
-          case .right:
-            if !menuOut {
-              showMenu()
+            if(sender.direction == .left){
+                if menuOut{
+                    setView(view: menuScroll, hidden: true)
+                    menuLeading.constant = -300
+                    menuTrailing.constant = 300
+                    menuOut = false
+                }
             }
-          case .left:
-            if menuOut{
-              showMenu()
-            }
-          default:
-            break;
-          }
         }
     }
-    func showMenu() {
-        if !menuOut {
-            setView(view: menuScroll, hidden: false)
-            menuLeading.constant = 0
-            menuTrailing.constant = 0
-            menuOut = true
-        } else {
-            setView(view: menuScroll, hidden: true)
-            menuLeading.constant = -300
-            menuTrailing.constant = 300
-            menuOut = false
-        }
-    }
+    
 }
