@@ -29,6 +29,14 @@ class HomeExplorePageViewController: UIViewController {
         menuScroll.showsVerticalScrollIndicator = false
         menuScroll.showsHorizontalScrollIndicator = false
         // Do any additional setup after loading the view.
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        rightSwipe.direction = .right
+        view.addGestureRecognizer(rightSwipe)
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        leftSwipe.direction = .left
+        view.addGestureRecognizer(leftSwipe)
+        
     }
 
     @IBAction func menuTapped(_ sender: Any) {
@@ -50,5 +58,35 @@ class HomeExplorePageViewController: UIViewController {
         UIScrollView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
             view.isHidden = hidden
         })
+    }
+    
+    @objc func handleSwipe(sender: UISwipeGestureRecognizer){
+        if sender.state == .ended {
+          switch sender.direction {
+          case .right:
+            if !menuOut {
+              showMenu()
+            }
+          case .left:
+            if menuOut{
+              showMenu()
+            }
+          default:
+            break;
+          }
+        }
+    }
+    func showMenu() {
+        if !menuOut {
+            setView(view: menuScroll, hidden: false)
+            menuLeading.constant = 0
+            menuTrailing.constant = 0
+            menuOut = true
+        } else {
+            setView(view: menuScroll, hidden: true)
+            menuLeading.constant = -300
+            menuTrailing.constant = 300
+            menuOut = false
+        }
     }
 }
