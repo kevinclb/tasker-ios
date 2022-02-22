@@ -8,17 +8,6 @@
 import UIKit
 
 class HomeExplorePageViewController: UIViewController {
-
-    //Outlets for each button on the menu
-    @IBOutlet weak var helpCenterButton: UIButton!
-    @IBOutlet weak var referAFriend: UIButton!
-    @IBOutlet weak var faq: UIButton!
-    @IBOutlet weak var contactUs: UIButton!
-    @IBOutlet weak var aboutUs: UIButton!
-    @IBOutlet weak var supportUs: UIButton!
-    @IBOutlet weak var employeeProfile: UIButton!
-    @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
     
     // Outlets for the menu for animation purposes
     @IBOutlet weak var menuScroll: UIScrollView!

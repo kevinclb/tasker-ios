@@ -196,6 +196,7 @@
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="exploreTapped:" destination="-1" eventType="touchUpInside" id="KS2-zB-5hV"/>
+                                        <action selector="helpCenterTapped:" destination="-1" eventType="touchUpInside" id="dug-HG-Bmg"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="Ugs-wF-kYu" userLabel="divider2">
@@ -211,6 +212,7 @@
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="recentTasksTapped:" destination="-1" eventType="touchUpInside" id="wWi-KT-vyB"/>
+                                        <action selector="referAFriendTapped:" destination="-1" eventType="touchUpInside" id="jIe-k2-0Cm"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="divider" id="R6Z-v6-sId" userLabel="divider3">
@@ -225,6 +227,7 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
+                                        <action selector="faqTapped:" destination="-1" eventType="touchUpInside" id="lPI-VN-vW0"/>
                                         <action selector="favoriteTasksTapped:" destination="-1" eventType="touchUpInside" id="co8-0j-CzX"/>
                                     </connections>
                                 </button>
@@ -240,6 +243,7 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
+                                        <action selector="contactUsTapped:" destination="-1" eventType="touchUpInside" id="THC-iG-AH1"/>
                                         <action selector="needboardsTapped:" destination="-1" eventType="touchUpInside" id="qnY-JO-2Tp"/>
                                     </connections>
                                 </button>
@@ -255,6 +259,7 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
+                                        <action selector="aboutUsTapped:" destination="-1" eventType="touchUpInside" id="vbe-hM-mdF"/>
                                         <action selector="communityTapped:" destination="-1" eventType="touchUpInside" id="GTi-mJ-WZ0"/>
                                     </connections>
                                 </button>
@@ -271,6 +276,7 @@
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="helpCenterTapped:" destination="-1" eventType="touchUpInside" id="RkZ-uY-bqA"/>
+                                        <action selector="supportUsTapped:" destination="-1" eventType="touchUpInside" id="UUu-Ga-pnU"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="6qa-iS-RZT" userLabel="divider6">
