@@ -187,10 +187,10 @@
                                     <rect key="frame" x="20" y="106" width="240" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJJ-c1-zFr" userLabel="Explore">
-                                    <rect key="frame" x="15" y="131.5" width="95" height="39.5"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJJ-c1-zFr" userLabel="helpCenter">
+                                    <rect key="frame" x="15" y="131.5" width="136.5" height="39.5"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Explore">
+                                    <buttonConfiguration key="configuration" style="plain" title="Help Center">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
@@ -202,10 +202,10 @@
                                     <rect key="frame" x="38" y="172" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ug3-l5-fkd" userLabel="RecentTasks">
-                                    <rect key="frame" x="15" y="197" width="149" height="38"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ug3-l5-fkd" userLabel="referAFriend">
+                                    <rect key="frame" x="14" y="197" width="154.5" height="38"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Recent Tasks">
+                                    <buttonConfiguration key="configuration" style="plain" title="Refer a Friend">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
@@ -217,10 +217,10 @@
                                     <rect key="frame" x="38" y="243" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoJ-al-08S" userLabel="FavoriteTaskers">
-                                    <rect key="frame" x="15" y="276" width="177" height="24"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoJ-al-08S" userLabel="FAQ">
+                                    <rect key="frame" x="15" y="276" width="63" height="24"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Favorite Taskers">
+                                    <buttonConfiguration key="configuration" style="plain" title="FAQ">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
@@ -232,10 +232,10 @@
                                     <rect key="frame" x="38" y="310" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5F-RY-Mzc">
-                                    <rect key="frame" x="15" y="339" width="140" height="32"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5F-RY-Mzc" userLabel="contactUs">
+                                    <rect key="frame" x="15" y="339" width="129" height="32"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Needboards">
+                                    <buttonConfiguration key="configuration" style="plain" title="Contact Us">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
@@ -247,10 +247,10 @@
                                     <rect key="frame" x="38" y="379" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2s-2z-TnB">
-                                    <rect key="frame" x="15" y="405" width="134" height="38"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2s-2z-TnB" userLabel="aboutUs">
+                                    <rect key="frame" x="15" y="405" width="111" height="38"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Community">
+                                    <buttonConfiguration key="configuration" style="plain" title="About Us">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
@@ -262,10 +262,10 @@
                                     <rect key="frame" x="38" y="451" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rz4-8p-AsX" userLabel="HelpCenter">
-                                    <rect key="frame" x="15" y="477" width="137" height="38"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rz4-8p-AsX" userLabel="supportUs">
+                                    <rect key="frame" x="15" y="477" width="130.5" height="38"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Help Center">
+                                    <buttonConfiguration key="configuration" style="plain" title="Support Us">
                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
@@ -322,12 +322,11 @@
                                 <constraint firstItem="oeV-Jr-8M1" firstAttribute="leading" secondItem="vXe-zM-URE" secondAttribute="trailing" constant="16" id="Jt0-N4-v21"/>
                                 <constraint firstItem="oeV-Jr-8M1" firstAttribute="firstBaseline" secondItem="aBr-xp-Oms" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="KRR-Vj-25y"/>
                                 <constraint firstItem="5o5-ak-vm7" firstAttribute="leading" secondItem="gHO-OJ-4eJ" secondAttribute="trailing" constant="-96" id="KZu-G6-avZ"/>
-                                <constraint firstItem="R6Z-v6-sId" firstAttribute="top" secondItem="Ug3-l5-fkd" secondAttribute="bottom" constant="10" id="Kov-XY-4sm"/>
-                                <constraint firstItem="Ug3-l5-fkd" firstAttribute="leading" secondItem="Kze-yr-g95" secondAttribute="leading" constant="15" id="MwC-3n-ncb"/>
+                                <constraint firstItem="R6Z-v6-sId" firstAttribute="top" secondItem="Ug3-l5-fkd" secondAttribute="bottom" constant="8" id="Kov-XY-4sm"/>
                                 <constraint firstItem="FzK-j4-bqf" firstAttribute="leading" secondItem="Kze-yr-g95" secondAttribute="leading" constant="15" id="Nel-Cc-yhd"/>
                                 <constraint firstItem="FzK-j4-bqf" firstAttribute="top" secondItem="aBr-xp-Oms" secondAttribute="bottom" constant="5.5" id="Odj-YX-w4K"/>
                                 <constraint firstItem="VeO-d5-g6Q" firstAttribute="leading" secondItem="KO2-dK-lJN" secondAttribute="leading" constant="38" id="OkI-IS-y3v"/>
-                                <constraint firstItem="Ug3-l5-fkd" firstAttribute="firstBaseline" secondItem="Ugs-wF-kYu" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="Qb3-qu-GJO"/>
+                                <constraint firstItem="Ug3-l5-fkd" firstAttribute="firstBaseline" secondItem="Ugs-wF-kYu" secondAttribute="baseline" constant="33" id="Qb3-qu-GJO"/>
                                 <constraint firstItem="R6Z-v6-sId" firstAttribute="leading" secondItem="KO2-dK-lJN" secondAttribute="leading" constant="1" id="STB-VY-kZJ"/>
                                 <constraint firstItem="Q2s-2z-TnB" firstAttribute="firstBaseline" secondItem="kyL-N0-hta" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="TlQ-68-rt4"/>
                                 <constraint firstItem="EoJ-al-08S" firstAttribute="firstBaseline" secondItem="R6Z-v6-sId" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="Uhq-BW-7pt"/>
@@ -335,6 +334,7 @@
                                 <constraint firstItem="fJJ-c1-zFr" firstAttribute="firstBaseline" secondItem="j6S-IZ-Uhf" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="ad3-S3-Rdx"/>
                                 <constraint firstItem="5o5-ak-vm7" firstAttribute="top" secondItem="aBr-xp-Oms" secondAttribute="top" id="bHq-DA-bye"/>
                                 <constraint firstItem="Rz4-8p-AsX" firstAttribute="leading" secondItem="Kze-yr-g95" secondAttribute="leading" constant="15" id="c8I-Cm-BLD"/>
+                                <constraint firstItem="Ug3-l5-fkd" firstAttribute="leading" secondItem="Kze-yr-g95" secondAttribute="leading" constant="14" id="fC0-eX-bXn"/>
                                 <constraint firstItem="5o5-ak-vm7" firstAttribute="leading" secondItem="aBr-xp-Oms" secondAttribute="trailing" constant="10" id="fnW-DE-4Nc"/>
                                 <constraint firstItem="Q2s-2z-TnB" firstAttribute="leading" secondItem="Kze-yr-g95" secondAttribute="leading" constant="15" id="gEs-sA-mlq"/>
                                 <constraint firstItem="Ugs-wF-kYu" firstAttribute="top" secondItem="fJJ-c1-zFr" secondAttribute="bottom" constant="1" id="gsY-up-LXY"/>
