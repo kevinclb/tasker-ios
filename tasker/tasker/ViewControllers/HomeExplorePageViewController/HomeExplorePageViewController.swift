@@ -63,6 +63,7 @@ class HomeExplorePageViewController: UIViewController {
         }
     }
     
+    // functions for the menu buttons
     @IBAction func helpCenterTapped(_ sender: Any) {
     }
     
