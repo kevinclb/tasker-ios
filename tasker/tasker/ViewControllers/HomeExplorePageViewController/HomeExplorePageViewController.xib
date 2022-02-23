@@ -10,19 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeExplorePageViewController" customModule="tasker" customModuleProvider="target">
             <connections>
-                <outlet property="communityButton" destination="Q2s-2z-TnB" id="Fi1-cW-CrG"/>
-                <outlet property="employeeProfile" destination="IBs-FY-D0Y" id="CLU-o7-kNp"/>
-                <outlet property="exploreButton" destination="fJJ-c1-zFr" id="adn-3y-k3P"/>
-                <outlet property="favoriteTaskers" destination="EoJ-al-08S" id="ziN-xV-1iT"/>
-                <outlet property="helpCenter" destination="Rz4-8p-AsX" id="7rO-aI-hW5"/>
-                <outlet property="logoutButton" destination="RC7-xq-zw8" id="cn2-mZ-jKB"/>
                 <outlet property="menuLeading" destination="44B-Vn-2vy" id="PLW-fd-2Wf"/>
                 <outlet property="menuScroll" destination="9kO-ID-s2V" id="0bC-eO-a4N"/>
                 <outlet property="menuTrailing" destination="g6M-5h-hgH" id="NmG-cE-Phw"/>
                 <outlet property="menuView" destination="KO2-dK-lJN" id="HaY-qS-alE"/>
-                <outlet property="needboards" destination="Y5F-RY-Mzc" id="IgR-GC-svZ"/>
-                <outlet property="recentTasks" destination="Ug3-l5-fkd" id="q0N-Yo-Ns8"/>
-                <outlet property="settingsButton" destination="lkW-wH-2SY" id="4aa-2e-qo9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="cJj-IV-DRQ"/>
             </connections>
         </placeholder>
@@ -195,7 +186,6 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
-                                        <action selector="exploreTapped:" destination="-1" eventType="touchUpInside" id="KS2-zB-5hV"/>
                                         <action selector="helpCenterTapped:" destination="-1" eventType="touchUpInside" id="dug-HG-Bmg"/>
                                     </connections>
                                 </button>
@@ -211,7 +201,6 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
-                                        <action selector="recentTasksTapped:" destination="-1" eventType="touchUpInside" id="wWi-KT-vyB"/>
                                         <action selector="referAFriendTapped:" destination="-1" eventType="touchUpInside" id="jIe-k2-0Cm"/>
                                     </connections>
                                 </button>
@@ -228,7 +217,6 @@
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="faqTapped:" destination="-1" eventType="touchUpInside" id="lPI-VN-vW0"/>
-                                        <action selector="favoriteTasksTapped:" destination="-1" eventType="touchUpInside" id="co8-0j-CzX"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="VeO-d5-g6Q" userLabel="divider4">
@@ -244,7 +232,6 @@
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="contactUsTapped:" destination="-1" eventType="touchUpInside" id="THC-iG-AH1"/>
-                                        <action selector="needboardsTapped:" destination="-1" eventType="touchUpInside" id="qnY-JO-2Tp"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="kyL-N0-hta" userLabel="divider4">
@@ -260,7 +247,6 @@
                                     </buttonConfiguration>
                                     <connections>
                                         <action selector="aboutUsTapped:" destination="-1" eventType="touchUpInside" id="vbe-hM-mdF"/>
-                                        <action selector="communityTapped:" destination="-1" eventType="touchUpInside" id="GTi-mJ-WZ0"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="rr3-df-oLx" userLabel="divider5">
@@ -275,7 +261,6 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
-                                        <action selector="helpCenterTapped:" destination="-1" eventType="touchUpInside" id="RkZ-uY-bqA"/>
                                         <action selector="supportUsTapped:" destination="-1" eventType="touchUpInside" id="UUu-Ga-pnU"/>
                                     </connections>
                                 </button>

@@ -65,30 +65,40 @@ class HomeExplorePageViewController: UIViewController {
     
     // functions for the menu buttons
     @IBAction func helpCenterTapped(_ sender: Any) {
+        
     }
     
     @IBAction func referAFriendTapped(_ sender: Any) {
+        
     }
     
     @IBAction func faqTapped(_ sender: Any) {
+        
     }
     
     @IBAction func contactUsTapped(_ sender: Any) {
+        
     }
     
     @IBAction func aboutUsTapped(_ sender: Any) {
+
     }
     
     @IBAction func supportUsTapped(_ sender: Any) {
+
     }
     
     @IBAction func employeeProfileTapped(_ sender: Any) {
+        
     }
     
     @IBAction func settingsTapped(_ sender: Any) {
+    
     }
     
+    
     @IBAction func logoutTapped(_ sender: Any) {
+    
     }
     
     
