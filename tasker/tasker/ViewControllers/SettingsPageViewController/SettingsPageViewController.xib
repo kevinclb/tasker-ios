@@ -54,10 +54,25 @@
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Account Settings"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqE-LO-5i5">
-                                    <rect key="frame" x="38.5" y="115" width="337" height="63"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqE-LO-5i5" userLabel="editProfile">
+                                    <rect key="frame" x="38.5" y="116" width="337" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Edit profile info"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9c-cp-doh" userLabel="paymentInfo">
+                                    <rect key="frame" x="38.5" y="183" width="337" height="63"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="Payment Informations"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De0-Wa-GDq" userLabel="appNotifications">
+                                    <rect key="frame" x="34.5" y="250" width="345" height="71"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="App Notifications"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLj-B1-XqA" userLabel="help">
+                                    <rect key="frame" x="38.5" y="325" width="337" height="63"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="Help"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -65,12 +80,18 @@
                                 <constraint firstItem="1Nr-gt-vwZ" firstAttribute="top" secondItem="9If-Nh-2QX" secondAttribute="top" id="3l9-bF-nAf"/>
                                 <constraint firstItem="fg6-dF-0Kr" firstAttribute="centerX" secondItem="9If-Nh-2QX" secondAttribute="centerX" id="4gJ-5a-wRX"/>
                                 <constraint firstItem="fg6-dF-0Kr" firstAttribute="top" secondItem="jyE-lI-IIc" secondAttribute="top" constant="16" id="67n-dn-igA"/>
+                                <constraint firstItem="De0-Wa-GDq" firstAttribute="top" secondItem="p9c-cp-doh" secondAttribute="bottom" constant="4" id="8Ye-7h-uow"/>
                                 <constraint firstItem="jyE-lI-IIc" firstAttribute="leading" secondItem="1Nr-gt-vwZ" secondAttribute="leading" id="Eyb-C0-vQ5"/>
+                                <constraint firstItem="p9c-cp-doh" firstAttribute="top" secondItem="ZqE-LO-5i5" secondAttribute="bottom" constant="4" id="Jmp-E2-akh"/>
+                                <constraint firstItem="p9c-cp-doh" firstAttribute="centerX" secondItem="9If-Nh-2QX" secondAttribute="centerX" id="M72-66-Aot"/>
                                 <constraint firstAttribute="trailing" secondItem="1Nr-gt-vwZ" secondAttribute="trailing" constant="274" id="NfX-Kp-7Qo"/>
                                 <constraint firstItem="ZqE-LO-5i5" firstAttribute="centerX" secondItem="9If-Nh-2QX" secondAttribute="centerX" id="WH3-hN-q3U"/>
-                                <constraint firstItem="ZqE-LO-5i5" firstAttribute="top" secondItem="fg6-dF-0Kr" secondAttribute="bottom" constant="3" id="ZUt-mA-jsX"/>
+                                <constraint firstItem="De0-Wa-GDq" firstAttribute="centerX" secondItem="9If-Nh-2QX" secondAttribute="centerX" id="Wdm-k7-vBX"/>
+                                <constraint firstItem="ZqE-LO-5i5" firstAttribute="top" secondItem="fg6-dF-0Kr" secondAttribute="bottom" constant="4" id="ZUt-mA-jsX"/>
+                                <constraint firstItem="nLj-B1-XqA" firstAttribute="top" secondItem="De0-Wa-GDq" secondAttribute="bottom" constant="4" id="c5w-Pr-axc"/>
                                 <constraint firstItem="1Nr-gt-vwZ" firstAttribute="leading" secondItem="9If-Nh-2QX" secondAttribute="leading" constant="54" id="flw-o1-dxK"/>
                                 <constraint firstItem="jyE-lI-IIc" firstAttribute="top" secondItem="1Nr-gt-vwZ" secondAttribute="bottom" constant="4" id="hjr-Ti-yjk"/>
+                                <constraint firstItem="nLj-B1-XqA" firstAttribute="centerX" secondItem="9If-Nh-2QX" secondAttribute="centerX" id="tDn-wY-HUJ"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -107,8 +128,11 @@
     </objects>
     <resources>
         <image name="Account Settings" width="313" height="49"/>
+        <image name="App Notifications" width="321" height="57"/>
         <image name="Edit profile info" width="313" height="49"/>
         <image name="HeaderTextandLogo-1" width="123" height="47"/>
+        <image name="Help" width="313" height="49"/>
+        <image name="Payment Informations" width="313" height="49"/>
         <image name="arrow_back_ios_24px" width="20" height="20"/>
         <image name="blackDivider" width="293" height="1"/>
         <systemColor name="systemBackgroundColor">
