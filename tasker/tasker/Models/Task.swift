@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct task{
+struct Task {
     var name: String?
     var city: String?
     var taskInfo: String?
