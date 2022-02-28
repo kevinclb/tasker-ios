@@ -22,7 +22,7 @@ class EmployeeExplorePageViewController: UIViewController {
     
     let taskCollectionViewCellId = "MyCollectionViewCell"
     
-    var tasks = [task]()
+    var tasks = [Task]()
     var menuOut = false
     override func viewDidLoad() {
         // This is for the slide out menu
@@ -46,7 +46,7 @@ class EmployeeExplorePageViewController: UIViewController {
                         print(error)
                     } else {
                         for d in (snapshot?.documents)! {
-                            self.tasks.append(task(name: d["name"] as? String ?? "", city: d["city"] as? String ?? "", taskInfo: d["desc"] as? String ?? "", price: d["rate"] as? String ?? "", category: d["category"] as? String ?? ""))
+                            self.tasks.append(Task(name: d["name"] as? String ?? "", city: d["city"] as? String ?? "", taskInfo: d["desc"] as? String ?? "", price: d["rate"] as? String ?? "", category: d["category"] as? String ?? ""))
                                 DispatchQueue.main.async {
                                     self.collectionView.reloadData()
                                 }
