@@ -57,31 +57,49 @@
                                     <rect key="frame" x="54" y="128" width="321" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Edit profile info"/>
+                                    <connections>
+                                        <action selector="editProfileTapped:" destination="-1" eventType="touchUpInside" id="QKa-Wb-Iy6"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9c-cp-doh" userLabel="paymentInfo">
                                     <rect key="frame" x="54" y="199" width="321" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Payment Informations"/>
+                                    <connections>
+                                        <action selector="paymentInfoTapped:" destination="-1" eventType="touchUpInside" id="rDd-Pm-A9m"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De0-Wa-GDq" userLabel="appNotifications">
                                     <rect key="frame" x="54" y="270" width="321" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="App Notifications"/>
+                                    <connections>
+                                        <action selector="appNotifTapped:" destination="-1" eventType="touchUpInside" id="3BK-pm-x4J"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLj-B1-XqA" userLabel="help">
                                     <rect key="frame" x="54" y="341" width="321" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Help"/>
+                                    <connections>
+                                        <action selector="helpTapped:" destination="-1" eventType="touchUpInside" id="AXy-Vp-Bqo"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fg6-dF-0Kr" userLabel="accountSettings">
                                     <rect key="frame" x="54" y="57" width="318" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Account Settings"/>
+                                    <connections>
+                                        <action selector="accountSettingsTapped:" destination="-1" eventType="touchUpInside" id="Yqj-ZN-gK5"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDf-iP-aO8" userLabel="logOut">
                                     <rect key="frame" x="54" y="667" width="321" height="70"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="LogOut_Button"/>
+                                    <connections>
+                                        <action selector="logoutTapped:" destination="-1" eventType="touchUpInside" id="zEA-SB-Ljp"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
