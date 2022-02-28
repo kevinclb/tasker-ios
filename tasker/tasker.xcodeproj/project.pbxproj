@@ -38,6 +38,8 @@
 		CE0555C627BF0DC700877325 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0555C127BF0DC700877325 /* MyCollectionViewCell.xib */; };
 		CE0555C727BF0DC700877325 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0555C227BF0DC700877325 /* Task.swift */; };
 		CE0555C827BF0DC700877325 /* EmployeeExplorePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */; };
+		CE10019027CD6171007767AC /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10018E27CD6170007767AC /* HelpViewController.swift */; };
+		CE10019127CD6171007767AC /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10018F27CD6170007767AC /* HelpViewController.xib */; };
 		CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */; };
 		CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */; };
 		CE4C4B5227B5D8AF001EF283 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C4B5127B5D8AF001EF283 /* MenuView.xib */; };
@@ -83,6 +85,8 @@
 		CE0555C127BF0DC700877325 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE0555C227BF0DC700877325 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeExplorePageViewController.xib; sourceTree = "<group>"; };
+		CE10018E27CD6170007767AC /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		CE10018F27CD6170007767AC /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
 		CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		CE4C4B5127B5D8AF001EF283 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE10018D27CD6150007767AC /* HelpViewController */,
 				BAC6A86627BEF4E300CA66DE /* LoginViewController */,
 				BAC6A85D27BEF4A600CA66DE /* RegistrationViewControllers */,
 				BAC6A85827BEF48500CA66DE /* LoggedOutViewConntroller */,
@@ -258,6 +263,15 @@
 			path = LoginViewController;
 			sourceTree = "<group>";
 		};
+		CE10018D27CD6150007767AC /* HelpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE10018E27CD6170007767AC /* HelpViewController.swift */,
+				CE10018F27CD6170007767AC /* HelpViewController.xib */,
+			);
+			path = HelpViewController;
+			sourceTree = "<group>";
+		};
 		CE641A5827A88E0500766C59 = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +380,7 @@
 				CE0555C827BF0DC700877325 /* EmployeeExplorePageViewController.xib in Resources */,
 				BAC6A86527BEF4DF00CA66DE /* RegistrationStep2ViewController.xib in Resources */,
 				BAC6A86A27BEF4F600CA66DE /* LoginViewController.xib in Resources */,
+				CE10019127CD6171007767AC /* HelpViewController.xib in Resources */,
 				CE0555C627BF0DC700877325 /* MyCollectionViewCell.xib in Resources */,
 				CE641A7927A8904A00766C59 /* GoogleService-Info.plist in Resources */,
 				8C250DBF27AB34CE00A280B3 /* HomeExplorePageViewController.xib in Resources */,
@@ -448,6 +463,7 @@
 				8C224DA627BB15B100E486C7 /* PublicProfileViewController.swift in Sources */,
 				8C250DDC27AB3A5200A280B3 /* RegisterButton.swift in Sources */,
 				CE0555C527BF0DC700877325 /* EmployeeExplorePageViewController.swift in Sources */,
+				CE10019027CD6171007767AC /* HelpViewController.swift in Sources */,
 				8C2DC0A627C6F9DE0026FF11 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
