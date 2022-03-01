@@ -12,17 +12,6 @@ class HomeExplorePageViewController: UIViewController {
     var taskers = [User]()
     @IBOutlet weak var HomePageCollectionView: UICollectionView!
     
-    //Outlets for each button on the menu
-    @IBOutlet weak var exploreButton: UIButton!
-    @IBOutlet weak var recentTasks: UIButton!
-    @IBOutlet weak var favoriteTaskers: UIButton!
-    @IBOutlet weak var needboards: UIButton!
-    @IBOutlet weak var communityButton: UIButton!
-    @IBOutlet weak var helpCenter: UIButton!
-    @IBOutlet weak var employeeProfile: UIButton!
-    @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
-    
     // Outlets for the menu for animation purposes
     @IBOutlet weak var menuScroll: UIScrollView!
     @IBOutlet weak var menuView: UIView!
