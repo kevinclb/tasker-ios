@@ -69,7 +69,7 @@
                                 <fragment content="Email Address:">
                                     <attributes>
                                         <color key="NSColor" red="0.411719799" green="0.43532106279999999" blue="0.47444945570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="17" name="Inter-Regular_Medium"/>
+                                        <font key="NSFont" metaFont="system" size="17"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>

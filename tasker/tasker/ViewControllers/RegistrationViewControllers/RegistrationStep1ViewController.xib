@@ -10,6 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationStep1ViewController" customModule="tasker" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="RpE-X0-gLo" id="Bz4-rz-WHT"/>
+                <outlet property="confirmPasswordLabel" destination="sTU-rI-564" id="F9h-a6-JII"/>
+                <outlet property="confirmPasswordTextField" destination="lLa-4W-7BV" id="0VP-xA-0GV"/>
+                <outlet property="continueButton" destination="KRg-Ta-Mnr" id="SZG-Yo-jzL"/>
+                <outlet property="emailAddressLabel" destination="zxL-GU-346" id="CZD-aS-mNs"/>
+                <outlet property="emailAddressTextField" destination="ye8-cL-4Og" id="tms-VO-6bR"/>
+                <outlet property="errorLabel" destination="gWp-UY-XQv" id="Rhy-EC-Jik"/>
+                <outlet property="passwordLabel" destination="6zq-7d-qB3" id="6Yr-BC-a9y"/>
+                <outlet property="passwordTextField" destination="fpv-wK-H9d" id="NBH-UY-mfU"/>
+                <outlet property="registerWithAppleButton" destination="hDe-l7-6Ov" id="tsA-lM-ANP"/>
+                <outlet property="registerWithGoogleButton" destination="dKd-51-Lmv" id="ldb-0S-XI0"/>
                 <outlet property="view" destination="yU8-cL-PGd" id="guf-i9-Y03"/>
             </connections>
         </placeholder>
@@ -54,7 +65,10 @@
                     </constraints>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tasker Logo" translatesAutoresizingMaskIntoConstraints="NO" id="gVc-E5-6tg">
-                    <rect key="frame" x="116" y="680" width="165" height="93"/>
+                    <rect key="frame" x="116" y="766" width="165" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="92y-7C-kmK"/>
+                    </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qlp-0q-L6V">
                     <rect key="frame" x="41" y="167" width="332" height="363"/>
@@ -69,7 +83,7 @@
                                 <fragment content="Email Address:">
                                     <attributes>
                                         <color key="NSColor" red="0.411719799" green="0.43532106279999999" blue="0.47444945570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="17" name="Inter-Regular_Medium"/>
+                                        <font key="NSFont" metaFont="system" size="17"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -100,12 +114,12 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTU-rI-564">
-                            <rect key="frame" x="0.0" y="188.5" width="332" height="20"/>
+                            <rect key="frame" x="0.0" y="188.5" width="332" height="20.5"/>
                             <attributedString key="attributedText">
                                 <fragment content="Confirm Password:">
                                     <attributes>
                                         <color key="NSColor" red="0.411719799" green="0.43532106279999999" blue="0.47444945570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="17" name="Inter-Regular_Medium"/>
+                                        <font key="NSFont" metaFont="system" size="17"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -113,12 +127,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="yourPasswordHere123!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-4W-7BV">
-                            <rect key="frame" x="0.0" y="228.5" width="332" height="34"/>
+                            <rect key="frame" x="0.0" y="229" width="332" height="34"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRg-Ta-Mnr">
-                            <rect key="frame" x="0.0" y="282.5" width="332" height="40"/>
+                            <rect key="frame" x="0.0" y="283" width="332" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="eHE-Kc-6fv"/>
                             </constraints>
@@ -129,7 +143,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWp-UY-XQv">
-                            <rect key="frame" x="0.0" y="342.5" width="332" height="20.5"/>
+                            <rect key="frame" x="0.0" y="343" width="332" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" systemColor="systemRedColor"/>
                             <nil key="highlightedColor"/>
@@ -146,13 +160,15 @@
             <constraints>
                 <constraint firstItem="VkG-z9-itC" firstAttribute="trailing" secondItem="gVc-E5-6tg" secondAttribute="trailing" constant="133" id="0B6-LX-08Y"/>
                 <constraint firstItem="RpE-X0-gLo" firstAttribute="leading" secondItem="Rew-bD-iwx" secondAttribute="leading" id="1aj-R8-4W7"/>
+                <constraint firstItem="VkG-z9-itC" firstAttribute="bottom" secondItem="gVc-E5-6tg" secondAttribute="bottom" constant="40" id="7wa-xA-JT7"/>
                 <constraint firstItem="Qlp-0q-L6V" firstAttribute="centerX" secondItem="yU8-cL-PGd" secondAttribute="centerX" id="CvV-aa-2U8"/>
                 <constraint firstItem="RpE-X0-gLo" firstAttribute="leading" secondItem="yU8-cL-PGd" secondAttribute="leadingMargin" id="DzB-B1-67R"/>
                 <constraint firstItem="Qlp-0q-L6V" firstAttribute="top" secondItem="yU8-cL-PGd" secondAttribute="top" constant="167" id="EKb-TR-CqF"/>
                 <constraint firstItem="gVc-E5-6tg" firstAttribute="leading" secondItem="VkG-z9-itC" secondAttribute="leading" constant="116" id="HOF-MM-JvG"/>
                 <constraint firstItem="Rew-bD-iwx" firstAttribute="top" secondItem="d5p-06-W5E" secondAttribute="bottom" constant="33" id="RkK-MO-AOO"/>
+                <constraint firstItem="gVc-E5-6tg" firstAttribute="leading" secondItem="VkG-z9-itC" secondAttribute="leading" constant="116" id="XPW-wC-LoC"/>
+                <constraint firstItem="gVc-E5-6tg" firstAttribute="top" secondItem="Rew-bD-iwx" secondAttribute="bottom" constant="94" id="cYM-Cv-f66"/>
                 <constraint firstItem="Rew-bD-iwx" firstAttribute="top" secondItem="Qlp-0q-L6V" secondAttribute="bottom" constant="32" id="dGc-cr-IR6"/>
-                <constraint firstItem="gVc-E5-6tg" firstAttribute="top" secondItem="Rew-bD-iwx" secondAttribute="bottom" constant="8" id="geY-kI-zkY"/>
                 <constraint firstItem="Qlp-0q-L6V" firstAttribute="top" secondItem="RpE-X0-gLo" secondAttribute="bottom" constant="52" id="iMn-lA-K5J"/>
                 <constraint firstItem="Qlp-0q-L6V" firstAttribute="centerX" secondItem="d5p-06-W5E" secondAttribute="centerX" id="pvM-gJ-iyk"/>
             </constraints>

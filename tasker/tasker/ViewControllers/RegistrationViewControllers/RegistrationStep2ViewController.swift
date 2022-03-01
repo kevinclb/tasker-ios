@@ -11,6 +11,24 @@ class RegistrationStep2ViewController: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
     
+    @IBOutlet weak var firstNameLabel: UILabel!
+    
+    @IBOutlet weak var firstNameTextField: UITextField!
+    
+    @IBOutlet weak var lastNameLabel: UILabel!
+    
+    @IBOutlet weak var lastNameTextField: UITextField!
+    
+    @IBOutlet weak var dateOfBirthLabel: UILabel!
+    
+    @IBOutlet weak var dateOfBirthTextField: UITextField!
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    @IBOutlet weak var cityTextField: UITextField!
+    
+    @IBOutlet weak var errorLabel: UILabel!
+    
     @IBOutlet weak var continueButton: UIButton!
     
     override func viewDidLoad() {
