@@ -54,7 +54,10 @@
                     </constraints>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tasker Logo" translatesAutoresizingMaskIntoConstraints="NO" id="bl9-gC-0pI">
-                    <rect key="frame" x="116" y="680" width="165" height="93"/>
+                    <rect key="frame" x="116" y="766" width="165" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="TcX-0S-6cS"/>
+                    </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="IQo-Nl-y8X">
                     <rect key="frame" x="41" y="167" width="332" height="363"/>
@@ -140,8 +143,9 @@
                 <constraint firstItem="Jtc-jj-G1l" firstAttribute="leading" secondItem="fJp-VL-9bv" secondAttribute="leading" id="Pef-xq-zby"/>
                 <constraint firstItem="fJp-VL-9bv" firstAttribute="top" secondItem="IQo-Nl-y8X" secondAttribute="bottom" constant="32" id="RD1-u0-QsX"/>
                 <constraint firstItem="e0c-5t-E2C" firstAttribute="trailing" secondItem="bl9-gC-0pI" secondAttribute="trailing" constant="133" id="YN9-Cm-MT9"/>
-                <constraint firstItem="bl9-gC-0pI" firstAttribute="top" secondItem="fJp-VL-9bv" secondAttribute="bottom" constant="8" id="Zl3-zX-CVJ"/>
                 <constraint firstItem="IQo-Nl-y8X" firstAttribute="top" secondItem="q2p-tm-pcc" secondAttribute="top" constant="167" id="cLy-CE-LCz"/>
+                <constraint firstItem="bl9-gC-0pI" firstAttribute="top" secondItem="fJp-VL-9bv" secondAttribute="bottom" constant="94" id="kzL-sM-0nw"/>
+                <constraint firstItem="e0c-5t-E2C" firstAttribute="bottom" secondItem="bl9-gC-0pI" secondAttribute="bottom" constant="40" id="lYE-tT-lNh"/>
                 <constraint firstItem="IQo-Nl-y8X" firstAttribute="top" secondItem="Jtc-jj-G1l" secondAttribute="bottom" constant="52" id="q1J-5f-RWT"/>
             </constraints>
             <point key="canvasLocation" x="140" y="120.14218009478672"/>
