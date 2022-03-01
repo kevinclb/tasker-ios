@@ -8,7 +8,10 @@
 import UIKit
 
 class HomeExplorePageViewController: UIViewController {
-
+    
+    var taskers = [User]()
+    @IBOutlet weak var HomePageCollectionView: UICollectionView!
+    
     //Outlets for each button on the menu
     @IBOutlet weak var exploreButton: UIButton!
     @IBOutlet weak var recentTasks: UIButton!
@@ -38,8 +41,21 @@ class HomeExplorePageViewController: UIViewController {
         leftSwipe.direction = .left
         view.addGestureRecognizer(leftSwipe)
         
+        db.collection("Users").getDocuments { (snapshot, error) in
+            if error != nil {
+                print(error)
+            } else {
+                for d in (snapshot?.documents)! {
+                    self.taskers.append(User(firstname: d["firstname"] as? String ?? "", lastname: d["lastname"] as? String ?? "", employee: d["desc"] as? Bool ?? false))
+                    DispatchQueue.main.async {
+                        //                                    self.collectionView.reloadData()
+                    }
+                }
+            }
+        }
     }
-
+    //collectionView.reloadData()    }
+    
     @IBAction func menuTapped(_ sender: Any) {
         if(menuOut == false){
             setView(view: menuScroll, hidden: false)
