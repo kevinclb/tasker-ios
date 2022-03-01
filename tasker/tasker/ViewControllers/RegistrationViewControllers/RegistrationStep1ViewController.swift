@@ -8,8 +8,6 @@
 import UIKit
 
 class RegistrationStep1ViewController: UIViewController {
-
-    @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var emailAddressLabel: UILabel!
     
@@ -47,10 +45,6 @@ class RegistrationStep1ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func backTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func continueTapped(_ sender: Any) {
         let registerPage2VC = RegistrationStep2ViewController()

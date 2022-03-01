@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,18 +10,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoggedOutViewController" customModule="tasker" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="Tth-qd-Bvn" id="BMO-XC-VvU"/>
+                <outlet property="view" destination="Tth-qd-Bvn" id="8rv-sd-UXc"/>
             </connections>
         </placeholder>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Tth-qd-Bvn">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8hh-40-enT">
-                    <rect key="frame" x="40" y="782" width="334" height="40"/>
+                    <rect key="frame" x="40" y="730" width="310" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPs-fb-VYg">
-                            <rect key="frame" x="0.0" y="0.0" width="157" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="145" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="qjF-Aa-Pfr"/>
                             </constraints>
@@ -34,7 +34,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osf-0A-lzP">
-                            <rect key="frame" x="177" y="0.0" width="157" height="40"/>
+                            <rect key="frame" x="165" y="0.0" width="145" height="40"/>
                             <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" image="Sign up" title="">
@@ -51,7 +51,7 @@
                     </constraints>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tasker Logo" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-Ur-ggM">
-                    <rect key="frame" x="53" y="323" width="280" height="201"/>
+                    <rect key="frame" x="53" y="323" width="256" height="149"/>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="SWQ-VI-zyn"/>
