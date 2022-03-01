@@ -71,7 +71,6 @@
 		8C2DC0AB27C6FA070026FF11 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8C2DC0AD27C6FB940026FF11 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		8C30117527ABA61B00DDA117 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
-		8CA1C0A727CD76B200C71680 /* testplayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = testplayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8CA1C0A827CDA97100C71680 /* TaskerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CA1C0A927CDA97100C71680 /* TaskerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskerCollectionViewCell.xib; sourceTree = "<group>"; };
 		B7F263A0E495878F4758FEE1 /* Pods-tasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.debug.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -294,7 +293,6 @@
 				8C2DC0A427C6F8E70026FF11 /* Models */,
 				8C250DDD27AB3A6700A280B3 /* Components */,
 				8C250DB327AB338C00A280B3 /* ViewControllers */,
-				8CA1C0A727CD76B200C71680 /* testplayground.playground */,
 			);
 			path = tasker;
 			sourceTree = "<group>";
