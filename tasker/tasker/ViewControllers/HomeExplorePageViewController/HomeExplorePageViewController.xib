@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H6Y-w4-g47" userLabel="HomePageStackView">
-                            <rect key="frame" x="0.0" y="45" width="415" height="765"/>
+                            <rect key="frame" x="0.0" y="45" width="415" height="743"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="xHM-dk-egh" userLabel="HeaderStackView">
                                     <rect key="frame" x="0.0" y="0.0" width="415" height="47"/>
@@ -51,7 +51,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" id="9dF-Vw-2eu" userLabel="ContentStackView">
-                                    <rect key="frame" x="0.0" y="66" width="415" height="710"/>
+                                    <rect key="frame" x="0.0" y="66" width="415" height="688"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hss-PE-Fep" userLabel="SearchAndListStackView">
@@ -75,7 +75,7 @@
                                             </constraints>
                                         </stackView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JKB-Hk-SeU">
-                                            <rect key="frame" x="0.0" y="83" width="415" height="627"/>
+                                            <rect key="frame" x="0.0" y="83" width="415" height="605"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SS1-xH-jBz">
                                                 <size key="itemSize" width="128" height="128"/>
