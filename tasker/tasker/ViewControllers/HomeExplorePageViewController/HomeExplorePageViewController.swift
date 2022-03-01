@@ -9,6 +9,9 @@ import UIKit
 
 class HomeExplorePageViewController: UIViewController {
     
+    var taskers = [User]()
+    @IBOutlet weak var HomePageCollectionView: UICollectionView!
+    
     // Outlets for the menu for animation purposes
     @IBOutlet weak var menuScroll: UIScrollView!
     @IBOutlet weak var menuView: UIView!
@@ -27,8 +30,21 @@ class HomeExplorePageViewController: UIViewController {
         leftSwipe.direction = .left
         view.addGestureRecognizer(leftSwipe)
         
+        db.collection("Users").getDocuments { (snapshot, error) in
+            if error != nil {
+                print(error)
+            } else {
+                for d in (snapshot?.documents)! {
+                    self.taskers.append(User(firstname: d["firstname"] as? String ?? "", lastname: d["lastname"] as? String ?? "", employee: d["desc"] as? Bool ?? false))
+                    DispatchQueue.main.async {
+                        //                                    self.collectionView.reloadData()
+                    }
+                }
+            }
+        }
     }
-
+    //collectionView.reloadData()    }
+    
     @IBAction func menuTapped(_ sender: Any) {
         if(menuOut == false){
             setView(view: menuScroll, hidden: false)
@@ -63,42 +79,31 @@ class HomeExplorePageViewController: UIViewController {
         }
     }
     
-    // functions for the menu buttons
+    @IBAction func exploreTapped(_ sender: Any) {
+    }
+    
+    @IBAction func recentTasksTapped(_ sender: Any) {
+    }
+    
+    @IBAction func favoriteTasksTapped(_ sender: Any) {
+    }
+    
+    @IBAction func needboardsTapped(_ sender: Any) {
+    }
+    
+    @IBAction func communityTapped(_ sender: Any) {
+    }
+    
     @IBAction func helpCenterTapped(_ sender: Any) {
-        
-    }
-    
-    @IBAction func referAFriendTapped(_ sender: Any) {
-        
-    }
-    
-    @IBAction func faqTapped(_ sender: Any) {
-        
-    }
-    
-    @IBAction func contactUsTapped(_ sender: Any) {
-        
-    }
-    
-    @IBAction func aboutUsTapped(_ sender: Any) {
-
-    }
-    
-    @IBAction func supportUsTapped(_ sender: Any) {
-
     }
     
     @IBAction func employeeProfileTapped(_ sender: Any) {
-        
     }
     
     @IBAction func settingsTapped(_ sender: Any) {
-    
     }
     
-    
     @IBAction func logoutTapped(_ sender: Any) {
-    
     }
     
     

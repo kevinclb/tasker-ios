@@ -8,8 +8,6 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-    @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var emailAddressLabel: UILabel!
     
@@ -40,14 +38,10 @@ class LoginViewController: UIViewController {
     }
     */
     
-    
-    @IBAction func backPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func continueTapped(_ sender: Any) {
-        let homePageVC = HomeExplorePageViewController()
-        present(homePageVC, animated: true, completion: nil)
+        let employeeHomePageVC = EmployeeExplorePageViewController()
+        employeeHomePageVC.modalPresentationStyle = .fullScreen
+        present(employeeHomePageVC, animated: true, completion: nil)
     }
     
     
