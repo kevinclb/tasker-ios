@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoggedOutViewController" customModule="tasker" customModuleProvider="target">
             <connections>
+                <outlet property="loginButton" destination="oPs-fb-VYg" id="hqz-Zh-ZQ8"/>
+                <outlet property="registerButton" destination="osf-0A-lzP" id="HuN-mL-lSh"/>
                 <outlet property="view" destination="Tth-qd-Bvn" id="8rv-sd-UXc"/>
             </connections>
         </placeholder>
