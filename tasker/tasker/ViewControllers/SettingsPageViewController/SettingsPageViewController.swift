@@ -14,16 +14,42 @@ class SettingsPageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   
+    @IBAction func accountSettingsTapped(_ sender: Any) {
+        
     }
-    */
+    @IBAction func editProfileTapped(_ sender: Any) {
+        navigateTo(newViewController: EditProfileViewController(), transitionFrom: .fromRight)
+    }
+    @IBAction func paymentInfoTapped(_ sender: Any) {
+        
+    }
+    @IBAction func appNotifTapped(_ sender: Any) {
+        
+    }
+    @IBAction func helpTapped(_ sender: Any) {
+        
+    }
+    @IBAction func logoutTapped(_ sender: Any) {
+        
+    }
+    @IBAction func backButtonTapped(_ sender: Any) {
 
+    }
+    
+    func navigateTo(newViewController:UIViewController, transitionFrom:CATransitionSubtype){
+        // this code here is to present from right to left instead of bottom to top
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = transitionFrom
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+        let newVC = newViewController
+        newVC.modalPresentationStyle = .fullScreen
+        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+        self.present(newVC, animated: false, completion: nil)
+    }
 }
