@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88616E7527C5C228002A1F72 /* MessageViewCell.swift */; };
+		88616E7827C5C228002A1F72 /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88616E7627C5C228002A1F72 /* MessageViewCell.xib */; };
+		88616E7A27C5CDC9002A1F72 /* messageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88616E7927C5CDC9002A1F72 /* messageModel.swift */; };
 		8C224DA227BB14AA00E486C7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C224DA027BB14AA00E486C7 /* RootViewController.swift */; };
 		8C224DA327BB14AA00E486C7 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C224DA127BB14AA00E486C7 /* RootViewController.xib */; };
 		8C224DA627BB15B100E486C7 /* PublicProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C224DA427BB15B100E486C7 /* PublicProfileViewController.swift */; };
@@ -53,6 +56,9 @@
 /* Begin PBXFileReference section */
 		0CA7F196D3098A70BEF3A25D /* Pods_tasker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tasker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDF5D68BCEF519EC1696766 /* Pods-tasker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.release.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.release.xcconfig"; sourceTree = "<group>"; };
+		88616E7527C5C228002A1F72 /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
+		88616E7627C5C228002A1F72 /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
+		88616E7927C5CDC9002A1F72 /* messageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageModel.swift; sourceTree = "<group>"; };
 		8C224DA027BB14AA00E486C7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		8C224DA127BB14AA00E486C7 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		8C224DA427BB15B100E486C7 /* PublicProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProfileViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +189,9 @@
 			children = (
 				8C250DC527AB351B00A280B3 /* MessagesViewController.swift */,
 				8C250DC627AB351B00A280B3 /* MessagesViewController.xib */,
+				88616E7527C5C228002A1F72 /* MessageViewCell.swift */,
+				88616E7627C5C228002A1F72 /* MessageViewCell.xib */,
+				88616E7927C5CDC9002A1F72 /* messageModel.swift */,
 			);
 			path = MessagesViewController;
 			sourceTree = "<group>";
@@ -365,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88616E7827C5C228002A1F72 /* MessageViewCell.xib in Resources */,
 				CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */,
 				CE4C4B5227B5D8AF001EF283 /* MenuView.xib in Resources */,
 				8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */,
@@ -436,6 +446,7 @@
 			files = (
 				CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */,
 				8C30117627ABA61B00DDA117 /* LoginButton.swift in Sources */,
+				88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */,
 				BAC6A85B27BEF4A000CA66DE /* LoggedOutViewController.swift in Sources */,
 				CE0555C727BF0DC700877325 /* Task.swift in Sources */,
 				CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */,
@@ -450,6 +461,7 @@
 				8C2DC0AE27C6FB940026FF11 /* Address.swift in Sources */,
 				BAC6A86927BEF4F600CA66DE /* LoginViewController.swift in Sources */,
 				CE0555C427BF0DC700877325 /* MyCollectionViewCell.swift in Sources */,
+				88616E7A27C5CDC9002A1F72 /* messageModel.swift in Sources */,
 				8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */,
 				8CA1C0AA27CDA97100C71680 /* TaskerCollectionViewCell.swift in Sources */,
 				8C2DC0AC27C6FA070026FF11 /* Message.swift in Sources */,
