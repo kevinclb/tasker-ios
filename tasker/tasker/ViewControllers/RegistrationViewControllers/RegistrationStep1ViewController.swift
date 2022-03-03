@@ -34,6 +34,42 @@ class RegistrationStep1ViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    func validateFields() -> String? {
+        
+        // Checking if all fields are filled in.
+        if emailAddressTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            confirmPasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "Please fill in all fields"
+        }
+        
+        // Checking if email and password are valid entries.
+        let cleanedEmail = emailAddressTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedConfirmedPassword = confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if Utilities.isEmailValid(email: cleanedEmail) == false {
+            // Email they entered wasn't valid
+            
+            return "Please enter a valid email address"
+        }
+        
+        if Utilities.isPasswordValid(password: cleanedPassword) == false {
+            // Password they entered isn't secure
+            
+            return "Password must be 8 characters long\nwith numbers and a special character"
+        }
+        
+        if cleanedConfirmedPassword != cleanedPassword{
+            // Confirmed password does not match the original password they inputted.
+            
+            return "You've entered passwords that do not match"
+        }
+        
+        return nil
+    }
 
 
     /*
@@ -47,11 +83,16 @@ class RegistrationStep1ViewController: UIViewController {
     */
     
     @IBAction func continueTapped(_ sender: Any) {
-        let registerPage2VC = RegistrationStep2ViewController()
-        present(registerPage2VC, animated: true, completion: nil)
         
+        let error = validateFields()
+        
+        if error != nil {
+            // There was something wrong with the fields, show error message
+            Utilities.showError(message: error!, errorLabel: self.errorLabel)
+        }
+        else {
+            let registerPage2VC = RegistrationStep2ViewController()
+            self.present(registerPage2VC, animated: true, completion: nil)
+        }
     }
-    
-    
-    
 }

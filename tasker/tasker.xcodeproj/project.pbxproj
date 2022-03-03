@@ -30,6 +30,7 @@
 		8C30117627ABA61B00DDA117 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30117527ABA61B00DDA117 /* LoginButton.swift */; };
 		8CA1C0AA27CDA97100C71680 /* TaskerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1C0A827CDA97100C71680 /* TaskerCollectionViewCell.swift */; };
 		8CA1C0AB27CDA97100C71680 /* TaskerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA1C0A927CDA97100C71680 /* TaskerCollectionViewCell.xib */; };
+		BA1DF53C27D02222000F292E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1DF53B27D02222000F292E /* Utilities.swift */; };
 		BAC6A85B27BEF4A000CA66DE /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6A85927BEF4A000CA66DE /* LoggedOutViewController.swift */; };
 		BAC6A85C27BEF4A000CA66DE /* LoggedOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC6A85A27BEF4A000CA66DE /* LoggedOutViewController.xib */; };
 		BAC6A86027BEF4CB00CA66DE /* RegistrationStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6A85E27BEF4CB00CA66DE /* RegistrationStep1ViewController.swift */; };
@@ -82,6 +83,7 @@
 		8CA1C0A827CDA97100C71680 /* TaskerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CA1C0A927CDA97100C71680 /* TaskerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskerCollectionViewCell.xib; sourceTree = "<group>"; };
 		B7F263A0E495878F4758FEE1 /* Pods-tasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.debug.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.debug.xcconfig"; sourceTree = "<group>"; };
+		BA1DF53B27D02222000F292E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		BAC6A85927BEF4A000CA66DE /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
 		BAC6A85A27BEF4A000CA66DE /* LoggedOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoggedOutViewController.xib; sourceTree = "<group>"; };
 		BAC6A85E27BEF4CB00CA66DE /* RegistrationStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStep1ViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BA1DF53A27D021F2000F292E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BA1DF53B27D02222000F292E /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		BAC6A85827BEF48500CA66DE /* LoggedOutViewConntroller */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +320,7 @@
 			children = (
 				CE641A6427A88E0500766C59 /* AppDelegate.swift */,
 				CE641A6627A88E0500766C59 /* SceneDelegate.swift */,
+				BA1DF53A27D021F2000F292E /* Helpers */,
 				CE641A7827A8904A00766C59 /* GoogleService-Info.plist */,
 				CE641A7227A88E0700766C59 /* Info.plist */,
 				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
@@ -474,6 +485,7 @@
 				8C250DC727AB351B00A280B3 /* MessagesViewController.swift in Sources */,
 				8C2DC0AA27C6F9F90026FF11 /* Post.swift in Sources */,
 				8C2DC0AE27C6FB940026FF11 /* Address.swift in Sources */,
+				BA1DF53C27D02222000F292E /* Utilities.swift in Sources */,
 				BAC6A86927BEF4F600CA66DE /* LoginViewController.swift in Sources */,
 				CE0555C427BF0DC700877325 /* MyCollectionViewCell.swift in Sources */,
 				88616E7A27C5CDC9002A1F72 /* messageModel.swift in Sources */,
