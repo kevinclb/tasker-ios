@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HelpViewController" customModule="tasker" customModuleProvider="target">
             <connections>
+                <outlet property="abtAppAns" destination="fnN-YO-HbX" id="luj-mh-yXe"/>
                 <outlet property="view" destination="maf-HB-VuF" id="zLH-zS-UUx"/>
             </connections>
         </placeholder>
@@ -53,12 +54,37 @@
                                         <constraint firstAttribute="height" constant="13" id="yKi-lX-T1B"/>
                                     </constraints>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnN-YO-HbX" userLabel="abtTaskerAns">
+                                    <rect key="frame" x="54" y="89" width="336" height="0.0"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="336" id="Nhc-rt-jzu"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sl8-qH-gI7">
+                                    <rect key="frame" x="54" y="53" width="185.5" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="31" id="guQ-fB-pRS"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="+    About the Tasker app"/>
+                                    <connections>
+                                        <action selector="abtAppTapped:" destination="-1" eventType="touchUpInside" id="Fxp-Dp-UHg"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="x4i-9q-0E9" firstAttribute="top" secondItem="oIa-y9-PmL" secondAttribute="bottom" id="QIT-12-RUA"/>
                                 <constraint firstItem="oIa-y9-PmL" firstAttribute="leading" secondItem="ZYn-8U-06Y" secondAttribute="leading" constant="54" id="V9x-i5-DWe"/>
                                 <constraint firstItem="x4i-9q-0E9" firstAttribute="leading" secondItem="oIa-y9-PmL" secondAttribute="leading" id="Zfi-rv-DfO"/>
+                                <constraint firstItem="sl8-qH-gI7" firstAttribute="top" secondItem="x4i-9q-0E9" secondAttribute="bottom" constant="4" id="a2d-TL-dNQ"/>
+                                <constraint firstItem="fnN-YO-HbX" firstAttribute="leading" secondItem="x4i-9q-0E9" secondAttribute="leading" id="e77-vI-NAN"/>
+                                <constraint firstItem="fnN-YO-HbX" firstAttribute="top" secondItem="sl8-qH-gI7" secondAttribute="bottom" constant="5" id="gEX-WM-dSr"/>
+                                <constraint firstItem="sl8-qH-gI7" firstAttribute="leading" secondItem="x4i-9q-0E9" secondAttribute="leading" id="pU4-0a-CTC"/>
+                                <constraint firstAttribute="trailing" secondItem="fnN-YO-HbX" secondAttribute="trailing" constant="24" id="w6j-6l-wTH"/>
                             </constraints>
                         </view>
                     </subviews>
