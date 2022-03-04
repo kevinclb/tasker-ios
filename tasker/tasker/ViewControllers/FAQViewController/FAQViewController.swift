@@ -16,7 +16,6 @@ class FAQViewController: UIViewController {
     // Boolean variables for the questions clicked or not
     var whtTskr = false,whoCanBool = false
     
-    
     // String variables for answers for questions
     var taskerAns = "Tasker is an application that helps you find tasks near you in your city to take on and complete then be compensated directly by the client that posted the task, it is also for those that want to get things done around their house, business, backyard, garage, etc. but do not have the time to do so and would rather just make a listing and pay someone else to run their errands or do the task for them when they are busy."
     var whoSignupAns = "Anyone can sign up to be a tasker, click on the slide out menu option to refer a friend and tell your friends about us, when you sign up for an account, Tasker automatically creates a client as well as an employee account for you, so not only those looking for work can join but also those that need work done for them as well!"
