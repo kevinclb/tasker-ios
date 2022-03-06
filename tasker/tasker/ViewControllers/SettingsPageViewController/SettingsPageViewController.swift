@@ -31,9 +31,10 @@ class SettingsPageViewController: UIViewController {
         print("Help Center Tapped")
     }
     @IBAction func logoutTapped(_ sender: Any) {
+        print("Logout Tapped")
     }
     @IBAction func backButtonTapped(_ sender: Any) {
-
+        print("Back Button Tapped")
     }
     
     func navigateTo(newViewController:UIViewController, transitionFrom:CATransitionSubtype){
