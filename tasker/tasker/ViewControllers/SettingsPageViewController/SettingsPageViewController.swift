@@ -16,22 +16,21 @@ class SettingsPageViewController: UIViewController {
     }
    
     @IBAction func accountSettingsTapped(_ sender: Any) {
-        
+        print("Accoutn Settings Tapped")
     }
     @IBAction func editProfileTapped(_ sender: Any) {
         navigateTo(newViewController: EditProfileViewController(), transitionFrom: .fromRight)
     }
     @IBAction func paymentInfoTapped(_ sender: Any) {
-        
+        print("Payment Info Tapped")
     }
     @IBAction func appNotifTapped(_ sender: Any) {
-        
+        print("App Notifications Tapped")
     }
     @IBAction func helpTapped(_ sender: Any) {
-        
+        print("Help Center Tapped")
     }
     @IBAction func logoutTapped(_ sender: Any) {
-        
     }
     @IBAction func backButtonTapped(_ sender: Any) {
 
