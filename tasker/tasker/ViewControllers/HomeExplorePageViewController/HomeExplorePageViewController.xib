@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H6Y-w4-g47" userLabel="HomePageStackView">
-                            <rect key="frame" x="0.0" y="45" width="415" height="743"/>
+                            <rect key="frame" x="0.0" y="45" width="415" height="721"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="xHM-dk-egh" userLabel="HeaderStackView">
                                     <rect key="frame" x="0.0" y="0.0" width="415" height="47"/>
@@ -51,7 +51,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" id="9dF-Vw-2eu" userLabel="ContentStackView">
-                                    <rect key="frame" x="0.0" y="66" width="415" height="688"/>
+                                    <rect key="frame" x="0.0" y="66" width="415" height="666"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hss-PE-Fep" userLabel="SearchAndListStackView">
@@ -75,7 +75,7 @@
                                             </constraints>
                                         </stackView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JKB-Hk-SeU">
-                                            <rect key="frame" x="0.0" y="83" width="415" height="605"/>
+                                            <rect key="frame" x="0.0" y="83" width="415" height="583"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SS1-xH-jBz">
                                                 <size key="itemSize" width="128" height="128"/>
@@ -172,7 +172,7 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
-                                        <action selector="referAFriendTapped:" destination="-1" eventType="touchUpInside" id="jIe-k2-0Cm"/>
+                                        <action selector="referAFriendTapped:" destination="-1" eventType="touchUpInside" id="7sp-DH-8XX"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="divider" id="R6Z-v6-sId" userLabel="divider3">
@@ -187,6 +187,7 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
+                                        <action selector="FAQTapped:" destination="-1" eventType="touchUpInside" id="nKU-fd-jiV"/>
                                         <action selector="faqTapped:" destination="-1" eventType="touchUpInside" id="lPI-VN-vW0"/>
                                     </connections>
                                 </button>
@@ -202,7 +203,7 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
-                                        <action selector="contactUsTapped:" destination="-1" eventType="touchUpInside" id="THC-iG-AH1"/>
+                                        <action selector="contactUsTapped:" destination="-1" eventType="touchUpInside" id="PTf-qe-upP"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="kyL-N0-hta" userLabel="divider4">
@@ -217,7 +218,7 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
-                                        <action selector="aboutUsTapped:" destination="-1" eventType="touchUpInside" id="vbe-hM-mdF"/>
+                                        <action selector="aboutUsTapped:" destination="-1" eventType="touchUpInside" id="O5i-76-mv0"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="rr3-df-oLx" userLabel="divider5">
@@ -232,7 +233,7 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
                                     <connections>
-                                        <action selector="supportUsTapped:" destination="-1" eventType="touchUpInside" id="UUu-Ga-pnU"/>
+                                        <action selector="supportUsTapped:" destination="-1" eventType="touchUpInside" id="K7D-MZ-3tW"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="6qa-iS-RZT" userLabel="divider6">
@@ -259,6 +260,9 @@
                                     <rect key="frame" x="71" y="619" width="169" height="77"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="LogOut_Button"/>
+                                    <connections>
+                                        <action selector="logoutTapped:" destination="-1" eventType="touchUpInside" id="vQ0-a9-r6A"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <viewLayoutGuide key="safeArea" id="Kze-yr-g95"/>

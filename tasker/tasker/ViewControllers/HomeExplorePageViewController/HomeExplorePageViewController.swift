@@ -79,31 +79,40 @@ class HomeExplorePageViewController: UIViewController {
         }
     }
     
-    @IBAction func exploreTapped(_ sender: Any) {
-    }
-    
-    @IBAction func recentTasksTapped(_ sender: Any) {
-    }
-    
-    @IBAction func favoriteTasksTapped(_ sender: Any) {
-    }
-    
-    @IBAction func needboardsTapped(_ sender: Any) {
-    }
-    
-    @IBAction func communityTapped(_ sender: Any) {
-    }
-    
     @IBAction func helpCenterTapped(_ sender: Any) {
+        print("Help Center Tapped")
+    }
+    
+    @IBAction func referAFriendTapped(_ sender: Any) {
+        print("Refer a Friend Tapped")
+    }
+    
+    @IBAction func FAQTapped(_ sender: Any) {
+        print("FAQ Tapped")
+    }
+    
+    @IBAction func contactUsTapped(_ sender: Any) {
+        print("Contact Us Tapped")
+    }
+    
+    @IBAction func aboutUsTapped(_ sender: Any) {
+        print("About Us Tapped")
+    }
+    
+    @IBAction func supportUsTapped(_ sender: Any) {
+        print("Support Us Tapped")
     }
     
     @IBAction func employeeProfileTapped(_ sender: Any) {
+        print("Employee Profile Tapped")
     }
     
     @IBAction func settingsTapped(_ sender: Any) {
+        print("Settings Tapped")
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
+        print("Logout Tapped")
     }
     
     
