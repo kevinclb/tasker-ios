@@ -79,7 +79,7 @@ class RegistrationStep2ViewController: UIViewController {
             Utilities.showError(message: error!, errorLabel: self.errorLabel)
         }
         else {
-            let employeeHomePageVC = EmployeeExplorePageViewController()
+            let employeeHomePageVC = HomeExplorePageViewController()
             employeeHomePageVC.modalPresentationStyle = .fullScreen
             present(employeeHomePageVC, animated: true, completion: nil)
         }

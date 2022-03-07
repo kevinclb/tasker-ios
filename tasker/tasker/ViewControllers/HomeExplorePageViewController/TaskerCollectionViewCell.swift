@@ -16,8 +16,10 @@ class TaskerCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // Initialization code
+//        self.contentView.layer.masksToBounds = true
+        self.contentView.layer.cornerRadius = 10.0
+        self.contentView.layer.borderWidth = 1.0
+        self.contentView.layer.borderColor = UIColor.black.cgColor
     }
 
 }
