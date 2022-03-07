@@ -10,6 +10,7 @@ import UIKit
 class HomeExplorePageViewController: UIViewController {
     
     var taskers = [User]()
+    
     @IBOutlet weak var HomePageCollectionView: UICollectionView!
     
     // Outlets for the menu for animation purposes
