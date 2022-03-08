@@ -8,12 +8,14 @@
 import Foundation
 
 struct User {
-    var firstname: String
-    var lastname: String
-    var address: String?
+    var firstname: String?
+    var lastname: String?
+    var city: String?
     var email: String?
     var password: String?  //TODO: Note. Passwords are string for temporary purposes only
                            //In production application, with actual users, never
                            //save password as unhashed, unencrypted strings!!!!
-    var employee: Bool
+    var employee: Bool?
+    var rating: Int?
+    var employeeDescription: String?
 }

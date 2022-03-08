@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegistrationStep2ViewController: UIViewController {
     
@@ -34,6 +35,30 @@ class RegistrationStep2ViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    func validateFields() -> String? {
+        
+        // Checking if all fields are filled in.
+        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            dateOfBirthTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            cityTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "Please fill in all fields."
+        }
+        
+        // TODO: Checking if their date of birth is valid
+        
+        let cleanedDateOfBirth = dateOfBirthTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if Utilities.isValidAge(date: cleanedDateOfBirth) == false {
+            // Age they entered was not valid
+            
+            return "Please enter a valid date of birth\n(must be 18 years or older)"
+        }
+        
+        return nil
+    }
 
 
     /*
@@ -47,8 +72,16 @@ class RegistrationStep2ViewController: UIViewController {
     */
     
     @IBAction func continuePressed(_ sender: Any) {
-        let employeeHomePageVC = EmployeeExplorePageViewController()
-        employeeHomePageVC.modalPresentationStyle = .fullScreen
-        present(employeeHomePageVC, animated: true, completion: nil)
+        let error = validateFields()
+        
+        if error != nil {
+            // There was something wrong with the fields, show error message
+            Utilities.showError(message: error!, errorLabel: self.errorLabel)
+        }
+        else {
+            let employeeHomePageVC = HomeExplorePageViewController()
+            employeeHomePageVC.modalPresentationStyle = .fullScreen
+            present(employeeHomePageVC, animated: true, completion: nil)
+        }
     }
 }
