@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HelpViewController" customModule="tasker" customModuleProvider="target">
             <connections>
+                <outlet property="aboutTeamAns" destination="O6r-IQ-ZSc" id="ezM-9t-CdF"/>
+                <outlet property="abtAppAns" destination="fnN-YO-HbX" id="luj-mh-yXe"/>
+                <outlet property="cancelTaskAns" destination="2jC-Jo-ZN5" id="VfZ-iq-XMJ"/>
+                <outlet property="contactClientAns" destination="3JT-7k-VZS" id="rJg-UP-Cnd"/>
+                <outlet property="hackedAns" destination="brs-zW-KMQ" id="asH-5F-xF5"/>
+                <outlet property="pmntRcvdAns" destination="K84-yf-7Oa" id="8er-iy-NDe"/>
+                <outlet property="supportDevAns" destination="mFP-yi-Nbo" id="92r-pA-ZUS"/>
                 <outlet property="view" destination="maf-HB-VuF" id="zLH-zS-UUx"/>
             </connections>
         </placeholder>
@@ -30,40 +37,148 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="arrow_back_ios_24px"/>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help Center" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIa-y9-PmL" userLabel="helpCenter">
+                    <rect key="frame" x="55" y="118" width="124" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="VTC-3B-Y2G"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackDivider" translatesAutoresizingMaskIntoConstraints="NO" id="x4i-9q-0E9">
+                    <rect key="frame" x="55" y="155" width="293" height="13"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="13" id="yKi-lX-T1B"/>
+                    </constraints>
+                </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oJ-Fx-o5r">
-                    <rect key="frame" x="0.0" y="117" width="414" height="779"/>
+                    <rect key="frame" x="0.0" y="162" width="414" height="671"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYn-8U-06Y" userLabel="ContainerView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="779"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help Center" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIa-y9-PmL" userLabel="helpCenter">
-                                    <rect key="frame" x="54" y="0.0" width="161" height="36"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="161" id="DRU-mt-cQb"/>
-                                        <constraint firstAttribute="height" constant="36" id="VTC-3B-Y2G"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                    <nil key="textColor"/>
+                                <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Swq-mg-zUV">
+                                    <rect key="frame" x="50" y="8" width="331" height="364"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sl8-qH-gI7" userLabel="abtTaskerApp">
+                                            <rect key="frame" x="0.0" y="0.0" width="331" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="+    About the Tasker app"/>
+                                            <connections>
+                                                <action selector="abtAppTapped:" destination="-1" eventType="touchUpInside" id="Fxp-Dp-UHg"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnN-YO-HbX" userLabel="abtTaskerAns">
+                                            <rect key="frame" x="0.0" y="41" width="331" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dw1-yj-nsx" userLabel="hacked">
+                                            <rect key="frame" x="0.0" y="51" width="331" height="48"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="+    I believe that my account got hacked, what should I do?"/>
+                                            <connections>
+                                                <action selector="hackedTapped:" destination="-1" eventType="touchUpInside" id="R7O-hm-ayP"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brs-zW-KMQ" userLabel="hackedAns">
+                                            <rect key="frame" x="0.0" y="109" width="331" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="DFG-rO-xJc" userLabel="paymentNotRcvd">
+                                            <rect key="frame" x="0.0" y="119" width="331" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="+    I have not received my payment"/>
+                                            <connections>
+                                                <action selector="pmntRcvdTapped:" destination="-1" eventType="touchUpInside" id="MgZ-Zr-2Zv"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K84-yf-7Oa" userLabel="paymentNotRcvdAns">
+                                            <rect key="frame" x="0.0" y="160" width="331" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FsF-kr-DaJ" userLabel="contactClient">
+                                            <rect key="frame" x="0.0" y="170" width="331" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="+    Unable to contact my client"/>
+                                            <connections>
+                                                <action selector="contactClientTapped:" destination="-1" eventType="touchUpInside" id="dET-ht-dls"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JT-7k-VZS" userLabel="contactClientAns">
+                                            <rect key="frame" x="0.0" y="211" width="331" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ws7-m5-IEU" userLabel="cancelTask">
+                                            <rect key="frame" x="0.0" y="221" width="331" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="+    I want to cancel a task I already started on"/>
+                                            <connections>
+                                                <action selector="cancelTaskTapped:" destination="-1" eventType="touchUpInside" id="r22-oB-4w0"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jC-Jo-ZN5" userLabel="cancelTaskAns">
+                                            <rect key="frame" x="0.0" y="262" width="331" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rzg-S3-5yy" userLabel="aboutTeam">
+                                            <rect key="frame" x="0.0" y="272" width="331" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="+    About the development team"/>
+                                            <connections>
+                                                <action selector="aboutTeamTapped:" destination="-1" eventType="touchUpInside" id="fDv-kW-mjZ"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6r-IQ-ZSc" userLabel="aboutTeamAns">
+                                            <rect key="frame" x="0.0" y="313" width="331" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GJl-N0-jRM" userLabel="supportDev">
+                                            <rect key="frame" x="0.0" y="323" width="331" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="+    How can I support development?"/>
+                                            <connections>
+                                                <action selector="supportDevTapped:" destination="-1" eventType="touchUpInside" id="7Tp-hI-kJ8"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFP-yi-Nbo" userLabel="supportDevAns">
+                                            <rect key="frame" x="0.0" y="364" width="331" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dk6-wp-4jz" userLabel="dummyLabel">
+                                    <rect key="frame" x="207" y="734" width="0.0" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackDivider" translatesAutoresizingMaskIntoConstraints="NO" id="x4i-9q-0E9">
-                                    <rect key="frame" x="54" y="36" width="240" height="13"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="240" id="8Jg-0h-Jql"/>
-                                        <constraint firstAttribute="height" constant="13" id="yKi-lX-T1B"/>
-                                    </constraints>
-                                </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="x4i-9q-0E9" firstAttribute="top" secondItem="oIa-y9-PmL" secondAttribute="bottom" id="QIT-12-RUA"/>
-                                <constraint firstItem="oIa-y9-PmL" firstAttribute="leading" secondItem="ZYn-8U-06Y" secondAttribute="leading" constant="54" id="V9x-i5-DWe"/>
-                                <constraint firstItem="x4i-9q-0E9" firstAttribute="leading" secondItem="oIa-y9-PmL" secondAttribute="leading" id="Zfi-rv-DfO"/>
+                                <constraint firstItem="Swq-mg-zUV" firstAttribute="top" secondItem="ZYn-8U-06Y" secondAttribute="top" constant="8" id="3qo-aC-ZUc"/>
+                                <constraint firstItem="Swq-mg-zUV" firstAttribute="width" secondItem="ZYn-8U-06Y" secondAttribute="width" multiplier="0.8" id="62b-5n-SJ7"/>
+                                <constraint firstItem="dk6-wp-4jz" firstAttribute="centerX" secondItem="ZYn-8U-06Y" secondAttribute="centerX" id="6u0-nd-4ZU"/>
+                                <constraint firstAttribute="height" constant="1200" id="GNm-sd-GCe"/>
+                                <constraint firstItem="Swq-mg-zUV" firstAttribute="leading" secondItem="ZYn-8U-06Y" secondAttribute="leading" constant="50" id="fK3-f9-qLY"/>
                             </constraints>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="ZYn-8U-06Y" firstAttribute="height" secondItem="2oJ-Fx-o5r" secondAttribute="height" id="LSS-e7-wKz"/>
                         <constraint firstAttribute="bottom" secondItem="ZYn-8U-06Y" secondAttribute="bottom" id="Lln-dc-bSX"/>
                         <constraint firstAttribute="trailing" secondItem="ZYn-8U-06Y" secondAttribute="trailing" id="gtT-hP-Af6"/>
                         <constraint firstItem="ZYn-8U-06Y" firstAttribute="top" secondItem="2oJ-Fx-o5r" secondAttribute="top" id="nTE-jd-xYp"/>
@@ -71,26 +186,37 @@
                         <constraint firstItem="ZYn-8U-06Y" firstAttribute="leading" secondItem="2oJ-Fx-o5r" secondAttribute="leading" id="yPj-vP-0VF"/>
                     </constraints>
                 </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Tasker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9B-oL-3Ih">
+                    <rect key="frame" x="172.5" y="839.5" width="69" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="ox8-4a-7Xc"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ox8-4a-7Xc" firstAttribute="trailing" secondItem="2oJ-Fx-o5r" secondAttribute="trailing" id="0Gt-Zn-hHd"/>
                 <constraint firstItem="m7s-8n-Lfc" firstAttribute="trailing" secondItem="7UI-Tu-zhP" secondAttribute="leading" constant="68" id="22Y-Nh-FWj"/>
-                <constraint firstItem="2oJ-Fx-o5r" firstAttribute="bottom" secondItem="ox8-4a-7Xc" secondAttribute="bottom" constant="34" id="72X-Pm-PSx"/>
+                <constraint firstItem="2oJ-Fx-o5r" firstAttribute="bottom" secondItem="ox8-4a-7Xc" secondAttribute="bottom" constant="-29" id="72X-Pm-PSx"/>
                 <constraint firstItem="7UI-Tu-zhP" firstAttribute="centerX" secondItem="ox8-4a-7Xc" secondAttribute="centerX" id="8ry-Kb-JoU"/>
-                <constraint firstItem="oIa-y9-PmL" firstAttribute="leading" secondItem="m7s-8n-Lfc" secondAttribute="centerX" id="Aue-3h-jpI"/>
                 <constraint firstItem="m7s-8n-Lfc" firstAttribute="centerY" secondItem="7UI-Tu-zhP" secondAttribute="centerY" constant="2.5" id="D9s-P2-WbK"/>
-                <constraint firstItem="oIa-y9-PmL" firstAttribute="top" secondItem="7UI-Tu-zhP" secondAttribute="bottom" constant="15" id="Gaq-E8-yRL"/>
+                <constraint firstItem="x4i-9q-0E9" firstAttribute="top" secondItem="oIa-y9-PmL" secondAttribute="bottom" constant="1" id="KCS-ab-jUW"/>
+                <constraint firstItem="oIa-y9-PmL" firstAttribute="leading" secondItem="ox8-4a-7Xc" secondAttribute="leading" constant="55" id="LNU-S6-Irh"/>
                 <constraint firstItem="2oJ-Fx-o5r" firstAttribute="leading" secondItem="ox8-4a-7Xc" secondAttribute="leading" id="LZU-P4-zCO"/>
+                <constraint firstItem="dk6-wp-4jz" firstAttribute="bottom" secondItem="ox8-4a-7Xc" secondAttribute="bottom" constant="34" id="LhU-6K-EI3"/>
+                <constraint firstItem="x4i-9q-0E9" firstAttribute="leading" secondItem="oIa-y9-PmL" secondAttribute="leading" id="MEk-HP-15F"/>
                 <constraint firstItem="ox8-4a-7Xc" firstAttribute="trailing" secondItem="7UI-Tu-zhP" secondAttribute="trailing" constant="20" id="NVT-yn-aYp"/>
-                <constraint firstItem="2oJ-Fx-o5r" firstAttribute="top" secondItem="7UI-Tu-zhP" secondAttribute="bottom" constant="15" id="S6b-yc-DJL"/>
+                <constraint firstItem="oIa-y9-PmL" firstAttribute="top" secondItem="7UI-Tu-zhP" secondAttribute="bottom" constant="16" id="OB4-ON-KKL"/>
+                <constraint firstItem="2oJ-Fx-o5r" firstAttribute="top" secondItem="x4i-9q-0E9" secondAttribute="bottom" constant="-6" id="S6b-yc-DJL"/>
                 <constraint firstItem="m7s-8n-Lfc" firstAttribute="leading" secondItem="ox8-4a-7Xc" secondAttribute="leading" constant="20" id="VnN-WI-O0K"/>
                 <constraint firstItem="2oJ-Fx-o5r" firstAttribute="width" secondItem="maf-HB-VuF" secondAttribute="width" id="WWN-qh-QdD"/>
                 <constraint firstItem="7UI-Tu-zhP" firstAttribute="top" secondItem="ox8-4a-7Xc" secondAttribute="top" constant="11" id="iKc-g0-aMk"/>
                 <constraint firstItem="2oJ-Fx-o5r" firstAttribute="centerX" secondItem="ox8-4a-7Xc" secondAttribute="centerX" id="lt5-GG-p8M"/>
+                <constraint firstItem="ox8-4a-7Xc" firstAttribute="bottom" secondItem="S9B-oL-3Ih" secondAttribute="bottom" constant="2" id="rtL-sw-oQo"/>
+                <constraint firstItem="S9B-oL-3Ih" firstAttribute="centerX" secondItem="ox8-4a-7Xc" secondAttribute="centerX" id="ty1-5f-jNL"/>
             </constraints>
-            <point key="canvasLocation" x="388" y="70"/>
+            <point key="canvasLocation" x="386.95652173913044" y="69.642857142857139"/>
         </view>
     </objects>
     <resources>

@@ -94,24 +94,32 @@ class EmployeeExplorePageViewController: UIViewController {
     // IB Actions for menu buttons
     
     @IBAction func helpCenterTapped(_ sender: Any) {
+        print("Help Center Tapped")
     }
     @IBAction func referAfriendTapped(_ sender: Any) {
+        print("Refer a Friend Tapped")
     }
     @IBAction func faqTapped(_ sender: Any) {
+        print("FAQ Tapped")
     }
     @IBAction func contactUsTapped(_ sender: Any) {
+        print("Contact Us Tapped")
     }
     @IBAction func aboutUsTapped(_ sender: Any) {
+        print("About Us Tapped")
     }
     @IBAction func supportUsTapped(_ sender: Any) {
+        print("Support Us Tapped")
     }
     @IBAction func clientProfileTapped(_ sender: Any) {
+        print("Client Profile Tapped")
     }
     @IBAction func settingsTapped(_ sender: Any) {
+        print("Settings Tapped")
     }
     @IBAction func logoutTapped(_ sender: Any) {
+        print("Logout Tapped")
     }
-    
     
 }
 

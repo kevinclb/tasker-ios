@@ -53,6 +53,8 @@
 		CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6627A88E0500766C59 /* SceneDelegate.swift */; };
 		CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE641A6D27A88E0700766C59 /* Assets.xcassets */; };
 		CE641A7927A8904A00766C59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE641A7827A8904A00766C59 /* GoogleService-Info.plist */; };
+		CE65BE7127CEFE4A00BD09FB /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65BE6F27CEFE4A00BD09FB /* FAQViewController.swift */; };
+		CE65BE7227CEFE4A00BD09FB /* FAQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE65BE7027CEFE4A00BD09FB /* FAQViewController.xib */; };
 		F95B9875A59DE0E9011EFDF8 /* Pods_tasker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA7F196D3098A70BEF3A25D /* Pods_tasker.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,8 @@
 		CE641A6D27A88E0700766C59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE641A7227A88E0700766C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE641A7827A8904A00766C59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE65BE6F27CEFE4A00BD09FB /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		CE65BE7027CEFE4A00BD09FB /* FAQViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE65BE6E27CEFE3300BD09FB /* FAQViewController */,
 				CE10018D27CD6150007767AC /* HelpViewController */,
 				BAC6A86627BEF4E300CA66DE /* LoginViewController */,
 				BAC6A85D27BEF4A600CA66DE /* RegistrationViewControllers */,
@@ -331,6 +336,15 @@
 			path = tasker;
 			sourceTree = "<group>";
 		};
+		CE65BE6E27CEFE3300BD09FB /* FAQViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE65BE6F27CEFE4A00BD09FB /* FAQViewController.swift */,
+				CE65BE7027CEFE4A00BD09FB /* FAQViewController.xib */,
+			);
+			path = FAQViewController;
+			sourceTree = "<group>";
+		};
 		E38F3B5A54A3073BA91AF909 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +430,7 @@
 				8C224DA327BB14AA00E486C7 /* RootViewController.xib in Resources */,
 				BAC6A86127BEF4CB00CA66DE /* RegistrationStep1ViewController.xib in Resources */,
 				BAC6A85C27BEF4A000CA66DE /* LoggedOutViewController.xib in Resources */,
+				CE65BE7227CEFE4A00BD09FB /* FAQViewController.xib in Resources */,
 				8C250DD427AB37A400A280B3 /* SettingsPageViewController.xib in Resources */,
 				8C224DA727BB15B100E486C7 /* PublicProfileViewController.xib in Resources */,
 			);
@@ -495,6 +510,7 @@
 				8C224DA627BB15B100E486C7 /* PublicProfileViewController.swift in Sources */,
 				8C250DDC27AB3A5200A280B3 /* RegisterButton.swift in Sources */,
 				CE0555C527BF0DC700877325 /* EmployeeExplorePageViewController.swift in Sources */,
+				CE65BE7127CEFE4A00BD09FB /* FAQViewController.swift in Sources */,
 				CE10019027CD6171007767AC /* HelpViewController.swift in Sources */,
 				8C2DC0A627C6F9DE0026FF11 /* User.swift in Sources */,
 			);
