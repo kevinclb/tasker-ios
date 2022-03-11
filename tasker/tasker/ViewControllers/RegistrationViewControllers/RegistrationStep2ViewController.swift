@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class RegistrationStep2ViewController: UIViewController {
     
@@ -30,10 +31,24 @@ class RegistrationStep2ViewController: UIViewController {
     
     @IBOutlet weak var continueButton: UIButton!
     
+    let registerStep1VC = RegistrationStep1ViewController()
+    
+    var email: String = ""
+    
+    var password: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func setEmail(email: String){
+        self.email = email
+    }
+    
+    func setPassword(password: String){
+        self.password = password
     }
     
     func validateFields() -> String? {
@@ -72,6 +87,8 @@ class RegistrationStep2ViewController: UIViewController {
     */
     
     @IBAction func continuePressed(_ sender: Any) {
+        
+        // Validate fields
         let error = validateFields()
         
         if error != nil {
@@ -79,9 +96,42 @@ class RegistrationStep2ViewController: UIViewController {
             Utilities.showError(message: error!, errorLabel: self.errorLabel)
         }
         else {
-            let employeeHomePageVC = HomeExplorePageViewController()
-            employeeHomePageVC.modalPresentationStyle = .fullScreen
-            present(employeeHomePageVC, animated: true, completion: nil)
+            // Create cleaned versions of data
+            let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let dateOfBirth = dateOfBirthTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let city = cityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Create User
+            Auth.auth().createUser(withEmail: self.email, password: self.password) { (result, err) in
+                
+                // Check for errors
+                if err != nil{
+                    Utilities.showError(message: "Error creating user", errorLabel: self.errorLabel)
+                }
+                
+                else {
+                    // User was created successfully, now store the data
+                    let db = Firestore.firestore()
+                    
+                    db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "dateOfBirth": dateOfBirth, "city": city, "uid": result!.user.uid]) { (error) in
+                        
+                        if error != nil {
+                            // Show error message
+                            Utilities.showError(message: "Error saving user data.", errorLabel: self.errorLabel)
+                        }
+                    }
+                    // Segue to home explore page and programatically change root view controller to home explore page
+                    let homePageVC = HomeExplorePageViewController()
+                    
+                    self.view.window?.rootViewController = homePageVC
+                    self.view.window?.makeKeyAndVisible()
+                    
+                    homePageVC.modalPresentationStyle = .fullScreen
+                    self.present(homePageVC, animated: true, completion: nil)
+                    
+                }
+            }
         }
     }
 }
