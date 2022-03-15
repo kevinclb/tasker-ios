@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,6 +15,7 @@
                 <outlet property="menuScroll" destination="9kO-ID-s2V" id="0bC-eO-a4N"/>
                 <outlet property="menuTrailing" destination="g6M-5h-hgH" id="NmG-cE-Phw"/>
                 <outlet property="menuView" destination="KO2-dK-lJN" id="HaY-qS-alE"/>
+                <outlet property="searchBar" destination="KBA-Kb-Nun" id="E72-y9-5gb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="cJj-IV-DRQ"/>
             </connections>
         </placeholder>
@@ -87,12 +88,10 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hss-PE-Fep" userLabel="SearchAndListStackView">
                                             <rect key="frame" x="0.0" y="0.0" width="415" height="84"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="j23-bF-H7T">
+                                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KBA-Kb-Nun">
                                                     <rect key="frame" x="20" y="8" width="289" height="68"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                </searchBar>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Aoo-Q8-tdY" userLabel="AddButton">
                                                     <rect key="frame" x="309" y="8" width="78" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
