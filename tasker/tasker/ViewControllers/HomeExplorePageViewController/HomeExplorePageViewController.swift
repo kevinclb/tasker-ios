@@ -144,7 +144,6 @@ extension HomeExplorePageViewController : UICollectionViewDelegate, UICollection
         cell.taskerCity.text = tasker.city!
         cell.taskerRating.text = String(tasker.rating!)
         cell.taskerDescription.text = tasker.employeeDescription!
-        
         return cell
     }
     

@@ -114,7 +114,7 @@ class RegistrationStep2ViewController: UIViewController {
                     // User was created successfully, now store the data
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "dateOfBirth": dateOfBirth, "city": city, "rating": 0, "employeeDescription": "", "uid": result!.user.uid]) { (error) in
+                    db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "dateOfBirth": dateOfBirth, "city": city, "rating": 0, "employeeDescription": "", "uid": result!.user.uid]) { (error) in
                         
                         if error != nil {
                             // Show error message
