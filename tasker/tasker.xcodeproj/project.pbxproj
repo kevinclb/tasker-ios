@@ -30,6 +30,10 @@
 		8C2DC0AC27C6FA070026FF11 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0AB27C6FA070026FF11 /* Message.swift */; };
 		8C2DC0AE27C6FB940026FF11 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0AD27C6FB940026FF11 /* Address.swift */; };
 		8C30117627ABA61B00DDA117 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30117527ABA61B00DDA117 /* LoginButton.swift */; };
+		8CAD48E627E0307500304CF8 /* SearchResultsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD48E527E0307500304CF8 /* SearchResultsTableViewController.xib */; };
+		8CAD48E827E0308800304CF8 /* SearchResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD48E727E0308800304CF8 /* SearchResultsTableViewCell.xib */; };
+		8CAD48EC27E030B200304CF8 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD48EB27E030B200304CF8 /* SearchResultsTableViewController.swift */; };
+		8CAD48EE27E030D600304CF8 /* SearchResultsTableViewCell.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD48ED27E030D600304CF8 /* SearchResultsTableViewCell.swift.swift */; };
 		BA1DF53C27D02222000F292E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1DF53B27D02222000F292E /* Utilities.swift */; };
 		BAC6A85B27BEF4A000CA66DE /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6A85927BEF4A000CA66DE /* LoggedOutViewController.swift */; };
 		BAC6A85C27BEF4A000CA66DE /* LoggedOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC6A85A27BEF4A000CA66DE /* LoggedOutViewController.xib */; };
@@ -84,6 +88,10 @@
 		8C2DC0AB27C6FA070026FF11 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8C2DC0AD27C6FB940026FF11 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		8C30117527ABA61B00DDA117 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		8CAD48E527E0307500304CF8 /* SearchResultsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsTableViewController.xib; sourceTree = "<group>"; };
+		8CAD48E727E0308800304CF8 /* SearchResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsTableViewCell.xib; sourceTree = "<group>"; };
+		8CAD48EB27E030B200304CF8 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		8CAD48ED27E030D600304CF8 /* SearchResultsTableViewCell.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift.swift; sourceTree = "<group>"; };
 		B7F263A0E495878F4758FEE1 /* Pods-tasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.debug.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.debug.xcconfig"; sourceTree = "<group>"; };
 		BA1DF53B27D02222000F292E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		BAC6A85927BEF4A000CA66DE /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +171,7 @@
 				BAC6A85827BEF48500CA66DE /* LoggedOutViewConntroller */,
 				8C224DA927BB15C000E486C7 /* RootViewController */,
 				8C224DA827BB15B500E486C7 /* PublicProfileViewController */,
+				8CAD48E427E0305800304CF8 /* SearchResultsViewControllers */,
 				8C250DD027AB378000A280B3 /* SettingsPageViewController */,
 				8C250DBB27AB34B300A280B3 /* HomeExplorePageViewController */,
 				8C250DB127AB336800A280B3 /* LaunchViewController */,
@@ -245,6 +254,17 @@
 				8C2DC0AD27C6FB940026FF11 /* Address.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8CAD48E427E0305800304CF8 /* SearchResultsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8CAD48ED27E030D600304CF8 /* SearchResultsTableViewCell.swift.swift */,
+				8CAD48EB27E030B200304CF8 /* SearchResultsTableViewController.swift */,
+				8CAD48E527E0307500304CF8 /* SearchResultsTableViewController.xib */,
+				8CAD48E727E0308800304CF8 /* SearchResultsTableViewCell.xib */,
+			);
+			path = SearchResultsViewControllers;
 			sourceTree = "<group>";
 		};
 		B9AB0102E4EC48168B0C7CCF /* Pods */ = {
@@ -431,7 +451,9 @@
 				BAC6A86127BEF4CB00CA66DE /* RegistrationStep1ViewController.xib in Resources */,
 				BAC6A85C27BEF4A000CA66DE /* LoggedOutViewController.xib in Resources */,
 				CE65BE7227CEFE4A00BD09FB /* FAQViewController.xib in Resources */,
+				8CAD48E627E0307500304CF8 /* SearchResultsTableViewController.xib in Resources */,
 				8C250DD427AB37A400A280B3 /* SettingsPageViewController.xib in Resources */,
+				8CAD48E827E0308800304CF8 /* SearchResultsTableViewCell.xib in Resources */,
 				8C224DA727BB15B100E486C7 /* PublicProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,11 +509,13 @@
 			files = (
 				CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */,
 				8C30117627ABA61B00DDA117 /* LoginButton.swift in Sources */,
+				8CAD48EC27E030B200304CF8 /* SearchResultsTableViewController.swift in Sources */,
 				88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */,
 				BAC6A85B27BEF4A000CA66DE /* LoggedOutViewController.swift in Sources */,
 				CE0555C727BF0DC700877325 /* Task.swift in Sources */,
 				8C2AFF5B27D5D787009CFE6C /* TaskerCollectionViewCell.swift in Sources */,
 				CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */,
+				8CAD48EE27E030D600304CF8 /* SearchResultsTableViewCell.swift.swift in Sources */,
 				8C224DA227BB14AA00E486C7 /* RootViewController.swift in Sources */,
 				CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */,
 				BAC6A86027BEF4CB00CA66DE /* RegistrationStep1ViewController.swift in Sources */,
