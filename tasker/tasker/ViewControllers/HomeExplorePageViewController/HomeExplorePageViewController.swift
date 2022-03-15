@@ -11,6 +11,7 @@ class HomeExplorePageViewController: UIViewController {
     
     var taskers = [User]()
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var HomePageCollectionView: UICollectionView!
     let taskerCollectionViewCellId = "TaskerCollectionViewCell"
     // Outlets for the menu for animation purposes
@@ -31,6 +32,7 @@ class HomeExplorePageViewController: UIViewController {
         HomePageCollectionView.register(nibCell, forCellWithReuseIdentifier: taskerCollectionViewCellId)
         HomePageCollectionView.delegate = self
         HomePageCollectionView.dataSource = self
+        searchBar.delegate = self
         TaskerCollectionViewCell.awakeFromNib()
         
         
@@ -51,6 +53,7 @@ class HomeExplorePageViewController: UIViewController {
                 }
             }
         }
+        
     }
     //collectionView.reloadData()    }
     
@@ -141,7 +144,6 @@ extension HomeExplorePageViewController : UICollectionViewDelegate, UICollection
         cell.taskerCity.text = tasker.city!
         cell.taskerRating.text = String(tasker.rating!)
         cell.taskerDescription.text = tasker.employeeDescription!
-        
         return cell
     }
     
@@ -171,4 +173,35 @@ extension HomeExplorePageViewController : UICollectionViewDelegate, UICollection
     
     //fixing an issue
     
+}
+
+extension HomeExplorePageViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("text did change")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        navigateTo(newViewController: SearchResultsTableViewController(), transitionFrom: .fromBottom)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        print("Text did end editing")
+    }
+    
+    func navigateTo(newViewController:UIViewController, transitionFrom:CATransitionSubtype){
+        // this code here is to present from right to left instead of bottom to top
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = transitionFrom
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+        let newVC = newViewController
+        newVC.modalPresentationStyle = .popover
+        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+        self.present(newVC, animated: false, completion: nil)
+    }
 }
