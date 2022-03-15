@@ -29,6 +29,10 @@ class RegistrationStep1ViewController: UIViewController {
     
     @IBOutlet weak var registerWithAppleButton: UIButton!
     
+    var email: String = ""
+    
+    var password: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,8 +95,16 @@ class RegistrationStep1ViewController: UIViewController {
             Utilities.showError(message: error!, errorLabel: self.errorLabel)
         }
         else {
+            // Create cleaned versions of data and store values from user to the User email and password variables
+            self.email = emailAddressTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            self.password = confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Segue to step 2 of the registration process
             let registerPage2VC = RegistrationStep2ViewController()
-            self.present(registerPage2VC, animated: true, completion: nil)
+            self.present(registerPage2VC, animated: true, completion: {
+                registerPage2VC.setEmail(email: self.email);
+                registerPage2VC.setPassword(password: self.password)
+            })
         }
     }
 }
