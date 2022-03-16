@@ -59,6 +59,9 @@
 		CE641A7927A8904A00766C59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE641A7827A8904A00766C59 /* GoogleService-Info.plist */; };
 		CE65BE7127CEFE4A00BD09FB /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65BE6F27CEFE4A00BD09FB /* FAQViewController.swift */; };
 		CE65BE7227CEFE4A00BD09FB /* FAQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE65BE7027CEFE4A00BD09FB /* FAQViewController.xib */; };
+		CEF81B2A27E2516F00CE0340 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B2827E2516F00CE0340 /* ContactUsViewController.swift */; };
+		CEF81B2B27E2516F00CE0340 /* ContactUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF81B2927E2516F00CE0340 /* ContactUsViewController.xib */; };
+		CEF81B2D27E256E600CE0340 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF81B2C27E256E600CE0340 /* MessageUI.framework */; };
 		F95B9875A59DE0E9011EFDF8 /* Pods_tasker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA7F196D3098A70BEF3A25D /* Pods_tasker.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +123,9 @@
 		CE641A7827A8904A00766C59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE65BE6F27CEFE4A00BD09FB /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		CE65BE7027CEFE4A00BD09FB /* FAQViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQViewController.xib; sourceTree = "<group>"; };
+		CEF81B2827E2516F00CE0340 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		CEF81B2927E2516F00CE0340 /* ContactUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsViewController.xib; sourceTree = "<group>"; };
+		CEF81B2C27E256E600CE0340 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF81B2D27E256E600CE0340 /* MessageUI.framework in Frameworks */,
 				F95B9875A59DE0E9011EFDF8 /* Pods_tasker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +171,7 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEF81B2727E2514E00CE0340 /* ContactUsViewController */,
 				CE65BE6E27CEFE3300BD09FB /* FAQViewController */,
 				CE10018D27CD6150007767AC /* HelpViewController */,
 				BAC6A86627BEF4E300CA66DE /* LoginViewController */,
@@ -365,9 +373,19 @@
 			path = FAQViewController;
 			sourceTree = "<group>";
 		};
+		CEF81B2727E2514E00CE0340 /* ContactUsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEF81B2827E2516F00CE0340 /* ContactUsViewController.swift */,
+				CEF81B2927E2516F00CE0340 /* ContactUsViewController.xib */,
+			);
+			path = ContactUsViewController;
+			sourceTree = "<group>";
+		};
 		E38F3B5A54A3073BA91AF909 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEF81B2C27E256E600CE0340 /* MessageUI.framework */,
 				0CA7F196D3098A70BEF3A25D /* Pods_tasker.framework */,
 			);
 			name = Frameworks;
@@ -454,6 +472,7 @@
 				8CAD48E627E0307500304CF8 /* SearchResultsTableViewController.xib in Resources */,
 				8C250DD427AB37A400A280B3 /* SettingsPageViewController.xib in Resources */,
 				8CAD48E827E0308800304CF8 /* SearchResultsTableViewCell.xib in Resources */,
+				CEF81B2B27E2516F00CE0340 /* ContactUsViewController.xib in Resources */,
 				8C224DA727BB15B100E486C7 /* PublicProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,6 +542,7 @@
 				BAC6A86427BEF4DF00CA66DE /* RegistrationStep2ViewController.swift in Sources */,
 				8C250DBE27AB34CE00A280B3 /* HomeExplorePageViewController.swift in Sources */,
 				8C250DC727AB351B00A280B3 /* MessagesViewController.swift in Sources */,
+				CEF81B2A27E2516F00CE0340 /* ContactUsViewController.swift in Sources */,
 				8C2DC0AA27C6F9F90026FF11 /* Post.swift in Sources */,
 				8C2DC0AE27C6FB940026FF11 /* Address.swift in Sources */,
 				BA1DF53C27D02222000F292E /* Utilities.swift in Sources */,
