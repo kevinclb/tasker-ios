@@ -16,7 +16,7 @@ class SettingsPageViewController: UIViewController {
     }
    
     @IBAction func accountSettingsTapped(_ sender: Any) {
-        print("Accoutn Settings Tapped")
+        print("Account Settings Tapped")
     }
     @IBAction func editProfileTapped(_ sender: Any) {
         navigateTo(newViewController: EditProfileViewController(), transitionFrom: .fromRight)
@@ -28,13 +28,20 @@ class SettingsPageViewController: UIViewController {
         print("App Notifications Tapped")
     }
     @IBAction func helpTapped(_ sender: Any) {
-        print("Help Center Tapped")
+        navigateTo(newViewController: HelpViewController(), transitionFrom: .fromRight)
     }
     @IBAction func logoutTapped(_ sender: Any) {
         print("Logout Tapped")
     }
     @IBAction func backButtonTapped(_ sender: Any) {
-        print("Back Button Tapped")
+        // this code here is to present from right to left instead of bottom to top
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = .fromLeft
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        dismiss(animated: false, completion: nil)
     }
     
     func navigateTo(newViewController:UIViewController, transitionFrom:CATransitionSubtype){
