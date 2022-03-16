@@ -92,7 +92,7 @@ class HomeExplorePageViewController: UIViewController {
     }
     
     @IBAction func helpCenterTapped(_ sender: Any) {
-        print("Help Center Tapped")
+        navigateTo(newViewController: HelpViewController(), transitionFrom: .fromRight)
     }
     
     @IBAction func referAFriendTapped(_ sender: Any) {
@@ -100,11 +100,11 @@ class HomeExplorePageViewController: UIViewController {
     }
     
     @IBAction func FAQTapped(_ sender: Any) {
-        print("FAQ Tapped")
+        navigateTo(newViewController: FAQViewController(), transitionFrom: .fromRight)
     }
     
     @IBAction func contactUsTapped(_ sender: Any) {
-        print("Contact Us Tapped")
+        navigateTo(newViewController: ContactUsViewController(), transitionFrom: .fromRight)
     }
     
     @IBAction func aboutUsTapped(_ sender: Any) {
@@ -116,17 +116,37 @@ class HomeExplorePageViewController: UIViewController {
     }
     
     @IBAction func employeeProfileTapped(_ sender: Any) {
-        print("Employee Profile Tapped")
+        navigateTo(newViewController: EmployeeExplorePageViewController(), transitionFrom: .fromRight)
     }
     
     @IBAction func settingsTapped(_ sender: Any) {
-        print("Settings Tapped")
+        navigateTo(newViewController: SettingsPageViewController(), transitionFrom: .fromRight)
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
         print("Logout Tapped")
     }
-    
+    // function to use to navigate to other pages from homepage
+    func navigateTo(newViewController:UIViewController, transitionFrom:CATransitionSubtype){
+        // Close the menu so when we return it's not open
+        setView(view: menuScroll, hidden: true)
+        menuLeading.constant = -300
+        menuTrailing.constant = 300
+        menuOut = false
+        // this code here is to present from right to left instead of bottom to top
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = transitionFrom
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+        let newVC = newViewController
+        newVC.modalPresentationStyle = .fullScreen
+        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+        self.present(newVC, animated: false, completion: nil)
+    }
     
 }
 
@@ -171,8 +191,6 @@ extension HomeExplorePageViewController : UICollectionViewDelegate, UICollection
            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
         }
     
-    //fixing an issue
-    
 }
 
 extension HomeExplorePageViewController: UISearchBarDelegate {
@@ -189,19 +207,5 @@ extension HomeExplorePageViewController: UISearchBarDelegate {
         print("Text did end editing")
     }
     
-    func navigateTo(newViewController:UIViewController, transitionFrom:CATransitionSubtype){
-        // this code here is to present from right to left instead of bottom to top
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = CATransitionType.push
-        transition.subtype = transitionFrom
-        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        view.window!.layer.add(transition, forKey: kCATransition)
-        
-        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
-        let newVC = newViewController
-        newVC.modalPresentationStyle = .popover
-        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
-        self.present(newVC, animated: false, completion: nil)
-    }
+    
 }

@@ -147,5 +147,15 @@ class HelpViewController: UIViewController {
         }
         pmntRcvdAns.numberOfLines = 0
     }
+    @IBAction func backButtonTapped(_ sender: Any) {
+        // this code here is to present from right to left instead of bottom to top
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = .fromLeft
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        dismiss(animated: false, completion: nil)
+    }
     
 }
