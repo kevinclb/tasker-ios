@@ -104,7 +104,7 @@ class HomeExplorePageViewController: UIViewController {
     }
     
     @IBAction func contactUsTapped(_ sender: Any) {
-        print("Contact Us Tapped")
+        navigateTo(newViewController: ContactUsViewController(), transitionFrom: .fromRight)
     }
     
     @IBAction func aboutUsTapped(_ sender: Any) {
