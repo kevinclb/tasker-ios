@@ -106,7 +106,7 @@ class EmployeeExplorePageViewController: UIViewController {
         navigateTo(newViewController: ContactUsViewController(), transitionFrom: .fromRight)
     }
     @IBAction func aboutUsTapped(_ sender: Any) {
-        print("About Us Tapped")
+        navigateTo(newViewController: AboutUsViewController(), transitionFrom: .fromRight)
     }
     @IBAction func supportUsTapped(_ sender: Any) {
         print("Support Us Tapped")
