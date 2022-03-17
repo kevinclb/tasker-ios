@@ -116,12 +116,13 @@
                         <constraint firstAttribute="width" constant="332" id="kmF-xn-eAM"/>
                     </constraints>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj4-RD-y2V">
-                    <rect key="frame" x="29" y="655" width="332" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj4-RD-y2V">
+                    <rect key="frame" x="29" y="655" width="332" height="64"/>
                     <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="AYU-Z0-22A"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="X7W-dr-GGh"/>
-                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="iXt-Wi-xxc"/>
-                        <constraint firstAttribute="height" constant="40" id="vAe-vz-lHC"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="iXt-Wi-xxc"/>
+                        <constraint firstAttribute="height" constant="64" id="vAe-vz-lHC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" systemColor="systemRedColor"/>
@@ -144,7 +145,7 @@
                 <constraint firstItem="LdA-Kh-1zY" firstAttribute="centerX" secondItem="RMe-Xo-6GW" secondAttribute="centerX" id="jl8-WI-O7p"/>
                 <constraint firstItem="m5B-5R-KRm" firstAttribute="trailing" secondItem="kLN-qf-hJp" secondAttribute="trailing" constant="133" id="oWv-y3-RHL"/>
                 <constraint firstItem="kLN-qf-hJp" firstAttribute="top" secondItem="eS2-PS-ZSl" secondAttribute="bottom" constant="94" id="osQ-d9-6h3"/>
-                <constraint firstItem="m5B-5R-KRm" firstAttribute="bottom" secondItem="Mj4-RD-y2V" secondAttribute="bottom" constant="115" id="w8W-OL-jfj"/>
+                <constraint firstItem="m5B-5R-KRm" firstAttribute="bottom" secondItem="Mj4-RD-y2V" secondAttribute="bottom" constant="91" id="w8W-OL-jfj"/>
                 <constraint firstItem="Mj4-RD-y2V" firstAttribute="trailing" secondItem="LdA-Kh-1zY" secondAttribute="trailing" id="wgl-fT-lzj"/>
             </constraints>
             <point key="canvasLocation" x="140" y="120.14218009478672"/>

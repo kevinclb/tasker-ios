@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         if emailAddressTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
-            return "Please fill in all fields"
+            return "Please fill in all fields."
         }
         
         return nil
@@ -71,7 +71,7 @@ class LoginViewController: UIViewController {
                 
                 // Check for errors
                 if err != nil{
-                    Utilities.showError(message: "Incorrect email or password", errorLabel: self.errorLabel)
+                    Utilities.showError(message: err!.localizedDescription, errorLabel: self.errorLabel)
                 }
                 else {
                     // Segue to home explore page and programatically change root view controller to home explore page

@@ -18,11 +18,6 @@ class LoggedOutViewController: UIViewController {
     private var authListener: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
-   
-        
-        //I'm giving these views a set x and y coordinate for now,
-        //however, the correct way to lay these buttons vertical to one another
-        //is to use a vertical UIStackView.
         
         super.viewDidLoad()
     }
