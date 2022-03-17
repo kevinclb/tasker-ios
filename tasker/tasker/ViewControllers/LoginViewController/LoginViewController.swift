@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -26,6 +28,18 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    func validateFields() -> String? {
+        
+        // Checking if all fields are filled in.
+        if emailAddressTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "Please fill in all fields"
+        }
+        
+        return nil
+    }
 
 
     /*
@@ -39,11 +53,37 @@ class LoginViewController: UIViewController {
     */
     
     @IBAction func continueTapped(_ sender: Any) {
-        let employeeHomePageVC = EmployeeExplorePageViewController()
-        employeeHomePageVC.modalPresentationStyle = .fullScreen
-        present(employeeHomePageVC, animated: true, completion: nil)
+        
+        // Validate fields
+        let error = validateFields()
+        
+        if error != nil {
+            // There was something wrong with the fields, show error message
+            Utilities.showError(message: error!, errorLabel: self.errorLabel)
+        }
+        else {
+            // Create cleaned versions of data
+            let email = emailAddressTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Signing in user
+            Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+                
+                // Check for errors
+                if err != nil{
+                    Utilities.showError(message: "Incorrect email or password", errorLabel: self.errorLabel)
+                }
+                else {
+                    // Segue to home explore page and programatically change root view controller to home explore page
+                    let homePageVC = HomeExplorePageViewController()
+                    
+                    self.view.window?.rootViewController = homePageVC
+                    self.view.window?.makeKeyAndVisible()
+                    
+                    homePageVC.modalPresentationStyle = .fullScreen
+                    self.present(homePageVC, animated: true, completion: nil)
+                }
+            }
+        }
     }
-    
-    
 }
-
