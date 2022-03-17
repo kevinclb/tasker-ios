@@ -107,7 +107,8 @@ class RegistrationStep2ViewController: UIViewController {
                 
                 // Check for errors
                 if err != nil{
-                    Utilities.showError(message: "Error creating user", errorLabel: self.errorLabel)
+                    var errMessage = "Error creating user: " + err!.localizedDescription
+                    Utilities.showError(message: errMessage, errorLabel: self.errorLabel)
                 }
                 
                 else {
