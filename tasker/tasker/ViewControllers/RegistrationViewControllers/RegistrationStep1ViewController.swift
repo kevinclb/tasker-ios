@@ -49,7 +49,7 @@ class RegistrationStep1ViewController: UIViewController {
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             confirmPasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
-            return "Please fill in all fields"
+            return "Please fill in all fields."
         }
         
         // Checking if email and password are valid entries.
@@ -60,19 +60,19 @@ class RegistrationStep1ViewController: UIViewController {
         if Utilities.isEmailValid(email: cleanedEmail) == false {
             // Email they entered wasn't valid
             
-            return "Please enter a valid email address"
+            return "Please enter a valid email address."
         }
         
         if Utilities.isPasswordValid(password: cleanedPassword) == false {
             // Password they entered isn't secure
             
-            return "Password must be 8 characters long\nwith numbers and a special character"
+            return "Password must be 8 characters long\nwith numbers and a special character."
         }
         
         if cleanedConfirmedPassword != cleanedPassword{
             // Confirmed password does not match the original password they inputted.
             
-            return "You've entered passwords that do not match"
+            return "You've entered passwords that do not match."
         }
         
         return nil

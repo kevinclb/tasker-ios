@@ -69,7 +69,7 @@ class RegistrationStep2ViewController: UIViewController {
         if Utilities.isValidAge(date: cleanedDateOfBirth) == false {
             // Age they entered was not valid
             
-            return "Please enter a valid date of birth\n(must be 18 years or older)"
+            return "Please enter a valid date of birth\n(must be 18 years or older)."
         }
         
         return nil
