@@ -62,6 +62,10 @@
 		CEF81B2A27E2516F00CE0340 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B2827E2516F00CE0340 /* ContactUsViewController.swift */; };
 		CEF81B2B27E2516F00CE0340 /* ContactUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF81B2927E2516F00CE0340 /* ContactUsViewController.xib */; };
 		CEF81B2D27E256E600CE0340 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF81B2C27E256E600CE0340 /* MessageUI.framework */; };
+		CEF81B3227E3285400CE0340 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B3027E3285400CE0340 /* AboutUsViewController.swift */; };
+		CEF81B3327E3285400CE0340 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF81B3127E3285400CE0340 /* AboutUsViewController.xib */; };
+		CEF81B3627E3286700CE0340 /* SupportUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF81B3427E3286700CE0340 /* SupportUsViewController.swift */; };
+		CEF81B3727E3286700CE0340 /* SupportUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF81B3527E3286700CE0340 /* SupportUsViewController.xib */; };
 		F95B9875A59DE0E9011EFDF8 /* Pods_tasker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA7F196D3098A70BEF3A25D /* Pods_tasker.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +130,10 @@
 		CEF81B2827E2516F00CE0340 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		CEF81B2927E2516F00CE0340 /* ContactUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactUsViewController.xib; sourceTree = "<group>"; };
 		CEF81B2C27E256E600CE0340 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		CEF81B3027E3285400CE0340 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		CEF81B3127E3285400CE0340 /* AboutUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
+		CEF81B3427E3286700CE0340 /* SupportUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportUsViewController.swift; sourceTree = "<group>"; };
+		CEF81B3527E3286700CE0340 /* SupportUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupportUsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +179,7 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CEF81B2727E2514E00CE0340 /* ContactUsViewController */,
-				CE65BE6E27CEFE3300BD09FB /* FAQViewController */,
-				CE10018D27CD6150007767AC /* HelpViewController */,
+				CEF81B3827E3287A00CE0340 /* Help Related Pages */,
 				BAC6A86627BEF4E300CA66DE /* LoginViewController */,
 				BAC6A85D27BEF4A600CA66DE /* RegistrationViewControllers */,
 				BAC6A85827BEF48500CA66DE /* LoggedOutViewConntroller */,
@@ -382,6 +388,36 @@
 			path = ContactUsViewController;
 			sourceTree = "<group>";
 		};
+		CEF81B2E27E327D400CE0340 /* SupportUsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEF81B3427E3286700CE0340 /* SupportUsViewController.swift */,
+				CEF81B3527E3286700CE0340 /* SupportUsViewController.xib */,
+			);
+			path = SupportUsViewController;
+			sourceTree = "<group>";
+		};
+		CEF81B2F27E327DF00CE0340 /* AboutUsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEF81B3027E3285400CE0340 /* AboutUsViewController.swift */,
+				CEF81B3127E3285400CE0340 /* AboutUsViewController.xib */,
+			);
+			path = AboutUsViewController;
+			sourceTree = "<group>";
+		};
+		CEF81B3827E3287A00CE0340 /* Help Related Pages */ = {
+			isa = PBXGroup;
+			children = (
+				CE10018D27CD6150007767AC /* HelpViewController */,
+				CE65BE6E27CEFE3300BD09FB /* FAQViewController */,
+				CEF81B2727E2514E00CE0340 /* ContactUsViewController */,
+				CEF81B2F27E327DF00CE0340 /* AboutUsViewController */,
+				CEF81B2E27E327D400CE0340 /* SupportUsViewController */,
+			);
+			path = "Help Related Pages";
+			sourceTree = "<group>";
+		};
 		E38F3B5A54A3073BA91AF909 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +499,7 @@
 				CE0555C627BF0DC700877325 /* MyCollectionViewCell.xib in Resources */,
 				8C2AFF5A27D5D787009CFE6C /* TaskerCollectionViewCell.xib in Resources */,
 				CE641A7927A8904A00766C59 /* GoogleService-Info.plist in Resources */,
+				CEF81B3327E3285400CE0340 /* AboutUsViewController.xib in Resources */,
 				8C250DBF27AB34CE00A280B3 /* HomeExplorePageViewController.xib in Resources */,
 				CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */,
 				8C224DA327BB14AA00E486C7 /* RootViewController.xib in Resources */,
@@ -472,6 +509,7 @@
 				8CAD48E627E0307500304CF8 /* SearchResultsTableViewController.xib in Resources */,
 				8C250DD427AB37A400A280B3 /* SettingsPageViewController.xib in Resources */,
 				8CAD48E827E0308800304CF8 /* SearchResultsTableViewCell.xib in Resources */,
+				CEF81B3727E3286700CE0340 /* SupportUsViewController.xib in Resources */,
 				CEF81B2B27E2516F00CE0340 /* ContactUsViewController.xib in Resources */,
 				8C224DA727BB15B100E486C7 /* PublicProfileViewController.xib in Resources */,
 			);
@@ -550,8 +588,10 @@
 				CE0555C427BF0DC700877325 /* MyCollectionViewCell.swift in Sources */,
 				88616E7A27C5CDC9002A1F72 /* messageModel.swift in Sources */,
 				8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */,
+				CEF81B3227E3285400CE0340 /* AboutUsViewController.swift in Sources */,
 				8C2DC0AC27C6FA070026FF11 /* Message.swift in Sources */,
 				8C224DA627BB15B100E486C7 /* PublicProfileViewController.swift in Sources */,
+				CEF81B3627E3286700CE0340 /* SupportUsViewController.swift in Sources */,
 				8C250DDC27AB3A5200A280B3 /* RegisterButton.swift in Sources */,
 				CE0555C527BF0DC700877325 /* EmployeeExplorePageViewController.swift in Sources */,
 				CE65BE7127CEFE4A00BD09FB /* FAQViewController.swift in Sources */,
@@ -687,6 +727,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SJQTFG7HJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tasker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -714,6 +755,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SJQTFG7HJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tasker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

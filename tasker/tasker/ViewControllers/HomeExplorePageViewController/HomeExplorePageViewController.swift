@@ -108,11 +108,11 @@ class HomeExplorePageViewController: UIViewController {
     }
     
     @IBAction func aboutUsTapped(_ sender: Any) {
-        print("About Us Tapped")
+        navigateTo(newViewController: AboutUsViewController(), transitionFrom: .fromRight)
     }
     
     @IBAction func supportUsTapped(_ sender: Any) {
-        print("Support Us Tapped")
+        navigateTo(newViewController: SupportUsViewController(), transitionFrom: .fromRight)
     }
     
     @IBAction func employeeProfileTapped(_ sender: Any) {

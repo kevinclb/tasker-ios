@@ -9,16 +9,13 @@
 
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
 class LoggedOutViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var registerButton: UIButton!
-    
-    let loginVC = LoginViewController()
-    let registrationVC = RegistrationStep1ViewController()
-    
+    private var authListener: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
    
@@ -28,19 +25,32 @@ class LoggedOutViewController: UIViewController {
         //is to use a vertical UIStackView.
         
         super.viewDidLoad()
-        
     }
 
+    // Check for auth status some where
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-    /*
-    // MARK: - Navigation
+        authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            if let user = user {
+                let newVC = RootViewController()
+                newVC.modalPresentationStyle = .fullScreen
+                // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+                self.present(newVC, animated: false, completion: nil)
+            } else {
+                // No user
+            }
+        }
     }
-    */
+
+    // Remove the listener once it's no longer needed
+    deinit {
+        if let listener = authListener {
+            Auth.auth().removeStateDidChangeListener(authListener as! NSObjectProtocol)
+        }
+    }
+
     
     @IBAction func loginPressed(_ sender: Any) {
         let loginVC = LoginViewController()

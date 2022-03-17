@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -83,6 +83,9 @@
                             <rect key="frame" x="0.0" y="52" width="332" height="21.666666666666671"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="9IF-Xw-EYC"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zq-7d-qB3">
                             <rect key="frame" x="0.0" y="103.66666666666666" width="332" height="22"/>
@@ -101,6 +104,9 @@
                             <rect key="frame" x="0.0" y="155.66666666666666" width="332" height="22"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <connections>
+                                <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="3ui-Ek-LAU"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTU-rI-564">
                             <rect key="frame" x="0.0" y="207.66666666666669" width="332" height="21.666666666666657"/>
@@ -119,6 +125,9 @@
                             <rect key="frame" x="0.0" y="259.33333333333331" width="332" height="22"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <connections>
+                                <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="QbG-up-N34"/>
+                            </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRg-Ta-Mnr">
                             <rect key="frame" x="0.0" y="311.33333333333331" width="332" height="21.666666666666686"/>

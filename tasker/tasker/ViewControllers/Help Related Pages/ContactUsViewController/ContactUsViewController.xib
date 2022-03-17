@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactUsViewController" customModule="tasker" customModuleProvider="target">
             <connections>
                 <outlet property="email" destination="uhH-V3-fmI" id="uFu-Lx-tG3"/>
+                <outlet property="errorLabel" destination="cwE-90-4fh" id="AG2-jH-Uu8"/>
                 <outlet property="message" destination="Fjh-GU-lS7" id="XZi-Hs-gDz"/>
                 <outlet property="subject" destination="EIm-QD-zCA" id="54Z-Tk-iNV"/>
                 <outlet property="view" destination="fZM-4k-5gU" id="6yW-DM-4fl"/>
@@ -74,6 +75,9 @@
                     <rect key="frame" x="55" y="327" width="323" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="0Cr-0R-Yf6"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your message to send:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngt-8i-bEO" userLabel="textlabel2">
                     <rect key="frame" x="55" y="444" width="174" height="21"/>
@@ -85,6 +89,9 @@
                     <rect key="frame" x="55" y="477" width="323" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="Opu-eF-wGe"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0h-za-uPK" userLabel="sendButton">
                     <rect key="frame" x="55" y="529" width="324" height="60"/>
@@ -104,7 +111,16 @@
                     <rect key="frame" x="55" y="398" width="323" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="Yif-Zy-lCB"/>
+                    </connections>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwE-90-4fh" userLabel="errorLabel">
+                    <rect key="frame" x="79.5" y="644" width="255" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="J4e-PD-roc"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -121,11 +137,14 @@
                 <constraint firstItem="y0h-za-uPK" firstAttribute="top" secondItem="Fjh-GU-lS7" secondAttribute="bottom" constant="18" id="N5Q-aS-W8c"/>
                 <constraint firstItem="UOs-ks-Luf" firstAttribute="top" secondItem="uhH-V3-fmI" secondAttribute="bottom" constant="8" symbolic="YES" id="NSH-za-0Yg"/>
                 <constraint firstItem="qbb-qq-LlE" firstAttribute="top" secondItem="nuO-07-QMV" secondAttribute="bottom" constant="16" id="Ngt-hS-cg6"/>
+                <constraint firstItem="J4e-PD-roc" firstAttribute="trailing" secondItem="cwE-90-4fh" secondAttribute="trailing" constant="79.5" id="NsP-4H-KlM"/>
                 <constraint firstItem="y0h-za-uPK" firstAttribute="leading" secondItem="X2c-bJ-Omh" secondAttribute="leading" id="SGU-Cp-2XA"/>
                 <constraint firstItem="nuO-07-QMV" firstAttribute="top" secondItem="J4e-PD-roc" secondAttribute="top" constant="11" id="TYJ-JB-AuJ"/>
                 <constraint firstItem="jF4-TV-xAP" firstAttribute="top" secondItem="cIr-28-rre" secondAttribute="bottom" constant="40.5" id="Tvy-Pz-Rb0"/>
+                <constraint firstItem="cwE-90-4fh" firstAttribute="centerX" secondItem="J4e-PD-roc" secondAttribute="centerX" id="XjD-Fr-djU"/>
                 <constraint firstItem="J4e-PD-roc" firstAttribute="bottom" secondItem="Z5A-MT-kTJ" secondAttribute="bottom" constant="2" id="YFS-q5-iro"/>
                 <constraint firstItem="uhH-V3-fmI" firstAttribute="trailing" secondItem="cIr-28-rre" secondAttribute="trailing" id="bef-c0-0ap"/>
+                <constraint firstItem="cwE-90-4fh" firstAttribute="top" secondItem="y0h-za-uPK" secondAttribute="bottom" constant="55" id="btr-h4-65q"/>
                 <constraint firstItem="ngt-8i-bEO" firstAttribute="leading" secondItem="X2c-bJ-Omh" secondAttribute="leading" id="c9y-HL-2FG"/>
                 <constraint firstItem="2Vd-DZ-qg5" firstAttribute="centerY" secondItem="nuO-07-QMV" secondAttribute="centerY" constant="2.5" id="cjt-aC-fiT"/>
                 <constraint firstItem="uhH-V3-fmI" firstAttribute="top" secondItem="jF4-TV-xAP" secondAttribute="bottom" constant="8" symbolic="YES" id="cs1-dJ-Jcv"/>
@@ -134,6 +153,7 @@
                 <constraint firstItem="nuO-07-QMV" firstAttribute="centerX" secondItem="J4e-PD-roc" secondAttribute="centerX" id="jtn-tv-TIl"/>
                 <constraint firstItem="X2c-bJ-Omh" firstAttribute="top" secondItem="qbb-qq-LlE" secondAttribute="bottom" constant="1" id="k9k-Ps-1UK"/>
                 <constraint firstItem="J4e-PD-roc" firstAttribute="trailing" secondItem="cIr-28-rre" secondAttribute="trailing" constant="36" id="kJK-4l-5aJ"/>
+                <constraint firstItem="cwE-90-4fh" firstAttribute="leading" secondItem="J4e-PD-roc" secondAttribute="leading" constant="79.5" id="kTt-hf-8k1"/>
                 <constraint firstItem="uhH-V3-fmI" firstAttribute="leading" secondItem="X2c-bJ-Omh" secondAttribute="leading" id="kZE-GB-eF7"/>
                 <constraint firstItem="Fjh-GU-lS7" firstAttribute="leading" secondItem="X2c-bJ-Omh" secondAttribute="leading" id="lHt-cl-E5c"/>
                 <constraint firstItem="Z5A-MT-kTJ" firstAttribute="centerX" secondItem="J4e-PD-roc" secondAttribute="centerX" id="lNw-f5-3ps"/>
@@ -153,6 +173,9 @@
         <image name="blackDivider" width="293" height="1"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
