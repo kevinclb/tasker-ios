@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -47,6 +47,9 @@
                             <rect key="frame" x="0.0" y="40.333333333333343" width="310" height="34"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="81J-JQ-kti"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZC6-rf-4lW">
                             <rect key="frame" x="0.0" y="94.333333333333314" width="310" height="20.333333333333329"/>
@@ -64,6 +67,9 @@
                             <rect key="frame" x="0.0" y="134.66666666666669" width="310" height="34"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="4dC-pq-y8Q"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoQ-9X-icO">
                             <rect key="frame" x="0.0" y="188.66666666666669" width="310" height="20.333333333333343"/>
@@ -82,6 +88,9 @@
                             <rect key="frame" x="0.0" y="229" width="310" height="34"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="b47-xS-FAB"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXh-U4-wDM">
                             <rect key="frame" x="0.0" y="283" width="310" height="20.333333333333314"/>
@@ -100,6 +109,9 @@
                             <rect key="frame" x="0.0" y="323.33333333333331" width="310" height="34"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="J0r-qx-nGx"/>
+                            </connections>
                         </textField>
                     </subviews>
                 </stackView>

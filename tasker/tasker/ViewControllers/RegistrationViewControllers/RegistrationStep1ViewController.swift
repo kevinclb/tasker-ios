@@ -39,6 +39,9 @@ class RegistrationStep1ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        self.resignFirstResponder()
+    }
     func validateFields() -> String? {
         
         // Checking if all fields are filled in.

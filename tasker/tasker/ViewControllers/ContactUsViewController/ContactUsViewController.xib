@@ -74,6 +74,9 @@
                     <rect key="frame" x="55" y="327" width="323" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="0Cr-0R-Yf6"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your message to send:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngt-8i-bEO" userLabel="textlabel2">
                     <rect key="frame" x="55" y="444" width="174" height="21"/>
@@ -85,6 +88,9 @@
                     <rect key="frame" x="55" y="477" width="323" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="Opu-eF-wGe"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0h-za-uPK" userLabel="sendButton">
                     <rect key="frame" x="55" y="529" width="324" height="60"/>
@@ -104,6 +110,9 @@
                     <rect key="frame" x="55" y="398" width="323" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="-1" eventType="editingDidEndOnExit" id="Yif-Zy-lCB"/>
+                    </connections>
                 </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="J4e-PD-roc"/>

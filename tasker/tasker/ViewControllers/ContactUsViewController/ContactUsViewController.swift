@@ -33,9 +33,12 @@ class ContactUsViewController: UIViewController, MFMailComposeViewControllerDele
         dismiss(animated: false, completion: nil)
     }
     
-
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        self.resignFirstResponder()
+    }
+    
     @IBAction func send(_ sender: Any) {
-        let toRecipients = ["taskersupport@gmail.com"]
+        let toRecipients = ["taskersup@gmail.com"]
         let userID : String = (Auth.auth().currentUser?.uid)!
         var name : String = ""
         db.collection("users").document(userID).getDocument { (snapshot, error) in
