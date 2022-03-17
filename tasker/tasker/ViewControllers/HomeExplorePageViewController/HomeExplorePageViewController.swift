@@ -112,7 +112,7 @@ class HomeExplorePageViewController: UIViewController {
     }
     
     @IBAction func supportUsTapped(_ sender: Any) {
-        print("Support Us Tapped")
+        navigateTo(newViewController: SupportUsViewController(), transitionFrom: .fromRight)
     }
     
     @IBAction func employeeProfileTapped(_ sender: Any) {

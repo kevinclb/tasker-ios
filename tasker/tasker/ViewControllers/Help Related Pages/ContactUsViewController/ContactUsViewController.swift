@@ -15,6 +15,7 @@ class ContactUsViewController: UIViewController, MFMailComposeViewControllerDele
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var subject: UITextField!
     @IBOutlet weak var message: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,11 @@ class ContactUsViewController: UIViewController, MFMailComposeViewControllerDele
     }
     
     @IBAction func send(_ sender: Any) {
+        if(((message.text?.isEmpty) != nil) || ((email.text?.isEmpty) != nil) || ((subject.text?.isEmpty) != nil)){
+            Utilities.showError(message: "One or more fields is empty, please make sure all fields are filled", errorLabel: errorLabel)
+            return
+        }
+        Utilities.showError(message: "", errorLabel: errorLabel)
         let toRecipients = ["taskersup@gmail.com"]
         let userID : String = (Auth.auth().currentUser?.uid)!
         var name : String = ""

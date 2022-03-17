@@ -14,16 +14,22 @@ class SupportUsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func contactUsTapped(_ sender: Any) {
+        let vc = ContactUsViewController()
+        present(vc, animated: true, completion: nil)
     }
-    */
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        // this code here is to present from right to left instead of bottom to top
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = .fromLeft
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        dismiss(animated: false, completion: nil)
+    }
+    
 
 }
