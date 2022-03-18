@@ -91,7 +91,6 @@ class RegistrationStep2ViewController: UIViewController {
         
         // Validate fields
         let error = validateFields()
-        var userID = ""
         if error != nil {
             // There was something wrong with the fields, show error message
             Utilities.showError(message: error!, errorLabel: self.errorLabel)
@@ -115,7 +114,7 @@ class RegistrationStep2ViewController: UIViewController {
                 else {
                     // User was created successfully, now store the data
                     let db = Firestore.firestore()
-                    userID = result!.user.uid
+                    let userID = result!.user.uid
                     db.collection("users").document(userID).setData(
                         ["firstname": firstName,
                          "lastname": lastName,
@@ -132,7 +131,9 @@ class RegistrationStep2ViewController: UIViewController {
                          "employeeDescription": "",
                          "skills": [],
                          "employee": false,
-                         "uid": result!.user.uid]) { (error) in
+                         "uid": userID,
+                         "email": self.email,
+                         "gender": ""]) { (error) in
                         
                         if error != nil {
                             // Show error message
