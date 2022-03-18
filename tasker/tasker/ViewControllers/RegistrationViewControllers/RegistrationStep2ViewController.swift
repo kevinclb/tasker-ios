@@ -108,7 +108,7 @@ class RegistrationStep2ViewController: UIViewController {
                 
                 // Check for errors
                 if err != nil{
-                    var errMessage = "Error creating user: " + err!.localizedDescription
+                    let errMessage = "Error creating user: " + err!.localizedDescription
                     Utilities.showError(message: errMessage, errorLabel: self.errorLabel)
                 }
                 
@@ -116,7 +116,22 @@ class RegistrationStep2ViewController: UIViewController {
                     // User was created successfully, now store the data
                     let db = Firestore.firestore()
                     
-                    db.collection("users").document(result!.user.uid).setData(["firstname": firstName, "lastname": lastName, "dateOfBirth": dateOfBirth, "zipCode": zipCode!, "rating": 0, "employeeDescription": "", "uid": result!.user.uid]) { (error) in
+                    db.collection("users").document(result!.user.uid).setData(
+                        ["firstname": firstName,
+                         "lastname": lastName,
+                         "dateOfBirth": dateOfBirth,
+                         "address": [
+                             "city": "",
+                             "country": "",
+                             "phone": "",
+                             "streetAddress": "",
+                             "zipcode": zipCode!
+                             
+                    ],
+                         "rating": 0,
+                         "employeeDescription": "",
+                         "skills": [],
+                         "uid": result!.user.uid]) { (error) in
                         
                         if error != nil {
                             // Show error message
