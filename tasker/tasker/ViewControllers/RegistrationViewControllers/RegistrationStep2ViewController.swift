@@ -23,9 +23,9 @@ class RegistrationStep2ViewController: UIViewController {
     
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     
-    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var zipCodeLabel: UILabel!
     
-    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var zipCodeTextField: UITextField!
     
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -57,7 +57,7 @@ class RegistrationStep2ViewController: UIViewController {
         if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             dateOfBirthTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            cityTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            zipCodeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
             return "Please fill in all fields."
         }
@@ -65,11 +65,18 @@ class RegistrationStep2ViewController: UIViewController {
         // TODO: Checking if their date of birth is valid
         
         let cleanedDateOfBirth = dateOfBirthTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedZipCode = zipCodeTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        if Utilities.isValidAge(date: cleanedDateOfBirth) == false {
+        if Utilities.isAgeValid(date: cleanedDateOfBirth) == false {
             // Age they entered was not valid
             
             return "Please enter a valid date of birth\n(must be 18 years or older)."
+        }
+        
+        if Utilities.isZipCodeValid(zipCode: cleanedZipCode) == false {
+            // Zip code they entered was not valid
+            
+            return "The zip code you entered was not valid\n(must be 5 digits)."
         }
         
         return nil
@@ -94,7 +101,7 @@ class RegistrationStep2ViewController: UIViewController {
             let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let dateOfBirth = dateOfBirthTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let city = cityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let zipCode = Int(zipCodeTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))
             
             // Create User
             Auth.auth().createUser(withEmail: self.email, password: self.password) { (result, err) in
@@ -109,7 +116,7 @@ class RegistrationStep2ViewController: UIViewController {
                     // User was created successfully, now store the data
                     let db = Firestore.firestore()
                     
-                    db.collection("users").document(result!.user.uid).setData(["firstname":firstName, "lastname":lastName, "dateOfBirth": dateOfBirth, "city": city, "rating": 0, "employeeDescription": "", "uid": result!.user.uid]) { (error) in
+                    db.collection("users").document(result!.user.uid).setData(["firstname": firstName, "lastname": lastName, "dateOfBirth": dateOfBirth, "zipCode": zipCode!, "rating": 0, "employeeDescription": "", "uid": result!.user.uid]) { (error) in
                         
                         if error != nil {
                             // Show error message
