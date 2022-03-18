@@ -131,6 +131,7 @@ class RegistrationStep2ViewController: UIViewController {
                          "rating": 0,
                          "employeeDescription": "",
                          "skills": [],
+                         "employee": false,
                          "uid": result!.user.uid]) { (error) in
                         
                         if error != nil {
