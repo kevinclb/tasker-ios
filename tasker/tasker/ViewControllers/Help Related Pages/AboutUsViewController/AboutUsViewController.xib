@@ -55,13 +55,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdC-cV-Ano" userLabel="dummyLabel">
-                                    <rect key="frame" x="207" y="734" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="207" y="745" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNH-fY-gtj" userLabel="goToContactUs">
-                                    <rect key="frame" x="55" y="384" width="316" height="48"/>
+                                    <rect key="frame" x="55" y="395" width="316" height="48"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Head to contact us page to leave feedback/ask questions" cornerStyle="capsule">
                                         <backgroundConfiguration key="background">
@@ -74,7 +74,10 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsb-I8-dlC">
-                                    <rect key="frame" x="55" y="26" width="316" height="325"/>
+                                    <rect key="frame" x="55" y="37" width="316" height="325"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="325" id="E66-C9-Pob"/>
+                                    </constraints>
                                     <string key="text">The developemt team is composed of 4 computer science major students at California State University Long Beach. And this project was made for the senior project capstone to graduate as part of a two semester project that first started with blue printing and UI design and prototyping in Figma, and the second semester started with learning and starting the project in swift in xcode and getting the final product of our design and complete the application in a timely manner. For any questions please head over to the contact us page to let us know about any feedback or issues that you're having.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>

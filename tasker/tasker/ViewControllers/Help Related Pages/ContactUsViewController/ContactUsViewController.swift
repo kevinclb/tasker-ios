@@ -40,7 +40,7 @@ class ContactUsViewController: UIViewController, MFMailComposeViewControllerDele
     
     @IBAction func send(_ sender: Any) {
         if(((message.text?.isEmpty) != nil) || ((email.text?.isEmpty) != nil) || ((subject.text?.isEmpty) != nil)){
-            Utilities.showError(message: "One or more fields is empty, please make sure all fields are filled", errorLabel: errorLabel)
+            errorLabel.text = "One or more fields is empty, please make sure all fields are filled"
             return
         }
         Utilities.showError(message: "", errorLabel: errorLabel)
