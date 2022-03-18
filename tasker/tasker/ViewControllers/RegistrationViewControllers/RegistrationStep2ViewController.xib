@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,8 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationStep2ViewController" customModule="tasker" customModuleProvider="target">
             <connections>
-                <outlet property="cityLabel" destination="pXh-U4-wDM" id="rZh-gX-nTc"/>
-                <outlet property="cityTextField" destination="aWS-YA-PEh" id="nid-m5-e5f"/>
                 <outlet property="continueButton" destination="zuJ-JI-K1U" id="x98-jT-o6U"/>
                 <outlet property="dateOfBirthLabel" destination="MoQ-9X-icO" id="WKt-XM-XJ7"/>
                 <outlet property="dateOfBirthTextField" destination="ML9-wF-tcC" id="kCk-C8-PZU"/>
@@ -21,6 +19,8 @@
                 <outlet property="lastNameLabel" destination="ZC6-rf-4lW" id="x7d-As-5Mh"/>
                 <outlet property="lastNameTextField" destination="ZtM-Dq-sPw" id="JJK-kE-apU"/>
                 <outlet property="view" destination="7uQ-Fa-rUe" id="WDg-4X-6KQ"/>
+                <outlet property="zipCodeLabel" destination="pXh-U4-wDM" id="RI8-Qj-1y5"/>
+                <outlet property="zipCodeTextField" destination="aWS-YA-PEh" id="PSR-ye-pOj"/>
             </connections>
         </placeholder>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7uQ-Fa-rUe">
@@ -95,7 +95,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXh-U4-wDM">
                             <rect key="frame" x="0.0" y="283" width="310" height="20.333333333333314"/>
                             <attributedString key="attributedText">
-                                <fragment content="City:">
+                                <fragment content="Zip Code:">
                                     <attributes>
                                         <color key="NSColor" red="0.411719799" green="0.43532106279999999" blue="0.47444945570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <font key="NSFont" metaFont="system" size="17"/>
@@ -105,7 +105,7 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Los Angeles" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWS-YA-PEh">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="90048" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWS-YA-PEh">
                             <rect key="frame" x="0.0" y="323.33333333333331" width="310" height="34"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>

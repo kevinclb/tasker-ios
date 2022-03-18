@@ -26,7 +26,7 @@ class Utilities {
         return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: email)
     }
     
-    static func isValidAge(date: String) -> Bool {
+    static func isAgeValid(date: String) -> Bool {
         
         let dateFormatter = DateFormatter()
             
@@ -48,6 +48,13 @@ class Utilities {
             return false
         }
     }
+    
+    static func isZipCodeValid(zipCode: String) -> Bool {
+        
+            let zipRegex = "^[0-9]{5}(-[0-9]{4})?$"
+        
+            return NSPredicate(format: "SELF MATCHES %@", zipRegex).evaluate(with: zipCode)
+        }
     
     static func showError(message: String, errorLabel: UILabel) {
         errorLabel.text = message
