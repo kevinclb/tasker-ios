@@ -11,19 +11,18 @@ import UIKit
 
 class Utilities {
     
-    static func isPasswordValid(password : String) -> Bool {
-        
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@",
-        "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
-        return passwordTest.evaluate(with: password)
-    }
-    
     static func isEmailValid(email: String) -> Bool {
         
-        let REGEX: String
-        REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         
-        return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: email)
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+    }
+    
+    static func isPasswordValid(password : String) -> Bool {
+        
+        let passwordRegex = "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}"
+        
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
     }
     
     static func isAgeValid(date: String) -> Bool {
