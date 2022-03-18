@@ -202,7 +202,9 @@ extension HomeExplorePageViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        navigateTo(newViewController: SearchResultsTableViewController(), transitionFrom: .fromBottom)
+        let searchVC = SearchResultsTableViewController(nibName: "SearchResultsTableViewController", bundle: nil)
+        searchVC.searchQuery = searchBar.text ?? ""
+        navigateTo(newViewController: searchVC, transitionFrom: .fromBottom)
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
