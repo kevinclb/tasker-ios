@@ -7,29 +7,46 @@
 
 import Foundation
 
-struct User {
-    var firstname: String?
-    var lastname: String?
-    var gender: String?
-    var address: address?
-    var email: String?
-    var password: String?  //TODO: Note. Passwords are string for temporary purposes only
-                           //In production application, with actual users, never
-                           //save password as unhashed, unencrypted strings!!!!
-    var employee: Bool?
-    var rating: Int?
-    var employeeDescription: String?
-    var uid: String?
-    var dateOfBirth: String?
+// MARK: - User
+class User: Codable {
+    let employee: Bool
+    let firstname, uid, email: String
+    let address: Address
+    let lastname: String
+    let rating: Double
+    let dateOfBirth: String
+    let id: Int
+    let employeeDescription, ipAddress, city, gender: String
+
+    init(employee: Bool, firstname: String, uid: String, email: String, address: Address, lastname: String, rating: Double, dateOfBirth: String, id: Int, employeeDescription: String, ipAddress: String, city: String, gender: String) {
+        self.employee = employee
+        self.firstname = firstname
+        self.uid = uid
+        self.email = email
+        self.address = address
+        self.lastname = lastname
+        self.rating = rating
+        self.dateOfBirth = dateOfBirth
+        self.id = id
+        self.employeeDescription = employeeDescription
+        self.ipAddress = ipAddress
+        self.city = city
+        self.gender = gender
+    }
 }
 
-extension User {
-    struct address {
-        var city: String?
-        var country: String?
-        var phone: String?
-        var state: String?
-        var streetAddress: String?
-        var zipCode: String?
+// MARK: - Address
+class Address: Codable {
+    let phone, streetAddress: String
+    let zipcode: Int
+    let country, state, city: String
+
+    init(phone: String, streetAddress: String, zipcode: Int, country: String, state: String, city: String) {
+        self.phone = phone
+        self.streetAddress = streetAddress
+        self.zipcode = zipcode
+        self.country = country
+        self.state = state
+        self.city = city
     }
 }
