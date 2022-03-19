@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RootViewController: UITabBarController {
-
+    var uid = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //TODO: pass this to homepage
+        guard (Auth.auth().currentUser) != nil else {
+            print("error: no current user logged into app.")
+            return
+        }
+        uid = Utilities.getUid()
         // Create instance of view controllers
         let homeVC = HomeExplorePageViewController()
         let messagesVC = MessagesViewController()
@@ -47,5 +54,8 @@ class RootViewController: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
+    
 }
