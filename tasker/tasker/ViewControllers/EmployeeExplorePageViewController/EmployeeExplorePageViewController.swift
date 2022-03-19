@@ -118,7 +118,8 @@ class EmployeeExplorePageViewController: UIViewController {
         navigateTo(newViewController: SettingsPageViewController(), transitionFrom: .fromRight)
     }
     @IBAction func logoutTapped(_ sender: Any) {
-        print("Logout Tapped")
+        try! Auth.auth().signOut()
+        navigateTo(newViewController: LoggedOutViewController(), transitionFrom: .fromLeft)
     }
     // function to use to navigate to other pages from homepage
     func navigateTo(newViewController:UIViewController, transitionFrom:CATransitionSubtype){
