@@ -9,7 +9,9 @@ import UIKit
 import Firebase
 import FirebaseAuth
 class HomeExplorePageViewController: UIViewController {
-    
+    var userID: String?
+    var loggedInUser: User?
+    var taskerDocumentData = [String: Any].self
     var taskers = [User]()
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -41,21 +43,36 @@ class HomeExplorePageViewController: UIViewController {
         leftSwipe.direction = .left
         view.addGestureRecognizer(leftSwipe)
         
-        db.collection("users").getDocuments { (snapshot, error) in
-            if error != nil {
-                print(error)
-            } else {
-                for d in (snapshot?.documents)! {
-                    self.taskers.append(User(firstname: d["firstname"] as? String ?? "", city: d["city"] as? String ?? "", rating: d["rating"] as? Int ?? 0,
-                                             employeeDescription: d["employeeDescription"] as? String ?? ""))
-                    DispatchQueue.main.async {
-                        self.HomePageCollectionView.reloadData()
-                    }
-                }
-            }
+        if let userID = Auth.auth().currentUser?.uid {
+            print("userID correctly set by parent VC. userID:", userID)
+        } else {
+            print("userID not correctly set.")
         }
+//        db.collection("users")
+//            .whereField("address.zipcode", isGreaterThan: (loggedInUser?.address.zipcode)! - 10)
+//            .whereField("address.zipcode", isLessThan: (loggedInUser?.address.zipcode)! + 10)
+////            .whereField("employee", isEqualTo: true)
+//            .getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        print("\(document.documentID) => \(document.data())")
+//                    }
+//                }
+//        }
         
     }
+    
+    init(userId: String?) {
+        self.userID = userId
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+    }
+    
     //collectionView.reloadData()    }
     
     @IBAction func menuTapped(_ sender: Any) {
@@ -162,16 +179,16 @@ extension HomeExplorePageViewController : UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: taskerCollectionViewCellId, for: indexPath) as! TaskerCollectionViewCell
         let tasker = taskers[indexPath.row]
-        cell.taskerName.text = tasker.firstname!
-        cell.taskerCity.text = tasker.city!
+        cell.taskerName.text = tasker.firstname
+        cell.taskerCity.text = tasker.city
         cell.taskerRating.text = String(tasker.rating!)
-        cell.taskerDescription.text = tasker.employeeDescription!
+        cell.taskerDescription.text = tasker.employeeDescription
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let tasker = taskers[indexPath.row]
-        print("\(indexPath.row) - \(tasker.firstname!)")
+        print("\(indexPath.row) - \(tasker.firstname ?? "no first name error")")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
