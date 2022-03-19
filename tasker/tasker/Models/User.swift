@@ -7,11 +7,13 @@
 
 import Foundation
 import FirebaseFirestoreSwift
+import Firebase
 
 // MARK: - User
 class User: Codable {
     
-    @DocumentID var id: String?
+    @DocumentID var docid: String?
+    private var user: User?
     var employee: Bool?
     var firstname, uid, email: String?
     var address: Address?
@@ -20,7 +22,6 @@ class User: Codable {
     var dateOfBirth: String?
     var employeeDescription, ipAddress, city, gender: String?
     var skills: [String]?
-    private var user: User?
     
     required init() {
     }
@@ -43,42 +44,49 @@ class User: Codable {
 }
 
 // MARK: - Address
-class Address: Codable {
-    let phone, streetAddress: String
-    let zipcode: Int
-    let country, state, city: String
+struct Address: Codable {
+    let phone, streetAddress: String?
+    let zipcode: Int?
+    let country, state, city: String?
     
-    init(phone: String, streetAddress: String, zipcode: Int, country: String, state: String, city: String) {
-        self.phone = phone
-        self.streetAddress = streetAddress
-        self.zipcode = zipcode
-        self.country = country
-        self.state = state
-        self.city = city
-    }
 }
 
 extension User {
-    func fetchUser(documentId: String) {
+    func fetchUser(documentId: String) async throws -> DocumentSnapshot {
         let docRef = db.collection("users").document(documentId)
-        
-        docRef.getDocument { (document, error) in
-            if let e = error {
-                print("there was an error retrieving data from firestore. \(e)")
+        var snap: Firebase.DocumentSnapshot?
+        do {
+            print("trying to get document snapshot")
+            let snapshot = try await docRef.getDocument()
+            if !snapshot.exists {
+                print("snapshot does not exist")
+            }
+            snap = snapshot
+            do {
+                print("trying to decode snapshot data as user object")
+                user = try snapshot.data(as: User.self)
+            } catch {
+                print("error decoding user document data")
+            }
+        } catch {
+            print("failed to fetch user document.")
+        }
+        print("snapshot type: ", type(of: snap))
+        return snap!
+    }
+    
+    func fetchQuerySnapshotArray(userCollectionRef: CollectionReference) -> [QueryDocumentSnapshot]? {
+        var documentSnapshots: [QueryDocumentSnapshot]?
+        userCollectionRef.getDocuments { (snapshot, error) in
+            if let err = error {
+                debugPrint("Error fetching docs: \(err)")
             } else {
-                if document?.data() == nil {
-                    print("error with the document data")
-                } else {
-                    do {
-                    print("document data: \(document?.data())")
-                    self.user = try document?.data(as: User.self)
-                    }
-                    catch {
-                        print(error)
-                    }
-                }
+                documentSnapshots = snapshot?.documents
+                print(documentSnapshots)
+                print("printed from user class")
             }
         }
+        return documentSnapshots
     }
     
 }

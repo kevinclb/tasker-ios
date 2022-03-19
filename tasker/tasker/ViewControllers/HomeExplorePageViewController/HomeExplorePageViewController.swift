@@ -8,25 +8,32 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseFirestoreSwift
+import CoreLocation
+
 class HomeExplorePageViewController: UIViewController {
-    var userID: String?
-    var loggedInUser: User?
-    var taskerDocumentData = [String: Any].self
-    var taskers = [User]()
-    
+    var decoder = JSONDecoder()
+    private var userCollectionRef: CollectionReference!
+    private var taskers = [User]()
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var HomePageCollectionView: UICollectionView!
     let taskerCollectionViewCellId = "TaskerCollectionViewCell"
+    
     // Outlets for the menu for animation purposes
     @IBOutlet weak var menuScroll: UIScrollView!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var menuLeading: NSLayoutConstraint!
     @IBOutlet weak var menuTrailing: NSLayoutConstraint!
     
+    let locationManager = CLLocationManager()
+    
     
     var menuOut = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         menuScroll.bounces = false
         menuScroll.showsVerticalScrollIndicator = false
         menuScroll.showsHorizontalScrollIndicator = false
@@ -43,37 +50,57 @@ class HomeExplorePageViewController: UIViewController {
         leftSwipe.direction = .left
         view.addGestureRecognizer(leftSwipe)
         
-        if let userID = Auth.auth().currentUser?.uid {
-            print("userID correctly set by parent VC. userID:", userID)
-        } else {
-            print("userID not correctly set.")
+        
+        let uid = Utilities.getUid()
+        print("uid == ", uid)
+        let collectionRef = db.collection("users")
+        collectionRef.whereField("address.zipcode", isGreaterThan: 90000).whereField("address.zipcode", isLessThan: 91444).getDocuments { snapshot, error in
+            if let error = error {
+                print("error: \(error.localizedDescription)")
+            } else {
+                print("loading snapshot successful")
+                print("sample snapshot document data: ", snapshot?.documents[Int.random(in: 0...((snapshot?.documents.count)!-1))].data())
+                guard let snapshot = snapshot else { return }
+                for document in snapshot.documents {
+                    do {
+                        try self.taskers.append(document.data(as: User.self)!)
+                    } catch {
+                        print("error decoding taskers to HomePageVC taskers array")
+                    }
+                }
+                if self.taskers.count == snapshot.documents.count {
+                    print("random tasker data: ", String(describing: self.taskers[Int(self.taskers.count-1)].firstname))
+                    print("success loading taskers")
+                } else {
+                    print("error loading taskers")
+                }
+            }
         }
-//        db.collection("users")
-//            .whereField("address.zipcode", isGreaterThan: (loggedInUser?.address.zipcode)! - 10)
-//            .whereField("address.zipcode", isLessThan: (loggedInUser?.address.zipcode)! + 10)
-////            .whereField("employee", isEqualTo: true)
-//            .getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//                } else {
-//                    for document in querySnapshot!.documents {
-//                        print("\(document.documentID) => \(document.data())")
+//        collectionRef.getDocuments(source: FirestoreSource.server) { snapshot, error in
+//            if let error = error {
+//                print("error: \(error.localizedDescription)")
+//            } else {
+//                print("loading snapshot successful")
+//                print("sample snapshot document data: ", snapshot?.documents[Int.random(in: 0...((snapshot?.documents.count)!-1))].data())
+//                guard let snapshot = snapshot else { return }
+//                for document in snapshot.documents {
+//                    do {
+//                        try self.taskers.append(document.data(as: User.self)!)
+//                    } catch {
+//                        print("error decoding taskers to HomePageVC taskers array")
 //                    }
 //                }
+//                if self.taskers.count == snapshot.documents.count {
+//                    print("random tasker data: ", String(describing: self.taskers[Int.random(in: 0...125)].firstname))
+//                    print("success loading taskers")
+//                } else {
+//                    print("error loading taskers")
+//                }
+//            }
 //        }
         
+        
     }
-    
-    init(userId: String?) {
-        self.userID = userId
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-    }
-    
-    //collectionView.reloadData()    }
     
     @IBAction func menuTapped(_ sender: Any) {
         if(menuOut == false){
@@ -192,23 +219,23 @@ extension HomeExplorePageViewController : UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         let noOfCellsInRow = 1
-
+        
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-
+        
         let totalSpace = flowLayout.sectionInset.left
-            + flowLayout.sectionInset.right
-            + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
-
+        + flowLayout.sectionInset.right
+        + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
+        
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
-
+        
         return CGSize(width: size, height: size)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-           return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
-        }
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
+    }
     
 }
 
@@ -228,5 +255,9 @@ extension HomeExplorePageViewController: UISearchBarDelegate {
         print("Text did end editing")
     }
     
+    
+}
+
+extension HomeExplorePageViewController {
     
 }
