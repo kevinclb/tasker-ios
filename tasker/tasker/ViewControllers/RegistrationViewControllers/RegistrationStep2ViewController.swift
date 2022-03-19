@@ -124,6 +124,7 @@ class RegistrationStep2ViewController: UIViewController {
                              "country": "",
                              "phone": "",
                              "streetAddress": "",
+                             "state": "",
                              "zipcode": zipCode!
                              
                     ],
