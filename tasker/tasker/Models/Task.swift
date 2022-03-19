@@ -12,19 +12,20 @@ import Foundation
 
 // MARK: - Task
 class Task: Codable {
-    let employeeID: String
-    let price: Int
-    let isCompleted: Bool
-    let location: JSONNull?
-    let negotiable: Bool
-    let category, taskDescription: String
-
+    var employeeID: String?
+    var price: Int?
+    var isCompleted: Bool?
+    var location: String?
+    var negotiable: Bool?
+    var category, taskDescription: String?
+    private var task: Task?
+    
     enum CodingKeys: String, CodingKey {
         case employeeID, price, isCompleted, location, negotiable, category
         case taskDescription = "description"
     }
 
-    init(employeeID: String, price: Int, isCompleted: Bool, location: JSONNull?, negotiable: Bool, category: String, taskDescription: String) {
+    init(employeeID: String?, price: Int?, isCompleted: Bool?, location: String?, negotiable: Bool?, category: String, taskDescription: String?) {
         self.employeeID = employeeID
         self.price = price
         self.isCompleted = isCompleted
@@ -35,29 +36,26 @@ class Task: Codable {
     }
 }
 
-// MARK: - Encode/decode helpers
-
-class JSONNull: Codable, Hashable {
-
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
-    }
-
-    public var hashValue: Int {
-        return 0
-    }
-
-    public init() {}
-
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
+extension Task {
+    func fetchTask(documentId: String) {
+        let docRef = db.collection("tasks").document(documentId)
+        
+        docRef.getDocument { (document, error) in
+            if let e = error {
+                print("there was an error retrieving task data from firestore. \(e)")
+            } else {
+                if document?.data() == nil {
+                    print("error with the document data")
+                } else {
+                    do {
+                    print("document data: \(document?.data())")
+                    self.task = try document?.data(as: Task.self)
+                    }
+                    catch {
+                        print(error)
+                    }
+                }
+            }
         }
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
     }
 }
