@@ -8,6 +8,7 @@
 // This class can be used to stylize buttons, text fields and create functions for validating textfields.
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class Utilities {
     
@@ -58,5 +59,14 @@ class Utilities {
     static func showError(message: String, errorLabel: UILabel) {
         errorLabel.text = message
         errorLabel.alpha = 1
+    }
+    
+    static func getUid() -> String {
+        if let user = Auth.auth().currentUser {
+            let uid = user.uid
+            return uid
+        } else {
+            return "error: no current user signed in"
+        }
     }
 }
