@@ -18,6 +18,7 @@ class HomeExplorePageViewController: UIViewController {
     private var locationString: String!
     private var currentLocation: CLLocation!
     
+    
     var geocoder = CLGeocoder()
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -37,7 +38,11 @@ class HomeExplorePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: searchBar initialization
         searchBar.showsSearchResultsButton = true
+        searchBar.placeholder = "Search for taskers here"
+        
         //MARK: menu scroll code
         menuScroll.bounces = false
         menuScroll.showsVerticalScrollIndicator = false
@@ -63,7 +68,6 @@ class HomeExplorePageViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        searchBar.placeholder = "Search for taskers here"
         //MARK: location manager code
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -165,6 +169,30 @@ class HomeExplorePageViewController: UIViewController {
     
 }
 
+//MARK: Navigating to ListTaskVC
+extension HomeExplorePageViewController {
+    @IBAction func listTaskButtonPressed(_ sender: UIButton) {
+        var listTaskVC = ListTaskViewController()
+        navigateToListTaskVC(listTaskVC, .fromRight)
+    }
+    
+    func navigateToListTaskVC(_ newViewController: UIViewController, _ transitionFrom:CATransitionSubtype) {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.reveal
+        transition.subtype = transitionFrom
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+
+        
+        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+        let newVC = newViewController
+        newVC.modalPresentationStyle = .fullScreen
+        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+        self.present(newVC, animated: false, completion: nil)
+    }
+}
+
 extension HomeExplorePageViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -209,21 +237,30 @@ extension HomeExplorePageViewController : UICollectionViewDelegate, UICollection
 
 extension HomeExplorePageViewController: UISearchBarDelegate {
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.placeholder = ""
+    }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("text did change")
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.text == "" {
+            print("nothing searched, no results")
+            return
+        }
+        
         let searchVC = SearchResultsTableViewController(nibName: "SearchResultsTableViewController", bundle: nil)
-        searchVC.searchQuery = searchBar.text ?? ""
-        navigateTo(newViewController: searchVC, transitionFrom: .fromBottom)
+        searchVC.searchQuery = searchBar.text!
+        navigateToResults(newViewController: searchVC, transitionFrom: .fromTop)
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        print("Text did end editing")
+        if (searchBar.text?.isEmpty)! {
+            searchBar.placeholder = "Search for taskers here"
+        }
     }
-    
     
 }
 
@@ -238,7 +275,6 @@ extension HomeExplorePageViewController: CLLocationManagerDelegate {
                 print("error: \(error.localizedDescription)")
             } else {
                 print("loading snapshot successful")
-                print("sample snapshot document data: ", snapshot?.documents[Int.random(in: 0...((snapshot?.documents.count)!-1))].data())
                 guard let snapshot = snapshot else { return }
                 for document in snapshot.documents {
                     do {
@@ -274,9 +310,8 @@ extension HomeExplorePageViewController: CLLocationManagerDelegate {
             self.userLocation.state = placemark.administrativeArea
             self.userLocation.zipcode = Int(placemark.postalCode!)
             
-            DispatchQueue.main.async {
-                self.locationString = "text location: \(self.userLocation.city) , \(self.userLocation.state) , \(self.userLocation.zipcode)"
-                self.fetchAndLoadNearbyTaskers()
+            DispatchQueue.main.async { //TODO: uncomment this for production app.
+//                self.fetchAndLoadNearbyTaskers()
             }
         }
         
@@ -285,5 +320,22 @@ extension HomeExplorePageViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("locationManager \(error.localizedDescription)")
     }
+    
+    func navigateToResults(newViewController:UIViewController, transitionFrom:CATransitionSubtype){
+            // this code here is to present from right to left instead of bottom to top
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.type = CATransitionType.moveIn
+            transition.subtype = transitionFrom
+            transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+            view.window!.layer.add(transition, forKey: kCATransition)
+
+            // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+            let newVC = newViewController
+            newVC.modalPresentationStyle = .popover
+            // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+            self.present(newVC, animated: false, completion: nil)
+        }
+
     
 }

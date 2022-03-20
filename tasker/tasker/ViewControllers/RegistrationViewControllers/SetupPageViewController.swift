@@ -11,38 +11,22 @@ import Firebase
 
 //TODO: Add more fields onto RegistrationStep2 and finish the backend logic for it.
 
-class RegistrationStep2ViewController: UIViewController {
-    
-    @IBOutlet weak var firstNameLabel: UILabel!
+class SetupPageViewController: UIViewController {
     
     @IBOutlet weak var firstNameTextField: UITextField!
-    
-    @IBOutlet weak var lastNameLabel: UILabel!
-    
     @IBOutlet weak var lastNameTextField: UITextField!
-    
-    @IBOutlet weak var dateOfBirthLabel: UILabel!
-    
     @IBOutlet weak var dateOfBirthTextField: UITextField!
-    
-    @IBOutlet weak var zipCodeLabel: UILabel!
-    
     @IBOutlet weak var zipCodeTextField: UITextField!
-    
     @IBOutlet weak var errorLabel: UILabel!
-    
     @IBOutlet weak var continueButton: UIButton!
     
     let registerStep1VC = RegistrationStep1ViewController()
     
     var email: String = ""
-    
     var password: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     func setEmail(email: String){

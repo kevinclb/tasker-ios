@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct message{
+struct message {
     var name: String?
     var message: String?
 }

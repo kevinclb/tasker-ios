@@ -157,18 +157,18 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: taskCollectionViewCellId, for: indexPath) as! MyCollectionViewCell
         let task = tasks[indexPath.row]
-        cell.lbName.text = task.title ?? "no title"
+        cell.lbName.text = task.title
         cell.lbCity.text = task.location?.city ?? "no city"
-        cell.lbDesc.text = task.taskDescription ?? "no description"
-        cell.lbPrice.text = String(task.price!) ?? "no price"
-        cell.lbCategory.text = task.category ?? "no category"
+        cell.lbDesc.text = task.taskDescription
+        cell.lbPrice.text = String(task.price!)
+        cell.lbCategory.text = task.category
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             let task = tasks[indexPath.row]
-            print("\(indexPath.row) - \(task.title!)")
+            print("\(indexPath.row) - \(task.title)")
         }
     
     //fixing an issue

@@ -8,18 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationStep2ViewController" customModule="tasker" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetupPageViewController" customModule="tasker" customModuleProvider="target">
             <connections>
                 <outlet property="continueButton" destination="zuJ-JI-K1U" id="x98-jT-o6U"/>
-                <outlet property="dateOfBirthLabel" destination="MoQ-9X-icO" id="WKt-XM-XJ7"/>
                 <outlet property="dateOfBirthTextField" destination="ML9-wF-tcC" id="kCk-C8-PZU"/>
                 <outlet property="errorLabel" destination="uSR-QG-7Jq" id="Rmq-av-v3M"/>
-                <outlet property="firstNameLabel" destination="nbQ-0j-4Bn" id="Y3w-Dn-Epf"/>
                 <outlet property="firstNameTextField" destination="EF4-dT-mEc" id="PdP-Ap-uIf"/>
-                <outlet property="lastNameLabel" destination="ZC6-rf-4lW" id="x7d-As-5Mh"/>
                 <outlet property="lastNameTextField" destination="ZtM-Dq-sPw" id="JJK-kE-apU"/>
                 <outlet property="view" destination="7uQ-Fa-rUe" id="WDg-4X-6KQ"/>
-                <outlet property="zipCodeLabel" destination="pXh-U4-wDM" id="RI8-Qj-1y5"/>
                 <outlet property="zipCodeTextField" destination="aWS-YA-PEh" id="PSR-ye-pOj"/>
             </connections>
         </placeholder>
