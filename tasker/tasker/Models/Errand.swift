@@ -10,34 +10,36 @@ import Foundation
 
 import Foundation
 
-// MARK: - Task
-class Task: Codable {
+// MARK: - Errand
+class Errand: Codable {
+    var title: String?
     var employeeID: String?
     var price: Int?
     var isCompleted: Bool?
-    var location: String?
     var negotiable: Bool?
     var category, taskDescription: String?
-    private var task: Task?
+    var location: Address?
+    private var errand: Errand?
     
     enum CodingKeys: String, CodingKey {
         case employeeID, price, isCompleted, location, negotiable, category
         case taskDescription = "description"
     }
 
-    init(employeeID: String?, price: Int?, isCompleted: Bool?, location: String?, negotiable: Bool?, category: String, taskDescription: String?) {
+    init(title: String?, employeeID: String?, price: Int?, isCompleted: Bool?, location: Address?, negotiable: Bool?, category: String?, taskDescription: String?) {
+        self.title = title
         self.employeeID = employeeID
         self.price = price
         self.isCompleted = isCompleted
-        self.location = location
         self.negotiable = negotiable
         self.category = category
         self.taskDescription = taskDescription
+        self.location = location
     }
 }
 
-extension Task {
-    func fetchTask(documentId: String) {
+extension Errand {
+    func fetchWork(documentId: String) {
         let docRef = db.collection("tasks").document(documentId)
         
         docRef.getDocument { (document, error) in
@@ -48,8 +50,8 @@ extension Task {
                     print("error with the document data")
                 } else {
                     do {
-                    print("document data: \(document?.data())")
-                    self.task = try document?.data(as: Task.self)
+                        print("document data: \(String(describing: document?.data()))")
+                        self.errand = try document?.data(as: Errand.self)
                     }
                     catch {
                         print(error)

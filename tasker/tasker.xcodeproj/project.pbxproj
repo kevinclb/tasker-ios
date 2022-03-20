@@ -22,14 +22,11 @@
 		8C250DD427AB37A400A280B3 /* SettingsPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DD227AB37A400A280B3 /* SettingsPageViewController.xib */; };
 		8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DD527AB380E00A280B3 /* EditProfileViewController.swift */; };
 		8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C250DD627AB380E00A280B3 /* EditProfileViewController.xib */; };
-		8C250DDC27AB3A5200A280B3 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C250DDB27AB3A5200A280B3 /* RegisterButton.swift */; };
 		8C2AFF5A27D5D787009CFE6C /* TaskerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2AFF5827D5D787009CFE6C /* TaskerCollectionViewCell.xib */; };
 		8C2AFF5B27D5D787009CFE6C /* TaskerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2AFF5927D5D787009CFE6C /* TaskerCollectionViewCell.swift */; };
 		8C2DC0A627C6F9DE0026FF11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0A527C6F9DE0026FF11 /* User.swift */; };
 		8C2DC0AA27C6F9F90026FF11 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0A927C6F9F90026FF11 /* Post.swift */; };
 		8C2DC0AC27C6FA070026FF11 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0AB27C6FA070026FF11 /* Message.swift */; };
-		8C2DC0AE27C6FB940026FF11 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0AD27C6FB940026FF11 /* Address.swift */; };
-		8C30117627ABA61B00DDA117 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30117527ABA61B00DDA117 /* LoginButton.swift */; };
 		8CAD48E627E0307500304CF8 /* SearchResultsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD48E527E0307500304CF8 /* SearchResultsTableViewController.xib */; };
 		8CAD48E827E0308800304CF8 /* SearchResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD48E727E0308800304CF8 /* SearchResultsTableViewCell.xib */; };
 		8CAD48EC27E030B200304CF8 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD48EB27E030B200304CF8 /* SearchResultsTableViewController.swift */; };
@@ -46,7 +43,7 @@
 		CE0555C427BF0DC700877325 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0555BF27BF0DC700877325 /* MyCollectionViewCell.swift */; };
 		CE0555C527BF0DC700877325 /* EmployeeExplorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0555C027BF0DC700877325 /* EmployeeExplorePageViewController.swift */; };
 		CE0555C627BF0DC700877325 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0555C127BF0DC700877325 /* MyCollectionViewCell.xib */; };
-		CE0555C727BF0DC700877325 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0555C227BF0DC700877325 /* Task.swift */; };
+		CE0555C727BF0DC700877325 /* Errand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0555C227BF0DC700877325 /* Errand.swift */; };
 		CE0555C827BF0DC700877325 /* EmployeeExplorePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */; };
 		CE10019027CD6171007767AC /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10018E27CD6170007767AC /* HelpViewController.swift */; };
 		CE10019127CD6171007767AC /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10018F27CD6170007767AC /* HelpViewController.xib */; };
@@ -87,14 +84,11 @@
 		8C250DD227AB37A400A280B3 /* SettingsPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsPageViewController.xib; sourceTree = "<group>"; };
 		8C250DD527AB380E00A280B3 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8C250DD627AB380E00A280B3 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
-		8C250DDB27AB3A5200A280B3 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
 		8C2AFF5827D5D787009CFE6C /* TaskerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskerCollectionViewCell.xib; sourceTree = "<group>"; };
 		8C2AFF5927D5D787009CFE6C /* TaskerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskerCollectionViewCell.swift; sourceTree = "<group>"; };
 		8C2DC0A527C6F9DE0026FF11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C2DC0A927C6F9F90026FF11 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8C2DC0AB27C6FA070026FF11 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		8C2DC0AD27C6FB940026FF11 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		8C30117527ABA61B00DDA117 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		8CAD48E527E0307500304CF8 /* SearchResultsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsTableViewController.xib; sourceTree = "<group>"; };
 		8CAD48E727E0308800304CF8 /* SearchResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsTableViewCell.xib; sourceTree = "<group>"; };
 		8CAD48EB27E030B200304CF8 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +106,7 @@
 		CE0555BF27BF0DC700877325 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE0555C027BF0DC700877325 /* EmployeeExplorePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeExplorePageViewController.swift; sourceTree = "<group>"; };
 		CE0555C127BF0DC700877325 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
-		CE0555C227BF0DC700877325 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		CE0555C227BF0DC700877325 /* Errand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errand.swift; sourceTree = "<group>"; };
 		CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeExplorePageViewController.xib; sourceTree = "<group>"; };
 		CE10018E27CD6170007767AC /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CE10018F27CD6170007767AC /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
@@ -249,23 +243,13 @@
 			path = EditProfilePageViewController;
 			sourceTree = "<group>";
 		};
-		8C250DDD27AB3A6700A280B3 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				8C250DDB27AB3A5200A280B3 /* RegisterButton.swift */,
-				8C30117527ABA61B00DDA117 /* LoginButton.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		8C2DC0A427C6F8E70026FF11 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE0555C227BF0DC700877325 /* Task.swift */,
+				CE0555C227BF0DC700877325 /* Errand.swift */,
 				8C2DC0A527C6F9DE0026FF11 /* User.swift */,
 				8C2DC0A927C6F9F90026FF11 /* Post.swift */,
 				8C2DC0AB27C6FA070026FF11 /* Message.swift */,
-				8C2DC0AD27C6FB940026FF11 /* Address.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -364,7 +348,6 @@
 				CE641A7227A88E0700766C59 /* Info.plist */,
 				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
 				8C2DC0A427C6F8E70026FF11 /* Models */,
-				8C250DDD27AB3A6700A280B3 /* Components */,
 				8C250DB327AB338C00A280B3 /* ViewControllers */,
 			);
 			path = tasker;
@@ -565,11 +548,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */,
-				8C30117627ABA61B00DDA117 /* LoginButton.swift in Sources */,
 				8CAD48EC27E030B200304CF8 /* SearchResultsTableViewController.swift in Sources */,
 				88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */,
 				BAC6A85B27BEF4A000CA66DE /* LoggedOutViewController.swift in Sources */,
-				CE0555C727BF0DC700877325 /* Task.swift in Sources */,
+				CE0555C727BF0DC700877325 /* Errand.swift in Sources */,
 				8C2AFF5B27D5D787009CFE6C /* TaskerCollectionViewCell.swift in Sources */,
 				CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */,
 				8CAD48EE27E030D600304CF8 /* SearchResultsTableViewCell.swift in Sources */,
@@ -582,7 +564,6 @@
 				8C250DC727AB351B00A280B3 /* MessagesViewController.swift in Sources */,
 				CEF81B2A27E2516F00CE0340 /* ContactUsViewController.swift in Sources */,
 				8C2DC0AA27C6F9F90026FF11 /* Post.swift in Sources */,
-				8C2DC0AE27C6FB940026FF11 /* Address.swift in Sources */,
 				BA1DF53C27D02222000F292E /* Utilities.swift in Sources */,
 				BAC6A86927BEF4F600CA66DE /* LoginViewController.swift in Sources */,
 				CE0555C427BF0DC700877325 /* MyCollectionViewCell.swift in Sources */,
@@ -592,7 +573,6 @@
 				8C2DC0AC27C6FA070026FF11 /* Message.swift in Sources */,
 				8C224DA627BB15B100E486C7 /* PublicProfileViewController.swift in Sources */,
 				CEF81B3627E3286700CE0340 /* SupportUsViewController.swift in Sources */,
-				8C250DDC27AB3A5200A280B3 /* RegisterButton.swift in Sources */,
 				CE0555C527BF0DC700877325 /* EmployeeExplorePageViewController.swift in Sources */,
 				CE65BE7127CEFE4A00BD09FB /* FAQViewController.swift in Sources */,
 				CE10019027CD6171007767AC /* HelpViewController.swift in Sources */,

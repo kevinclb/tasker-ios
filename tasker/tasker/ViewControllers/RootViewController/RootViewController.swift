@@ -10,7 +10,6 @@ import FirebaseAuth
 
 class RootViewController: UITabBarController {
     var uid = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //TODO: pass this to homepage
@@ -58,4 +57,17 @@ class RootViewController: UITabBarController {
     
 
     
+}
+
+// Put this piece of code anywhere you like
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

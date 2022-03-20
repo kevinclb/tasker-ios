@@ -45,10 +45,18 @@ class User: Codable {
 
 // MARK: - Address
 struct Address: Codable {
-    let phone, streetAddress: String?
-    let zipcode: Int?
-    let country, state, city: String?
+    var phone, streetAddress: String?
+    var zipcode: Int?
+    var country, state, city: String?
     
+    init() {
+        self.phone = nil
+        self.streetAddress = nil
+        self.zipcode = nil
+        self.city = nil
+        self.country = nil
+        self.state = nil
+    }
 }
 
 extension User {

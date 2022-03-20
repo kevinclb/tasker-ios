@@ -74,9 +74,8 @@ class LoginViewController: UIViewController {
                     Utilities.showError(message: err!.localizedDescription, errorLabel: self.errorLabel)
                 }
                 else {
-                    let userID = Auth.auth().currentUser?.uid
                     // Segue to home explore page and programatically change root view controller to home explore page
-                    let homePageVC = HomeExplorePageViewController(userId: userID)
+                    let homePageVC = HomeExplorePageViewController()
                     
                     self.view.window?.rootViewController = homePageVC
                     self.view.window?.makeKeyAndVisible()
