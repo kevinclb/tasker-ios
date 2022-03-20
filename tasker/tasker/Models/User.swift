@@ -6,16 +6,95 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
+import Firebase
 
-struct User {
-    var firstname: String?
-    var lastname: String?
-    var city: String?
-    var email: String?
-    var password: String?  //TODO: Note. Passwords are string for temporary purposes only
-                           //In production application, with actual users, never
-                           //save password as unhashed, unencrypted strings!!!!
+// MARK: - User
+class User: Codable {
+    
+    @DocumentID var docid: String?
+    private var user: User?
     var employee: Bool?
-    var rating: Int?
-    var employeeDescription: String?
+    var firstname, uid, email: String?
+    var address: Address?
+    var lastname: String?
+    var rating: Double?
+    var dateOfBirth: String?
+    var employeeDescription, ipAddress, city, gender: String?
+    var skills: [String]?
+    
+    required init() {
+    }
+    
+    init(employee: Bool?, firstname: String?, uid: String?, email: String?, address: Address?, lastname: String?, rating: Double?, dateOfBirth: String?, id: String?, employeeDescription: String?, ipAddress: String?, city: String?, gender: String?, skills: [String]?) {
+        self.employee = employee
+        self.firstname = firstname
+        self.uid = uid
+        self.email = email
+        self.address = address
+        self.lastname = lastname
+        self.rating = rating
+        self.dateOfBirth = dateOfBirth
+        self.employeeDescription = employeeDescription
+        self.ipAddress = ipAddress
+        self.city = city
+        self.gender = gender
+        self.skills = skills
+    }
+}
+
+// MARK: - Address
+struct Address: Codable {
+    var phone, streetAddress: String?
+    var zipcode: Int?
+    var country, state, city: String?
+    
+    init() {
+        self.phone = nil
+        self.streetAddress = nil
+        self.zipcode = nil
+        self.city = nil
+        self.country = nil
+        self.state = nil
+    }
+}
+
+extension User {
+    func fetchUser(documentId: String) async throws -> DocumentSnapshot {
+        let docRef = db.collection("users").document(documentId)
+        var snap: Firebase.DocumentSnapshot?
+        do {
+            print("trying to get document snapshot")
+            let snapshot = try await docRef.getDocument()
+            if !snapshot.exists {
+                print("snapshot does not exist")
+            }
+            snap = snapshot
+            do {
+                print("trying to decode snapshot data as user object")
+                user = try snapshot.data(as: User.self)
+            } catch {
+                print("error decoding user document data")
+            }
+        } catch {
+            print("failed to fetch user document.")
+        }
+        print("snapshot type: ", type(of: snap))
+        return snap!
+    }
+    
+    func fetchQuerySnapshotArray(userCollectionRef: CollectionReference) -> [QueryDocumentSnapshot]? {
+        var documentSnapshots: [QueryDocumentSnapshot]?
+        userCollectionRef.getDocuments { (snapshot, error) in
+            if let err = error {
+                debugPrint("Error fetching docs: \(err)")
+            } else {
+                documentSnapshots = snapshot?.documents
+                print(documentSnapshots)
+                print("printed from user class")
+            }
+        }
+        return documentSnapshots
+    }
+    
 }

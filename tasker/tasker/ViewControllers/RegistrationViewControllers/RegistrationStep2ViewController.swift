@@ -9,6 +9,8 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
+//TODO: Add more fields onto RegistrationStep2 and finish the backend logic for it.
+
 class RegistrationStep2ViewController: UIViewController {
     
     @IBOutlet weak var firstNameLabel: UILabel!
@@ -39,7 +41,7 @@ class RegistrationStep2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -81,7 +83,7 @@ class RegistrationStep2ViewController: UIViewController {
         
         return nil
     }
-
+    
     @IBAction func dismissKeyboard(_ sender: Any) {
         self.resignFirstResponder()
     }
@@ -91,7 +93,6 @@ class RegistrationStep2ViewController: UIViewController {
         
         // Validate fields
         let error = validateFields()
-        
         if error != nil {
             // There was something wrong with the fields, show error message
             Utilities.showError(message: error!, errorLabel: self.errorLabel)
@@ -115,37 +116,44 @@ class RegistrationStep2ViewController: UIViewController {
                 else {
                     // User was created successfully, now store the data
                     let db = Firestore.firestore()
-                    
-                    db.collection("users").document(result!.user.uid).setData(
+                    let userID = result!.user.uid
+                    db.collection("users").document(userID).setData(
                         ["firstname": firstName,
                          "lastname": lastName,
                          "dateOfBirth": dateOfBirth,
                          "address": [
-                             "city": "",
-                             "country": "",
-                             "phone": "",
-                             "streetAddress": "",
-                             "zipcode": zipCode!
-                             
-                    ],
+                            "city": "",
+                            "country": "",
+                            "phone": "",
+                            "streetAddress": "",
+                            "state": "",
+                            "zipcode": zipCode!
+                            
+                         ],
                          "rating": 0,
                          "employeeDescription": "",
                          "skills": [],
-                         "uid": result!.user.uid]) { (error) in
-                        
-                        if error != nil {
-                            // Show error message
-                            Utilities.showError(message: "Error saving user data.", errorLabel: self.errorLabel)
+                         "employee": false,
+                         "uid": userID,
+                         "email": self.email,
+                         "gender": "",
+                         "num_ratings": 0,
+                        ]) { (error) in
+                            
+                            if error != nil {
+                                // Show error message
+                                Utilities.showError(message: "Error saving user data.", errorLabel: self.errorLabel)
+                            }
+                            // Segue to home explore page and programatically change root view controller to home explore page
+                            let homePageVC = HomeExplorePageViewController()
+                            
+                            self.view.window?.rootViewController = homePageVC
+                            self.view.window?.makeKeyAndVisible()
+                            
+                            homePageVC.modalPresentationStyle = .fullScreen
+                            self.present(homePageVC, animated: true, completion: nil)
                         }
-                    }
-                    // Segue to home explore page and programatically change root view controller to home explore page
-                    let homePageVC = HomeExplorePageViewController()
                     
-                    self.view.window?.rootViewController = homePageVC
-                    self.view.window?.makeKeyAndVisible()
-                    
-                    homePageVC.modalPresentationStyle = .fullScreen
-                    self.present(homePageVC, animated: true, completion: nil)
                     
                 }
             }

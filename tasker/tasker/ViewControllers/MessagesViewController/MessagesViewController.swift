@@ -9,6 +9,7 @@ import UIKit
 
 class MessagesViewController: UIViewController {
 
+    var uid = ""
     let messageCollectionViewCellId = "MessageViewCell"
     
     @IBOutlet var messageViewCollection: UICollectionView!
@@ -16,7 +17,7 @@ class MessagesViewController: UIViewController {
     var messages = [message]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        uid = Utilities.getUid()
         let nibCell = UINib(nibName: messageCollectionViewCellId, bundle: nil)
         messageViewCollection.register(nibCell, forCellWithReuseIdentifier: messageCollectionViewCellId)
         messageViewCollection.delegate = self

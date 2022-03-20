@@ -8,11 +8,13 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
-    
+    var uid = ""
+    var searchQuery = ""
     var data = ["Ruben", "Donald", "Tommy", "Frank"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        uid = Utilities.getUid()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

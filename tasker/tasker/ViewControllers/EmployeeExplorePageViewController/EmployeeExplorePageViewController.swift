@@ -22,7 +22,7 @@ class EmployeeExplorePageViewController: UIViewController {
     
     let taskCollectionViewCellId = "MyCollectionViewCell"
     
-    var tasks = [Task]()
+    var tasks = [Errand]()
     var menuOut = false
     override func viewDidLoad() {
         // This is for the slide out menu
@@ -42,18 +42,21 @@ class EmployeeExplorePageViewController: UIViewController {
         MyCollectionViewCell.awakeFromNib()
         
         db.collection("tasks").getDocuments { (snapshot, error) in
-                    if error != nil {
-                        print(error)
-                    } else {
-                        for d in (snapshot?.documents)! {
-                            self.tasks.append(Task(name: d["name"] as? String ?? "", city: d["city"] as? String ?? "", taskInfo: d["desc"] as? String ?? "", price: d["rate"] as? String ?? "", category: d["category"] as? String ?? ""))
-                                DispatchQueue.main.async {
-                                    self.collectionView.reloadData()
-                                }
-                            }
-                        }
+            if error != nil {
+                print("error retrieving task(errand) documents: \(String(describing: error?.localizedDescription))")
+            } else {
+                for d in (snapshot!.documents) {
+                    do {
+                        try self.tasks.append(d.data(as: Errand.self)!)
+                    } catch {
+                        print("error decoding task(errand) document")
                     }
-        //collectionView.reloadData()
+                }
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
     }
     // functions for slide out menu
     
@@ -155,18 +158,18 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: taskCollectionViewCellId, for: indexPath) as! MyCollectionViewCell
         let task = tasks[indexPath.row]
-        cell.lbName.text = task.name!
-        cell.lbCity.text = task.city!
-        cell.lbDesc.text = task.taskInfo!
-        cell.lbPrice.text = task.price!
-        cell.lbCategory.text = task.category!
+        cell.lbName.text = task.title ?? "no title"
+        cell.lbCity.text = task.location?.city ?? "no city"
+        cell.lbDesc.text = task.taskDescription ?? "no description"
+        cell.lbPrice.text = String(task.price!) ?? "no price"
+        cell.lbCategory.text = task.category ?? "no category"
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             let task = tasks[indexPath.row]
-            print("\(indexPath.row) - \(task.name!)")
+            print("\(indexPath.row) - \(task.title!)")
         }
     
     //fixing an issue
