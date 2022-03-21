@@ -12,6 +12,7 @@ import Firebase
 
 //TODO: Add better validation and data cleansing.
 
+//TODO: Add error checking
 
 class SetupPageViewController: UIViewController {
     

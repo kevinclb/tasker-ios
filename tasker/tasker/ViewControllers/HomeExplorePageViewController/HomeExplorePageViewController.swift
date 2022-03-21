@@ -11,6 +11,9 @@ import FirebaseAuth
 import FirebaseFirestoreSwift
 import CoreLocation
 
+
+//TODO: Make the home page more pretty.
+//TODO: Add different sections
 class HomeExplorePageViewController: UIViewController {
     private var userCollectionRef: CollectionReference!
     private var nearbyTaskers = [User]()
@@ -310,8 +313,8 @@ extension HomeExplorePageViewController: CLLocationManagerDelegate {
             self.userLocation.state = placemark.administrativeArea
             self.userLocation.zipcode = Int(placemark.postalCode!)
             
-            DispatchQueue.main.async { //TODO: uncomment this for production app.
-//                self.fetchAndLoadNearbyTaskers()
+            DispatchQueue.main.async { //comment this out to save us money on reads.
+                self.fetchAndLoadNearbyTaskers()
             }
         }
         
