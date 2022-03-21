@@ -13,11 +13,13 @@ import Firebase
 class Errand: Codable {
     
     @DocumentID var docid: String?
-    var title, category, taskDescription, employeeID: String
-    var price: Int?
+    var title, category, taskDescription, clientID: String
+    var price: Double?
     var negotiable, isCompleted: Bool?
     var location: Address?
-    var date: Date?
+    var listingDate: Date?
+    var hireDate: Date?
+    var employeeID: String?
     private var errand: Errand?
 //
 //    enum CodingKeys: String, CodingKey {
@@ -25,11 +27,11 @@ class Errand: Codable {
 //        case taskDescription = "description"
 //    }
 //
-    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, location: Address, negotiable: Bool, price: Int) {
+    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, location: Address, negotiable: Bool, price: Double) {
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
-        self.employeeID = employeeID
+        self.clientID = employeeID
         self.isCompleted = isCompleted
         self.price = price
         self.negotiable = negotiable
@@ -41,7 +43,7 @@ class Errand: Codable {
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
-        self.employeeID = employeeID
+        self.clientID = employeeID
         self.isCompleted = isCompleted
     }
 }
