@@ -80,7 +80,6 @@
 		88616E7527C5C228002A1F72 /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		88616E7627C5C228002A1F72 /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
 		88616E7927C5CDC9002A1F72 /* messageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageModel.swift; sourceTree = "<group>"; };
-		8C08C92D27E7D94B000406B9 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8C08C92E27E7DC4C000406B9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		8C08C92F27E7DC4C000406B9 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		8C224DA027BB14AA00E486C7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -390,7 +389,6 @@
 				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
 				8C2DC0A427C6F8E70026FF11 /* Models */,
 				8C250DB327AB338C00A280B3 /* ViewControllers */,
-				8C08C92D27E7D94B000406B9 /* MyPlayground.playground */,
 			);
 			path = tasker;
 			sourceTree = "<group>";
