@@ -13,6 +13,7 @@ class ListTaskViewController: UIViewController {
     var categoryText: String!
     var taskDescription: String!
     
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var taskDescriptionTextField: UITextField!
@@ -31,17 +32,20 @@ class ListTaskViewController: UIViewController {
     }
     
     @IBAction func titleTextEditingEnded(_ sender: UITextField) {
-        self.titleText = titleTextField.text!
+        //TODO: add better text validation here to prevent people from pressing continue with empty fields
+        self.titleText = titleTextField.text ?? ""
         sender.resignFirstResponder()
     }
     @IBAction func categoryTextFieldEditingEnded(_ sender: UITextField) {
-        self.categoryText = categoryTextField.text!
+        //TODO: add better text validation here to prevent people from pressing continue with empty fields
+        self.categoryText = categoryTextField.text ?? ""
         sender.resignFirstResponder()
         print("category text:", self.categoryText ?? "none")
     }
     
     @IBAction func descriptionTextFieldEditingEnded(_ sender: UITextField) {
-        self.taskDescription = taskDescriptionTextField.text!
+        //TODO: add better text validation here to prevent people from pressing continue with empty fields
+        self.taskDescription = taskDescriptionTextField.text ?? ""
         print("taskDescription text:", self.taskDescription ?? "none")
         sender.resignFirstResponder()
     }
@@ -91,8 +95,7 @@ extension ListTaskViewController {
     }
     
     func navigateToSubmitVC() {
-        
-        let taskToList = Errand(title: self.titleText, category: self.categoryText, taskDescription: self.description, employeeID: self.uid, isCompleted: false)
+        let taskToList = Errand(title: self.titleText, category: self.categoryText, taskDescription: self.taskDescription, employeeID: self.uid, isCompleted: false)
         let submitVC = SubmitTaskViewController(inputTask: taskToList)
         let transition = CATransition()
         transition.duration = 0.3
