@@ -37,6 +37,9 @@
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="Register with Google Button"/>
+                            <connections>
+                                <action selector="registerWithGoogleTapped:" destination="-1" eventType="touchUpInside" id="7WG-Hx-Tv1"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDe-l7-6Ov">
                             <rect key="frame" x="0.0" y="70" width="353" height="40"/>

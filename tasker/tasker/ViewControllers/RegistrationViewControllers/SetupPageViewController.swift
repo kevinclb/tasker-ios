@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import GoogleSignIn
 
 
 //TODO: Add better validation and data cleansing.
@@ -38,19 +39,38 @@ class SetupPageViewController: UIViewController {
     
     @IBOutlet weak var skillsTextField: UITextField!
     
-    var email: String = ""
-    var password: String = ""
+    var firstName: String = ""
+    var lastName: String = ""
+    private var email: String = ""
+    private var password: String = ""
+    private var googleCredentials: AuthCredential?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    func setEmail(email: String){
+    func setEmail(email: String) {
         self.email = email
     }
     
-    func setPassword(password: String){
+    func getEmail() -> String {
+        return email
+    }
+    
+    func setPassword(password: String) {
         self.password = password
+    }
+    
+    func getPassword() -> String {
+        return password
+    }
+    
+    func setGoogleCredentials(credentials: AuthCredential)  {
+        self.googleCredentials = credentials
+    }
+
+    func getGoogleCredentials() -> AuthCredential {
+        return googleCredentials!
     }
     
     @IBAction func firstNameEditingEnded(_ sender: UITextField) {
@@ -123,15 +143,68 @@ class SetupPageViewController: UIViewController {
             let state = stateTextField.text!
             let bio = bioTextField.text!
             
-            // Create User
-            Auth.auth().createUser(withEmail: self.email, password: self.password) { (result, err) in
-                
-                // Check for errors
-                if err != nil{
-                    let errMessage = "Error creating user: " + err!.localizedDescription
-                    Utilities.showError(message: errMessage, errorLabel: self.errorLabel)
+            // Check to see if this is a standard registration or Google registration
+            if password != "" {
+                // Regular Registration
+                Auth.auth().createUser(withEmail: getEmail(), password: getPassword()) { (result, err) in
+                    
+                    // Check for errors
+                    if err != nil{
+                        let errMessage = "Error creating user: " + err!.localizedDescription
+                        Utilities.showError(message: errMessage, errorLabel: self.errorLabel)
+                        
+                        }
+                    else {
+                        // User was created successfully, now store the data
+                        let db = Firestore.firestore()
+                        let userID = result!.user.uid
+                        db.collection("users").document(userID).setData(
+                            ["firstname": firstName,
+                             "lastname": lastName,
+                             "dateOfBirth": dateOfBirth,
+                             "address": [
+                                "city": city,
+                                "country": "US",
+                                "phone": "",
+                                "streetAddress": street,
+                                "state": state,
+                                "zipcode": zipCode!
+                                
+                             ],
+                             "rating": 0,
+                             "bio": bio,
+                             "employeeDescription": "",
+                             "skills": self.skillsTextField.text ?? "",
+                             "employee": self.isEmployee,
+                             "uid": userID,
+                             "email": self.getEmail(),
+                             "gender": "",
+                             "num_ratings": 0,
+                            ]) { (error) in
+                                
+                                if error != nil {
+                                    // Show error message
+                                    Utilities.showError(message: "Error saving user data.", errorLabel: self.errorLabel)
+                                    
+                                }
+                                // Direct to home view
+                                self.segueToHomeVC()
+                            }
+                        
+                        
+                    }
+                    
                 }
-                
+            }
+                else{
+                    // Google Registration
+                    Auth.auth().signIn(with: self.googleCredentials!) { result, err in
+                    
+                    // Check for errors
+                    if let err = err {
+                        Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
+                    }
+                        
                 else {
                     // User was created successfully, now store the data
                     let db = Firestore.firestore()
@@ -155,7 +228,7 @@ class SetupPageViewController: UIViewController {
                          "skills": self.skillsTextField.text ?? "",
                          "employee": self.isEmployee,
                          "uid": userID,
-                         "email": self.email,
+                         "email": self.getEmail(),
                          "gender": "",
                          "num_ratings": 0,
                         ]) { (error) in
@@ -163,22 +236,35 @@ class SetupPageViewController: UIViewController {
                             if error != nil {
                                 // Show error message
                                 Utilities.showError(message: "Error saving user data.", errorLabel: self.errorLabel)
+                                
                             }
-                            // Segue to home explore page and programatically change root view controller to home explore page
-                            let homePageVC = HomeExplorePageViewController()
-                            
-                            self.view.window?.rootViewController = homePageVC
-                            self.view.window?.makeKeyAndVisible()
-                            
-                            homePageVC.modalPresentationStyle = .fullScreen
-                            self.present(homePageVC, animated: true, completion: nil)
+                            // Direct to home view
+                            self.segueToHomeVC()
                         }
                     
+                }
+                        
+                    }
                     
                 }
-            }
+            
         }
+        
     }
+    
+    //TODO: Try to implement this function to clean up some code
+    func setUserData() {
+    }
+    
+    func segueToHomeVC() {
+        // Segue to home explore page and programatically change root view controller to home explore page
+        
+        let homePageVC = HomeExplorePageViewController()
+
+        homePageVC.modalPresentationStyle = .fullScreen
+        self.present(homePageVC, animated: true, completion: nil)
+    }
+     
 }
 
 extension SetupPageViewController {

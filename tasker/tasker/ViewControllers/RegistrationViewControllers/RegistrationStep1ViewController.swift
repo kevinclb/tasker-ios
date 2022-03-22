@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class RegistrationStep1ViewController: UIViewController {
     
@@ -100,4 +102,80 @@ class RegistrationStep1ViewController: UIViewController {
             })
         }
     }
+    
+    @IBAction func registerWithGoogleTapped(_ sender: Any) {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+
+        // Start the google sign in flow
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, err in
+
+            if err != nil {
+                Utilities.showError(message: err!.localizedDescription, errorLabel: self.errorLabel)
+            return
+          }
+
+        // User authentication which will be used as credentials to sign in.
+          guard
+            let authentication = user?.authentication,
+            let idToken = authentication.idToken
+          else {
+              
+            return
+          }
+            // User's sign in credentials.
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
+            
+            // Signing into firebase with user's credentials that were obtained above.
+            Auth.auth().signIn(with: credential) { result, err in
+
+                // Check for errors
+                if let err = err {
+                    Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
+                }
+                
+                // Checking if user is new
+                guard let newUserStatus = result?.additionalUserInfo?.isNewUser else {return}
+                
+                if newUserStatus == true {
+                    // New user, have them fill out additional info
+                    // Switch to setup page here
+                    let setupPageVC = SetupPageViewController()
+
+                    setupPageVC.modalPresentationStyle = .fullScreen
+                    self.present(setupPageVC, animated: true, completion: nil)
+                    setupPageVC.firstNameTextField.text = user?.profile?.givenName
+                    setupPageVC.lastNameTextField.text = user?.profile?.familyName
+                    setupPageVC.setEmail(email: (user?.profile!.email)!);
+                    setupPageVC.setGoogleCredentials(credentials: credential)
+                   
+                    let user = Auth.auth().currentUser
+
+                    user?.delete { error in
+                      if let err = err {
+                          Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
+                      } else {
+                        // Account deleted.
+                      }
+                    }
+                }
+                else{
+                    // Not a new user, direct to home view
+                    self.segueToHomeVC()
+                }
+            }
+        }
+    }
+    
+    func segueToHomeVC() {
+        // Segue to home explore page and programatically change root view controller to home explore page
+        
+        let homePageVC = HomeExplorePageViewController()
+
+        homePageVC.modalPresentationStyle = .fullScreen
+        self.present(homePageVC, animated: true, completion: nil)
+    }
+    
 }

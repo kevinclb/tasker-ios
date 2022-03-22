@@ -130,12 +130,25 @@ class LoginViewController: UIViewController {
                 
                 if newUserStatus == true {
                     // New user, have them fill out additional info
-                    // Siwtch to setup page here
+                    // Switch to setup page here
                     let setupPageVC = SetupPageViewController()
 
                     setupPageVC.modalPresentationStyle = .fullScreen
                     self.present(setupPageVC, animated: true, completion: nil)
-                    
+                    setupPageVC.firstNameTextField.text = user?.profile?.givenName
+                    setupPageVC.lastNameTextField.text = user?.profile?.familyName
+                    setupPageVC.setEmail(email: (user?.profile!.email)!);
+                    setupPageVC.setGoogleCredentials(credentials: credential)
+                   
+                    let user = Auth.auth().currentUser
+
+                    user?.delete { error in
+                      if let err = err {
+                          Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
+                      } else {
+                        // Account deleted.
+                      }
+                    }
                 }
                 else{
                     // Not a new user, direct to home view
