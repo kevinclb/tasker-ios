@@ -93,10 +93,10 @@ class RegistrationStep1ViewController: UIViewController {
             self.password = confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             // Segue to step 2 of the registration process
-            let registerPage2VC = RegistrationStep2ViewController()
-            self.present(registerPage2VC, animated: true, completion: {
-                registerPage2VC.setEmail(email: self.email);
-                registerPage2VC.setPassword(password: self.password)
+            let setupPageVC = SetupPageViewController()
+            self.present(setupPageVC, animated: true, completion: {
+                setupPageVC.setEmail(email: self.email);
+                setupPageVC.setPassword(password: self.password)
             })
         }
     }

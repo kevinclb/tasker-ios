@@ -57,13 +57,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H6Y-w4-g47" userLabel="HomePageStackView">
-                            <rect key="frame" x="0.0" y="45" width="415" height="856"/>
+                            <rect key="frame" x="0.0" y="45" width="414" height="856"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="xHM-dk-egh" userLabel="HeaderStackView">
-                                    <rect key="frame" x="0.0" y="0.0" width="415" height="58"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r9-DZ-BH2" userLabel="MenuButton">
-                                            <rect key="frame" x="0.0" y="0.0" width="123" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="122.5" height="58"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="Menu-Button"/>
                                             <connections>
@@ -71,38 +71,41 @@
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderTextandLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="hGC-f6-MlX">
-                                            <rect key="frame" x="146" y="0.0" width="123" height="58"/>
+                                            <rect key="frame" x="145.5" y="0.0" width="123" height="58"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="46.770000000000003" id="evA-1K-C8V"/>
+                                                <constraint firstAttribute="width" constant="122.72" id="2c6-4h-AsM"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demoAviHomePage" translatesAutoresizingMaskIntoConstraints="NO" id="550-fu-mea">
-                                            <rect key="frame" x="292" y="0.0" width="123" height="58"/>
+                                            <rect key="frame" x="291.5" y="0.0" width="122.5" height="58"/>
                                         </imageView>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" id="9dF-Vw-2eu" userLabel="ContentStackView">
-                                    <rect key="frame" x="0.0" y="66" width="415" height="790"/>
+                                    <rect key="frame" x="0.0" y="66" width="414" height="790"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hss-PE-Fep" userLabel="SearchAndListStackView">
-                                            <rect key="frame" x="0.0" y="0.0" width="415" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
                                             <subviews>
                                                 <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="KBA-Kb-Nun">
-                                                    <rect key="frame" x="20" y="8" width="289" height="68"/>
+                                                    <rect key="frame" x="20" y="8" width="288" height="68"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="webSearch" returnKeyType="search"/>
                                                 </searchBar>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Aoo-Q8-tdY" userLabel="AddButton">
-                                                    <rect key="frame" x="309" y="8" width="78" height="68"/>
+                                                    <rect key="frame" x="308" y="8" width="78" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="addButton" title=""/>
+                                                    <connections>
+                                                        <action selector="listTaskButtonPressed:" destination="-1" eventType="touchUpInside" id="lS7-Y0-aOH"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="20" bottom="8" trailing="28"/>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    Taskers Near You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVD-Pu-RoQ">
-                                            <rect key="frame" x="0.0" y="99" width="415" height="25"/>
+                                            <rect key="frame" x="0.0" y="99" width="414" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="tUu-bJ-nS3"/>
                                             </constraints>
@@ -111,7 +114,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jKm-U8-mbo">
-                                            <rect key="frame" x="0.0" y="139" width="415" height="651"/>
+                                            <rect key="frame" x="0.0" y="139" width="414" height="651"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="rYP-gz-B3K">
                                                 <size key="itemSize" width="346" height="119"/>

@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '12.0'
 
 target 'tasker' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -7,10 +7,10 @@ target 'tasker' do
 
   # Pods for tasker
 
-pod 'Firebase/Firestore'
-pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 
-# Optionally, include the Swift extensions if you're using Swift.
-pod 'FirebaseFirestoreSwift'
+  # Optionally, include the Swift extensions if you're using Swift.
+  pod 'FirebaseFirestoreSwift'
 
 end
