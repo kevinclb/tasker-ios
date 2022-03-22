@@ -710,6 +710,7 @@
 				DEVELOPMENT_TEAM = SJQTFG7HJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tasker/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tasker only uses your location in order to better deliver you employees and tasks near you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -738,6 +739,7 @@
 				DEVELOPMENT_TEAM = SJQTFG7HJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tasker/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tasker only uses your location in order to better deliver you employees and tasks near you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

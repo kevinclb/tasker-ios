@@ -100,4 +100,10 @@ class RegistrationStep1ViewController: UIViewController {
             })
         }
     }
+    
+    @IBAction func registerWithGoogleButtonTapped(_ sender: Any) {
+        
+        
+    }
+    
 }

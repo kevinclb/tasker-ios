@@ -64,8 +64,6 @@ class RegistrationStep2ViewController: UIViewController {
             return "Please fill in all fields."
         }
         
-        // TODO: Checking if their date of birth is valid
-        
         let cleanedDateOfBirth = dateOfBirthTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedZipCode = zipCodeTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
@@ -102,61 +100,71 @@ class RegistrationStep2ViewController: UIViewController {
             let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let dateOfBirth = dateOfBirthTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let zipCode = Int(zipCodeTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+            let zipCode = Int(zipCodeTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))!
             
             // Create User
-            Auth.auth().createUser(withEmail: self.email, password: self.password) { (result, err) in
-                
-                // Check for errors
-                if err != nil{
-                    let errMessage = "Error creating user: " + err!.localizedDescription
-                    Utilities.showError(message: errMessage, errorLabel: self.errorLabel)
-                }
-                
-                else {
-                    // User was created successfully, now store the data
-                    let db = Firestore.firestore()
-                    let userID = result!.user.uid
-                    db.collection("users").document(userID).setData(
-                        ["firstname": firstName,
-                         "lastname": lastName,
-                         "dateOfBirth": dateOfBirth,
-                         "address": [
-                            "city": "",
-                            "country": "",
-                            "phone": "",
-                            "streetAddress": "",
-                            "state": "",
-                            "zipcode": zipCode!
-                            
-                         ],
-                         "rating": 0,
-                         "employeeDescription": "",
-                         "skills": [],
-                         "employee": false,
-                         "uid": userID,
-                         "email": self.email,
-                         "gender": "",
-                         "num_ratings": 0,
-                        ]) { (error) in
-                            
-                            if error != nil {
-                                // Show error message
-                                Utilities.showError(message: "Error saving user data.", errorLabel: self.errorLabel)
-                            }
-                            // Segue to home explore page and programatically change root view controller to home explore page
-                            let homePageVC = HomeExplorePageViewController()
-                            
-                            self.view.window?.rootViewController = homePageVC
-                            self.view.window?.makeKeyAndVisible()
-                            
-                            homePageVC.modalPresentationStyle = .fullScreen
-                            self.present(homePageVC, animated: true, completion: nil)
-                        }
-                    
-                    
+            createAccount(email: email, password: password, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, zipCode: zipCode, errorLabel: errorLabel)
+            
+            // Transition to home view controller
+            segueToHomeVC()
                 }
             }
+    
+func createAccount(email: String, password: String, firstName: String, lastName: String, dateOfBirth: String, zipCode: Int, errorLabel: UILabel){
+        // Create User
+        Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+            
+            // Check for errors
+            if err != nil{
+                let errMessage = "Error creating user: " + err!.localizedDescription
+                Utilities.showError(message: errMessage, errorLabel: errorLabel)
+            }
+            
+            else {
+                // User was created successfully, now store the data
+                let db = Firestore.firestore()
+                let userID = result!.user.uid
+                db.collection("users").document(userID).setData(
+                    ["firstname": firstName,
+                     "lastname": lastName,
+                     "dateOfBirth": dateOfBirth,
+                     "address": [
+                        "city": "",
+                        "country": "",
+                        "phone": "",
+                        "streetAddress": "",
+                        "state": "",
+                        "zipcode": zipCode
+                        
+                     ],
+                     "rating": 0,
+                     "employeeDescription": "",
+                     "skills": [],
+                     "employee": false,
+                     "uid": userID,
+                     "email": email,
+                     "gender": "",
+                     "num_ratings": 0,
+                    ]) { (error) in
+                        
+                        if error != nil {
+                            // Show error message
+                            Utilities.showError(message: "Error saving user data.", errorLabel: errorLabel)
+                        }
+                    }
+            }
         }
+    }
+    
+    func segueToHomeVC() {
+        // Segue to home explore page and programatically change root view controller to home explore page
+        
+        let homePageVC = HomeExplorePageViewController()
+
+        self.view.window?.rootViewController = homePageVC
+        self.view.window?.makeKeyAndVisible()
+
+        homePageVC.modalPresentationStyle = .fullScreen
+        self.present(homePageVC, animated: true, completion: nil)
     }
 }
