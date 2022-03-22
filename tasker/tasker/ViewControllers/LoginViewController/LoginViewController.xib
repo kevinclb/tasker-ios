@@ -35,7 +35,7 @@
                                 <constraint firstAttribute="height" constant="40" id="D0x-iw-m9p"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="Register with Google Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Login with Google Button"/>
                             <connections>
                                 <action selector="loginWithGoogleTapped:" destination="-1" eventType="touchUpInside" id="ogm-yN-xe9"/>
                             </connections>
@@ -46,7 +46,7 @@
                                 <constraint firstAttribute="height" constant="40" id="V16-xZ-NpD"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="Register with Apple Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Login with Apple Button"/>
                         </button>
                     </subviews>
                     <constraints>
@@ -158,9 +158,9 @@
     </objects>
     <resources>
         <image name="Continue Button" width="308" height="46"/>
+        <image name="Login with Apple Button" width="329" height="66"/>
+        <image name="Login with Google Button" width="329" height="66"/>
         <image name="OrDivider" width="306" height="12"/>
-        <image name="Register with Apple Button" width="329" height="66"/>
-        <image name="Register with Google Button" width="329" height="66"/>
         <image name="Tasker Logo" width="257" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
