@@ -104,12 +104,13 @@ class RegistrationStep1ViewController: UIViewController {
     }
     
     @IBAction func registerWithGoogleTapped(_ sender: Any) {
+        
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
         // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
 
-        // Start the google sign in flow
+        // Start the google sign in flow.
         GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, err in
 
             if err != nil {
@@ -131,17 +132,17 @@ class RegistrationStep1ViewController: UIViewController {
             // Signing into firebase with user's credentials that were obtained above.
             Auth.auth().signIn(with: credential) { result, err in
 
-                // Check for errors
+                // Check for errors.
                 if let err = err {
                     Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
                 }
                 
-                // Checking if user is new
+                // Checking if user is new.
                 guard let newUserStatus = result?.additionalUserInfo?.isNewUser else {return}
                 
                 if newUserStatus == true {
-                    // New user, have them fill out additional info
-                    // Switch to setup page here
+                    
+                    // New user, have them fill out additional info, transfer data and segue to setup view
                     let setupPageVC = SetupPageViewController(fromThirdParty: true, givenName: user?.profile?.givenName! ?? "", familyName: user?.profile?.familyName! ?? "")
 
                     setupPageVC.modalPresentationStyle = .fullScreen
@@ -153,6 +154,7 @@ class RegistrationStep1ViewController: UIViewController {
                    
                     let user = Auth.auth().currentUser
 
+                    // Delete user from database if they do not complete the setup page
                     user?.delete { error in
                       if let err = err {
                           Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
@@ -162,7 +164,8 @@ class RegistrationStep1ViewController: UIViewController {
                     }
                 }
                 else{
-                    // Not a new user, direct to home view
+                    
+                    // Not a new user, direct to home view.
                     self.segueToHomeVC()
                 }
             }
@@ -172,64 +175,74 @@ class RegistrationStep1ViewController: UIViewController {
     @IBAction func registerWithFacebookTapped(_ sender: Any) {
         
         let accessToken = AccessToken.current
-
+        
+        // Start the Facebook sign in flow.
         LoginManager().logIn(permissions: ["email", "public_profile"], from: self) { (result, error) in
           if error != nil {
 
             Utilities.showError(message: error!.localizedDescription, errorLabel: self.errorLabel)
-            return
-          }
+          } else if result?.isCancelled == true {
+              
+              Utilities.showError(message: "Facebook login was cancelled.", errorLabel: self.errorLabel)
+          } else {
+              
+              // Pulling data from Facebook user.
+              GraphRequest(graphPath: "/me", parameters: ["fields": "first_name, last_name, email"]).start {
+                (connection, result, err) in
 
-          GraphRequest(graphPath: "/me", parameters: ["fields": "first_name, last_name, email"]).start {
-            (connection, result, err) in
+                if err == nil {
+                    
+                  // Converting data to Strings so we can use them later.
+                  let data: [String: AnyObject] = result as! [String: AnyObject]
 
-            if err == nil {
-              let data: [String: AnyObject] = result as! [String: AnyObject]
+                  guard let accessTokenString = accessToken?.tokenString else { return }
+                  let credential = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
 
-              guard let accessTokenString = accessToken?.tokenString else { return }
-              let credential = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
-
-              // Signing into firebase with user's credentials that were obtained above.
-              Auth.auth().signIn(with: credential) { result, err in
-                // Check for errors
-                if let err = err {
-                  Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
-                }
-
-                // Checking if user is new
-                guard let newUserStatus = result?.additionalUserInfo?.isNewUser else { return }
-
-                if newUserStatus == true {
-                  // New user, have them fill out additional info
-                  // Switch to setup page here
-                  let setupPageVC = SetupPageViewController(
-                    fromThirdParty: true, givenName: data["first_name"] as? String,
-                    familyName: data["last_name"] as? String)
-
-                  setupPageVC.modalPresentationStyle = .fullScreen
-                  self.present(setupPageVC, animated: true, completion: nil)
-                  setupPageVC.firstNameTextField.text = data["first_name"] as? String
-                  setupPageVC.lastNameTextField.text = data["last_name"] as? String
-                  setupPageVC.setEmail(email: (data["email"] as? String)!)
-                  setupPageVC.setCredentials(credentials: credential)
-
-                  let user = Auth.auth().currentUser
-
-                  user?.delete { error in
+                  // Signing into firebase with user's credentials that were obtained above.
+                  Auth.auth().signIn(with: credential) { result, err in
+                      
+                    // Check for errors.
                     if let err = err {
                       Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
+                    }
+
+                    // Checking if user is new.
+                    guard let newUserStatus = result?.additionalUserInfo?.isNewUser else { return }
+
+                    if newUserStatus == true {
+                        
+                      // New user, have them fill out additional info, transfer data and segue to setup view.
+                      let setupPageVC = SetupPageViewController(
+                        fromThirdParty: true, givenName: data["first_name"] as? String,
+                        familyName: data["last_name"] as? String)
+
+                      setupPageVC.modalPresentationStyle = .fullScreen
+                      self.present(setupPageVC, animated: true, completion: nil)
+                      setupPageVC.firstNameTextField.text = data["first_name"] as? String
+                      setupPageVC.lastNameTextField.text = data["last_name"] as? String
+                      setupPageVC.setEmail(email: (data["email"] as? String)!)
+                      setupPageVC.setCredentials(credentials: credential)
+
+                      let user = Auth.auth().currentUser
+
+                      // Delete user from database if they do not complete the setup page.
+                      user?.delete { error in
+                        if let err = err {
+                          Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
+                        } else {
+                          // Account deleted.
+                        }
+                      }
                     } else {
-                      // Account deleted.
+                        
+                      // Not a new user, direct to home view.
+                      self.segueToHomeVC()
                     }
                   }
-                } else {
-                  // Not a new user, direct to home view
-                  self.segueToHomeVC()
                 }
               }
             }
           }
-        }
       }
     
     func segueToHomeVC() {
