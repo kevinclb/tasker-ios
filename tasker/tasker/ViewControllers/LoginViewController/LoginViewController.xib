@@ -14,6 +14,8 @@
                 <outlet property="emailAddressLabel" destination="S9K-G6-ryJ" id="2dc-Zm-3se"/>
                 <outlet property="emailAddressTextField" destination="zcH-nb-tIC" id="EEE-SA-mPK"/>
                 <outlet property="errorLabel" destination="Mj4-RD-y2V" id="4JN-k5-OuT"/>
+                <outlet property="loginWithAppleButton" destination="dyq-SR-2w7" id="0DM-uz-Uqe"/>
+                <outlet property="loginWithGoogleButton" destination="21s-ob-UvO" id="UOi-63-VXV"/>
                 <outlet property="passwordLabel" destination="BD7-99-oL7" id="URJ-7u-V6K"/>
                 <outlet property="passwordTextField" destination="NPX-04-hfE" id="CAu-we-p85"/>
                 <outlet property="view" destination="RMe-Xo-6GW" id="sjR-IN-VU7"/>
@@ -33,7 +35,10 @@
                                 <constraint firstAttribute="height" constant="40" id="D0x-iw-m9p"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="Register with Google Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Login with Google Button"/>
+                            <connections>
+                                <action selector="loginWithGoogleTapped:" destination="-1" eventType="touchUpInside" id="ogm-yN-xe9"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyq-SR-2w7">
                             <rect key="frame" x="0.0" y="70" width="353" height="40"/>
@@ -41,7 +46,7 @@
                                 <constraint firstAttribute="height" constant="40" id="V16-xZ-NpD"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="Register with Apple Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Login with Apple Button"/>
                         </button>
                     </subviews>
                     <constraints>
@@ -50,17 +55,17 @@
                         <constraint firstAttribute="height" constant="110" id="z5R-uB-93o"/>
                     </constraints>
                 </stackView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tasker Logo" translatesAutoresizingMaskIntoConstraints="NO" id="kLN-qf-hJp">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Tasker Logo" translatesAutoresizingMaskIntoConstraints="NO" id="kLN-qf-hJp">
                     <rect key="frame" x="116" y="718" width="141" height="52"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="2ah-OM-56w"/>
                     </constraints>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="LdA-Kh-1zY">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="LdA-Kh-1zY">
                     <rect key="frame" x="29" y="119" width="332" height="363"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9K-G6-ryJ">
-                            <rect key="frame" x="0.0" y="0.0" width="332" height="35.666666666666664"/>
+                            <rect key="frame" x="0.0" y="0.0" width="332" height="22.333333333333332"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.329999999999998" id="Gi0-nS-AdO"/>
                                 <constraint firstAttribute="width" constant="332" id="yOs-H0-vT9"/>
@@ -77,12 +82,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="youremail@address.here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcH-nb-tIC">
-                            <rect key="frame" x="0.0" y="65.666666666666657" width="332" height="35.333333333333343"/>
+                            <rect key="frame" x="0.0" y="52.333333333333343" width="332" height="37.333333333333343"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD7-99-oL7">
-                            <rect key="frame" x="0.0" y="131" width="332" height="35.666666666666657"/>
+                            <rect key="frame" x="0.0" y="119.66666666666664" width="332" height="22.333333333333329"/>
                             <attributedString key="attributedText">
                                 <fragment content="Password:">
                                     <attributes>
@@ -95,12 +100,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="yourPasswordHere123!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NPX-04-hfE">
-                            <rect key="frame" x="0.0" y="196.66666666666669" width="332" height="35.333333333333343"/>
+                            <rect key="frame" x="0.0" y="172" width="332" height="37.333333333333343"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iH7-Lh-0Xf">
-                            <rect key="frame" x="0.0" y="262" width="332" height="35.666666666666686"/>
+                            <rect key="frame" x="0.0" y="239.33333333333329" width="332" height="65.666666666666657"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="Continue Button"/>
                             <connections>
@@ -108,7 +113,7 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrDivider" translatesAutoresizingMaskIntoConstraints="NO" id="5Nx-HS-UzC">
-                            <rect key="frame" x="0.0" y="327.66666666666669" width="332" height="35.333333333333314"/>
+                            <rect key="frame" x="0.0" y="335" width="332" height="28"/>
                         </imageView>
                     </subviews>
                     <constraints>
@@ -153,9 +158,9 @@
     </objects>
     <resources>
         <image name="Continue Button" width="308" height="46"/>
+        <image name="Login with Apple Button" width="329" height="66"/>
+        <image name="Login with Google Button" width="329" height="66"/>
         <image name="OrDivider" width="306" height="12"/>
-        <image name="Register with Apple Button" width="329" height="66"/>
-        <image name="Register with Google Button" width="329" height="66"/>
         <image name="Tasker Logo" width="257" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

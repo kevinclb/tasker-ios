@@ -382,7 +382,7 @@
                                             <rect key="frame" x="20" y="128.33333333333337" width="323" height="140.66666666666663"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" usesAttributedText="YES" borderStyle="bezel" placeholder="short bio here" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZrC-1e-fMy" userLabel="short bio">
-                                                    <rect key="frame" x="0.0" y="29" width="323" height="104"/>
+                                                    <rect key="frame" x="0.0" y="29.000000000000007" width="323" height="103.66666666666669"/>
                                                     <attributedString key="attributedText"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -429,7 +429,7 @@
                                                     <attributes>
                                                         <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <font key="NSFont" size="30" name="Helvetica-Light"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>

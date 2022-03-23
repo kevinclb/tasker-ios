@@ -10,69 +10,60 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoggedOutViewController" customModule="tasker" customModuleProvider="target">
             <connections>
-                <outlet property="loginButton" destination="oPs-fb-VYg" id="hqz-Zh-ZQ8"/>
-                <outlet property="registerButton" destination="osf-0A-lzP" id="HuN-mL-lSh"/>
-                <outlet property="view" destination="Tth-qd-Bvn" id="8rv-sd-UXc"/>
+                <outlet property="loginButton" destination="rQK-Sr-Fr2" id="wgv-EU-ttX"/>
+                <outlet property="registerButton" destination="NB6-lb-UsE" id="mwD-fP-lmc"/>
+                <outlet property="view" destination="D0H-hQ-wdt" id="84F-am-nRq"/>
             </connections>
         </placeholder>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Tth-qd-Bvn">
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="D0H-hQ-wdt">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8hh-40-enT">
-                    <rect key="frame" x="40" y="730" width="310" height="40"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tasker Logo" translatesAutoresizingMaskIntoConstraints="NO" id="1J9-E8-No9">
+                    <rect key="frame" x="53" y="323" width="256" height="129"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="tb8-Ia-lq5">
+                    <rect key="frame" x="40" y="710" width="310" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPs-fb-VYg">
-                            <rect key="frame" x="0.0" y="0.0" width="145" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="qjF-Aa-Pfr"/>
-                            </constraints>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQK-Sr-Fr2">
+                            <rect key="frame" x="0.0" y="0.0" width="135" height="60"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" image="Login Button" title="">
-                                <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </buttonConfiguration>
+                            <buttonConfiguration key="configuration" style="filled" image="Login Button" title=""/>
                             <connections>
-                                <action selector="loginPressed:" destination="-1" eventType="touchUpInside" id="1Iv-f0-gjX"/>
+                                <action selector="loginPressed:" destination="-1" eventType="touchUpInside" id="rJ1-3q-FMs"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osf-0A-lzP">
-                            <rect key="frame" x="165" y="0.0" width="145" height="40"/>
-                            <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB6-lb-UsE">
+                            <rect key="frame" x="175" y="0.0" width="135" height="60"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" image="Sign up" title="">
-                                <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </buttonConfiguration>
+                            <buttonConfiguration key="configuration" style="filled" image="Sign up" title=""/>
                             <connections>
-                                <action selector="registerPressed:" destination="-1" eventType="touchUpInside" id="bzL-Nk-gsj"/>
+                                <action selector="registerPressed:" destination="-1" eventType="touchUpInside" id="Xm9-0a-oXk"/>
                             </connections>
                         </button>
                     </subviews>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="osf-0A-lzP" firstAttribute="width" secondItem="oPs-fb-VYg" secondAttribute="width" id="VrS-3n-CC7"/>
-                        <constraint firstItem="osf-0A-lzP" firstAttribute="height" secondItem="oPs-fb-VYg" secondAttribute="height" id="yvV-BO-RDl"/>
+                        <constraint firstAttribute="height" constant="60" id="xBx-bN-t3Y"/>
                     </constraints>
                 </stackView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tasker Logo" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-Ur-ggM">
-                    <rect key="frame" x="53" y="323" width="256" height="149"/>
-                </imageView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="SWQ-VI-zyn"/>
+            <viewLayoutGuide key="safeArea" id="tlL-IZ-2tr"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="IsA-Ur-ggM" firstAttribute="top" secondItem="SWQ-VI-zyn" secondAttribute="top" constant="279" id="24V-io-6uZ"/>
-                <constraint firstItem="SWQ-VI-zyn" firstAttribute="bottom" secondItem="8hh-40-enT" secondAttribute="bottom" constant="40" id="45C-fG-tTz"/>
-                <constraint firstItem="SWQ-VI-zyn" firstAttribute="trailing" secondItem="8hh-40-enT" secondAttribute="trailing" constant="40" id="6q2-G3-rLG"/>
-                <constraint firstItem="IsA-Ur-ggM" firstAttribute="leading" secondItem="SWQ-VI-zyn" secondAttribute="leading" constant="53" id="AEb-1h-zmy"/>
-                <constraint firstItem="8hh-40-enT" firstAttribute="leading" secondItem="SWQ-VI-zyn" secondAttribute="leading" constant="40" id="NGx-OY-buf"/>
-                <constraint firstItem="8hh-40-enT" firstAttribute="top" secondItem="IsA-Ur-ggM" secondAttribute="bottom" constant="258" id="Tom-IH-Hqy"/>
-                <constraint firstItem="8hh-40-enT" firstAttribute="leading" secondItem="SWQ-VI-zyn" secondAttribute="leading" constant="40" id="W0S-ZG-zGm"/>
-                <constraint firstItem="SWQ-VI-zyn" firstAttribute="trailing" secondItem="IsA-Ur-ggM" secondAttribute="trailing" constant="81" id="WEm-1i-7Tn"/>
-                <constraint firstItem="SWQ-VI-zyn" firstAttribute="trailing" secondItem="8hh-40-enT" secondAttribute="trailing" constant="40" id="jHv-HD-d4r"/>
-                <constraint firstItem="SWQ-VI-zyn" firstAttribute="bottom" secondItem="8hh-40-enT" secondAttribute="bottom" constant="40" id="vRH-9f-J3t"/>
+                <constraint firstItem="tlL-IZ-2tr" firstAttribute="trailing" secondItem="1J9-E8-No9" secondAttribute="trailing" constant="81" id="Rfa-fQ-bPW"/>
+                <constraint firstItem="tb8-Ia-lq5" firstAttribute="leading" secondItem="tlL-IZ-2tr" secondAttribute="leading" constant="40" id="e3q-2N-RSt"/>
+                <constraint firstItem="tlL-IZ-2tr" firstAttribute="trailing" secondItem="tb8-Ia-lq5" secondAttribute="trailing" constant="40" id="gPR-A8-ihs"/>
+                <constraint firstItem="tlL-IZ-2tr" firstAttribute="bottom" secondItem="tb8-Ia-lq5" secondAttribute="bottom" constant="40" id="hYI-kw-4h6"/>
+                <constraint firstItem="1J9-E8-No9" firstAttribute="leading" secondItem="tlL-IZ-2tr" secondAttribute="leading" constant="53" id="hxj-Tu-6HW"/>
+                <constraint firstItem="tb8-Ia-lq5" firstAttribute="centerX" secondItem="D0H-hQ-wdt" secondAttribute="centerX" id="rBr-DJ-MWR"/>
+                <constraint firstItem="1J9-E8-No9" firstAttribute="top" secondItem="tlL-IZ-2tr" secondAttribute="top" constant="279" id="und-hz-90H"/>
+                <constraint firstItem="tlL-IZ-2tr" firstAttribute="bottom" secondItem="tb8-Ia-lq5" secondAttribute="bottom" constant="40" id="wLe-zB-dym"/>
+                <constraint firstItem="tb8-Ia-lq5" firstAttribute="top" secondItem="1J9-E8-No9" secondAttribute="bottom" constant="258" id="wWq-fb-LAv"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="65.625"/>
         </view>
-        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
     </objects>
     <resources>
         <image name="Login Button" width="187" height="72"/>
