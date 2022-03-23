@@ -31,8 +31,8 @@ class SetupPageViewController: UIViewController {
     @IBOutlet weak var yourNameTextLabel: UILabel!
     
     @IBOutlet weak var avatarImage: UIImageView!
-    var name = ["Your", "Name"]
     
+    var name = ["Your", "Name"]
     
     var isEmployee = false
     let registerStep1VC = RegistrationStep1ViewController()
@@ -46,6 +46,7 @@ class SetupPageViewController: UIViewController {
     private var googleCredentials: AuthCredential?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
     }
     
@@ -74,13 +75,15 @@ class SetupPageViewController: UIViewController {
     }
     
     @IBAction func firstNameEditingEnded(_ sender: UITextField) {
-        self.name[0] = firstNameTextField.text!
+        
+        self.name[0] = self.firstNameTextField.text!
         self.yourNameTextLabel.text = self.name[0] + " " + self.name[1]
     }
     
     @IBAction func lastNameEditingEnded(_ sender: UITextField) {
-        self.name[1] = lastNameTextField.text!
+        self.name[1] = self.lastNameTextField.text!
         self.yourNameTextLabel.text = self.name[0] + " " + self.name[1]
+        
     }
     
     
@@ -156,43 +159,11 @@ class SetupPageViewController: UIViewController {
                         }
                     else {
                         // User was created successfully, now store the data
-                        let db = Firestore.firestore()
                         let userID = result!.user.uid
-                        db.collection("users").document(userID).setData(
-                            ["firstname": firstName,
-                             "lastname": lastName,
-                             "dateOfBirth": dateOfBirth,
-                             "address": [
-                                "city": city,
-                                "country": "US",
-                                "phone": "",
-                                "streetAddress": street,
-                                "state": state,
-                                "zipcode": zipCode!
-                                
-                             ],
-                             "rating": 0,
-                             "bio": bio,
-                             "employeeDescription": "",
-                             "skills": self.skillsTextField.text ?? "",
-                             "employee": self.isEmployee,
-                             "uid": userID,
-                             "email": self.getEmail(),
-                             "gender": "",
-                             "num_ratings": 0,
-                            ]) { (error) in
-                                
-                                if error != nil {
-                                    // Show error message
-                                    Utilities.showError(message: "Error saving user data.", errorLabel: self.errorLabel)
-                                    
-                                }
+                        self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
                                 // Direct to home view
                                 self.segueToHomeVC()
                             }
-                        
-                        
-                    }
                     
                 }
             }
@@ -207,40 +178,11 @@ class SetupPageViewController: UIViewController {
                         
                 else {
                     // User was created successfully, now store the data
-                    let db = Firestore.firestore()
                     let userID = result!.user.uid
-                    db.collection("users").document(userID).setData(
-                        ["firstname": firstName,
-                         "lastname": lastName,
-                         "dateOfBirth": dateOfBirth,
-                         "address": [
-                            "city": city,
-                            "country": "US",
-                            "phone": "",
-                            "streetAddress": street,
-                            "state": state,
-                            "zipcode": zipCode!
-                            
-                         ],
-                         "rating": 0,
-                         "bio": bio,
-                         "employeeDescription": "",
-                         "skills": self.skillsTextField.text ?? "",
-                         "employee": self.isEmployee,
-                         "uid": userID,
-                         "email": self.getEmail(),
-                         "gender": "",
-                         "num_ratings": 0,
-                        ]) { (error) in
-                            
-                            if error != nil {
-                                // Show error message
-                                Utilities.showError(message: "Error saving user data.", errorLabel: self.errorLabel)
-                                
-                            }
+                    self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
                             // Direct to home view
                             self.segueToHomeVC()
-                        }
+                        
                     
                 }
                         
@@ -253,7 +195,39 @@ class SetupPageViewController: UIViewController {
     }
     
     //TODO: Try to implement this function to clean up some code
-    func setUserData() {
+    func setUserData(userID: String, firstName: String, lastName: String, dateOfBirth: String, city: String, street: String, zipCode: Int, bio: String, state: String) {
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(userID).setData(
+            ["firstname": firstName,
+             "lastname": lastName,
+             "dateOfBirth": dateOfBirth,
+             "address": [
+                "city": city,
+                "country": "US",
+                "phone": "",
+                "streetAddress": street,
+                "state": state,
+                "zipcode": zipCode
+                
+             ],
+             "rating": 0,
+             "bio": bio,
+             "employeeDescription": "",
+             "skills": self.skillsTextField.text ?? "",
+             "employee": self.isEmployee,
+             "uid": userID,
+             "email": self.getEmail(),
+             "gender": "",
+             "num_ratings": 0,
+            ]) { (error) in
+                
+                if error != nil {
+                    // Show error message
+                    Utilities.showError(message: "Error saving user data.", errorLabel: self.errorLabel)
+                    
+                }
+            }
     }
     
     func segueToHomeVC() {
