@@ -18,7 +18,7 @@
                 <outlet property="errorLabel" destination="gWp-UY-XQv" id="Z2f-vI-o9v"/>
                 <outlet property="passwordLabel" destination="6zq-7d-qB3" id="8wJ-wM-DBU"/>
                 <outlet property="passwordTextField" destination="fpv-wK-H9d" id="kHB-zH-0X9"/>
-                <outlet property="registerWithAppleButton" destination="hDe-l7-6Ov" id="gj9-g3-HPr"/>
+                <outlet property="registerWithFacebookButton" destination="hDe-l7-6Ov" id="pTv-zE-aik"/>
                 <outlet property="registerWithGoogleButton" destination="dKd-51-Lmv" id="DDI-Z5-6Sk"/>
                 <outlet property="view" destination="yU8-cL-PGd" id="guf-i9-Y03"/>
             </connections>
@@ -47,7 +47,10 @@
                                 <constraint firstAttribute="height" constant="40" id="4SI-pS-ejo"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="Register with Apple Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Register with Facebook"/>
+                            <connections>
+                                <action selector="registerWithFacebookTapped:" destination="-1" eventType="touchUpInside" id="eCn-f7-fZq"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -188,7 +191,7 @@
     <resources>
         <image name="Continue Button" width="308" height="46"/>
         <image name="OrDivider" width="306" height="12"/>
-        <image name="Register with Apple Button" width="329" height="66"/>
+        <image name="Register with Facebook" width="329" height="66"/>
         <image name="Register with Google Button" width="329" height="66"/>
         <image name="Tasker Logo" width="257" height="93"/>
         <systemColor name="systemBackgroundColor">

@@ -32,7 +32,7 @@ class SetupPageViewController: UIViewController {
     
     
     
-    var fromGoogle: Bool!
+    var fromThirdParty: Bool!
     var givenName: String!
     var familyName: String!
     
@@ -49,16 +49,16 @@ class SetupPageViewController: UIViewController {
     var lastName: String = ""
     private var email: String = ""
     private var password: String = ""
-    private var googleCredentials: AuthCredential?
+    private var credentials: AuthCredential?
     
     
     convenience init() {
-        self.init(fromGoogle: false, givenName: "", familyName: "")
+        self.init(fromThirdParty: false, givenName: "", familyName: "")
     }
     
-    init(fromGoogle: Bool?, givenName: String?, familyName: String?) {
+    init(fromThirdParty: Bool?, givenName: String?, familyName: String?) {
         super.init(nibName: nil, bundle: nil)
-        self.fromGoogle = fromGoogle ?? false
+        self.fromThirdParty = fromThirdParty ?? false
         self.givenName = givenName ?? ""
         self.familyName = familyName ?? ""
     }
@@ -70,7 +70,7 @@ class SetupPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if fromGoogle {
+        if fromThirdParty {
             yourNameTextLabel.text = self.givenName + " " + self.familyName
         }
     }
@@ -92,12 +92,12 @@ class SetupPageViewController: UIViewController {
         return password
     }
     
-    func setGoogleCredentials(credentials: AuthCredential)  {
-        self.googleCredentials = credentials
+    func setCredentials(credentials: AuthCredential)  {
+        self.credentials = credentials
     }
     
-    func getGoogleCredentials() -> AuthCredential {
-        return googleCredentials!
+    func getCredentials() -> AuthCredential {
+        return credentials!
     }
     
     @IBAction func firstNameEditingEnded(_ sender: UITextField) {
@@ -194,8 +194,8 @@ class SetupPageViewController: UIViewController {
                 }
             }
             else{
-                // Google Registration
-                Auth.auth().signIn(with: self.googleCredentials!) { result, err in
+                // Registering with third party (Google or Facebook)
+                Auth.auth().signIn(with: self.credentials!) { result, err in
                     
                     // Check for errors
                     if let err = err {
