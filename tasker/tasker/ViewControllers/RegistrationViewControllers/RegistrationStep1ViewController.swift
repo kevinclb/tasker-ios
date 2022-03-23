@@ -142,7 +142,7 @@ class RegistrationStep1ViewController: UIViewController {
                 if newUserStatus == true {
                     // New user, have them fill out additional info
                     // Switch to setup page here
-                    let setupPageVC = SetupPageViewController()
+                    let setupPageVC = SetupPageViewController(fromGoogle: true, givenName: user?.profile?.givenName! ?? "", familyName: user?.profile?.familyName! ?? "")
 
                     setupPageVC.modalPresentationStyle = .fullScreen
                     self.present(setupPageVC, animated: true, completion: nil)
