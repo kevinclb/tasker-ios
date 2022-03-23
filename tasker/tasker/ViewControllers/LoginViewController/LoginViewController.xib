@@ -14,7 +14,7 @@
                 <outlet property="emailAddressLabel" destination="S9K-G6-ryJ" id="2dc-Zm-3se"/>
                 <outlet property="emailAddressTextField" destination="zcH-nb-tIC" id="EEE-SA-mPK"/>
                 <outlet property="errorLabel" destination="Mj4-RD-y2V" id="4JN-k5-OuT"/>
-                <outlet property="loginWithAppleButton" destination="dyq-SR-2w7" id="0DM-uz-Uqe"/>
+                <outlet property="loginWithFacebookButton" destination="dyq-SR-2w7" id="G57-ZJ-GCX"/>
                 <outlet property="loginWithGoogleButton" destination="21s-ob-UvO" id="UOi-63-VXV"/>
                 <outlet property="passwordLabel" destination="BD7-99-oL7" id="URJ-7u-V6K"/>
                 <outlet property="passwordTextField" destination="NPX-04-hfE" id="CAu-we-p85"/>
@@ -46,7 +46,10 @@
                                 <constraint firstAttribute="height" constant="40" id="V16-xZ-NpD"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="Login with Apple Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Login with Facebook"/>
+                            <connections>
+                                <action selector="loginWithFacebookTapped:" destination="-1" eventType="touchUpInside" id="eTo-vh-8yi"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -158,7 +161,7 @@
     </objects>
     <resources>
         <image name="Continue Button" width="308" height="46"/>
-        <image name="Login with Apple Button" width="329" height="66"/>
+        <image name="Login with Facebook" width="329" height="65.666664123535156"/>
         <image name="Login with Google Button" width="329" height="66"/>
         <image name="OrDivider" width="306" height="12"/>
         <image name="Tasker Logo" width="257" height="93"/>
