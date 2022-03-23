@@ -12,6 +12,17 @@
 			</array>
 		</dict>
 	</array>
+	<key>FacebookAppID</key>
+	<string>348486917058959</string>
+	<key>FacebookClientToken</key>
+	<string>98f3b926ed08b0c57e7448bbb59ddf3e</string>
+	<key>FacebookDisplayName</key>
+	<string>tasker</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -29,16 +40,7 @@
 			</array>
 		</dict>
 	</dict>
-	<key>FacebookAppID</key>
-	<string>348486917058959</string>
-	<key>FacebookClientToken</key>
-	<string>98f3b926ed08b0c57e7448bbb59ddf3e</string>
-	<key>FacebookDisplayName</key>
-	<string>tasker</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fbapi</string>
-		<string>fb-messenger-share-api</string>
-	</array>
+	<key>UILaunchImageFile</key>
+	<string>running man</string>
 </dict>
 </plist>

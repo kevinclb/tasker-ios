@@ -20,32 +20,46 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Tasker Logo" translatesAutoresizingMaskIntoConstraints="NO" id="1J9-E8-No9">
-                    <rect key="frame" x="53" y="323" width="256" height="129"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1J9-E8-No9">
+                    <rect key="frame" x="53" y="323" width="256" height="64"/>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="tb8-Ia-lq5">
-                    <rect key="frame" x="40" y="710" width="310" height="60"/>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yhu-Mq-4oO">
+                    <rect key="frame" x="38.666666666666657" y="688" width="313" height="52"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQK-Sr-Fr2">
-                            <rect key="frame" x="0.0" y="0.0" width="135" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="159" height="52"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="159" id="VvW-sm-pH5"/>
+                                <constraint firstAttribute="height" constant="52" id="gdg-S7-OZ4"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" image="Login Button" title=""/>
+                            <buttonConfiguration key="configuration" style="plain" title="">
+                                <backgroundConfiguration key="background" image="loginbutton-b" imageContentMode="scaleAspectFill"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="loginPressed:" destination="-1" eventType="touchUpInside" id="rJ1-3q-FMs"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB6-lb-UsE">
-                            <rect key="frame" x="175" y="0.0" width="135" height="60"/>
+                            <rect key="frame" x="159" y="0.0" width="154" height="52"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="GOT-xw-pp9"/>
+                                <constraint firstAttribute="width" constant="154" id="tC9-4I-jhP"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" image="Sign up" title=""/>
+                            <buttonConfiguration key="configuration" style="plain" title="">
+                                <backgroundConfiguration key="background" image="registerbutton-b" imageContentMode="scaleAspectFit"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="registerPressed:" destination="-1" eventType="touchUpInside" id="Xm9-0a-oXk"/>
                             </connections>
                         </button>
                     </subviews>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="xBx-bN-t3Y"/>
+                        <constraint firstAttribute="height" constant="52" id="LfC-wd-lh0"/>
+                        <constraint firstAttribute="width" constant="313" id="omc-mw-SrY"/>
                     </constraints>
                 </stackView>
             </subviews>
@@ -53,22 +67,20 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="tlL-IZ-2tr" firstAttribute="trailing" secondItem="1J9-E8-No9" secondAttribute="trailing" constant="81" id="Rfa-fQ-bPW"/>
-                <constraint firstItem="tb8-Ia-lq5" firstAttribute="leading" secondItem="tlL-IZ-2tr" secondAttribute="leading" constant="40" id="e3q-2N-RSt"/>
-                <constraint firstItem="tlL-IZ-2tr" firstAttribute="trailing" secondItem="tb8-Ia-lq5" secondAttribute="trailing" constant="40" id="gPR-A8-ihs"/>
-                <constraint firstItem="tlL-IZ-2tr" firstAttribute="bottom" secondItem="tb8-Ia-lq5" secondAttribute="bottom" constant="40" id="hYI-kw-4h6"/>
+                <constraint firstItem="yhu-Mq-4oO" firstAttribute="leading" secondItem="tlL-IZ-2tr" secondAttribute="leading" constant="38.5" id="dIN-Ea-nWs"/>
+                <constraint firstItem="yhu-Mq-4oO" firstAttribute="top" secondItem="1J9-E8-No9" secondAttribute="bottom" constant="301" id="em9-mL-LtD"/>
                 <constraint firstItem="1J9-E8-No9" firstAttribute="leading" secondItem="tlL-IZ-2tr" secondAttribute="leading" constant="53" id="hxj-Tu-6HW"/>
-                <constraint firstItem="tb8-Ia-lq5" firstAttribute="centerX" secondItem="D0H-hQ-wdt" secondAttribute="centerX" id="rBr-DJ-MWR"/>
+                <constraint firstItem="tlL-IZ-2tr" firstAttribute="trailing" secondItem="yhu-Mq-4oO" secondAttribute="trailing" constant="38.5" id="riQ-9V-021"/>
                 <constraint firstItem="1J9-E8-No9" firstAttribute="top" secondItem="tlL-IZ-2tr" secondAttribute="top" constant="279" id="und-hz-90H"/>
-                <constraint firstItem="tlL-IZ-2tr" firstAttribute="bottom" secondItem="tb8-Ia-lq5" secondAttribute="bottom" constant="40" id="wLe-zB-dym"/>
-                <constraint firstItem="tb8-Ia-lq5" firstAttribute="top" secondItem="1J9-E8-No9" secondAttribute="bottom" constant="258" id="wWq-fb-LAv"/>
+                <constraint firstItem="tlL-IZ-2tr" firstAttribute="bottom" secondItem="yhu-Mq-4oO" secondAttribute="bottom" constant="70" id="xtr-Ud-xuG"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="65.625"/>
+            <point key="canvasLocation" x="136.92307692307691" y="65.402843601895725"/>
         </view>
     </objects>
     <resources>
-        <image name="Login Button" width="187" height="72"/>
-        <image name="Sign up" width="175" height="60"/>
-        <image name="Tasker Logo" width="257" height="93"/>
+        <image name="loginbutton-b" width="187" height="72"/>
+        <image name="logo" width="219" height="64"/>
+        <image name="registerbutton-b" width="175" height="60"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
