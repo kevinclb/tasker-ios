@@ -100,7 +100,9 @@ class EmployeeExplorePageViewController: UIViewController {
         navigateTo(newViewController: HelpViewController(), transitionFrom: .fromRight)
     }
     @IBAction func referAfriendTapped(_ sender: Any) {
-        print("Refer a Friend Tapped")
+        let activityVC = UIActivityViewController(activityItems: ["Hello friend, check out this cool app on the app store that I am using, Tasker, the task marketplace that allows you to post errands/tasks that you need to get done so that people can take them on and work for you, or you can be the employee and take on tasks to do and get paid, download it at: https://itunes.apple.com/us/app/tasker/id361285480?mt=8"], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
     }
     @IBAction func faqTapped(_ sender: Any) {
         navigateTo(newViewController: FAQViewController(), transitionFrom: .fromRight)
