@@ -14,14 +14,14 @@ import FirebaseStorage
 class EditProfileViewController: UIViewController {
     // var for picking an image from photo library
     var imagePicker:UIImagePickerController!
+    
+    
+    // outlets for components to populate
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var dob: UITextField!
-    
-    // outlets for components to populate
     @IBOutlet weak var bioTextfield: UITextView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
