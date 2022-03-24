@@ -20,13 +20,13 @@ class User: Codable {
     var lastname: String?
     var rating: Double?
     var dateOfBirth: String?
-    var employeeDescription, ipAddress, city, gender: String?
-    var skills: [String]?
+    var employeeDescription, bio, city, gender: String?
+    var skills: String?
     
     required init() {
     }
     
-    init(employee: Bool?, firstname: String?, uid: String?, email: String?, address: Address?, lastname: String?, rating: Double?, dateOfBirth: String?, id: String?, employeeDescription: String?, ipAddress: String?, city: String?, gender: String?, skills: [String]?) {
+    init(employee: Bool?, firstname: String?, uid: String?, email: String?, address: Address?, lastname: String?, rating: Double?, dateOfBirth: String?, id: String?, employeeDescription: String?, bio: String?, city: String?, gender: String?, skills: String?) {
         self.employee = employee
         self.firstname = firstname
         self.uid = uid
@@ -36,7 +36,7 @@ class User: Codable {
         self.rating = rating
         self.dateOfBirth = dateOfBirth
         self.employeeDescription = employeeDescription
-        self.ipAddress = ipAddress
+        self.bio = bio
         self.city = city
         self.gender = gender
         self.skills = skills

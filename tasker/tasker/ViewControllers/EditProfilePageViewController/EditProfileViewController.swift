@@ -22,6 +22,11 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var dob: UITextField!
     @IBOutlet weak var bioTextfield: UITextView!
+    @IBOutlet weak var street: UITextField!
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var state: UITextField!
+    @IBOutlet weak var zipCode: UITextField!
+    @IBOutlet weak var country: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,53 +39,43 @@ class EditProfileViewController: UIViewController {
         profilePic.clipsToBounds = true
         
         // When the view loads, lets go to the database and get info to populate fields so user can edit them
-        var user = User()
         let db = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {return}
         let docRef = db.collection("users").document(userID)
         docRef.getDocument { snapshot, error in
-            if error != nil {
-                print("error")
-            } else {
-                do {
-                    user = try snapshot!.data(as: User.self)!
-                } catch {
-                    print("error decoding user object")
+                    if error != nil {
+                        print("error fetching user document")
+                    } else {
+                        do {
+                            guard let user = try snapshot!.data(as: User.self) else{return}
+                            // Set first name
+                            self.firstName.text = user.firstname
+                            // Set last name
+                            self.lastName.text = user.lastname
+                            // Set dob
+                            self.dob.text = user.dateOfBirth
+                            // Set address
+                            self.street.text = user.address?.streetAddress
+                            self.city.text = user.address?.city
+                            self.state.text = user.address?.state
+                            let zip:Int = user.address?.zipcode ?? 0
+                            self.zipCode.text = String(zip)
+                            self.country.text = user.address?.country
+                            // Set bio
+                            let bio:String = user.bio ?? ""
+                            if(!bio.isEmpty){
+                                self.bioTextfield.text = bio
+                                self.bioTextfield.textColor = UIColor.black
+                            }
+                            else{
+                                self.bioTextfield.text = "You currently do not have a bio, add one to tell people more about you!"
+                                self.bioTextfield.textColor = UIColor.lightGray
+                            }
+                        } catch {
+                            print(error)
+                    }
                 }
-                user.address?.state
-                user.address?.city
-            }
         }
-        
-//        docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                // Set the first name
-//                let fname = document.get("firstname") as! String
-//                self.firstName.text = fname
-//                // Set the last name
-//                let lname = document.get("lastname") as! String
-//                self.lastName.text = lname
-//                // Set the Date of Birth
-//                let dateob = document.get("dateOfBirth") as! String
-//                self.dob.text = dateob
-//                // Set the address
-//
-//                // Set the bio
-//                let bio:String = document.get("bio") as! String
-//                if(!bio.isEmpty){
-//                    self.bioTextfield.text = bio
-//                    self.bioTextfield.textColor = UIColor.black
-//                }
-//                else{
-//                    self.bioTextfield.text = "You currently do not have a bio, add one to tell people more about you!"
-//                    self.bioTextfield.textColor = UIColor.lightGray
-//                }
-//                // Set the skills
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
-        
     }
    
     @IBAction func editImagePressed(_ sender: Any) {
@@ -104,12 +99,6 @@ class EditProfileViewController: UIViewController {
     }
     
 }
-
-
-
-
-
-
 
 
 extension EditProfileViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
