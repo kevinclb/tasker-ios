@@ -164,8 +164,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginWithFacebookTapped(_ sender: Any) {
         
-        let accessToken = AccessToken.current
-        
         // Start the Facebook sign in flow.
         AccessToken.current
         
