@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -53,9 +53,9 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbQ-0j-4Bn">
                                             <rect key="frame" x="20" y="50" width="133" height="21"/>
                                             <attributedString key="attributedText">
-                                                <fragment content="first name:">
+                                                <fragment content="* First name:">
                                                     <attributes>
-                                                        <color key="NSColor" red="0.411719799" green="0.43532106279999999" blue="0.47444945570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="NSColor" red="0.42726427319999999" green="0.45238620039999999" blue="0.48817884919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <font key="NSFont" metaFont="system" size="17"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
@@ -74,9 +74,9 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoQ-9X-icO">
                                             <rect key="frame" x="20" y="123" width="133" height="21"/>
                                             <attributedString key="attributedText">
-                                                <fragment content="date of birth:">
+                                                <fragment content="* Date of Birth:">
                                                     <attributes>
-                                                        <color key="NSColor" red="0.411719799" green="0.43532106279999999" blue="0.47444945570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="NSColor" red="0.44916611909999998" green="0.46871376040000001" blue="0.50789469480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <font key="NSFont" metaFont="system" size="17"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
@@ -87,7 +87,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZC6-rf-4lW">
                                             <rect key="frame" x="189" y="49" width="133" height="21"/>
                                             <attributedString key="attributedText">
-                                                <fragment content="last name:">
+                                                <fragment content="* Last name:">
                                                     <attributes>
                                                         <color key="NSColor" red="0.41176399590000001" green="0.43529450889999999" blue="0.47450906040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <font key="NSFont" metaFont="system" size="17"/>
@@ -110,7 +110,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdh-TZ-9K7">
                                             <rect key="frame" x="12" y="13" width="94" height="28"/>
                                             <attributedString key="attributedText">
-                                                <fragment content="personal">
+                                                <fragment content="Personal">
                                                     <attributes>
                                                         <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <font key="NSFont" size="24" name="Helvetica-Light"/>
@@ -149,9 +149,9 @@
                                     <rect key="frame" x="0.0" y="203" width="390" height="209"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PT-pi-p3K" userLabel="AddressHeader">
-                                            <rect key="frame" x="12" y="0.0" width="88" height="28"/>
+                                            <rect key="frame" x="12" y="0.0" width="90.333333333333329" height="28"/>
                                             <attributedString key="attributedText">
-                                                <fragment content="address">
+                                                <fragment content="Address">
                                                     <attributes>
                                                         <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <font key="NSFont" size="24" name="Helvetica-Light"/>
@@ -235,10 +235,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5m-Kx-boj" userLabel="CityBox">
-                                            <rect key="frame" x="19" y="111" width="126" height="67"/>
+                                            <rect key="frame" x="18.999999999999993" y="111" width="114.33333333333331" height="67"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="city" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LEG-Zu-zjZ">
-                                                    <rect key="frame" x="0.0" y="25" width="126" height="34"/>
+                                                    <rect key="frame" x="0.0" y="25" width="114.33333333333333" height="34"/>
                                                     <attributedString key="attributedText"/>
                                                     <textInputTraits key="textInputTraits" textContentType="address-level1"/>
                                                     <connections>
@@ -270,10 +270,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqC-pl-8Cl" userLabel="ZipBox">
-                                            <rect key="frame" x="154" y="111" width="105" height="67"/>
+                                            <rect key="frame" x="142.33333333333334" y="111" width="116.66666666666666" height="67"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="zip" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGN-yu-hC6">
-                                                    <rect key="frame" x="0.0" y="25" width="105" height="34"/>
+                                                    <rect key="frame" x="0.0" y="25" width="116.66666666666667" height="34"/>
                                                     <attributedString key="attributedText"/>
                                                     <textInputTraits key="textInputTraits" textContentType="address-level1"/>
                                                     <connections>
@@ -281,9 +281,9 @@
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xts-5z-ocj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="23" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="21"/>
                                                     <attributedString key="attributedText">
-                                                        <fragment content="zip">
+                                                        <fragment content="* zip">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.41176399590000001" green="0.43529450889999999" blue="0.47450906040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" metaFont="system" size="17"/>

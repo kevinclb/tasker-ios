@@ -9,6 +9,7 @@ target 'tasker' do
 
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
 

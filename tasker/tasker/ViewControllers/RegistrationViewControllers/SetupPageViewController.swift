@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import GoogleSignIn
-
+import FirebaseFirestore
 
 //TODO: Add better validation and data cleansing.
 
