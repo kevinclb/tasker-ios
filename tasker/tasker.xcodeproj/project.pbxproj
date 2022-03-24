@@ -56,7 +56,6 @@
 		CE0555C827BF0DC700877325 /* EmployeeExplorePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */; };
 		CE10019027CD6171007767AC /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10018E27CD6170007767AC /* HelpViewController.swift */; };
 		CE10019127CD6171007767AC /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10018F27CD6170007767AC /* HelpViewController.xib */; };
-		CE4C4B5227B5D8AF001EF283 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C4B5127B5D8AF001EF283 /* MenuView.xib */; };
 		CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6427A88E0500766C59 /* AppDelegate.swift */; };
 		CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6627A88E0500766C59 /* SceneDelegate.swift */; };
 		CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE641A6D27A88E0700766C59 /* Assets.xcassets */; };
@@ -126,7 +125,6 @@
 		CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeExplorePageViewController.xib; sourceTree = "<group>"; };
 		CE10018E27CD6170007767AC /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CE10018F27CD6170007767AC /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
-		CE4C4B5127B5D8AF001EF283 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		CE641A6127A88E0500766C59 /* tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE641A6427A88E0500766C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE641A6627A88E0500766C59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 				8C250DBD27AB34CE00A280B3 /* HomeExplorePageViewController.xib */,
 				8C2AFF5927D5D787009CFE6C /* TaskerCollectionViewCell.swift */,
 				8C2AFF5827D5D787009CFE6C /* TaskerCollectionViewCell.xib */,
-				CE4C4B5127B5D8AF001EF283 /* MenuView.xib */,
 			);
 			path = HomeExplorePageViewController;
 			sourceTree = "<group>";
@@ -500,7 +497,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88616E7827C5C228002A1F72 /* MessageViewCell.xib in Resources */,
-				CE4C4B5227B5D8AF001EF283 /* MenuView.xib in Resources */,
 				8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */,
 				8C250DC827AB351B00A280B3 /* MessagesViewController.xib in Resources */,
 				CE0555C827BF0DC700877325 /* EmployeeExplorePageViewController.xib in Resources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,10 +25,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="733" verticalCompressionResistancePriority="691" alignment="top" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="j1q-Rw-py1" userLabel="dummyStack View">
-                    <rect key="frame" x="107.5" y="831" width="199" height="31"/>
+                    <rect key="frame" x="107.5" y="841" width="199" height="21"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jhB-so-4R3" userLabel="HomeButton">
-                            <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
+                            <rect key="frame" x="0.0" y="0.0" width="31" height="21"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" image="house" catalog="system" cornerStyle="capsule">
                                 <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,7 +36,7 @@
                             </buttonConfiguration>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAW-oe-hVL" userLabel="MessageButton">
-                            <rect key="frame" x="84" y="0.0" width="31" height="31"/>
+                            <rect key="frame" x="84" y="0.0" width="31" height="21"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" image="message" catalog="system" imagePlacement="top" imagePadding="3" cornerStyle="capsule">
                                 <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,7 +44,7 @@
                             </buttonConfiguration>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fK8-Eq-SzC" userLabel="ProfileButton">
-                            <rect key="frame" x="168" y="0.0" width="31" height="31"/>
+                            <rect key="frame" x="168" y="0.0" width="31" height="21"/>
                             <state key="normal" title="Button" backgroundImage="person" catalog="system"/>
                             <buttonConfiguration key="configuration" style="filled" image="person" catalog="system" imagePlacement="top" imagePadding="3" cornerStyle="capsule">
                                 <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,7 +161,7 @@
                     </constraints>
                 </view>
                 <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kO-ID-s2V" userLabel="MenuScrollView">
-                    <rect key="frame" x="0.0" y="105" width="270" height="716"/>
+                    <rect key="frame" x="0.0" y="105" width="270" height="726"/>
                     <subviews>
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="KO2-dK-lJN" userLabel="Menu">
                             <rect key="frame" x="0.0" y="0.0" width="270" height="791"/>
@@ -385,7 +385,7 @@
             <constraints>
                 <constraint firstItem="9kO-ID-s2V" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" id="44B-Vn-2vy"/>
                 <constraint firstItem="j1q-Rw-py1" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4OH-Yk-ebY"/>
-                <constraint firstItem="9kO-ID-s2V" firstAttribute="bottom" secondItem="Mjo-7u-MRE" secondAttribute="bottom" constant="-80" id="4vh-bg-Niy"/>
+                <constraint firstItem="9kO-ID-s2V" firstAttribute="bottom" secondItem="Mjo-7u-MRE" secondAttribute="bottom" constant="-70" id="4vh-bg-Niy"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="width" secondItem="9kO-ID-s2V" secondAttribute="width" priority="999" id="6yE-Xr-RIy"/>
                 <constraint firstItem="j1q-Rw-py1" firstAttribute="top" secondItem="9kO-ID-s2V" secondAttribute="bottom" constant="10" id="7CD-Sy-8Zq"/>
                 <constraint firstItem="Mjo-7u-MRE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9N0-gU-C3E"/>
