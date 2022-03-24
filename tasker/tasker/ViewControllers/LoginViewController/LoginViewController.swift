@@ -135,7 +135,6 @@ class LoginViewController: UIViewController {
                     // New user, have them fill out additional info, transfer data and segue to setup view
                     let setupPageVC = SetupPageViewController(fromThirdParty: true, givenName: user?.profile?.givenName! ?? "", familyName: user?.profile?.familyName! ?? "")
 
-                    setupPageVC.modalPresentationStyle = .fullScreen
                     self.present(setupPageVC, animated: true, completion: nil)
                     setupPageVC.firstNameTextField.text = user?.profile?.givenName
                     setupPageVC.lastNameTextField.text = user?.profile?.familyName
@@ -206,7 +205,6 @@ class LoginViewController: UIViewController {
                         fromThirdParty: true, givenName: data["first_name"] as? String,
                         familyName: data["last_name"] as? String)
 
-                      setupPageVC.modalPresentationStyle = .fullScreen
                       self.present(setupPageVC, animated: true, completion: nil)
                       setupPageVC.firstNameTextField.text = data["first_name"] as? String
                       setupPageVC.lastNameTextField.text = data["last_name"] as? String
