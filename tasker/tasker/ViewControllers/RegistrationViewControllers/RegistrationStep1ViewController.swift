@@ -145,7 +145,6 @@ class RegistrationStep1ViewController: UIViewController {
                     // New user, have them fill out additional info, transfer data and segue to setup view
                     let setupPageVC = SetupPageViewController(fromThirdParty: true, givenName: user?.profile?.givenName! ?? "", familyName: user?.profile?.familyName! ?? "")
 
-                    setupPageVC.modalPresentationStyle = .fullScreen
                     self.present(setupPageVC, animated: true, completion: nil)
                     setupPageVC.firstNameTextField.text = user?.profile?.givenName
                     setupPageVC.lastNameTextField.text = user?.profile?.familyName
@@ -173,18 +172,18 @@ class RegistrationStep1ViewController: UIViewController {
     }
     
     @IBAction func registerWithFacebookTapped(_ sender: Any) {
-        
-        let accessToken = AccessToken.current
-        
+
         // Start the Facebook sign in flow.
-        LoginManager().logIn(permissions: ["email", "public_profile"], from: self) { (result, error) in
+        LoginManager().logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
           if error != nil {
 
             Utilities.showError(message: error!.localizedDescription, errorLabel: self.errorLabel)
-          } else if result?.isCancelled == true {
+          }
+            else if result?.isCancelled == true {
               
               Utilities.showError(message: "Facebook login was cancelled.", errorLabel: self.errorLabel)
-          } else {
+          }
+            else {
               
               // Pulling data from Facebook user.
               GraphRequest(graphPath: "/me", parameters: ["fields": "first_name, last_name, email"]).start {
@@ -195,7 +194,7 @@ class RegistrationStep1ViewController: UIViewController {
                   // Converting data to Strings so we can use them later.
                   let data: [String: AnyObject] = result as! [String: AnyObject]
 
-                  guard let accessTokenString = accessToken?.tokenString else { return }
+                    guard let accessTokenString = AccessToken.current?.tokenString else { return }
                   let credential = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
 
                   // Signing into firebase with user's credentials that were obtained above.
@@ -216,7 +215,6 @@ class RegistrationStep1ViewController: UIViewController {
                         fromThirdParty: true, givenName: data["first_name"] as? String,
                         familyName: data["last_name"] as? String)
 
-                      setupPageVC.modalPresentationStyle = .fullScreen
                       self.present(setupPageVC, animated: true, completion: nil)
                       setupPageVC.firstNameTextField.text = data["first_name"] as? String
                       setupPageVC.lastNameTextField.text = data["last_name"] as? String
@@ -244,6 +242,8 @@ class RegistrationStep1ViewController: UIViewController {
             }
           }
       }
+
+
     
     func segueToHomeVC() {
         // Segue to home explore page and programatically change root view controller to home explore page
