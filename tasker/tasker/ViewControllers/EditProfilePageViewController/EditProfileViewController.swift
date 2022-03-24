@@ -34,37 +34,52 @@ class EditProfileViewController: UIViewController {
         profilePic.clipsToBounds = true
         
         // When the view loads, lets go to the database and get info to populate fields so user can edit them
+        var user = User()
         let db = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {return}
         let docRef = db.collection("users").document(userID)
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                // Set the first name
-                let fname = document.get("firstname") as! String
-                self.firstName.text = fname
-                // Set the last name
-                let lname = document.get("lastname") as! String
-                self.lastName.text = lname
-                // Set the Date of Birth
-                let dateob = document.get("dateOfBirth") as! String
-                self.dob.text = dateob
-                // Set the address
-                
-                // Set the bio
-                let bio:String = document.get("bio") as! String
-                if(!bio.isEmpty){
-                    self.bioTextfield.text = bio
-                    self.bioTextfield.textColor = UIColor.black
-                }
-                else{
-                    self.bioTextfield.text = "You currently do not have a bio, add one to tell people more about you!"
-                    self.bioTextfield.textColor = UIColor.lightGray
-                }
-                // Set the skills
+        docRef.getDocument { snapshot, error in
+            if error != nil {
+                print("error")
             } else {
-                print("Document does not exist")
+                do {
+                    user = try snapshot!.data(as: User.self)!
+                } catch {
+                    print("error decoding user object")
+                }
+                user.address?.state
+                user.address?.city
             }
         }
+        
+//        docRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                // Set the first name
+//                let fname = document.get("firstname") as! String
+//                self.firstName.text = fname
+//                // Set the last name
+//                let lname = document.get("lastname") as! String
+//                self.lastName.text = lname
+//                // Set the Date of Birth
+//                let dateob = document.get("dateOfBirth") as! String
+//                self.dob.text = dateob
+//                // Set the address
+//
+//                // Set the bio
+//                let bio:String = document.get("bio") as! String
+//                if(!bio.isEmpty){
+//                    self.bioTextfield.text = bio
+//                    self.bioTextfield.textColor = UIColor.black
+//                }
+//                else{
+//                    self.bioTextfield.text = "You currently do not have a bio, add one to tell people more about you!"
+//                    self.bioTextfield.textColor = UIColor.lightGray
+//                }
+//                // Set the skills
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
         
     }
    
