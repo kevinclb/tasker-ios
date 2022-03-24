@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
@@ -23,8 +24,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var continueButton: UIButton!
     
     @IBOutlet weak var loginWithGoogleButton: UIButton!
-    
-    @IBOutlet weak var loginWithAppleButton: UIButton!
+ 
+    @IBOutlet weak var loginWithFacebookButton: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -98,7 +99,7 @@ class LoginViewController: UIViewController {
         // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
 
-        // Start the google sign in flow
+        // Start the google sign in flow.
         GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, err in
 
             if err != nil {
@@ -120,28 +121,29 @@ class LoginViewController: UIViewController {
             // Signing into firebase with user's credentials that were obtained above.
             Auth.auth().signIn(with: credential) { result, err in
 
-                // Check for errors
+                // Check for errors.
                 if let err = err {
                     Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
                 }
                 
-                // Checking if user is new
+                // Checking if user is new.
                 guard let newUserStatus = result?.additionalUserInfo?.isNewUser else {return}
                 
                 if newUserStatus == true {
-                    // New user, have them fill out additional info
-                    // Switch to setup page here
-                    let setupPageVC = SetupPageViewController()
+                    
+                    // New user, have them fill out additional info, transfer data and segue to setup view
+                    let setupPageVC = SetupPageViewController(fromThirdParty: true, givenName: user?.profile?.givenName! ?? "", familyName: user?.profile?.familyName! ?? "")
 
                     setupPageVC.modalPresentationStyle = .fullScreen
                     self.present(setupPageVC, animated: true, completion: nil)
                     setupPageVC.firstNameTextField.text = user?.profile?.givenName
                     setupPageVC.lastNameTextField.text = user?.profile?.familyName
                     setupPageVC.setEmail(email: (user?.profile!.email)!);
-                    setupPageVC.setGoogleCredentials(credentials: credential)
+                    setupPageVC.setCredentials(credentials: credential)
                    
                     let user = Auth.auth().currentUser
 
+                    // Delete user from database if they do not complete the setup page
                     user?.delete { error in
                       if let err = err {
                           Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
@@ -151,12 +153,86 @@ class LoginViewController: UIViewController {
                     }
                 }
                 else{
-                    // Not a new user, direct to home view
+                    
+                    // Not a new user, direct to home view.
                     self.segueToHomeVC()
                 }
             }
         }
     }
+    
+    @IBAction func loginWithFacebookTapped(_ sender: Any) {
+        
+        let accessToken = AccessToken.current
+        
+        // Start the Facebook sign in flow.
+        LoginManager().logIn(permissions: ["email", "public_profile"], from: self) { (result, error) in
+          if error != nil {
+
+            Utilities.showError(message: error!.localizedDescription, errorLabel: self.errorLabel)
+          } else if result?.isCancelled == true {
+              
+              Utilities.showError(message: "Facebook login was cancelled.", errorLabel: self.errorLabel)
+          } else {
+              
+              // Pulling data from Facebook user.
+              GraphRequest(graphPath: "/me", parameters: ["fields": "first_name, last_name, email"]).start {
+                (connection, result, err) in
+
+                if err == nil {
+                    
+                  // Converting data to Strings so we can use them later.
+                  let data: [String: AnyObject] = result as! [String: AnyObject]
+
+                  guard let accessTokenString = accessToken?.tokenString else { return }
+                  let credential = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+
+                  // Signing into firebase with user's credentials that were obtained above.
+                  Auth.auth().signIn(with: credential) { result, err in
+                      
+                    // Check for errors.
+                    if let err = err {
+                      Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
+                    }
+
+                    // Checking if user is new.
+                    guard let newUserStatus = result?.additionalUserInfo?.isNewUser else { return }
+
+                    if newUserStatus == true {
+                        
+                      // New user, have them fill out additional info, transfer data and segue to setup view.
+                      let setupPageVC = SetupPageViewController(
+                        fromThirdParty: true, givenName: data["first_name"] as? String,
+                        familyName: data["last_name"] as? String)
+
+                      setupPageVC.modalPresentationStyle = .fullScreen
+                      self.present(setupPageVC, animated: true, completion: nil)
+                      setupPageVC.firstNameTextField.text = data["first_name"] as? String
+                      setupPageVC.lastNameTextField.text = data["last_name"] as? String
+                      setupPageVC.setEmail(email: (data["email"] as? String)!)
+                      setupPageVC.setCredentials(credentials: credential)
+
+                      let user = Auth.auth().currentUser
+
+                      // Delete user from database if they do not complete the setup page.
+                      user?.delete { error in
+                        if let err = err {
+                          Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
+                        } else {
+                          // Account deleted.
+                        }
+                      }
+                    } else {
+                        
+                      // Not a new user, direct to home view.
+                      self.segueToHomeVC()
+                    }
+                  }
+                }
+              }
+            }
+          }
+      }
     
     func segueToHomeVC() {
         // Segue to home explore page and programatically change root view controller to home explore page

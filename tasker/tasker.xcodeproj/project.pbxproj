@@ -30,6 +30,7 @@
 		8C2DC0AA27C6F9F90026FF11 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0A927C6F9F90026FF11 /* Post.swift */; };
 		8C2DC0AC27C6FA070026FF11 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0AB27C6FA070026FF11 /* Message.swift */; };
 		8C6F7E5227E7E34B00495DF1 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F7E5127E7E34B00495DF1 /* Address.swift */; };
+		8C791CD927EBD69E0016728E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C791CD827EBD69E0016728E /* Launch Screen.storyboard */; };
 		8CAD48E627E0307500304CF8 /* SearchResultsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD48E527E0307500304CF8 /* SearchResultsTableViewController.xib */; };
 		8CAD48E827E0308800304CF8 /* SearchResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD48E727E0308800304CF8 /* SearchResultsTableViewCell.xib */; };
 		8CAD48EC27E030B200304CF8 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD48EB27E030B200304CF8 /* SearchResultsTableViewController.swift */; };
@@ -55,8 +56,6 @@
 		CE0555C827BF0DC700877325 /* EmployeeExplorePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */; };
 		CE10019027CD6171007767AC /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10018E27CD6170007767AC /* HelpViewController.swift */; };
 		CE10019127CD6171007767AC /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10018F27CD6170007767AC /* HelpViewController.xib */; };
-		CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */; };
-		CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */; };
 		CE4C4B5227B5D8AF001EF283 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C4B5127B5D8AF001EF283 /* MenuView.xib */; };
 		CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6427A88E0500766C59 /* AppDelegate.swift */; };
 		CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6627A88E0500766C59 /* SceneDelegate.swift */; };
@@ -100,6 +99,7 @@
 		8C2DC0A927C6F9F90026FF11 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8C2DC0AB27C6FA070026FF11 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8C6F7E5127E7E34B00495DF1 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		8C791CD827EBD69E0016728E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8CAD48E527E0307500304CF8 /* SearchResultsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsTableViewController.xib; sourceTree = "<group>"; };
 		8CAD48E727E0308800304CF8 /* SearchResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsTableViewCell.xib; sourceTree = "<group>"; };
 		8CAD48EB27E030B200304CF8 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
@@ -126,8 +126,6 @@
 		CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeExplorePageViewController.xib; sourceTree = "<group>"; };
 		CE10018E27CD6170007767AC /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CE10018F27CD6170007767AC /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
-		CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
-		CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		CE4C4B5127B5D8AF001EF283 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		CE641A6127A88E0500766C59 /* tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE641A6427A88E0500766C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,15 +184,6 @@
 			path = RootViewController;
 			sourceTree = "<group>";
 		};
-		8C250DB127AB336800A280B3 /* LaunchViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CE42C21227AB289E00BBEB7A /* LaunchViewController.swift */,
-				CE42C21327AB289E00BBEB7A /* LaunchViewController.xib */,
-			);
-			path = LaunchViewController;
-			sourceTree = "<group>";
-		};
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +197,6 @@
 				8CAD48E427E0305800304CF8 /* SearchResultsViewControllers */,
 				8C250DD027AB378000A280B3 /* SettingsPageViewController */,
 				8C250DBB27AB34B300A280B3 /* HomeExplorePageViewController */,
-				8C250DB127AB336800A280B3 /* LaunchViewController */,
 				8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */,
 				8C250DC927AB352E00A280B3 /* MessagesViewController */,
 				8C250DD927AB381200A280B3 /* EditProfilePageViewController */,
@@ -382,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				CE641A6427A88E0500766C59 /* AppDelegate.swift */,
+				8C791CD827EBD69E0016728E /* Launch Screen.storyboard */,
 				CE641A6627A88E0500766C59 /* SceneDelegate.swift */,
 				BA1DF53A27D021F2000F292E /* Helpers */,
 				CE641A7827A8904A00766C59 /* GoogleService-Info.plist */,
@@ -511,7 +500,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88616E7827C5C228002A1F72 /* MessageViewCell.xib in Resources */,
-				CE42C21527AB289E00BBEB7A /* LaunchViewController.xib in Resources */,
 				CE4C4B5227B5D8AF001EF283 /* MenuView.xib in Resources */,
 				8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */,
 				8C250DC827AB351B00A280B3 /* MessagesViewController.xib in Resources */,
@@ -535,6 +523,7 @@
 				8C250DD427AB37A400A280B3 /* SettingsPageViewController.xib in Resources */,
 				8CAD48E827E0308800304CF8 /* SearchResultsTableViewCell.xib in Resources */,
 				CEF81B3727E3286700CE0340 /* SupportUsViewController.xib in Resources */,
+				8C791CD927EBD69E0016728E /* Launch Screen.storyboard in Resources */,
 				CEF81B2B27E2516F00CE0340 /* ContactUsViewController.xib in Resources */,
 				8C08C93127E7DC4C000406B9 /* TestViewController.xib in Resources */,
 				8C224DA727BB15B100E486C7 /* PublicProfileViewController.xib in Resources */,
@@ -598,7 +587,6 @@
 				CE0555C727BF0DC700877325 /* Errand.swift in Sources */,
 				8CD95D3727E6D9FC003F7360 /* ListTaskViewController.swift in Sources */,
 				8C2AFF5B27D5D787009CFE6C /* TaskerCollectionViewCell.swift in Sources */,
-				CE42C21427AB289E00BBEB7A /* LaunchViewController.swift in Sources */,
 				8CAD48EE27E030D600304CF8 /* SearchResultsTableViewCell.swift in Sources */,
 				8C224DA227BB14AA00E486C7 /* RootViewController.swift in Sources */,
 				CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */,
@@ -754,6 +742,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SJQTFG7HJ5;
@@ -761,7 +750,7 @@
 				INFOPLIST_FILE = tasker/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tasker only uses your location in order to better deliver you employees and tasks near you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -783,6 +772,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SJQTFG7HJ5;
@@ -790,7 +780,7 @@
 				INFOPLIST_FILE = tasker/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tasker only uses your location in order to better deliver you employees and tasks near you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
