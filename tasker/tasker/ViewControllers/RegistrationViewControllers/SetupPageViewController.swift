@@ -30,12 +30,6 @@ class SetupPageViewController: UIViewController {
     @IBOutlet weak var bioTextField: UITextField!
     @IBOutlet weak var yourNameTextLabel: UILabel!
     
-    
-    
-    var fromThirdParty: Bool!
-    var givenName: String!
-    var familyName: String!
-    
     @IBOutlet weak var avatarImage: UIImageView!
     
     var name = ["Your", "Name"]
@@ -49,32 +43,12 @@ class SetupPageViewController: UIViewController {
     var lastName: String = ""
     private var email: String = ""
     private var password: String = ""
-    private var credentials: AuthCredential?
-    
-    
-    convenience init() {
-        self.init(fromThirdParty: false, givenName: "", familyName: "")
-    }
-    
-    init(fromThirdParty: Bool?, givenName: String?, familyName: String?) {
-        super.init(nibName: nil, bundle: nil)
-        self.fromThirdParty = fromThirdParty ?? false
-        self.givenName = givenName ?? ""
-        self.familyName = familyName ?? ""
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
+    private var googleCredentials: AuthCredential?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        if fromThirdParty {
-            yourNameTextLabel.text = self.givenName + " " + self.familyName
-        }
+        super.viewDidLoad()
     }
-    
     
     func setEmail(email: String) {
         self.email = email
@@ -92,12 +66,12 @@ class SetupPageViewController: UIViewController {
         return password
     }
     
-    func setCredentials(credentials: AuthCredential)  {
-        self.credentials = credentials
+    func setGoogleCredentials(credentials: AuthCredential)  {
+        self.googleCredentials = credentials
     }
-    
-    func getCredentials() -> AuthCredential {
-        return credentials!
+
+    func getGoogleCredentials() -> AuthCredential {
+        return googleCredentials!
     }
     
     @IBAction func firstNameEditingEnded(_ sender: UITextField) {
@@ -182,39 +156,39 @@ class SetupPageViewController: UIViewController {
                         let errMessage = "Error creating user: " + err!.localizedDescription
                         Utilities.showError(message: errMessage, errorLabel: self.errorLabel)
                         
-                    }
+                        }
                     else {
                         // User was created successfully, now store the data
                         let userID = result!.user.uid
                         self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
-                        // Direct to home view
-                        self.segueToHomeVC()
-                    }
+                                // Direct to home view
+                                self.segueToHomeVC()
+                            }
                     
                 }
             }
-            else{
-                // Registering with third party (Google or Facebook)
-                Auth.auth().signIn(with: self.credentials!) { result, err in
+                else{
+                    // Google Registration
+                    Auth.auth().signIn(with: self.googleCredentials!) { result, err in
                     
                     // Check for errors
                     if let err = err {
                         Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
                     }
-                    
-                    else {
-                        // User was created successfully, now store the data
-                        let userID = result!.user.uid
-                        self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
-                        // Direct to home view
-                        self.segueToHomeVC()
                         
+                else {
+                    // User was created successfully, now store the data
+                    let userID = result!.user.uid
+                    self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
+                            // Direct to home view
+                            self.segueToHomeVC()
+                        
+                    
+                }
                         
                     }
                     
                 }
-                
-            }
             
         }
         
@@ -260,11 +234,11 @@ class SetupPageViewController: UIViewController {
         // Segue to home explore page and programatically change root view controller to home explore page
         
         let homePageVC = HomeExplorePageViewController()
-        
+
         homePageVC.modalPresentationStyle = .fullScreen
         self.present(homePageVC, animated: true, completion: nil)
     }
-    
+     
 }
 
 extension SetupPageViewController {

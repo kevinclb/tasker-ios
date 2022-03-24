@@ -59,44 +59,30 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H6Y-w4-g47" userLabel="HomePageStackView">
                             <rect key="frame" x="0.0" y="45" width="414" height="856"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xHM-dk-egh" userLabel="HeaderStackView">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="xHM-dk-egh" userLabel="HeaderStackView">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="-17" translatesAutoresizingMaskIntoConstraints="NO" id="Y2S-LS-2gN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r9-DZ-BH2" userLabel="MenuButton">
-                                                    <rect key="frame" x="0.0" y="0.0" width="85" height="64"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="85" id="VGE-3x-51g"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="menu button"/>
-                                                    <connections>
-                                                        <action selector="menuTapped:" destination="-1" eventType="touchUpInside" id="Rrf-M8-AZx"/>
-                                                    </connections>
-                                                </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hGC-f6-MlX">
-                                                    <rect key="frame" x="114.5" y="0.0" width="185" height="64"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="185" id="dlL-Ld-WAB"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avi 10" translatesAutoresizingMaskIntoConstraints="NO" id="550-fu-mea">
-                                                    <rect key="frame" x="329" y="0.0" width="85" height="64"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="85" id="P4F-DQ-Tzn"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r9-DZ-BH2" userLabel="MenuButton">
+                                            <rect key="frame" x="0.0" y="0.0" width="122.5" height="58"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="Menu-Button"/>
+                                            <connections>
+                                                <action selector="menuTapped:" destination="-1" eventType="touchUpInside" id="Rrf-M8-AZx"/>
+                                            </connections>
+                                        </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderTextandLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="hGC-f6-MlX">
+                                            <rect key="frame" x="145.5" y="0.0" width="123" height="58"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="414" id="UuN-nr-SNJ"/>
+                                                <constraint firstAttribute="width" constant="122.72" id="2c6-4h-AsM"/>
                                             </constraints>
-                                        </stackView>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demoAviHomePage" translatesAutoresizingMaskIntoConstraints="NO" id="550-fu-mea">
+                                            <rect key="frame" x="291.5" y="0.0" width="122.5" height="58"/>
+                                        </imageView>
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" id="9dF-Vw-2eu" userLabel="ContentStackView">
-                                    <rect key="frame" x="0.0" y="72" width="414" height="784"/>
+                                    <rect key="frame" x="0.0" y="66" width="414" height="790"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hss-PE-Fep" userLabel="SearchAndListStackView">
@@ -128,7 +114,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jKm-U8-mbo">
-                                            <rect key="frame" x="0.0" y="139" width="414" height="645"/>
+                                            <rect key="frame" x="0.0" y="139" width="414" height="651"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="rYP-gz-B3K">
                                                 <size key="itemSize" width="346" height="119"/>
@@ -151,13 +137,9 @@
                     <constraints>
                         <constraint firstItem="H6Y-w4-g47" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" id="0fH-Id-8gb"/>
                         <constraint firstAttribute="bottom" secondItem="H6Y-w4-g47" secondAttribute="bottom" id="8E0-Tl-Hs7"/>
-                        <constraint firstAttribute="trailing" secondItem="H6Y-w4-g47" secondAttribute="trailing" id="REL-Hz-gcp"/>
                         <constraint firstItem="H6Y-w4-g47" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" id="RJ1-oG-eM4"/>
                         <constraint firstItem="H6Y-w4-g47" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="45" id="c3D-xO-QCV"/>
-                        <constraint firstItem="H6Y-w4-g47" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" id="fuD-jB-Rvn"/>
-                        <constraint firstAttribute="bottom" secondItem="H6Y-w4-g47" secondAttribute="bottom" id="oWb-dU-l2b"/>
                         <constraint firstItem="H6Y-w4-g47" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="45" id="pt8-lE-GtU"/>
-                        <constraint firstItem="H6Y-w4-g47" firstAttribute="top" secondItem="Mjo-7u-MRE" secondAttribute="top" constant="45" id="rM4-gx-g67"/>
                     </constraints>
                 </view>
                 <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kO-ID-s2V" userLabel="MenuScrollView">
@@ -167,7 +149,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="270" height="791"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="avi 10" translatesAutoresizingMaskIntoConstraints="NO" id="aBr-xp-Oms" userLabel="profilePicture">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="JosephSmith" translatesAutoresizingMaskIntoConstraints="NO" id="aBr-xp-Oms" userLabel="profilePicture">
                                     <rect key="frame" x="8" y="13" width="59" height="62"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joseph Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5o5-ak-vm7" userLabel="name">
@@ -203,10 +185,10 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="white star" translatesAutoresizingMaskIntoConstraints="NO" id="FzK-j4-bqf">
-                                    <rect key="frame" x="15" y="82.5" width="18" height="13.5"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Star_1" translatesAutoresizingMaskIntoConstraints="NO" id="FzK-j4-bqf">
+                                    <rect key="frame" x="15" y="82.5" width="18" height="14"/>
                                 </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big divider" id="j6S-IZ-Uhf" userLabel="divider1">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="j6S-IZ-Uhf" userLabel="divider1">
                                     <rect key="frame" x="20" y="106" width="240" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -221,7 +203,7 @@
                                         <action selector="helpCenterTapped:" destination="-1" eventType="touchUpInside" id="dug-HG-Bmg"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small divider" id="Ugs-wF-kYu" userLabel="divider2">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="Ugs-wF-kYu" userLabel="divider2">
                                     <rect key="frame" x="38" y="172" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -236,7 +218,7 @@
                                         <action selector="referAFriendTapped:" destination="-1" eventType="touchUpInside" id="jIe-k2-0Cm"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small divider" id="R6Z-v6-sId" userLabel="divider3">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="R6Z-v6-sId" userLabel="divider3">
                                     <rect key="frame" x="38" y="243" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -251,7 +233,7 @@
                                         <action selector="FAQTapped:" destination="-1" eventType="touchUpInside" id="ES5-Dc-MAq"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small divider" id="VeO-d5-g6Q" userLabel="divider4">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="VeO-d5-g6Q" userLabel="divider4">
                                     <rect key="frame" x="38" y="310" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -266,7 +248,7 @@
                                         <action selector="contactUsTapped:" destination="-1" eventType="touchUpInside" id="THC-iG-AH1"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small divider" id="kyL-N0-hta" userLabel="divider4">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="kyL-N0-hta" userLabel="divider4">
                                     <rect key="frame" x="38" y="379" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -281,7 +263,7 @@
                                         <action selector="aboutUsTapped:" destination="-1" eventType="touchUpInside" id="vbe-hM-mdF"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small divider" id="rr3-df-oLx" userLabel="divider5">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="rr3-df-oLx" userLabel="divider5">
                                     <rect key="frame" x="38" y="451" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -296,14 +278,14 @@
                                         <action selector="supportUsTapped:" destination="-1" eventType="touchUpInside" id="UUu-Ga-pnU"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small divider" id="6qa-iS-RZT" userLabel="divider6">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" id="6qa-iS-RZT" userLabel="divider6">
                                     <rect key="frame" x="38" y="523" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBs-FY-D0Y" userLabel="EmployeeProfile">
                                     <rect key="frame" x="15" y="545" width="145" height="66"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="employ-button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="employeeProfile_Button"/>
                                     <connections>
                                         <action selector="employeeProfileTapped:" destination="-1" eventType="touchUpInside" id="2Mx-gT-Hdg"/>
                                     </connections>
@@ -311,7 +293,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkW-wH-2SY" userLabel="SettingsButton">
                                     <rect key="frame" x="169" y="544" width="77" height="68"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="menuGear Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="Settings_Button"/>
                                     <connections>
                                         <action selector="settingsTapped:" destination="-1" eventType="touchUpInside" id="ORL-s1-9h3"/>
                                     </connections>
@@ -319,7 +301,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RC7-xq-zw8" userLabel="LogoutButton">
                                     <rect key="frame" x="71" y="619" width="169" height="77"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="logout-button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="LogOut_Button"/>
                                     <connections>
                                         <action selector="logoutTapped:" destination="-1" eventType="touchUpInside" id="G0G-ds-nvV"/>
                                     </connections>
@@ -406,19 +388,19 @@
         </view>
     </objects>
     <resources>
+        <image name="HeaderTextandLogo-1" width="123" height="47"/>
+        <image name="JosephSmith" width="59" height="57"/>
+        <image name="LogOut_Button" width="142" height="56"/>
+        <image name="Menu-Button" width="44" height="44"/>
+        <image name="Settings_Button" width="56" height="56"/>
+        <image name="Star_1" width="18" height="14"/>
         <image name="addButton" width="54" height="54"/>
-        <image name="avi 10" width="46" height="45"/>
-        <image name="big divider" width="182.5" height="9"/>
-        <image name="employ-button" width="142" height="56"/>
+        <image name="demoAviHomePage" width="44" height="44"/>
+        <image name="divider" width="183" height="9"/>
+        <image name="employeeProfile_Button" width="142" height="56"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="logo" width="219" height="64"/>
-        <image name="logout-button" width="142" height="56"/>
-        <image name="menu button" width="44" height="44"/>
-        <image name="menuGear Button" width="56" height="56"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="small divider" width="143" height="9"/>
-        <image name="white star" width="18" height="13.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -14,7 +14,7 @@
                 <outlet property="emailAddressLabel" destination="S9K-G6-ryJ" id="2dc-Zm-3se"/>
                 <outlet property="emailAddressTextField" destination="zcH-nb-tIC" id="EEE-SA-mPK"/>
                 <outlet property="errorLabel" destination="Mj4-RD-y2V" id="4JN-k5-OuT"/>
-                <outlet property="loginWithFacebookButton" destination="dyq-SR-2w7" id="G57-ZJ-GCX"/>
+                <outlet property="loginWithAppleButton" destination="dyq-SR-2w7" id="0DM-uz-Uqe"/>
                 <outlet property="loginWithGoogleButton" destination="21s-ob-UvO" id="UOi-63-VXV"/>
                 <outlet property="passwordLabel" destination="BD7-99-oL7" id="URJ-7u-V6K"/>
                 <outlet property="passwordTextField" destination="NPX-04-hfE" id="CAu-we-p85"/>
@@ -35,7 +35,7 @@
                                 <constraint firstAttribute="height" constant="40" id="D0x-iw-m9p"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="register with google button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Login with Google Button"/>
                             <connections>
                                 <action selector="loginWithGoogleTapped:" destination="-1" eventType="touchUpInside" id="ogm-yN-xe9"/>
                             </connections>
@@ -46,10 +46,7 @@
                                 <constraint firstAttribute="height" constant="40" id="V16-xZ-NpD"/>
                             </constraints>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="register with facebook button"/>
-                            <connections>
-                                <action selector="loginWithFacebookTapped:" destination="-1" eventType="touchUpInside" id="eTo-vh-8yi"/>
-                            </connections>
+                            <buttonConfiguration key="configuration" style="plain" image="Login with Apple Button"/>
                         </button>
                     </subviews>
                     <constraints>
@@ -58,7 +55,7 @@
                         <constraint firstAttribute="height" constant="110" id="z5R-uB-93o"/>
                     </constraints>
                 </stackView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kLN-qf-hJp">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Tasker Logo" translatesAutoresizingMaskIntoConstraints="NO" id="kLN-qf-hJp">
                     <rect key="frame" x="116" y="718" width="141" height="52"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="2ah-OM-56w"/>
@@ -110,12 +107,12 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iH7-Lh-0Xf">
                             <rect key="frame" x="0.0" y="239.33333333333329" width="332" height="65.666666666666657"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="continue button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="Continue Button"/>
                             <connections>
                                 <action selector="continueTapped:" destination="-1" eventType="touchUpInside" id="ueZ-eT-1Za"/>
                             </connections>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or divider" translatesAutoresizingMaskIntoConstraints="NO" id="5Nx-HS-UzC">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrDivider" translatesAutoresizingMaskIntoConstraints="NO" id="5Nx-HS-UzC">
                             <rect key="frame" x="0.0" y="335" width="332" height="28"/>
                         </imageView>
                     </subviews>
@@ -160,11 +157,11 @@
         </view>
     </objects>
     <resources>
-        <image name="continue button" width="308" height="45.666667938232422"/>
-        <image name="logo" width="219" height="64"/>
-        <image name="or divider" width="306" height="12"/>
-        <image name="register with facebook button" width="329" height="65.666664123535156"/>
-        <image name="register with google button" width="329" height="65.666664123535156"/>
+        <image name="Continue Button" width="308" height="46"/>
+        <image name="Login with Apple Button" width="329" height="66"/>
+        <image name="Login with Google Button" width="329" height="66"/>
+        <image name="OrDivider" width="306" height="12"/>
+        <image name="Tasker Logo" width="257" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

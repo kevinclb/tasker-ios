@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,8 +18,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="k8i-tc-yZ4">
-                    <rect key="frame" x="20" y="55" width="374" height="64"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderTextandLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="k8i-tc-yZ4">
+                    <rect key="frame" x="20" y="55" width="374" height="47"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46.770000000000003" id="aC6-rr-KMz"/>
                     </constraints>
@@ -34,10 +34,10 @@
                     </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzb-Oy-WXD">
-                    <rect key="frame" x="0.0" y="134" width="414" height="762"/>
+                    <rect key="frame" x="0.0" y="117" width="414" height="779"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9If-Nh-2QX" userLabel="ContainerView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="762"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="779"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nr-gt-vwZ">
                                     <rect key="frame" x="54" y="0.0" width="116" height="36"/>
@@ -97,9 +97,9 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDf-iP-aO8" userLabel="logOut">
-                                    <rect key="frame" x="54" y="650" width="321" height="70"/>
+                                    <rect key="frame" x="54" y="667" width="321" height="70"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="logout-button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="LogOut_Button"/>
                                     <connections>
                                         <action selector="logoutTapped:" destination="-1" eventType="touchUpInside" id="zEA-SB-Ljp"/>
                                     </connections>
@@ -166,12 +166,12 @@
         <image name="Account Settings" width="313" height="49"/>
         <image name="App Notifications" width="313" height="49"/>
         <image name="Edit profile info" width="313" height="49"/>
+        <image name="HeaderTextandLogo-1" width="123" height="47"/>
         <image name="Help" width="313" height="49"/>
+        <image name="LogOut_Button" width="142" height="56"/>
         <image name="Payment Informations" width="313" height="49"/>
         <image name="arrow_back_ios_24px" width="20" height="20"/>
         <image name="blackDivider" width="293" height="1"/>
-        <image name="logo" width="219" height="64"/>
-        <image name="logout-button" width="142" height="56"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
