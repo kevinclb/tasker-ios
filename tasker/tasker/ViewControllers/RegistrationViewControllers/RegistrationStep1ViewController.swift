@@ -175,8 +175,6 @@ class RegistrationStep1ViewController: UIViewController {
     @IBAction func registerWithFacebookTapped(_ sender: Any) {
 
         // Start the Facebook sign in flow.
-        AccessToken.current
-        
         LoginManager().logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
           if error != nil {
 
