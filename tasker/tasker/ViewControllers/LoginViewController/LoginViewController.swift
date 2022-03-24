@@ -94,6 +94,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginWithGoogleTapped(_ sender: Any) {
+        
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
 
         // Create Google Sign In configuration object.
@@ -166,14 +167,18 @@ class LoginViewController: UIViewController {
         let accessToken = AccessToken.current
         
         // Start the Facebook sign in flow.
-        LoginManager().logIn(permissions: ["email", "public_profile"], from: self) { (result, error) in
+        AccessToken.current
+        
+        LoginManager().logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
           if error != nil {
 
             Utilities.showError(message: error!.localizedDescription, errorLabel: self.errorLabel)
-          } else if result?.isCancelled == true {
+          }
+            else if result?.isCancelled == true {
               
               Utilities.showError(message: "Facebook login was cancelled.", errorLabel: self.errorLabel)
-          } else {
+          }
+            else {
               
               // Pulling data from Facebook user.
               GraphRequest(graphPath: "/me", parameters: ["fields": "first_name, last_name, email"]).start {
@@ -184,7 +189,7 @@ class LoginViewController: UIViewController {
                   // Converting data to Strings so we can use them later.
                   let data: [String: AnyObject] = result as! [String: AnyObject]
 
-                  guard let accessTokenString = accessToken?.tokenString else { return }
+                    guard let accessTokenString = AccessToken.current?.tokenString else { return }
                   let credential = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
 
                   // Signing into firebase with user's credentials that were obtained above.

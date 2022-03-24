@@ -7,15 +7,15 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb348486917058959</string>
+				<string>fb691652112040416</string>
 				<string>com.googleusercontent.apps.743140781383-uv2olpevb78ctvsapvgn1nkd7ia7kgsr</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>348486917058959</string>
+	<string>691652112040416</string>
 	<key>FacebookClientToken</key>
-	<string>98f3b926ed08b0c57e7448bbb59ddf3e</string>
+	<string>f45208a83b27fc7661eeb765ea46fb91</string>
 	<key>FacebookDisplayName</key>
 	<string>tasker</string>
 	<key>LSApplicationQueriesSchemes</key>
