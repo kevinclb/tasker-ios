@@ -36,8 +36,12 @@ class Utilities {
             
             // Checking if the user is at least 18 years old
             let minimumAge: Date = Calendar.current.date(byAdding: .year, value: -18, to: Date())!;
+            let maximumAge: Date = Calendar.current.date(byAdding: .year, value: -99, to: Date())!;
                 
             if dateOfBirth > minimumAge {
+                return false
+            }
+            if dateOfBirth < maximumAge {
                 return false
             }
             else {

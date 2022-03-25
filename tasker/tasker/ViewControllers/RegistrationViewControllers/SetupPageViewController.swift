@@ -41,6 +41,7 @@ class SetupPageViewController: UIViewController {
     var name = ["Your", "Name"]
     
     var isEmployee = false
+    let dateFormatter = DateFormatter()
     let registerStep1VC = RegistrationStep1ViewController()
     
     @IBOutlet weak var skillsTextField: UITextField!
@@ -139,7 +140,8 @@ class SetupPageViewController: UIViewController {
         if Utilities.isZipCodeValid(zipCode: cleanedZipCode) == false {
             // Zip code they entered was not valid
             
-            return "The zip code you entered was not valid\n(must be 5 digits)."
+            return "The zip code you entered was not valid\n(must be a 5 digit U.S. zip code)."
+
         }
         
         return nil
@@ -159,10 +161,15 @@ class SetupPageViewController: UIViewController {
             Utilities.showError(message: error!, errorLabel: self.errorLabel)
         }
         else {
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+                        
             // Create cleaned versions of data
             let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let dateOfBirth = dateOfBirthTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                        
+            let dateConversion = dateFormatter.date(from: dateOfBirthTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+            let dateOfBirth = dateFormatter.string(from: dateConversion!)
+                        
             let zipCode = Int(zipCodeTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))
             var street = streetTextField.text!
             if aptTextField.text != "" {
