@@ -28,6 +28,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var zipCode: UITextField!
     @IBOutlet weak var country: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // This is for the image stuff
