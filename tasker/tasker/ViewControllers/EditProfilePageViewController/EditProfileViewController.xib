@@ -17,6 +17,7 @@
                 <outlet property="firstName" destination="1aq-eS-Nst" id="GmJ-WY-8F2"/>
                 <outlet property="lastName" destination="ybo-PT-2yW" id="Puq-U1-dBA"/>
                 <outlet property="profilePic" destination="LCX-7g-NO8" id="K8e-jk-74F"/>
+                <outlet property="skills" destination="Fb1-J0-rDr" id="KNX-BA-CP3"/>
                 <outlet property="state" destination="SSt-Ej-D8j" id="aLv-9h-TFB"/>
                 <outlet property="street" destination="uUY-qw-l89" id="ygF-BN-4c2"/>
                 <outlet property="view" destination="EUr-GT-Pgd" id="La6-XQ-QJO"/>
@@ -49,8 +50,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIc-su-Ecr" userLabel="ContainerView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TL-BR-Vy1" userLabel="dummyLabel">
-                                    <rect key="frame" x="207" y="786" width="0.0" height="0.0"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TL-BR-Vy1" userLabel="dummyLabel">
+                                    <rect key="frame" x="207" y="763" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -140,10 +141,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mA6-Kc-Lxk" userLabel="bio">
-                                    <rect key="frame" x="35" y="463" width="304" height="154"/>
+                                    <rect key="frame" x="35" y="463" width="304" height="108"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="154" id="XlO-Qa-6nt"/>
+                                        <constraint firstAttribute="height" constant="108" id="qDW-zA-rCd"/>
                                     </constraints>
                                     <color key="textColor" systemColor="labelColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -158,13 +159,13 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBo-KP-Ioz">
-                                    <rect key="frame" x="35" y="625" width="44" height="21"/>
+                                    <rect key="frame" x="35" y="579" width="44" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-J0-rDr">
-                                    <rect key="frame" x="35" y="654" width="304" height="45.5"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-J0-rDr" userLabel="skills">
+                                    <rect key="frame" x="35" y="608" width="304" height="455.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="textColor" systemColor="labelColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

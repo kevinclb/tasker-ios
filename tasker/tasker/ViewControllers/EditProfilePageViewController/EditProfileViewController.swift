@@ -27,6 +27,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var state: UITextField!
     @IBOutlet weak var zipCode: UITextField!
     @IBOutlet weak var country: UITextField!
+    @IBOutlet weak var skills: UITextView!
     
     
     override func viewDidLoad() {
@@ -41,6 +42,7 @@ class EditProfileViewController: UIViewController {
         
         // When the view loads, lets go to the database and get info to populate fields so user can edit them
         let db = Firestore.firestore()
+        let storage = FirebaseStorage.Storage.storage()
         guard let userID = Auth.auth().currentUser?.uid else {return}
         let docRef = db.collection("users").document(userID)
         docRef.getDocument { snapshot, error in
@@ -49,20 +51,46 @@ class EditProfileViewController: UIViewController {
                     } else {
                         do {
                             guard let user = try snapshot!.data(as: User.self) else{return}
-                            // Set first name
+                            // ----- Set profile picture
+                            let profilepicURL:String = user.profilePicLink ?? ""
+                            if(!profilepicURL.isEmpty){
+                                let storageRef = storage.reference(forURL: profilepicURL)
+                                storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                                    let picture = UIImage(data: data!)
+                                    self.profilePic.image = picture
+                                }
+                            }
+                                
+                            // ----- Set first name
                             self.firstName.text = user.firstname
-                            // Set last name
+                            
+                            // ----- Set last name
                             self.lastName.text = user.lastname
-                            // Set dob
+                            
+                            // ----- Set dob
                             self.dob.text = user.dateOfBirth
-                            // Set address
-                            self.street.text = user.address?.streetAddress
-                            self.city.text = user.address?.city
-                            self.state.text = user.address?.state
+                            
+                            // ----- Set address
+                            let str = user.address?.streetAddress
+                            if(!str!.isEmpty){
+                                self.street.text = str
+                            }
+                            let cit = user.address?.city
+                            if(!cit!.isEmpty){
+                                self.city.text = cit
+                            }
+                            let statee = user.address?.state
+                            if(!statee!.isEmpty){
+                                self.state.text = statee
+                            }
                             let zip:Int = user.address?.zipcode ?? 0
                             self.zipCode.text = String(zip)
-                            self.country.text = user.address?.country
-                            // Set bio
+                            let ctr = user.address?.country
+                            if(!ctr!.isEmpty){
+                                self.country.text = ctr
+                            }
+                            
+                            // ----- Set bio
                             let bio:String = user.bio ?? ""
                             if(!bio.isEmpty){
                                 self.bioTextfield.text = bio
@@ -71,6 +99,17 @@ class EditProfileViewController: UIViewController {
                             else{
                                 self.bioTextfield.text = "You currently do not have a bio, add one to tell people more about you!"
                                 self.bioTextfield.textColor = UIColor.lightGray
+                            }
+                            
+                            // ----- Set skills
+                            let skill:String = user.skills ?? ""
+                            if(!skill.isEmpty){
+                                self.skills.text = skill
+                                self.skills.textColor = UIColor.black
+                            }
+                            else{
+                                self.skills.text = "You currently do not have any skills added, add some to tell people more about your skills!"
+                                self.skills.textColor = UIColor.lightGray
                             }
                         } catch {
                             print(error)

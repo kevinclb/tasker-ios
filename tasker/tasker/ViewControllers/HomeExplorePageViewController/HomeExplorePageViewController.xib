@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeExplorePageViewController" customModule="tasker" customModuleProvider="target">
             <connections>
                 <outlet property="HomePageCollectionView" destination="jKm-U8-mbo" id="4zI-lB-Z0p"/>
+                <outlet property="employeeProfileButton" destination="IBs-FY-D0Y" id="328-wy-0cq"/>
                 <outlet property="menuLeading" destination="44B-Vn-2vy" id="PLW-fd-2Wf"/>
                 <outlet property="menuScroll" destination="9kO-ID-s2V" id="0bC-eO-a4N"/>
                 <outlet property="menuTrailing" destination="g6M-5h-hgH" id="NmG-cE-Phw"/>
@@ -163,7 +164,7 @@
                     </constraints>
                 </view>
                 <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kO-ID-s2V" userLabel="MenuScrollView">
-                    <rect key="frame" x="0.0" y="105" width="270" height="740"/>
+                    <rect key="frame" x="0.0" y="115" width="270" height="730"/>
                     <subviews>
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="KO2-dK-lJN" userLabel="Menu">
                             <rect key="frame" x="0.0" y="0.0" width="270" height="790"/>
@@ -396,7 +397,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="j1q-Rw-py1" secondAttribute="bottom" id="HKZ-OA-enT"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="bottom" secondItem="9kO-ID-s2V" secondAttribute="bottom" id="M53-zv-lc7"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="top" secondItem="9kO-ID-s2V" secondAttribute="top" id="WQN-ir-RPA"/>
-                <constraint firstItem="9kO-ID-s2V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="105" id="WSO-t1-Efu"/>
+                <constraint firstItem="9kO-ID-s2V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="115" id="WSO-t1-Efu"/>
                 <constraint firstItem="Mjo-7u-MRE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WWx-WL-Y9h"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="trailing" secondItem="9kO-ID-s2V" secondAttribute="trailing" id="Yte-LU-faq"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="leading" secondItem="9kO-ID-s2V" secondAttribute="leading" id="aPN-oa-gwv"/>

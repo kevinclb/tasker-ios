@@ -252,6 +252,7 @@ class SetupPageViewController: UIViewController {
              "uid": userID,
              "email": self.getEmail(),
              "gender": "",
+             "profilePicLink":"",
              "num_ratings": 0,
             ]) { (error) in
                 
