@@ -11,7 +11,8 @@ import UIKit
 let db = Firestore.firestore()
 
 class EmployeeExplorePageViewController: UIViewController {
-        
+    
+    public var completion:(([Errand]?) -> Void)?
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -163,7 +164,7 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
         cell.lbName.text = task.title
         cell.lbCity.text = task.location?.city ?? "no city"
         cell.lbDesc.text = task.taskDescription
-        cell.lbPrice.text = String(task.price!)
+        cell.lbPrice.text = "$" + String(task.price!) + "0"
         cell.lbCategory.text = task.category
         
         return cell
@@ -171,8 +172,32 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             let task = tasks[indexPath.row]
-            print("\(indexPath.row) - \(task.title)")
+            let showTaskVC = AcceptTaskViewController()
+        DispatchQueue.main.async {
+            showTaskVC.lbTitle.text = task.title
+            showTaskVC.lbLocation.text = task.location?.city ?? "no city"
+            showTaskVC.lbBody.text = task.taskDescription
+            showTaskVC.lbRate.text = "$" + String( task.price!) + "0"
         }
+        navigateToListTaskVC(showTaskVC, .fromRight)
+
+    func navigateToListTaskVC(_ newViewController: UIViewController, _ transitionFrom:CATransitionSubtype) {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.reveal
+        transition.subtype = transitionFrom
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+
+
+        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+        let newVC = newViewController
+        newVC.modalPresentationStyle = .fullScreen
+        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+        self.present(newVC, animated: false, completion: nil)
+    }
+        
+    }
     
     //fixing an issue
     
