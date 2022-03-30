@@ -15,6 +15,9 @@ class EditProfileViewController: UIViewController {
     // var for picking an image from photo library
     var imagePicker:UIImagePickerController!
     
+    // boolean to check if user clicked on edit, initially false
+    var editPressed:Bool = false;
+    @IBOutlet weak var editOrSaveButton: UIButton!
     
     // outlets for components to populate
     @IBOutlet weak var profilePic: UIImageView!
@@ -32,6 +35,19 @@ class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // This viewcontroller will act as a view profile info and edit as well, so first user will just view things, then if they click save then fields will become editable
+        bioTextfield.isEditable = false
+        skills.isEditable = false
+        firstName.isUserInteractionEnabled = false
+        lastName.isUserInteractionEnabled = false
+        dob.isUserInteractionEnabled = false
+        street.isUserInteractionEnabled = false
+        city.isUserInteractionEnabled = false
+        state.isUserInteractionEnabled = false
+        zipCode.isUserInteractionEnabled = false
+        country.isUserInteractionEnabled = false
+        editPressed = false
+        
         // This is for the image stuff
         imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
@@ -119,11 +135,35 @@ class EditProfileViewController: UIViewController {
     }
    
     @IBAction func editImagePressed(_ sender: Any) {
-        self.present(imagePicker, animated: true, completion: nil)
+        if(editPressed){
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     @IBAction func saveChangesTapped(_ sender: Any) {
-        
+        // User has already chosen to edit info, so now they're clicking save, so save their changes
+        if(editPressed){
+            print("Saving changes")
+        }
+        // User just pressed the edit button to edit
+        else{
+            editPressed = true
+            // Set the fields to editable
+            bioTextfield.isEditable = true
+            skills.isEditable = true
+            firstName.isUserInteractionEnabled = true
+            lastName.isUserInteractionEnabled = true
+            dob.isUserInteractionEnabled = true
+            street.isUserInteractionEnabled = true
+            city.isUserInteractionEnabled = true
+            state.isUserInteractionEnabled = true
+            zipCode.isUserInteractionEnabled = true
+            country.isUserInteractionEnabled = true
+            
+            // change the picture from the edit button to the save button
+            let image = UIImage(named: "editProfileSave") as UIImage?
+            editOrSaveButton.setImage(image, for: .normal)
+        }
     }
     
     

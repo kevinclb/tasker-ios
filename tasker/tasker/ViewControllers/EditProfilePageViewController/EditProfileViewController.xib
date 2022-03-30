@@ -14,6 +14,7 @@
                 <outlet property="city" destination="Uh0-2X-xt8" id="sNe-8V-b6B"/>
                 <outlet property="country" destination="n5b-Ku-XTj" id="qcR-YT-a05"/>
                 <outlet property="dob" destination="gaK-IK-ZaZ" id="apF-Kf-upF"/>
+                <outlet property="editOrSaveButton" destination="lSz-VT-pAe" id="klS-TP-sk3"/>
                 <outlet property="firstName" destination="1aq-eS-Nst" id="GmJ-WY-8F2"/>
                 <outlet property="lastName" destination="ybo-PT-2yW" id="Puq-U1-dBA"/>
                 <outlet property="profilePic" destination="LCX-7g-NO8" id="K8e-jk-74F"/>
@@ -165,7 +166,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-J0-rDr" userLabel="skills">
-                                    <rect key="frame" x="35" y="608" width="304" height="455.5"/>
+                                    <rect key="frame" x="35" y="608" width="304" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="textColor" systemColor="labelColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -247,7 +248,7 @@
                         <constraint firstAttribute="width" constant="67" id="JyA-Mq-uOE"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="editProfileSave"/>
+                    <buttonConfiguration key="configuration" style="plain" image="viewProfileEditProfile"/>
                     <connections>
                         <action selector="saveChangesTapped:" destination="-1" eventType="touchUpInside" id="zQh-Hc-gPf"/>
                     </connections>
@@ -279,8 +280,8 @@
     <resources>
         <image name="Change profile pic" width="114" height="10"/>
         <image name="arrow_back_ios_24px" width="20" height="20"/>
-        <image name="editProfileSave" width="92" height="43"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="viewProfileEditProfile" width="92" height="43"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
