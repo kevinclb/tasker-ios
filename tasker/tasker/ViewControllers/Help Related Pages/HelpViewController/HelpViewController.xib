@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,7 +59,7 @@
                     <rect key="frame" x="0.0" y="179" width="414" height="654"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYn-8U-06Y" userLabel="ContainerView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1040"/>
                             <subviews>
                                 <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Swq-mg-zUV">
                                     <rect key="frame" x="50" y="8" width="331" height="364"/>
@@ -176,7 +176,7 @@
                                 <constraint firstItem="Swq-mg-zUV" firstAttribute="top" secondItem="ZYn-8U-06Y" secondAttribute="top" constant="8" id="3qo-aC-ZUc"/>
                                 <constraint firstItem="Swq-mg-zUV" firstAttribute="width" secondItem="ZYn-8U-06Y" secondAttribute="width" multiplier="0.8" id="62b-5n-SJ7"/>
                                 <constraint firstItem="dk6-wp-4jz" firstAttribute="centerX" secondItem="ZYn-8U-06Y" secondAttribute="centerX" id="6u0-nd-4ZU"/>
-                                <constraint firstAttribute="height" constant="1200" id="GNm-sd-GCe"/>
+                                <constraint firstAttribute="height" constant="1040" id="GNm-sd-GCe"/>
                                 <constraint firstItem="Swq-mg-zUV" firstAttribute="leading" secondItem="ZYn-8U-06Y" secondAttribute="leading" constant="50" id="fK3-f9-qLY"/>
                             </constraints>
                         </view>
