@@ -14,7 +14,7 @@ class MessagesViewController: UIViewController {
     
     @IBOutlet var messageViewCollection: UICollectionView!
     
-    var messages = [message]()
+    var messages = [Message]()
     override func viewDidLoad() {
         super.viewDidLoad()
         uid = Utilities.getUid()
@@ -25,9 +25,7 @@ class MessagesViewController: UIViewController {
         messageViewCollection.awakeFromNib()
         
         for i in 1...35{
-            var message1 = message()
-            message1.name = "Tom "
-            message1.message = "Message information will go here and populate from database"
+            var message1 = Message(body: "Message will go here", sender:User.init())
             messages.append(message1)
         }
         
@@ -43,8 +41,8 @@ extension MessagesViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: messageCollectionViewCellId, for: indexPath) as! MessageViewCell
         let message = messages[indexPath.row]
-        cell.lbName.text = message.name!
-        cell.lbMessage.text = message.message!
+        cell.lbName.text = message.sender.firstname
+        cell.lbMessage.text = message.body
         return cell
     }
 }

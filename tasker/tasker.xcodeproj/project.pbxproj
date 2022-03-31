@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882783EA27EFA44C0096E225 /* AcceptTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882783E827EFA44C0096E225 /* AcceptTaskViewController.swift */; };
+		882783EB27EFA44C0096E225 /* AcceptTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882783E927EFA44C0096E225 /* AcceptTaskViewController.xib */; };
+		882783EE27F3C3100096E225 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882783EC27F3C3100096E225 /* ChatViewController.swift */; };
+		882783EF27F3C3100096E225 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882783ED27F3C3100096E225 /* ChatViewController.xib */; };
+		882783F227F3C3640096E225 /* ChatCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882783F027F3C3640096E225 /* ChatCellTableViewCell.swift */; };
+		882783F327F3C3640096E225 /* ChatCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882783F127F3C3640096E225 /* ChatCellTableViewCell.xib */; };
 		88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88616E7527C5C228002A1F72 /* MessageViewCell.swift */; };
 		88616E7827C5C228002A1F72 /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88616E7627C5C228002A1F72 /* MessageViewCell.xib */; };
-		88616E7A27C5CDC9002A1F72 /* messageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88616E7927C5CDC9002A1F72 /* messageModel.swift */; };
 		8C08C93027E7DC4C000406B9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08C92E27E7DC4C000406B9 /* TestViewController.swift */; };
 		8C08C93127E7DC4C000406B9 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C08C92F27E7DC4C000406B9 /* TestViewController.xib */; };
 		8C224DA227BB14AA00E486C7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C224DA027BB14AA00E486C7 /* RootViewController.swift */; };
@@ -75,9 +80,14 @@
 /* Begin PBXFileReference section */
 		0CA7F196D3098A70BEF3A25D /* Pods_tasker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tasker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BDF5D68BCEF519EC1696766 /* Pods-tasker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.release.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.release.xcconfig"; sourceTree = "<group>"; };
+		882783E827EFA44C0096E225 /* AcceptTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTaskViewController.swift; sourceTree = "<group>"; };
+		882783E927EFA44C0096E225 /* AcceptTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptTaskViewController.xib; sourceTree = "<group>"; };
+		882783EC27F3C3100096E225 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		882783ED27F3C3100096E225 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		882783F027F3C3640096E225 /* ChatCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellTableViewCell.swift; sourceTree = "<group>"; };
+		882783F127F3C3640096E225 /* ChatCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCellTableViewCell.xib; sourceTree = "<group>"; };
 		88616E7527C5C228002A1F72 /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		88616E7627C5C228002A1F72 /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
-		88616E7927C5CDC9002A1F72 /* messageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageModel.swift; sourceTree = "<group>"; };
 		8C08C92E27E7DC4C000406B9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		8C08C92F27E7DC4C000406B9 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		8C224DA027BB14AA00E486C7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +165,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		882783E727EFA3F60096E225 /* AcceptTaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				882783E827EFA44C0096E225 /* AcceptTaskViewController.swift */,
+				882783E927EFA44C0096E225 /* AcceptTaskViewController.xib */,
+			);
+			path = AcceptTaskViewController;
+			sourceTree = "<group>";
+		};
 		8C08C93227E7DED5000406B9 /* TestViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +204,7 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				882783E727EFA3F60096E225 /* AcceptTaskViewController */,
 				8CD95D3427E6D9A1003F7360 /* ListTaskViewControllers */,
 				CEF81B3827E3287A00CE0340 /* Help Related Pages */,
 				BAC6A86627BEF4E300CA66DE /* LoginViewController */,
@@ -232,7 +252,10 @@
 				8C250DC627AB351B00A280B3 /* MessagesViewController.xib */,
 				88616E7527C5C228002A1F72 /* MessageViewCell.swift */,
 				88616E7627C5C228002A1F72 /* MessageViewCell.xib */,
-				88616E7927C5CDC9002A1F72 /* messageModel.swift */,
+				882783EC27F3C3100096E225 /* ChatViewController.swift */,
+				882783ED27F3C3100096E225 /* ChatViewController.xib */,
+				882783F027F3C3640096E225 /* ChatCellTableViewCell.swift */,
+				882783F127F3C3640096E225 /* ChatCellTableViewCell.xib */,
 			);
 			path = MessagesViewController;
 			sourceTree = "<group>";
@@ -507,9 +530,11 @@
 				CE0555C627BF0DC700877325 /* MyCollectionViewCell.xib in Resources */,
 				8C2AFF5A27D5D787009CFE6C /* TaskerCollectionViewCell.xib in Resources */,
 				CE641A7927A8904A00766C59 /* GoogleService-Info.plist in Resources */,
+				882783EB27EFA44C0096E225 /* AcceptTaskViewController.xib in Resources */,
 				CEF81B3327E3285400CE0340 /* AboutUsViewController.xib in Resources */,
 				8CD95D3827E6D9FC003F7360 /* ListTaskViewController.xib in Resources */,
 				8C250DBF27AB34CE00A280B3 /* HomeExplorePageViewController.xib in Resources */,
+				882783F327F3C3640096E225 /* ChatCellTableViewCell.xib in Resources */,
 				CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */,
 				8C224DA327BB14AA00E486C7 /* RootViewController.xib in Resources */,
 				BAC6A86127BEF4CB00CA66DE /* RegistrationStep1ViewController.xib in Resources */,
@@ -520,6 +545,7 @@
 				8CAD48E827E0308800304CF8 /* SearchResultsTableViewCell.xib in Resources */,
 				CEF81B3727E3286700CE0340 /* SupportUsViewController.xib in Resources */,
 				8C791CD927EBD69E0016728E /* Launch Screen.storyboard in Resources */,
+				882783EF27F3C3100096E225 /* ChatViewController.xib in Resources */,
 				CEF81B2B27E2516F00CE0340 /* ContactUsViewController.xib in Resources */,
 				8C08C93127E7DC4C000406B9 /* TestViewController.xib in Resources */,
 				8C224DA727BB15B100E486C7 /* PublicProfileViewController.xib in Resources */,
@@ -578,6 +604,7 @@
 				CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */,
 				8CAD48EC27E030B200304CF8 /* SearchResultsTableViewController.swift in Sources */,
 				8C08C93027E7DC4C000406B9 /* TestViewController.swift in Sources */,
+				882783EE27F3C3100096E225 /* ChatViewController.swift in Sources */,
 				88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */,
 				BAC6A85B27BEF4A000CA66DE /* LoggedOutViewController.swift in Sources */,
 				CE0555C727BF0DC700877325 /* Errand.swift in Sources */,
@@ -587,6 +614,7 @@
 				8C224DA227BB14AA00E486C7 /* RootViewController.swift in Sources */,
 				CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */,
 				BAC6A86027BEF4CB00CA66DE /* RegistrationStep1ViewController.swift in Sources */,
+				882783F227F3C3640096E225 /* ChatCellTableViewCell.swift in Sources */,
 				8C250DD327AB37A400A280B3 /* SettingsPageViewController.swift in Sources */,
 				BAC6A86427BEF4DF00CA66DE /* SetupPageViewController.swift in Sources */,
 				8C250DBE27AB34CE00A280B3 /* HomeExplorePageViewController.swift in Sources */,
@@ -597,8 +625,8 @@
 				BA1DF53C27D02222000F292E /* Utilities.swift in Sources */,
 				BAC6A86927BEF4F600CA66DE /* LoginViewController.swift in Sources */,
 				CE0555C427BF0DC700877325 /* MyCollectionViewCell.swift in Sources */,
-				88616E7A27C5CDC9002A1F72 /* messageModel.swift in Sources */,
 				8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */,
+				882783EA27EFA44C0096E225 /* AcceptTaskViewController.swift in Sources */,
 				CEF81B3227E3285400CE0340 /* AboutUsViewController.swift in Sources */,
 				8C2DC0AC27C6FA070026FF11 /* Message.swift in Sources */,
 				8CD95D3327E6D1D9003F7360 /* Credentials.swift in Sources */,
