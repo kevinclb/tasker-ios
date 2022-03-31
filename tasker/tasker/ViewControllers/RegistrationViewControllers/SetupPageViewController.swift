@@ -238,12 +238,12 @@ class SetupPageViewController: UIViewController {
              "address": [
                 "city": city,
                 "country": "US",
-                "phone": "",
                 "streetAddress": street,
                 "state": state,
                 "zipcode": zipCode
                 
              ],
+             "phone": "",
              "rating": 0,
              "bio": bio,
              "employeeDescription": "",

@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
 import FirebaseFirestoreSwift
+import Foundation
 
 class EditProfileViewController: UIViewController {
     // var for picking an image from photo library
@@ -33,6 +34,8 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var country: UITextField!
     @IBOutlet weak var skills: UITextView!
     @IBOutlet weak var errorMessage: UILabel!
+    @IBOutlet weak var phoneNumber: UITextField!
+    
     var employeeOrNot:Bool = false
     var email:String = ""
     var linkToImg = ""
@@ -60,6 +63,7 @@ class EditProfileViewController: UIViewController {
         state.isUserInteractionEnabled = false
         zipCode.isUserInteractionEnabled = false
         country.isUserInteractionEnabled = false
+        phoneNumber.isUserInteractionEnabled = false
         editPressed = false
         
         
@@ -110,6 +114,9 @@ class EditProfileViewController: UIViewController {
                             
                             // ----- Set email field
                             self.email = user.email ?? ""
+                            
+                            // ----- Set phone number
+                            self.phoneNumber.text = user.phone
                             
                             // ----- Set address
                             let str = user.address?.streetAddress
@@ -173,8 +180,7 @@ class EditProfileViewController: UIViewController {
         
         // User has already chosen to edit info, so now they're clicking save, so save their changes
         if(editPressed){
-            
-            self.activityIndicator.startAnimating()
+
             // Validate fields
             let error = validateFields()
             if error != nil {
@@ -183,48 +189,47 @@ class EditProfileViewController: UIViewController {
             }
             else{
                 errorMessage.text = ""
-            }
-            
-            // upload image to storage, get the url then put it into the map that will then update the user data
-            guard let image = profilePic.image else {return}
-            if(!image.isSymbolImage){
-                guard let imageData = image.jpegData(compressionQuality: 0.75)else {return}
-                let upldmgr = StorageManagager()
-                upldmgr.uploadData(imageData){url, error in
-                    if let er = error {
-                        self.errorMessage.textColor = .red
-                        self.errorMessage.text = "Error in uploading picture, error code: "+er.localizedDescription.description
-                    }
-                    else{
-                        self.errorMessage.text = ""
-                    }
-                }
-                self.linkToImg = userID
-            }
-            
-            
-            // Create cleaned versions of data
-            let fname = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lname = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-                        
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM/dd/yyyy"
-            let dateConversion = dateFormatter.date(from: dob.text!.trimmingCharacters(in: .whitespacesAndNewlines))
-            let dateb = dateFormatter.string(from: dateConversion!)
-                        
-            let zip = Int(zipCode.text!.trimmingCharacters(in: .whitespacesAndNewlines))
-            let streetNum = street.text!
-            
-            let cityName = city.text!
-            let stateName = state.text!
-            let countryName = country.text!
-            let bioContent = bioTextfield.text!
-            let skillsContent = skills.text!
-            
-            self.updateUserInfo(fname: fname, lname: lname, dateb: dateb, city: cityName, country: countryName, street: streetNum, state: stateName, zip: zip!, bio: bioContent, skills: skillsContent, employeeOrNot: employeeOrNot, eamil: email, linkToImg: linkToImg)
+                self.activityIndicator.startAnimating()
 
-            
-            
+                // upload image to storage, get the url then put it into the map that will then update the user data
+                guard let image = profilePic.image else {return}
+                if(!image.isSymbolImage){
+                    guard let imageData = image.jpegData(compressionQuality: 0.75)else {return}
+                    let upldmgr = StorageManagager()
+                    upldmgr.uploadData(imageData){url, error in
+                        if let er = error {
+                            self.errorMessage.textColor = .red
+                            self.errorMessage.text = "Error in uploading picture, error code: "+er.localizedDescription.description
+                        }
+                        else{
+                            self.errorMessage.text = ""
+                        }
+                    }
+                    self.linkToImg = userID
+                }
+                
+                
+                // Create cleaned versions of data
+                let fname = firstName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                let lname = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                            
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yyyy"
+                let dateConversion = dateFormatter.date(from: dob.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+                let dateb = dateFormatter.string(from: dateConversion!)
+                            
+                let zip = Int(zipCode.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+                let streetNum = street.text!
+                
+                let cityName = city.text!
+                let stateName = state.text!
+                let countryName = country.text!
+                let bioContent = bioTextfield.text!
+                let skillsContent = skills.text!
+                let number = phoneNumber.text!
+                
+                self.updateUserInfo(fname: fname, lname: lname, dateb: dateb, city: cityName, country: countryName, street: streetNum, state: stateName, zip: zip!, bio: bioContent, skills: skillsContent, employeeOrNot: employeeOrNot, eamil: email, phone:number, linkToImg: linkToImg)
+            }
         }
         // User just pressed the edit button to edit
         else{
@@ -239,6 +244,7 @@ class EditProfileViewController: UIViewController {
             city.isUserInteractionEnabled = true
             state.isUserInteractionEnabled = true
             zipCode.isUserInteractionEnabled = true
+            phoneNumber.isUserInteractionEnabled = true
             
             editBioButton.isUserInteractionEnabled = true
             editSkillsButton.isUserInteractionEnabled = true
@@ -249,7 +255,7 @@ class EditProfileViewController: UIViewController {
         }
     }
     
-    func updateUserInfo(fname:String, lname:String, dateb:String, city:String, country:String, street:String, state:String, zip:Int, bio:String, skills:String, employeeOrNot:Bool, eamil:String, linkToImg:String){
+    func updateUserInfo(fname:String, lname:String, dateb:String, city:String, country:String, street:String, state:String, zip:Int, bio:String, skills:String, employeeOrNot:Bool, eamil:String, phone:String, linkToImg:String){
         let db = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {return}
         db.collection("users").document(userID).setData(
@@ -259,12 +265,12 @@ class EditProfileViewController: UIViewController {
              "address": [
                 "city": city,
                 "country": country,
-                "phone": "",
                 "streetAddress": street,
                 "state": state,
                 "zipcode": zip
              ],
              "rating": 0,
+             "phone": phone,
              "bio": bio,
              "employeeDescription": "",
              "skills": skills,
@@ -310,14 +316,18 @@ class EditProfileViewController: UIViewController {
         if Utilities.isAgeValid(date: cleanedDateOfBirth) == false {
             // Age they entered was not valid
             
-            return "Please enter a valid date of birth\n(must be 18 years or older)."
+            return "Please enter a valid date of birth\n(must be 18 years or older)"
         }
         
         if Utilities.isZipCodeValid(zipCode: cleanedZipCode) == false {
             // Zip code they entered was not valid
             
-            return "The zip code you entered was not valid\n(must be a 5 digit U.S. zip code)."
+            return "The zip code you entered was not valid\n(must be a 5 digit U.S. zip code)"
 
+        }
+        
+        if(!CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: phoneNumber.text!))){
+            return "The phone number you entered was not valid\n(Phone number should be digits only)"
         }
         
         return nil
