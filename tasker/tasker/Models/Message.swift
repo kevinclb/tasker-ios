@@ -9,7 +9,7 @@ import Foundation
 
 struct Message {
     var body: String
-    var metadata: Metadata
+    var metadata: Metadata?
     let sender: User
 }
 
