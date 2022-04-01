@@ -20,14 +20,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="C11-LC-gEC">
-                    <rect key="frame" x="146" y="44" width="123" height="47"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="47" id="FSD-8w-TkZ"/>
-                        <constraint firstAttribute="width" constant="123" id="HHY-B5-3xS"/>
-                    </constraints>
+                    <rect key="frame" x="146" y="34" width="123" height="64"/>
                 </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="99v-57-k8u">
-                    <rect key="frame" x="0.0" y="99" width="414" height="753"/>
+                    <rect key="frame" x="0.0" y="132.5" width="414" height="719.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="HXS-Ty-fC1">
                         <size key="itemSize" width="383" height="70"/>
@@ -36,21 +32,49 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLf-4p-5ma">
+                    <rect key="frame" x="156" y="102" width="101.5" height="27.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDt-Q2-h5w">
+                    <rect key="frame" x="343" y="102" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="28" id="Hyr-FU-ly5"/>
+                        <constraint firstAttribute="height" constant="28" id="ttf-nd-5Gp"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <backgroundConfiguration key="background" image="addButton" imageContentMode="scaleToFill"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="newMessage:" destination="-1" eventType="touchUpInside" id="P42-SO-5Lo"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="C11-LC-gEC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="146" id="0v7-lw-wXu"/>
+                <constraint firstItem="99v-57-k8u" firstAttribute="top" secondItem="NDt-Q2-h5w" secondAttribute="bottom" constant="2.5" id="0vM-Uo-GJw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="99v-57-k8u" secondAttribute="bottom" constant="10" id="33F-9S-2Gw"/>
+                <constraint firstItem="yLf-4p-5ma" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="156" id="68J-ix-oQy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C11-LC-gEC" secondAttribute="trailing" constant="145" id="DPj-IA-ful"/>
+                <constraint firstItem="yLf-4p-5ma" firstAttribute="top" secondItem="C11-LC-gEC" secondAttribute="bottom" constant="4" id="DaI-IB-GFz"/>
+                <constraint firstItem="NDt-Q2-h5w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="58" id="Pbu-U5-Et8"/>
                 <constraint firstItem="99v-57-k8u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="V9Z-dX-6vD"/>
-                <constraint firstItem="C11-LC-gEC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bhC-Xd-JJc"/>
-                <constraint firstItem="99v-57-k8u" firstAttribute="top" secondItem="C11-LC-gEC" secondAttribute="bottom" constant="8" symbolic="YES" id="i6w-CQ-Nuo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NDt-Q2-h5w" secondAttribute="trailing" constant="43" id="bSj-Yn-JwQ"/>
+                <constraint firstItem="C11-LC-gEC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="34" id="dfj-YU-CVo"/>
                 <constraint firstItem="99v-57-k8u" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="rBp-k4-BbQ"/>
+                <constraint firstItem="C11-LC-gEC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="146" id="vd3-9D-xIV"/>
+                <constraint firstItem="yLf-4p-5ma" firstAttribute="top" secondItem="C11-LC-gEC" secondAttribute="bottom" constant="4" id="wlM-bu-cfF"/>
+                <constraint firstItem="99v-57-k8u" firstAttribute="top" secondItem="yLf-4p-5ma" secondAttribute="bottom" constant="3" id="y9c-1r-Zz2"/>
             </constraints>
             <point key="canvasLocation" x="-1220.2898550724638" y="125.89285714285714"/>
         </view>
     </objects>
     <resources>
+        <image name="addButton" width="54" height="54"/>
         <image name="logo" width="219" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
