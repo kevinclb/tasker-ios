@@ -14,12 +14,14 @@ class EmployeeExplorePageViewController: UIViewController {
     
     public var completion:(([Errand]?) -> Void)?
     
-    @IBOutlet var collectionView: UICollectionView!
     
+    @IBOutlet var collectionViewA: UICollectionView!
+    @IBOutlet var nearByColView: UICollectionView!
     @IBOutlet weak var menuScrollView: UIScrollView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var menuLeading: NSLayoutConstraint!
     @IBOutlet weak var menuTrailing: NSLayoutConstraint!
+    
     
     let taskCollectionViewCellId = "MyCollectionViewCell"
     
@@ -36,11 +38,17 @@ class EmployeeExplorePageViewController: UIViewController {
         view.addGestureRecognizer(leftSwipe)
         
         // code for employeePage
+        //Collection View for Catered to User
         let nibCell = UINib(nibName: taskCollectionViewCellId, bundle: nil)
-        collectionView.register(nibCell, forCellWithReuseIdentifier: taskCollectionViewCellId)
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        collectionViewA.register(nibCell, forCellWithReuseIdentifier: taskCollectionViewCellId)
+        collectionViewA.delegate = self
+        collectionViewA.dataSource = self
         MyCollectionViewCell.awakeFromNib()
+        
+        //Collection View for NearBy
+        nearByColView.register(nibCell, forCellWithReuseIdentifier: taskCollectionViewCellId)
+        nearByColView.delegate = self
+        nearByColView.dataSource = self
         
         db.collection("tasks").getDocuments { (snapshot, error) in
             if error != nil {
@@ -54,7 +62,8 @@ class EmployeeExplorePageViewController: UIViewController {
                     }
                 }
                 DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+                    self.collectionViewA.reloadData()
+                    self.nearByColView.reloadData()
                 }
             }
         }
@@ -159,14 +168,14 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: taskCollectionViewCellId, for: indexPath) as! MyCollectionViewCell
         let task = tasks[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: taskCollectionViewCellId, for: indexPath) as! MyCollectionViewCell
         cell.lbName.text = task.title
         cell.lbCity.text = task.location?.city ?? "no city"
         cell.lbDesc.text = task.taskDescription
         cell.lbPrice.text = "$" + String(task.price!) + "0"
         cell.lbCategory.text = task.category
-        
+            
         return cell
     }
     
