@@ -34,6 +34,12 @@
 		8C2DC0A627C6F9DE0026FF11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0A527C6F9DE0026FF11 /* User.swift */; };
 		8C2DC0AA27C6F9F90026FF11 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0A927C6F9F90026FF11 /* Post.swift */; };
 		8C2DC0AC27C6FA070026FF11 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DC0AB27C6FA070026FF11 /* Message.swift */; };
+		8C5797B127FCE913006231E7 /* RecentTasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5797AF27FCE913006231E7 /* RecentTasksTableViewController.swift */; };
+		8C5797B227FCE913006231E7 /* RecentTasksTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5797B027FCE913006231E7 /* RecentTasksTableViewController.xib */; };
+		8C5797B527FCE95B006231E7 /* RecentTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5797B327FCE95B006231E7 /* RecentTaskTableViewCell.swift */; };
+		8C5797B627FCE95B006231E7 /* RecentTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5797B427FCE95B006231E7 /* RecentTaskTableViewCell.xib */; };
+		8C5797B927FD27D5006231E7 /* RecentTasksRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5797B727FD27D5006231E7 /* RecentTasksRootVC.swift */; };
+		8C5797BA27FD27D5006231E7 /* RecentTasksRootVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5797B827FD27D5006231E7 /* RecentTasksRootVC.xib */; };
 		8C6F7E5227E7E34B00495DF1 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F7E5127E7E34B00495DF1 /* Address.swift */; };
 		8C791CD927EBD69E0016728E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C791CD827EBD69E0016728E /* Launch Screen.storyboard */; };
 		8CAD48E627E0307500304CF8 /* SearchResultsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD48E527E0307500304CF8 /* SearchResultsTableViewController.xib */; };
@@ -107,6 +113,12 @@
 		8C2DC0A527C6F9DE0026FF11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C2DC0A927C6F9F90026FF11 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8C2DC0AB27C6FA070026FF11 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		8C5797AF27FCE913006231E7 /* RecentTasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTasksTableViewController.swift; sourceTree = "<group>"; };
+		8C5797B027FCE913006231E7 /* RecentTasksTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTasksTableViewController.xib; sourceTree = "<group>"; };
+		8C5797B327FCE95B006231E7 /* RecentTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTaskTableViewCell.swift; sourceTree = "<group>"; };
+		8C5797B427FCE95B006231E7 /* RecentTaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTaskTableViewCell.xib; sourceTree = "<group>"; };
+		8C5797B727FD27D5006231E7 /* RecentTasksRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTasksRootVC.swift; sourceTree = "<group>"; };
+		8C5797B827FD27D5006231E7 /* RecentTasksRootVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTasksRootVC.xib; sourceTree = "<group>"; };
 		8C6F7E5127E7E34B00495DF1 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		8C791CD827EBD69E0016728E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8CAD48E527E0307500304CF8 /* SearchResultsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsTableViewController.xib; sourceTree = "<group>"; };
@@ -204,6 +216,7 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8C5797AE27FCE8CC006231E7 /* RecentTaskViewController */,
 				882783E727EFA3F60096E225 /* AcceptTaskViewController */,
 				8CD95D3427E6D9A1003F7360 /* ListTaskViewControllers */,
 				CEF81B3827E3287A00CE0340 /* Help Related Pages */,
@@ -289,6 +302,19 @@
 				8C6F7E5127E7E34B00495DF1 /* Address.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8C5797AE27FCE8CC006231E7 /* RecentTaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8C5797AF27FCE913006231E7 /* RecentTasksTableViewController.swift */,
+				8C5797B027FCE913006231E7 /* RecentTasksTableViewController.xib */,
+				8C5797B327FCE95B006231E7 /* RecentTaskTableViewCell.swift */,
+				8C5797B427FCE95B006231E7 /* RecentTaskTableViewCell.xib */,
+				8C5797B727FD27D5006231E7 /* RecentTasksRootVC.swift */,
+				8C5797B827FD27D5006231E7 /* RecentTasksRootVC.xib */,
+			);
+			path = RecentTaskViewController;
 			sourceTree = "<group>";
 		};
 		8CAD48E427E0305800304CF8 /* SearchResultsViewControllers */ = {
@@ -519,6 +545,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C5797B627FCE95B006231E7 /* RecentTaskTableViewCell.xib in Resources */,
 				88616E7827C5C228002A1F72 /* MessageViewCell.xib in Resources */,
 				8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */,
 				8C250DC827AB351B00A280B3 /* MessagesViewController.xib in Resources */,
@@ -538,6 +565,7 @@
 				CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */,
 				8C224DA327BB14AA00E486C7 /* RootViewController.xib in Resources */,
 				BAC6A86127BEF4CB00CA66DE /* RegistrationStep1ViewController.xib in Resources */,
+				8C5797BA27FD27D5006231E7 /* RecentTasksRootVC.xib in Resources */,
 				BAC6A85C27BEF4A000CA66DE /* LoggedOutViewController.xib in Resources */,
 				CE65BE7227CEFE4A00BD09FB /* FAQViewController.xib in Resources */,
 				8CAD48E627E0307500304CF8 /* SearchResultsTableViewController.xib in Resources */,
@@ -547,6 +575,7 @@
 				8C791CD927EBD69E0016728E /* Launch Screen.storyboard in Resources */,
 				882783EF27F3C3100096E225 /* ChatViewController.xib in Resources */,
 				CEF81B2B27E2516F00CE0340 /* ContactUsViewController.xib in Resources */,
+				8C5797B227FCE913006231E7 /* RecentTasksTableViewController.xib in Resources */,
 				8C08C93127E7DC4C000406B9 /* TestViewController.xib in Resources */,
 				8C224DA727BB15B100E486C7 /* PublicProfileViewController.xib in Resources */,
 			);
@@ -612,6 +641,8 @@
 				8C2AFF5B27D5D787009CFE6C /* TaskerCollectionViewCell.swift in Sources */,
 				8CAD48EE27E030D600304CF8 /* SearchResultsTableViewCell.swift in Sources */,
 				8C224DA227BB14AA00E486C7 /* RootViewController.swift in Sources */,
+				8C5797B127FCE913006231E7 /* RecentTasksTableViewController.swift in Sources */,
+				8C5797B527FCE95B006231E7 /* RecentTaskTableViewCell.swift in Sources */,
 				CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */,
 				BAC6A86027BEF4CB00CA66DE /* RegistrationStep1ViewController.swift in Sources */,
 				882783F227F3C3640096E225 /* ChatCellTableViewCell.swift in Sources */,
@@ -624,6 +655,7 @@
 				8C2DC0AA27C6F9F90026FF11 /* Post.swift in Sources */,
 				BA1DF53C27D02222000F292E /* Utilities.swift in Sources */,
 				BAC6A86927BEF4F600CA66DE /* LoginViewController.swift in Sources */,
+				8C5797B927FD27D5006231E7 /* RecentTasksRootVC.swift in Sources */,
 				CE0555C427BF0DC700877325 /* MyCollectionViewCell.swift in Sources */,
 				8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */,
 				882783EA27EFA44C0096E225 /* AcceptTaskViewController.swift in Sources */,
