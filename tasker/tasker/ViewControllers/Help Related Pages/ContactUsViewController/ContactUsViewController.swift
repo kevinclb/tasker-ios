@@ -39,10 +39,7 @@ class ContactUsViewController: UIViewController, MFMailComposeViewControllerDele
     }
     
     @IBAction func send(_ sender: Any) {
-        let messageBody = message.text!
-        let emailField = email.text!
-        let subjectField = subject.text!
-        if(messageBody.isEmpty || emailField.isEmpty || subjectField.isEmpty){
+        if(((message.text?.isEmpty) != nil) || ((email.text?.isEmpty) != nil) || ((subject.text?.isEmpty) != nil)){
             errorLabel.text = "One or more fields is empty, please make sure all fields are filled"
             return
         }
@@ -71,8 +68,8 @@ class ContactUsViewController: UIViewController, MFMailComposeViewControllerDele
         let mc:MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self
         mc.setToRecipients(toRecipients)
-        mc.setSubject(subjectField)
-        mc.setMessageBody("User Id: \(userID)\n\nName: \(name)\n\nEmail: \(emailField)\n\nMessage: \(messageBody)", isHTML: false)
+        mc.setSubject(subject.text!)
+        mc.setMessageBody("User Id: \(userID)\n\nName: \(name)\n\nEmail: \(email.text!)\n\nMessage: \(message.text!)", isHTML: false)
         self.present(mc, animated: true, completion: nil)
     }
     
