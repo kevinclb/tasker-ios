@@ -119,6 +119,9 @@ extension SubmitTaskViewController {
                 errorLabel.textColor = .systemGreen
                 errorLabel.text = "Task posted successfully! (segue back)"
                 //TODO: add segue back to home page view controller.
+                self.dismiss(animated: true)
+                self.presentingViewController?.dismiss(animated: false)
+                print("back button pressed")
             } catch {
                 print("error adding document")
             }
