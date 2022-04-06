@@ -154,8 +154,8 @@ class HomeExplorePageViewController: UIViewController {
         navigateTo(newViewController: AboutUsViewController(), transitionFrom: .fromRight)
     }
     
-    @IBAction func supportUsTapped(_ sender: Any) {
-        navigateTo(newViewController: SupportUsViewController(), transitionFrom: .fromRight)
+    @IBAction func recentTasksTapped(_ sender: Any) {
+        navigateTo(newViewController: RecentTasksRootVC(), transitionFrom: .fromRight)
     }
     
     @IBAction func employeeProfileTapped(_ sender: Any) {
