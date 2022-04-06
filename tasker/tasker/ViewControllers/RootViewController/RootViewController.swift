@@ -34,7 +34,7 @@ class RootViewController: UITabBarController {
             return
         }
         
-        let images = ["home icon", "messages icon", "profile icon"]
+        let images = ["Home-Icon-Gray", "Message-Icon-Gray", "Profile-Icon-Gray"]
         for x in 0...2 {
             items[x].image = UIImage(named: images[x])
         }

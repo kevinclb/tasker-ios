@@ -238,12 +238,12 @@ class SetupPageViewController: UIViewController {
              "address": [
                 "city": city,
                 "country": "US",
+                "phone": "",
                 "streetAddress": street,
                 "state": state,
                 "zipcode": zipCode
                 
              ],
-             "phone": "",
              "rating": 0,
              "bio": bio,
              "employeeDescription": "",
@@ -252,7 +252,6 @@ class SetupPageViewController: UIViewController {
              "uid": userID,
              "email": self.getEmail(),
              "gender": "",
-             "profilePicLink":"",
              "num_ratings": 0,
             ]) { (error) in
                 
