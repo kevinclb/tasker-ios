@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -173,25 +173,14 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="aCF-Ki-xh4">
-                            <rect key="frame" x="35" y="0.0" width="342" height="62"/>
+                            <rect key="frame" x="34" y="0.0" width="342" height="62"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" imagePadding="7">
-                                <imageReference key="image" image="dot.circle.and.hand.point.up.left.fill" catalog="system" renderingMode="template"/>
-                                <backgroundConfiguration key="background" image="GreenListTaskButton" imageContentMode="scaleAspectFit" strokeWidth="1"/>
-                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="19" scale="large" weight="bold"/>
-                                <attributedString key="attributedTitle">
-                                    <fragment content="Post">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <backgroundConfiguration key="background" image="list task rounded rect button" imageContentMode="scaleAspectFit" strokeWidth="1"/>
+                                <attributedString key="attributedTitle"/>
                             </buttonConfiguration>
                             <connections>
                                 <action selector="postTaskButtonPressed:" destination="-1" eventType="touchUpInside" id="l0S-n0-eLG"/>
@@ -209,9 +198,8 @@
     </objects>
     <resources>
         <image name="BackButtonCircle" width="47" height="49"/>
-        <image name="GreenListTaskButton" width="308" height="46"/>
         <image name="backArrow" width="20" height="20"/>
-        <image name="dot.circle.and.hand.point.up.left.fill" catalog="system" width="128" height="107"/>
+        <image name="list task rounded rect button" width="308" height="46"/>
         <image name="logo" width="219" height="64"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <systemColor name="secondaryLabelColor">

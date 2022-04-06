@@ -13,7 +13,7 @@ import Firebase
 class Errand: Codable {
     
     @DocumentID var docid: String?
-    var title, category, taskDescription, clientID: String
+    var title, category, taskDescription: String
     var price: Double?
     var negotiable, isCompleted: Bool?
     var location: Address?
@@ -31,7 +31,7 @@ class Errand: Codable {
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
-        self.clientID = employeeID
+        self.employeeID = employeeID
         self.isCompleted = isCompleted
         self.price = price
         self.negotiable = negotiable
@@ -43,7 +43,7 @@ class Errand: Codable {
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
-        self.clientID = employeeID
+        self.employeeID = employeeID
         self.isCompleted = isCompleted
     }
 }

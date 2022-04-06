@@ -95,7 +95,7 @@ extension ListTaskViewController {
     }
     
     func navigateToSubmitVC() {
-        let taskToList = Errand(title: self.titleText, category: self.categoryText, taskDescription: self.taskDescription, employeeID: self.uid, isCompleted: false)
+        let taskToList = Errand(title: self.titleText ?? "", category: self.categoryText ?? "", taskDescription: self.taskDescription ?? "", employeeID: self.uid, isCompleted: false)
         let submitVC = SubmitTaskViewController(inputTask: taskToList)
         let transition = CATransition()
         transition.duration = 0.3
@@ -106,4 +106,5 @@ extension ListTaskViewController {
         self.view.window!.layer.add(transition, forKey: nil)
         self.present(submitVC, animated: false)
     }
+    
 }
