@@ -11,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeExplorePageViewController" customModule="tasker" customModuleProvider="target">
             <connections>
                 <outlet property="HomePageCollectionView" destination="jKm-U8-mbo" id="4zI-lB-Z0p"/>
-                <outlet property="employeeProfileButton" destination="IBs-FY-D0Y" id="328-wy-0cq"/>
                 <outlet property="menuLeading" destination="44B-Vn-2vy" id="PLW-fd-2Wf"/>
                 <outlet property="menuScroll" destination="9kO-ID-s2V" id="0bC-eO-a4N"/>
                 <outlet property="menuTrailing" destination="g6M-5h-hgH" id="NmG-cE-Phw"/>
@@ -26,10 +25,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="733" verticalCompressionResistancePriority="691" alignment="top" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="j1q-Rw-py1" userLabel="dummyStack View">
-                    <rect key="frame" x="107.5" y="831" width="199" height="31"/>
+                    <rect key="frame" x="107.5" y="841" width="199" height="21"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jhB-so-4R3" userLabel="HomeButton">
-                            <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
+                            <rect key="frame" x="0.0" y="0.0" width="31" height="21"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" image="house" catalog="system" cornerStyle="capsule">
                                 <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,7 +36,7 @@
                             </buttonConfiguration>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAW-oe-hVL" userLabel="MessageButton">
-                            <rect key="frame" x="84" y="0.0" width="31" height="31"/>
+                            <rect key="frame" x="84" y="0.0" width="31" height="21"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" image="message" catalog="system" imagePlacement="top" imagePadding="3" cornerStyle="capsule">
                                 <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,7 +44,7 @@
                             </buttonConfiguration>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fK8-Eq-SzC" userLabel="ProfileButton">
-                            <rect key="frame" x="168" y="0.0" width="31" height="31"/>
+                            <rect key="frame" x="168" y="0.0" width="31" height="21"/>
                             <state key="normal" title="Button" backgroundImage="person" catalog="system"/>
                             <buttonConfiguration key="configuration" style="filled" image="person" catalog="system" imagePlacement="top" imagePadding="3" cornerStyle="capsule">
                                 <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,10 +54,10 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mjo-7u-MRE" userLabel="ExplorePageView">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="871"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H6Y-w4-g47" userLabel="HomePageStackView">
-                            <rect key="frame" x="0.0" y="45" width="414" height="826"/>
+                            <rect key="frame" x="0.0" y="45" width="414" height="856"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xHM-dk-egh" userLabel="HeaderStackView">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
@@ -78,17 +77,16 @@
                                                     </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hGC-f6-MlX">
-                                                    <rect key="frame" x="117" y="0.0" width="185" height="64"/>
+                                                    <rect key="frame" x="114.5" y="0.0" width="185" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="185" id="dlL-Ld-WAB"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="550-fu-mea">
-                                                    <rect key="frame" x="334" y="1.5" width="80" height="61"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="550-fu-mea">
+                                                    <rect key="frame" x="329" y="1.5" width="85" height="61"/>
                                                     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="IFO-Du-q3D"/>
-                                                        <constraint firstAttribute="width" constant="80" id="WI6-6h-1uT"/>
+                                                        <constraint firstAttribute="width" constant="85" id="P4F-DQ-Tzn"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -99,7 +97,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" id="9dF-Vw-2eu" userLabel="ContentStackView">
-                                    <rect key="frame" x="0.0" y="72" width="414" height="754"/>
+                                    <rect key="frame" x="0.0" y="72" width="414" height="784"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hss-PE-Fep" userLabel="SearchAndListStackView">
@@ -131,7 +129,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jKm-U8-mbo">
-                                            <rect key="frame" x="0.0" y="139" width="414" height="615"/>
+                                            <rect key="frame" x="0.0" y="139" width="414" height="645"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="rYP-gz-B3K">
                                                 <size key="itemSize" width="346" height="119"/>
@@ -164,10 +162,10 @@
                     </constraints>
                 </view>
                 <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kO-ID-s2V" userLabel="MenuScrollView">
-                    <rect key="frame" x="0.0" y="115" width="270" height="730"/>
+                    <rect key="frame" x="0.0" y="105" width="270" height="726"/>
                     <subviews>
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="KO2-dK-lJN" userLabel="Menu">
-                            <rect key="frame" x="0.0" y="0.0" width="270" height="790"/>
+                            <rect key="frame" x="0.0" y="0.0" width="270" height="791"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aBr-xp-Oms" userLabel="profilePicture">
@@ -304,7 +302,7 @@
                                     <rect key="frame" x="38" y="523" width="205" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBs-FY-D0Y" userLabel="EmployeeProfile">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBs-FY-D0Y" userLabel="EmployeeProfile">
                                     <rect key="frame" x="15" y="545" width="145" height="66"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="employ-button"/>
@@ -389,15 +387,15 @@
             <constraints>
                 <constraint firstItem="9kO-ID-s2V" firstAttribute="leading" secondItem="Mjo-7u-MRE" secondAttribute="leading" id="44B-Vn-2vy"/>
                 <constraint firstItem="j1q-Rw-py1" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4OH-Yk-ebY"/>
-                <constraint firstItem="9kO-ID-s2V" firstAttribute="bottom" secondItem="Mjo-7u-MRE" secondAttribute="bottom" constant="-26" id="4vh-bg-Niy"/>
+                <constraint firstItem="9kO-ID-s2V" firstAttribute="bottom" secondItem="Mjo-7u-MRE" secondAttribute="bottom" constant="-70" id="4vh-bg-Niy"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="width" secondItem="9kO-ID-s2V" secondAttribute="width" priority="999" id="6yE-Xr-RIy"/>
-                <constraint firstItem="j1q-Rw-py1" firstAttribute="top" secondItem="9kO-ID-s2V" secondAttribute="bottom" constant="-14" id="7CD-Sy-8Zq"/>
+                <constraint firstItem="j1q-Rw-py1" firstAttribute="top" secondItem="9kO-ID-s2V" secondAttribute="bottom" constant="10" id="7CD-Sy-8Zq"/>
                 <constraint firstItem="Mjo-7u-MRE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9N0-gU-C3E"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="centerX" secondItem="9kO-ID-s2V" secondAttribute="centerX" priority="999" id="9rz-H9-zmu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="j1q-Rw-py1" secondAttribute="bottom" id="HKZ-OA-enT"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="bottom" secondItem="9kO-ID-s2V" secondAttribute="bottom" id="M53-zv-lc7"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="top" secondItem="9kO-ID-s2V" secondAttribute="top" id="WQN-ir-RPA"/>
-                <constraint firstItem="9kO-ID-s2V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="115" id="WSO-t1-Efu"/>
+                <constraint firstItem="9kO-ID-s2V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="105" id="WSO-t1-Efu"/>
                 <constraint firstItem="Mjo-7u-MRE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WWx-WL-Y9h"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="trailing" secondItem="9kO-ID-s2V" secondAttribute="trailing" id="Yte-LU-faq"/>
                 <constraint firstItem="KO2-dK-lJN" firstAttribute="leading" secondItem="9kO-ID-s2V" secondAttribute="leading" id="aPN-oa-gwv"/>
