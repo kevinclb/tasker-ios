@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,14 +19,14 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="k8i-tc-yZ4">
-                    <rect key="frame" x="20" y="55" width="374" height="64"/>
+                    <rect key="frame" x="97.5" y="55" width="219" height="47"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46.770000000000003" id="aC6-rr-KMz"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="7ct-aC-vNb" userLabel="backButton">
-                    <rect key="frame" x="20" y="52" width="68" height="58"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="7ct-aC-vNb" userLabel="backButton">
+                    <rect key="frame" x="20" y="57" width="68" height="52"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="arrow_back_ios_24px"/>
                     <connections>
@@ -34,10 +34,10 @@
                     </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzb-Oy-WXD">
-                    <rect key="frame" x="0.0" y="134" width="414" height="762"/>
+                    <rect key="frame" x="0.0" y="117" width="414" height="779"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9If-Nh-2QX" userLabel="ContainerView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="762"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="779"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nr-gt-vwZ">
                                     <rect key="frame" x="54" y="0.0" width="116" height="36"/>
@@ -97,7 +97,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDf-iP-aO8" userLabel="logOut">
-                                    <rect key="frame" x="54" y="650" width="321" height="70"/>
+                                    <rect key="frame" x="54" y="667" width="321" height="70"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="logout-button"/>
                                     <connections>
@@ -146,18 +146,16 @@
             <constraints>
                 <constraint firstItem="1Nr-gt-vwZ" firstAttribute="top" secondItem="k8i-tc-yZ4" secondAttribute="bottom" constant="15" id="CJs-bo-4BQ"/>
                 <constraint firstItem="Qzb-Oy-WXD" firstAttribute="width" secondItem="qZK-8s-oOl" secondAttribute="width" id="IBy-Mv-t4O"/>
-                <constraint firstItem="fPs-JI-YOh" firstAttribute="trailing" secondItem="k8i-tc-yZ4" secondAttribute="trailing" constant="20" id="KVx-zF-pdD"/>
                 <constraint firstItem="Qzb-Oy-WXD" firstAttribute="bottom" secondItem="fPs-JI-YOh" secondAttribute="bottom" constant="34" id="Kic-LI-vRP"/>
                 <constraint firstItem="fPs-JI-YOh" firstAttribute="trailing" secondItem="Qzb-Oy-WXD" secondAttribute="trailing" id="Odd-WK-58B"/>
                 <constraint firstItem="Qzb-Oy-WXD" firstAttribute="top" secondItem="k8i-tc-yZ4" secondAttribute="bottom" constant="15" id="QVg-yR-5HT"/>
-                <constraint firstItem="1Nr-gt-vwZ" firstAttribute="leading" secondItem="7ct-aC-vNb" secondAttribute="centerX" id="Ro2-xd-PCy"/>
                 <constraint firstItem="Qzb-Oy-WXD" firstAttribute="leading" secondItem="fPs-JI-YOh" secondAttribute="leading" id="ZxZ-Ny-Roy"/>
                 <constraint firstItem="k8i-tc-yZ4" firstAttribute="top" secondItem="fPs-JI-YOh" secondAttribute="top" constant="11" id="b0p-p5-uFs"/>
                 <constraint firstItem="Qzb-Oy-WXD" firstAttribute="centerX" secondItem="fPs-JI-YOh" secondAttribute="centerX" id="dXn-LD-mqH"/>
-                <constraint firstItem="7ct-aC-vNb" firstAttribute="centerY" secondItem="k8i-tc-yZ4" secondAttribute="centerY" constant="2.5" id="fko-G8-Exg"/>
+                <constraint firstItem="7ct-aC-vNb" firstAttribute="top" secondItem="fPs-JI-YOh" secondAttribute="top" constant="13" id="gEp-Bn-M4S"/>
                 <constraint firstItem="k8i-tc-yZ4" firstAttribute="centerX" secondItem="fPs-JI-YOh" secondAttribute="centerX" id="iwj-rj-lin"/>
                 <constraint firstItem="7ct-aC-vNb" firstAttribute="leading" secondItem="fPs-JI-YOh" secondAttribute="leading" constant="20" id="r6d-ej-TT2"/>
-                <constraint firstItem="7ct-aC-vNb" firstAttribute="trailing" secondItem="k8i-tc-yZ4" secondAttribute="leading" constant="68" id="rew-0r-K1j"/>
+                <constraint firstItem="k8i-tc-yZ4" firstAttribute="leading" secondItem="7ct-aC-vNb" secondAttribute="trailing" constant="9.5" id="r6o-l8-Kal"/>
             </constraints>
             <point key="canvasLocation" x="-455.07246376811599" y="60.9375"/>
         </view>
