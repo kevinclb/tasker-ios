@@ -42,7 +42,6 @@ class HomeExplorePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //MARK: searchBar initialization
         searchBar.showsSearchResultsButton = true
         searchBar.placeholder = "Search for taskers here"
