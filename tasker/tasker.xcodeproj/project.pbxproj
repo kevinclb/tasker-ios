@@ -13,6 +13,8 @@
 		882783EF27F3C3100096E225 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882783ED27F3C3100096E225 /* ChatViewController.xib */; };
 		882783F227F3C3640096E225 /* ChatCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882783F027F3C3640096E225 /* ChatCellTableViewCell.swift */; };
 		882783F327F3C3640096E225 /* ChatCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882783F127F3C3640096E225 /* ChatCellTableViewCell.xib */; };
+		8850A1DF27F666880039C95E /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8850A1DD27F666880039C95E /* NewMessageViewController.swift */; };
+		8850A1E027F666880039C95E /* NewMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8850A1DE27F666880039C95E /* NewMessageViewController.xib */; };
 		88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88616E7527C5C228002A1F72 /* MessageViewCell.swift */; };
 		88616E7827C5C228002A1F72 /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88616E7627C5C228002A1F72 /* MessageViewCell.xib */; };
 		8C08C93027E7DC4C000406B9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08C92E27E7DC4C000406B9 /* TestViewController.swift */; };
@@ -92,6 +94,8 @@
 		882783ED27F3C3100096E225 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		882783F027F3C3640096E225 /* ChatCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellTableViewCell.swift; sourceTree = "<group>"; };
 		882783F127F3C3640096E225 /* ChatCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCellTableViewCell.xib; sourceTree = "<group>"; };
+		8850A1DD27F666880039C95E /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
+		8850A1DE27F666880039C95E /* NewMessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewMessageViewController.xib; sourceTree = "<group>"; };
 		88616E7527C5C228002A1F72 /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		88616E7627C5C228002A1F72 /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
 		8C08C92E27E7DC4C000406B9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 				882783ED27F3C3100096E225 /* ChatViewController.xib */,
 				882783F027F3C3640096E225 /* ChatCellTableViewCell.swift */,
 				882783F127F3C3640096E225 /* ChatCellTableViewCell.xib */,
+				8850A1DD27F666880039C95E /* NewMessageViewController.swift */,
+				8850A1DE27F666880039C95E /* NewMessageViewController.xib */,
 			);
 			path = MessagesViewController;
 			sourceTree = "<group>";
@@ -557,6 +563,7 @@
 				CE0555C627BF0DC700877325 /* MyCollectionViewCell.xib in Resources */,
 				8C2AFF5A27D5D787009CFE6C /* TaskerCollectionViewCell.xib in Resources */,
 				CE641A7927A8904A00766C59 /* GoogleService-Info.plist in Resources */,
+				8850A1E027F666880039C95E /* NewMessageViewController.xib in Resources */,
 				882783EB27EFA44C0096E225 /* AcceptTaskViewController.xib in Resources */,
 				CEF81B3327E3285400CE0340 /* AboutUsViewController.xib in Resources */,
 				8CD95D3827E6D9FC003F7360 /* ListTaskViewController.xib in Resources */,
@@ -648,6 +655,7 @@
 				882783F227F3C3640096E225 /* ChatCellTableViewCell.swift in Sources */,
 				8C250DD327AB37A400A280B3 /* SettingsPageViewController.swift in Sources */,
 				BAC6A86427BEF4DF00CA66DE /* SetupPageViewController.swift in Sources */,
+				8850A1DF27F666880039C95E /* NewMessageViewController.swift in Sources */,
 				8C250DBE27AB34CE00A280B3 /* HomeExplorePageViewController.swift in Sources */,
 				8CB4530627E71052009512A0 /* SubmitTaskViewController.swift in Sources */,
 				8C250DC727AB351B00A280B3 /* MessagesViewController.swift in Sources */,
