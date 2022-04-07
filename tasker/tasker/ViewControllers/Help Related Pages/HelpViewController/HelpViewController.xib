@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,7 +32,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="m7s-8n-Lfc" userLabel="backButton">
-                    <rect key="frame" x="20" y="52" width="68" height="58"/>
+                    <rect key="frame" x="20" y="61" width="68" height="58"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="arrow_back_ios_24px"/>
@@ -59,7 +59,7 @@
                     <rect key="frame" x="0.0" y="179" width="414" height="654"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYn-8U-06Y" userLabel="ContainerView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1040"/>
                             <subviews>
                                 <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Swq-mg-zUV">
                                     <rect key="frame" x="50" y="8" width="331" height="364"/>
@@ -176,7 +176,7 @@
                                 <constraint firstItem="Swq-mg-zUV" firstAttribute="top" secondItem="ZYn-8U-06Y" secondAttribute="top" constant="8" id="3qo-aC-ZUc"/>
                                 <constraint firstItem="Swq-mg-zUV" firstAttribute="width" secondItem="ZYn-8U-06Y" secondAttribute="width" multiplier="0.8" id="62b-5n-SJ7"/>
                                 <constraint firstItem="dk6-wp-4jz" firstAttribute="centerX" secondItem="ZYn-8U-06Y" secondAttribute="centerX" id="6u0-nd-4ZU"/>
-                                <constraint firstAttribute="height" constant="1200" id="GNm-sd-GCe"/>
+                                <constraint firstAttribute="height" constant="1040" id="GNm-sd-GCe"/>
                                 <constraint firstItem="Swq-mg-zUV" firstAttribute="leading" secondItem="ZYn-8U-06Y" secondAttribute="leading" constant="50" id="fK3-f9-qLY"/>
                             </constraints>
                         </view>
@@ -200,10 +200,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ox8-4a-7Xc" firstAttribute="trailing" secondItem="2oJ-Fx-o5r" secondAttribute="trailing" id="0Gt-Zn-hHd"/>
+                <constraint firstItem="m7s-8n-Lfc" firstAttribute="bottom" secondItem="7UI-Tu-zhP" secondAttribute="bottom" id="1YE-kt-UOe"/>
                 <constraint firstItem="m7s-8n-Lfc" firstAttribute="trailing" secondItem="7UI-Tu-zhP" secondAttribute="leading" constant="68" id="22Y-Nh-FWj"/>
                 <constraint firstItem="2oJ-Fx-o5r" firstAttribute="bottom" secondItem="ox8-4a-7Xc" secondAttribute="bottom" constant="-29" id="72X-Pm-PSx"/>
                 <constraint firstItem="7UI-Tu-zhP" firstAttribute="centerX" secondItem="ox8-4a-7Xc" secondAttribute="centerX" id="8ry-Kb-JoU"/>
-                <constraint firstItem="m7s-8n-Lfc" firstAttribute="centerY" secondItem="7UI-Tu-zhP" secondAttribute="centerY" constant="2.5" id="D9s-P2-WbK"/>
+                <constraint firstItem="m7s-8n-Lfc" firstAttribute="centerY" secondItem="7UI-Tu-zhP" secondAttribute="centerY" id="D9s-P2-WbK"/>
                 <constraint firstItem="x4i-9q-0E9" firstAttribute="top" secondItem="oIa-y9-PmL" secondAttribute="bottom" constant="1" id="KCS-ab-jUW"/>
                 <constraint firstItem="oIa-y9-PmL" firstAttribute="leading" secondItem="ox8-4a-7Xc" secondAttribute="leading" constant="55" id="LNU-S6-Irh"/>
                 <constraint firstItem="2oJ-Fx-o5r" firstAttribute="leading" secondItem="ox8-4a-7Xc" secondAttribute="leading" id="LZU-P4-zCO"/>

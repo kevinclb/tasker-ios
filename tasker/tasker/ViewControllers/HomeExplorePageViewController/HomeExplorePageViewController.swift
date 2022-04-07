@@ -35,6 +35,7 @@ class HomeExplorePageViewController: UIViewController {
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var menuLeading: NSLayoutConstraint!
     @IBOutlet weak var menuTrailing: NSLayoutConstraint!
+    @IBOutlet weak var employeeProfileButton: UIButton!
     
     
     var menuOut = false
@@ -50,6 +51,25 @@ class HomeExplorePageViewController: UIViewController {
         menuScroll.bounces = false
         menuScroll.showsVerticalScrollIndicator = false
         menuScroll.showsHorizontalScrollIndicator = false
+        
+        //MARK: check if user is an employee or not, if they didn't make an employee account, then hide the employee profile button from menu
+        let databas = Firestore.firestore()
+        guard let userID = Auth.auth().currentUser?.uid else {return}
+        let docReff = databas.collection("users").document(userID)
+        docReff.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        let employOrNot = document.get("employee") as! Bool
+                        // User is employee so make the button visible, otherwise hide it
+                        if(employOrNot){
+                            self.employeeProfileButton.isHidden = false
+                        }
+                        else{
+                            self.employeeProfileButton.isHidden = true
+                        }
+                    }else {
+                        print("Document does not exist")
+                    }
+        }
         
         //MARK: collection view code
         let nibCell = UINib(nibName: taskerCollectionViewCellId, bundle: nil)
