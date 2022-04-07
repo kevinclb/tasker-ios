@@ -36,6 +36,13 @@ class HomeExplorePageViewController: UIViewController {
     @IBOutlet weak var menuLeading: NSLayoutConstraint!
     @IBOutlet weak var menuTrailing: NSLayoutConstraint!
     
+    // Outlet for employee profile button
+    @IBOutlet weak var employeeProfileButton: UIButton!
+    
+    // Outlets for profile pictures
+    @IBOutlet weak var menuProfilePic: UIImageView!
+    @IBOutlet weak var profPic: UIImageView!
+
     
     var menuOut = false
     let locationManager = CLLocationManager()
@@ -50,6 +57,40 @@ class HomeExplorePageViewController: UIViewController {
         menuScroll.bounces = false
         menuScroll.showsVerticalScrollIndicator = false
         menuScroll.showsHorizontalScrollIndicator = false
+        
+        //MARK: check if user is an employee or not, if they didn't make an employee account, then hide the employee profile button from menu, load their picture and info as well
+        let databas = Firestore.firestore()
+        guard let userID = Auth.auth().currentUser?.uid else {return}
+        let docReff = databas.collection("users").document(userID)
+        let storageRef = FirebaseStorage.Storage.storage().reference(forURL: "gs://developmentenvironment-224c8.appspot.com")
+        docReff.getDocument { snapshot, error in
+                    if error != nil {
+                        print("error fetching user document")
+                    } else {
+                        do {
+                            guard let user = try snapshot!.data(as: User.self) else{return}
+                            // ----- Set profile pic, check for existing, set if not empty
+                            let profilepicURL:String = user.profilePicLink ?? ""
+                            if(!profilepicURL.isEmpty){
+                                storageRef.child("UserPictures").child(profilepicURL).getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                                    let picture = UIImage(data: data!)
+                                    self.profPic.image = picture
+                                    self.menuProfilePic.image = picture
+                                }
+                            }
+                            let employOrNot = user.employee ?? false
+                            // User is employee so make the button visible, otherwise hide it
+                            if(employOrNot){
+                                self.employeeProfileButton.isHidden = false
+                            }
+                            else{
+                                self.employeeProfileButton.isHidden = true
+                            }
+                        }catch {
+                            print(error)
+                        }
+                    }
+        }
         
         //MARK: collection view code
         let nibCell = UINib(nibName: taskerCollectionViewCellId, bundle: nil)
@@ -177,8 +218,7 @@ class HomeExplorePageViewController: UIViewController {
 //MARK: Navigating to ListTaskVC
 extension HomeExplorePageViewController {
     @IBAction func listTaskButtonPressed(_ sender: UIButton) {
-        var listTaskVC = ListTaskViewController()
-        navigateToListTaskVC(listTaskVC, .fromRight)
+        navigateToListTaskVC(ListTaskViewController(), .fromRight)
     }
     
     func navigateToListTaskVC(_ newViewController: UIViewController, _ transitionFrom:CATransitionSubtype) {
