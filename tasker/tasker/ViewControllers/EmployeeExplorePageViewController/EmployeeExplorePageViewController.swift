@@ -17,10 +17,16 @@ class EmployeeExplorePageViewController: UIViewController {
     
     @IBOutlet var collectionViewA: UICollectionView!
     @IBOutlet var nearByColView: UICollectionView!
+    
+    // Outlets for menu
     @IBOutlet weak var menuScrollView: UIScrollView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var menuLeading: NSLayoutConstraint!
     @IBOutlet weak var menuTrailing: NSLayoutConstraint!
+    
+    // Outlets for profile pictures
+    @IBOutlet weak var menuProfilePic: UIImageView!
+    @IBOutlet weak var profilePic: UIImageView!
     
     
     let taskCollectionViewCellId = "MyCollectionViewCell"
@@ -66,6 +72,31 @@ class EmployeeExplorePageViewController: UIViewController {
                     self.nearByColView.reloadData()
                 }
             }
+        }
+        
+        // Code to load the profile pictures and profile info to the menu
+        guard let userID = Auth.auth().currentUser?.uid else {return}
+        let docReff = db.collection("users").document(userID)
+        let storageRef = FirebaseStorage.Storage.storage().reference(forURL: "gs://developmentenvironment-224c8.appspot.com")
+        docReff.getDocument { snapshot, error in
+                    if error != nil {
+                        print("error fetching user document")
+                    } else {
+                        do {
+                            guard let user = try snapshot!.data(as: User.self) else{return}
+                            // ----- Set profile pic, check for existing, set if not empty
+                            let profilepicURL:String = user.profilePicLink ?? ""
+                            if(!profilepicURL.isEmpty){
+                                storageRef.child("UserPictures").child(profilepicURL).getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                                    let picture = UIImage(data: data!)
+                                    self.profilePic.image = picture
+                                    self.menuProfilePic.image = picture
+                                }
+                            }
+                        }catch {
+                            print(error)
+                        }
+                    }
         }
     }
     // functions for slide out menu
