@@ -94,7 +94,6 @@ class EditProfileViewController: UIViewController {
                             let profilepicURL:String = user.profilePicLink ?? ""
                             if(!profilepicURL.isEmpty){
                                 storageRef.child("UserPictures").child(profilepicURL).getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-                                    self.activityIndicator.stopAnimating()
                                     let picture = UIImage(data: data!)
                                     self.profilePic.image = picture
                                 }
@@ -165,6 +164,7 @@ class EditProfileViewController: UIViewController {
                             print(error)
                     }
                 }
+            self.activityIndicator.stopAnimating()
         }
     }
    
