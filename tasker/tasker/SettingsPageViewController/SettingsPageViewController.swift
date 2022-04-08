@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsPageViewController: UIViewController {
 
@@ -31,8 +32,14 @@ class SettingsPageViewController: UIViewController {
         navigateTo(newViewController: HelpViewController(), transitionFrom: .fromRight)
     }
     @IBAction func logoutTapped(_ sender: Any) {
-        print("Logout Tapped")
+        try! Auth.auth().signOut()
+        navigateTo(newViewController: LoggedOutViewController(), transitionFrom: .fromLeft)
     }
+    @IBAction func employeeStatusTapped(_ sender: Any) {
+        navigateTo(newViewController: EmployeeStatusViewController(), transitionFrom: .fromRight)
+    }
+    
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         // this code here is to present from right to left instead of bottom to top
         let transition = CATransition()

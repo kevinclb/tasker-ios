@@ -64,8 +64,16 @@
                                         <action selector="editProfileTapped:" destination="-1" eventType="touchUpInside" id="QKa-Wb-Iy6"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9c-cp-doh" userLabel="paymentInfo">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDs-1i-OO0" userLabel="employeeStatus">
                                     <rect key="frame" x="54" y="199" width="321" height="63"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="employeeStatus"/>
+                                    <connections>
+                                        <action selector="employeeStatusTapped:" destination="-1" eventType="touchUpInside" id="X3s-J3-Oa1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9c-cp-doh" userLabel="paymentInfo">
+                                    <rect key="frame" x="54" y="270" width="321" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Payment Informations"/>
                                     <connections>
@@ -73,7 +81,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De0-Wa-GDq" userLabel="appNotifications">
-                                    <rect key="frame" x="54" y="270" width="321" height="63"/>
+                                    <rect key="frame" x="54" y="341" width="321" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="App Notifications"/>
                                     <connections>
@@ -81,7 +89,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLj-B1-XqA" userLabel="help">
-                                    <rect key="frame" x="54" y="341" width="321" height="63"/>
+                                    <rect key="frame" x="54" y="412" width="321" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Help"/>
                                     <connections>
@@ -113,10 +121,11 @@
                                 <constraint firstItem="De0-Wa-GDq" firstAttribute="leading" secondItem="jyE-lI-IIc" secondAttribute="leading" id="68K-CT-Tvm"/>
                                 <constraint firstItem="rDf-iP-aO8" firstAttribute="trailing" secondItem="nLj-B1-XqA" secondAttribute="trailing" id="8Sx-hX-X0a"/>
                                 <constraint firstItem="1Nr-gt-vwZ" firstAttribute="leading" secondItem="9If-Nh-2QX" secondAttribute="leading" constant="54" id="9xe-Oj-9BX"/>
-                                <constraint firstItem="p9c-cp-doh" firstAttribute="top" secondItem="ZqE-LO-5i5" secondAttribute="bottom" constant="8" symbolic="YES" id="GCG-lu-avr"/>
+                                <constraint firstItem="p9c-cp-doh" firstAttribute="top" secondItem="FDs-1i-OO0" secondAttribute="bottom" constant="8" symbolic="YES" id="GCG-lu-avr"/>
                                 <constraint firstItem="jyE-lI-IIc" firstAttribute="leading" secondItem="1Nr-gt-vwZ" secondAttribute="leading" id="GsL-vv-ml8"/>
                                 <constraint firstAttribute="trailing" secondItem="De0-Wa-GDq" secondAttribute="trailing" constant="39" id="JQm-RC-bmL"/>
                                 <constraint firstItem="nLj-B1-XqA" firstAttribute="top" secondItem="De0-Wa-GDq" secondAttribute="bottom" constant="8" symbolic="YES" id="KbZ-hY-4gQ"/>
+                                <constraint firstItem="FDs-1i-OO0" firstAttribute="leading" secondItem="jyE-lI-IIc" secondAttribute="leading" id="LKG-65-uiY"/>
                                 <constraint firstItem="De0-Wa-GDq" firstAttribute="top" secondItem="p9c-cp-doh" secondAttribute="bottom" constant="8" symbolic="YES" id="MCm-nd-X9A"/>
                                 <constraint firstItem="ZqE-LO-5i5" firstAttribute="leading" secondItem="jyE-lI-IIc" secondAttribute="leading" id="Sl2-7n-aSf"/>
                                 <constraint firstItem="fg6-dF-0Kr" firstAttribute="top" secondItem="jyE-lI-IIc" secondAttribute="bottom" constant="8" symbolic="YES" id="Srm-Io-6RE"/>
@@ -124,6 +133,7 @@
                                 <constraint firstAttribute="trailing" secondItem="nLj-B1-XqA" secondAttribute="trailing" constant="39" id="Vuf-iN-WEa"/>
                                 <constraint firstItem="ZqE-LO-5i5" firstAttribute="top" secondItem="fg6-dF-0Kr" secondAttribute="bottom" constant="8" symbolic="YES" id="b2T-Lc-B3k"/>
                                 <constraint firstAttribute="bottom" secondItem="rDf-iP-aO8" secondAttribute="bottom" constant="42" id="cme-lc-GA6"/>
+                                <constraint firstItem="FDs-1i-OO0" firstAttribute="top" secondItem="ZqE-LO-5i5" secondAttribute="bottom" constant="8" symbolic="YES" id="gwL-wF-y7F"/>
                                 <constraint firstAttribute="trailing" secondItem="fg6-dF-0Kr" secondAttribute="trailing" constant="42" id="hIU-33-Kfz"/>
                                 <constraint firstItem="fg6-dF-0Kr" firstAttribute="leading" secondItem="1Nr-gt-vwZ" secondAttribute="leading" id="hZb-jR-bZO"/>
                                 <constraint firstItem="jyE-lI-IIc" firstAttribute="top" secondItem="1Nr-gt-vwZ" secondAttribute="bottom" id="pYj-dk-Dbz"/>
@@ -145,6 +155,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="1Nr-gt-vwZ" firstAttribute="top" secondItem="k8i-tc-yZ4" secondAttribute="bottom" constant="15" id="CJs-bo-4BQ"/>
+                <constraint firstItem="fPs-JI-YOh" firstAttribute="trailing" secondItem="FDs-1i-OO0" secondAttribute="trailing" constant="39" id="Goi-Mo-8FE"/>
                 <constraint firstItem="Qzb-Oy-WXD" firstAttribute="width" secondItem="qZK-8s-oOl" secondAttribute="width" id="IBy-Mv-t4O"/>
                 <constraint firstItem="Qzb-Oy-WXD" firstAttribute="bottom" secondItem="fPs-JI-YOh" secondAttribute="bottom" constant="34" id="Kic-LI-vRP"/>
                 <constraint firstItem="fPs-JI-YOh" firstAttribute="trailing" secondItem="Qzb-Oy-WXD" secondAttribute="trailing" id="Odd-WK-58B"/>
@@ -168,6 +179,7 @@
         <image name="Payment Informations" width="313" height="49"/>
         <image name="arrow_back_ios_24px" width="20" height="20"/>
         <image name="blackDivider" width="293" height="1"/>
+        <image name="employeeStatus" width="313" height="49"/>
         <image name="logo" width="219" height="64"/>
         <image name="logout-button" width="142" height="56"/>
         <systemColor name="systemBackgroundColor">
