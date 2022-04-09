@@ -238,7 +238,9 @@
 				8C224DA927BB15C000E486C7 /* RootViewController */,
 				8C5797AE27FCE8CC006231E7 /* RecentTaskViewController */,
 				8CAD48E427E0305800304CF8 /* SearchResultsViewControllers */,
+				8C250DD027AB378000A280B3 /* SettingsPageViewController */,
 				8C250DD927AB381200A280B3 /* EditProfilePageViewController */,
+				8C08C93227E7DED5000406B9 /* TestViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -442,8 +444,6 @@
 				CE641A6D27A88E0700766C59 /* Assets.xcassets */,
 				8C2DC0A427C6F8E70026FF11 /* Models */,
 				8C250DB327AB338C00A280B3 /* ViewControllers */,
-				8C250DD027AB378000A280B3 /* SettingsPageViewController */,
-				8C08C93227E7DED5000406B9 /* TestViewControllers */,
 			);
 			path = tasker;
 			sourceTree = "<group>";

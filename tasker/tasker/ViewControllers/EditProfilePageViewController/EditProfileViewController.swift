@@ -86,6 +86,7 @@ class EditProfileViewController: UIViewController {
         let docRef = db.collection("users").document(userID)
         docRef.getDocument { snapshot, error in
                     if error != nil {
+                        self.activityIndicator.stopAnimating()
                         print("error fetching user document")
                     } else {
                         do {
@@ -160,11 +161,13 @@ class EditProfileViewController: UIViewController {
                                 self.skills.text = "You currently do not have any skills added, add some to tell people more about your skills!"
                                 self.skills.textColor = UIColor.lightGray
                             }
+                            self.activityIndicator.stopAnimating()
+
                         } catch {
+                            self.activityIndicator.stopAnimating()
                             print(error)
                     }
                 }
-            self.activityIndicator.stopAnimating()
         }
     }
    
@@ -224,7 +227,11 @@ class EditProfileViewController: UIViewController {
                 let cityName = city.text!
                 let stateName = state.text!
                 let countryName = country.text!
-                let bioContent = bioTextfield.text!
+                var bioContent = bioTextfield.text!
+                bioContent = bioContent.trimmingCharacters(in: .whitespacesAndNewlines)
+                if(bioContent=="You currently do not have a bio, add one to tell people more about you!"){
+                    bioContent = ""
+                }
                 let skillsContent = skills.text!
                 let number = phoneNumber.text!
                 
@@ -239,7 +246,6 @@ class EditProfileViewController: UIViewController {
             skills.isEditable = true
             firstName.isUserInteractionEnabled = true
             lastName.isUserInteractionEnabled = true
-            dob.isUserInteractionEnabled = true
             street.isUserInteractionEnabled = true
             city.isUserInteractionEnabled = true
             state.isUserInteractionEnabled = true

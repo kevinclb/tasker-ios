@@ -222,7 +222,6 @@ class LoginViewController: UIViewController {
                         }
                       }
                     } else {
-                        
                       // Not a new user, direct to home view.
                       self.segueToHomeVC()
                     }
@@ -235,9 +234,7 @@ class LoginViewController: UIViewController {
     
     func segueToHomeVC() {
         // Segue to home explore page and programatically change root view controller to home explore page
-        
-        let homePageVC = HomeExplorePageViewController()
-
+        let homePageVC = RootViewController()
         homePageVC.modalPresentationStyle = .fullScreen
         self.present(homePageVC, animated: true, completion: nil)
     }
