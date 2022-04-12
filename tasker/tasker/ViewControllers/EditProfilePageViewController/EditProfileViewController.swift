@@ -21,6 +21,9 @@ class EditProfileViewController: UIViewController {
     var editPressed:Bool = false;
     @IBOutlet weak var editOrSaveButton: UIButton!
     
+    @IBOutlet weak var backButton: UIButton!
+    var willbeHidden:Bool = false
+    
     // outlets for components to populate
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var firstName: UITextField!
@@ -66,6 +69,7 @@ class EditProfileViewController: UIViewController {
         phoneNumber.isUserInteractionEnabled = false
         editPressed = false
         
+        self.backButton.isHidden = willbeHidden
         
         editBioButton.isUserInteractionEnabled = false
         editSkillsButton.isUserInteractionEnabled = false
@@ -237,6 +241,9 @@ class EditProfileViewController: UIViewController {
                 
                 self.updateUserInfo(fname: fname, lname: lname, dateb: dateb, city: cityName, country: countryName, street: streetNum, state: stateName, zip: zip!, bio: bioContent, skills: skillsContent, employeeOrNot: employeeOrNot, eamil: email, phone:number, linkToImg: linkToImg)
             }
+            editPressed = false
+            let image = UIImage(named: "viewProfileEditProfile") as UIImage?
+            editOrSaveButton.setImage(image, for: .normal)
         }
         // User just pressed the edit button to edit
         else{
@@ -309,6 +316,8 @@ class EditProfileViewController: UIViewController {
         if firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             dob.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            city.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            state.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             zipCode.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
             return "Please fill in all required fields."
@@ -376,6 +385,12 @@ class EditProfileViewController: UIViewController {
         sender.isHidden = true;
     }
     
+    func hideBackButton(){
+        self.willbeHidden = true
+    }
+    func showBackButton(){
+        self.willbeHidden = false
+    }
     
 }
 

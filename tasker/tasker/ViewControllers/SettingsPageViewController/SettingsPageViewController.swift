@@ -20,7 +20,9 @@ class SettingsPageViewController: UIViewController {
         print("Account Settings Tapped")
     }
     @IBAction func editProfileTapped(_ sender: Any) {
-        navigateTo(newViewController: EditProfileViewController(), transitionFrom: .fromRight)
+        let vc = EditProfileViewController()
+        vc.showBackButton()
+        navigateTo(newViewController: vc, transitionFrom: .fromRight)
     }
     @IBAction func paymentInfoTapped(_ sender: Any) {
         print("Payment Info Tapped")
