@@ -42,6 +42,13 @@ class HomeExplorePageViewController: UIViewController {
     // Outlets for profile pictures
     @IBOutlet weak var menuProfilePic: UIImageView!
     @IBOutlet weak var profPic: UIImageView!
+    
+    // Menu outlets for setting name, rating, etc.
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var cityAndState: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var rating: UILabel!
+    
 
     
     var menuOut = false
@@ -86,6 +93,11 @@ class HomeExplorePageViewController: UIViewController {
                             else{
                                 self.employeeProfileButton.isHidden = true
                             }
+                            self.name.text = user.firstname! + " " + user.lastname!
+                            self.email.text = user.email
+                            self.rating.text = user.rating?.description
+                            let addy = user.address
+                            self.cityAndState.text = (addy?.city)! + ", " + (addy?.state)!
                         }catch {
                             print(error)
                         }

@@ -11,13 +11,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmployeeExplorePageViewController" customModule="tasker" customModuleProvider="target">
             <connections>
                 <outlet property="collectionViewA" destination="0eT-xO-EOk" id="qHW-vr-qiz"/>
+                <outlet property="email" destination="XQQ-iE-BK2" id="U3D-8X-o8F"/>
+                <outlet property="location" destination="dR2-fp-ia6" id="eHG-bM-4SM"/>
                 <outlet property="menuButton" destination="L52-Ff-xvK" id="IVf-CP-7Pm"/>
                 <outlet property="menuLeading" destination="sNI-QZ-HEe" id="7h9-ew-1Gs"/>
                 <outlet property="menuProfilePic" destination="zYf-Jg-2OT" id="JVD-Ao-CIJ"/>
                 <outlet property="menuScrollView" destination="p0r-vc-oli" id="k3g-wT-nf1"/>
                 <outlet property="menuTrailing" destination="KLi-mL-SHb" id="YIR-Nf-e41"/>
+                <outlet property="name" destination="SBf-DP-DFC" id="aEu-mg-UFq"/>
                 <outlet property="nearByColView" destination="VbB-YV-1sc" id="Y7B-ab-OZb"/>
                 <outlet property="profilePic" destination="1XI-5Z-6mZ" id="qnp-h7-syE"/>
+                <outlet property="rating" destination="icf-29-TA1" id="xbe-cU-Tww"/>
                 <outlet property="view" destination="ekV-De-20f" id="qaH-Qe-ohR"/>
             </connections>
         </placeholder>
@@ -240,27 +244,20 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joseph Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SBf-DP-DFC" userLabel="name">
-                                    <rect key="frame" x="77" y="13" width="154" height="23"/>
+                                    <rect key="frame" x="77" y="20" width="154" height="23"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los Angeles, CA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dR2-fp-ia6" userLabel="location">
-                                    <rect key="frame" x="80.666666666666686" y="71.666666666666657" width="92.333333333333314" height="14.333333333333329"/>
+                                    <rect key="frame" x="77" y="56.666666666666657" width="154" height="14.333333333333329"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member for 1 day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hpb-ZT-DVC" userLabel="membershipDuration">
-                                    <rect key="frame" x="80" y="61" width="187" height="13"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="joseph.smith@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQQ-iE-BK2" userLabel="email">
-                                    <rect key="frame" x="79.000000000000014" y="70.666666666666657" width="151.33333333333337" height="27.333333333333329"/>
+                                    <rect key="frame" x="77" y="70.666666666666657" width="154" height="27.333333333333329"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -401,9 +398,11 @@
                             <viewLayoutGuide key="safeArea" id="fe0-AY-lEj"/>
                             <color key="backgroundColor" red="0.18823529410000001" green="0.63921568630000003" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstItem="XQQ-iE-BK2" firstAttribute="leading" secondItem="SBf-DP-DFC" secondAttribute="leading" id="1Ct-Dx-cv7"/>
+                                <constraint firstItem="dR2-fp-ia6" firstAttribute="top" secondItem="SBf-DP-DFC" secondAttribute="bottom" constant="13.666666666666657" id="2Id-vm-5YO"/>
                                 <constraint firstItem="uTo-ck-aUo" firstAttribute="leading" secondItem="fe0-AY-lEj" secondAttribute="leading" constant="11" id="4Qs-IK-Dln"/>
+                                <constraint firstItem="XQQ-iE-BK2" firstAttribute="trailing" secondItem="SBf-DP-DFC" secondAttribute="trailing" id="6Y4-OG-xXp"/>
                                 <constraint firstItem="C8Q-eR-Pho" firstAttribute="leading" secondItem="fe0-AY-lEj" secondAttribute="leading" constant="169" id="6cr-fD-gJl"/>
-                                <constraint firstItem="hpb-ZT-DVC" firstAttribute="leading" secondItem="dR2-fp-ia6" secondAttribute="trailing" constant="-93" id="6qH-yx-6z3"/>
                                 <constraint firstItem="LKA-JW-qQ1" firstAttribute="top" secondItem="nUq-yC-v3k" secondAttribute="bottom" constant="8" symbolic="YES" id="7Av-Hn-maC"/>
                                 <constraint firstItem="C8Q-eR-Pho" firstAttribute="centerY" secondItem="nUq-yC-v3k" secondAttribute="centerY" id="8S1-ee-8NY"/>
                                 <constraint firstItem="nUq-yC-v3k" firstAttribute="leading" secondItem="fe0-AY-lEj" secondAttribute="leading" constant="15" id="BsD-Zp-soj"/>
@@ -413,17 +412,16 @@
                                 <constraint firstItem="UtW-el-Fil" firstAttribute="top" secondItem="djd-MJ-4jj" secondAttribute="bottom" constant="10" id="Fqg-XX-yIg"/>
                                 <constraint firstItem="djd-MJ-4jj" firstAttribute="firstBaseline" secondItem="hZM-j1-MQ0" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="HtM-dl-39N"/>
                                 <constraint firstItem="SaU-Z3-0yX" firstAttribute="leading" secondItem="fe0-AY-lEj" secondAttribute="leading" constant="15" id="I2N-O4-6UV"/>
+                                <constraint firstItem="dR2-fp-ia6" firstAttribute="leading" secondItem="SBf-DP-DFC" secondAttribute="leading" id="JeE-o0-EeP"/>
                                 <constraint firstItem="B95-UJ-cqV" firstAttribute="leading" secondItem="fe0-AY-lEj" secondAttribute="leading" constant="15" id="LrA-nr-ESq"/>
                                 <constraint firstItem="1M7-Ju-yzT" firstAttribute="leading" secondItem="fe0-AY-lEj" secondAttribute="leading" constant="15" id="MMd-LG-Ka2"/>
                                 <constraint firstItem="SaU-Z3-0yX" firstAttribute="firstBaseline" secondItem="3C4-r0-We3" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="MlV-sc-yg9"/>
                                 <constraint firstItem="3Yy-qn-bou" firstAttribute="leading" secondItem="KeQ-3u-BQF" secondAttribute="leading" constant="38" id="MnG-E0-rbD"/>
-                                <constraint firstItem="hpb-ZT-DVC" firstAttribute="top" secondItem="dR2-fp-ia6" secondAttribute="bottom" constant="4" id="NhQ-ze-wSn"/>
                                 <constraint firstItem="B95-UJ-cqV" firstAttribute="firstBaseline" secondItem="3Yy-qn-bou" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="PqU-aD-GE8"/>
                                 <constraint firstItem="LKA-JW-qQ1" firstAttribute="leading" secondItem="GZ8-kV-30v" secondAttribute="trailing" constant="-172" id="Rpj-Fd-TuY"/>
                                 <constraint firstItem="O6K-Ej-9gi" firstAttribute="leading" secondItem="KeQ-3u-BQF" secondAttribute="leading" constant="38" id="S4Y-OB-jiX"/>
                                 <constraint firstItem="djd-MJ-4jj" firstAttribute="leading" secondItem="fe0-AY-lEj" secondAttribute="leading" constant="15" id="S94-iH-8l8"/>
                                 <constraint firstItem="JVh-4e-H4w" firstAttribute="firstBaseline" secondItem="gVm-x4-4ko" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="SYH-XW-ov8"/>
-                                <constraint firstItem="dR2-fp-ia6" firstAttribute="firstBaseline" secondItem="SBf-DP-DFC" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="Uub-j2-u9y"/>
                                 <constraint firstItem="3C4-r0-We3" firstAttribute="leading" secondItem="KeQ-3u-BQF" secondAttribute="leading" constant="20" id="VlU-kl-Uhp"/>
                                 <constraint firstItem="O6K-Ej-9gi" firstAttribute="top" secondItem="SaU-Z3-0yX" secondAttribute="bottom" constant="1" id="aVz-LS-Iql"/>
                                 <constraint firstItem="nUq-yC-v3k" firstAttribute="top" secondItem="GZ8-kV-30v" secondAttribute="bottom" constant="4" id="aYR-mi-Wyp"/>
@@ -431,12 +429,10 @@
                                 <constraint firstItem="SBf-DP-DFC" firstAttribute="top" secondItem="zYf-Jg-2OT" secondAttribute="top" id="ate-Nw-OyJ"/>
                                 <constraint firstItem="zYf-Jg-2OT" firstAttribute="top" secondItem="fe0-AY-lEj" secondAttribute="top" constant="13" id="bhA-id-od3"/>
                                 <constraint firstItem="uj9-Cd-Eqz" firstAttribute="leading" secondItem="fe0-AY-lEj" secondAttribute="leading" constant="15" id="bry-Gf-ger"/>
-                                <constraint firstItem="fe0-AY-lEj" firstAttribute="top" secondItem="SBf-DP-DFC" secondAttribute="bottom" constant="-68" id="cNF-Ni-wUt"/>
+                                <constraint firstItem="fe0-AY-lEj" firstAttribute="top" secondItem="SBf-DP-DFC" secondAttribute="bottom" constant="-43" id="cNF-Ni-wUt"/>
                                 <constraint firstItem="1M7-Ju-yzT" firstAttribute="top" secondItem="zYf-Jg-2OT" secondAttribute="bottom" constant="5.5" id="e6x-Sp-G79"/>
-                                <constraint firstItem="SBf-DP-DFC" firstAttribute="leading" secondItem="dR2-fp-ia6" secondAttribute="trailing" constant="-96" id="fM5-yf-Bok"/>
                                 <constraint firstItem="SBf-DP-DFC" firstAttribute="leading" secondItem="zYf-Jg-2OT" secondAttribute="trailing" constant="10" id="ftR-6r-U9a"/>
                                 <constraint firstItem="uj9-Cd-Eqz" firstAttribute="firstBaseline" secondItem="UtW-el-Fil" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="jgd-vK-Wjm"/>
-                                <constraint firstItem="XQQ-iE-BK2" firstAttribute="leading" secondItem="icf-29-TA1" secondAttribute="trailing" constant="16" id="lk1-R7-fDu"/>
                                 <constraint firstItem="3Yy-qn-bou" firstAttribute="top" secondItem="uj9-Cd-Eqz" secondAttribute="bottom" constant="8" symbolic="YES" id="m3R-N3-NKM"/>
                                 <constraint firstItem="gVm-x4-4ko" firstAttribute="top" secondItem="B95-UJ-cqV" secondAttribute="bottom" constant="8" symbolic="YES" id="mF8-ki-pe4"/>
                                 <constraint firstItem="hZM-j1-MQ0" firstAttribute="leading" secondItem="KeQ-3u-BQF" secondAttribute="leading" constant="1" id="png-Uq-pV2"/>
@@ -444,6 +440,7 @@
                                 <constraint firstItem="JVh-4e-H4w" firstAttribute="leading" secondItem="fe0-AY-lEj" secondAttribute="leading" constant="15" id="vQ8-qi-nsY"/>
                                 <constraint firstItem="uTo-ck-aUo" firstAttribute="firstBaseline" secondItem="O6K-Ej-9gi" secondAttribute="baseline" constant="33" id="xSu-R5-hfi"/>
                                 <constraint firstItem="XQQ-iE-BK2" firstAttribute="firstBaseline" secondItem="zYf-Jg-2OT" secondAttribute="baseline" constant="19.666666666666668" symbolType="layoutAnchor" id="xtX-BR-ZG9"/>
+                                <constraint firstItem="dR2-fp-ia6" firstAttribute="trailing" secondItem="SBf-DP-DFC" secondAttribute="trailing" id="xtz-A6-BbF"/>
                                 <constraint firstItem="3C4-r0-We3" firstAttribute="top" secondItem="XQQ-iE-BK2" secondAttribute="bottom" constant="8" symbolic="YES" id="ygg-C5-5nS"/>
                             </constraints>
                         </view>

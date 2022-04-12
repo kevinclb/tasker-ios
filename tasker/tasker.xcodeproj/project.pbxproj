@@ -69,6 +69,8 @@
 		CE0555C827BF0DC700877325 /* EmployeeExplorePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */; };
 		CE10019027CD6171007767AC /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10018E27CD6170007767AC /* HelpViewController.swift */; };
 		CE10019127CD6171007767AC /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10018F27CD6170007767AC /* HelpViewController.xib */; };
+		CE5C50C727FF92030055F779 /* EmployeeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C50C527FF92030055F779 /* EmployeeStatusViewController.swift */; };
+		CE5C50C827FF92030055F779 /* EmployeeStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5C50C627FF92030055F779 /* EmployeeStatusViewController.xib */; };
 		CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6427A88E0500766C59 /* AppDelegate.swift */; };
 		CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6627A88E0500766C59 /* SceneDelegate.swift */; };
 		CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE641A6D27A88E0700766C59 /* Assets.xcassets */; };
@@ -151,6 +153,8 @@
 		CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeExplorePageViewController.xib; sourceTree = "<group>"; };
 		CE10018E27CD6170007767AC /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CE10018F27CD6170007767AC /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
+		CE5C50C527FF92030055F779 /* EmployeeStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeStatusViewController.swift; sourceTree = "<group>"; };
+		CE5C50C627FF92030055F779 /* EmployeeStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeStatusViewController.xib; sourceTree = "<group>"; };
 		CE641A6127A88E0500766C59 /* tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE641A6427A88E0500766C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE641A6627A88E0500766C59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,20 +224,21 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8C5797AE27FCE8CC006231E7 /* RecentTaskViewController */,
 				882783E727EFA3F60096E225 /* AcceptTaskViewController */,
-				8CD95D3427E6D9A1003F7360 /* ListTaskViewControllers */,
+				8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */,
+				CE5C50C427FF90D20055F779 /* EmployeeStatusViewController */,
 				CEF81B3827E3287A00CE0340 /* Help Related Pages */,
+				8C250DBB27AB34B300A280B3 /* HomeExplorePageViewController */,
+				8CD95D3427E6D9A1003F7360 /* ListTaskViewControllers */,
 				BAC6A86627BEF4E300CA66DE /* LoginViewController */,
-				BAC6A85D27BEF4A600CA66DE /* RegistrationViewControllers */,
 				BAC6A85827BEF48500CA66DE /* LoggedOutViewConntroller */,
-				8C224DA927BB15C000E486C7 /* RootViewController */,
+				8C250DC927AB352E00A280B3 /* MessagesViewController */,
 				8C224DA827BB15B500E486C7 /* PublicProfileViewController */,
+				BAC6A85D27BEF4A600CA66DE /* RegistrationViewControllers */,
+				8C224DA927BB15C000E486C7 /* RootViewController */,
+				8C5797AE27FCE8CC006231E7 /* RecentTaskViewController */,
 				8CAD48E427E0305800304CF8 /* SearchResultsViewControllers */,
 				8C250DD027AB378000A280B3 /* SettingsPageViewController */,
-				8C250DBB27AB34B300A280B3 /* HomeExplorePageViewController */,
-				8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */,
-				8C250DC927AB352E00A280B3 /* MessagesViewController */,
 				8C250DD927AB381200A280B3 /* EditProfilePageViewController */,
 				8C08C93227E7DED5000406B9 /* TestViewControllers */,
 			);
@@ -398,6 +403,15 @@
 				CE10018F27CD6170007767AC /* HelpViewController.xib */,
 			);
 			path = HelpViewController;
+			sourceTree = "<group>";
+		};
+		CE5C50C427FF90D20055F779 /* EmployeeStatusViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE5C50C527FF92030055F779 /* EmployeeStatusViewController.swift */,
+				CE5C50C627FF92030055F779 /* EmployeeStatusViewController.xib */,
+			);
+			path = EmployeeStatusViewController;
 			sourceTree = "<group>";
 		};
 		CE641A5827A88E0500766C59 = {
@@ -584,6 +598,7 @@
 				CEF81B2B27E2516F00CE0340 /* ContactUsViewController.xib in Resources */,
 				8C5797B227FCE913006231E7 /* RecentTasksTableViewController.xib in Resources */,
 				8C08C93127E7DC4C000406B9 /* TestViewController.xib in Resources */,
+				CE5C50C827FF92030055F779 /* EmployeeStatusViewController.xib in Resources */,
 				8C224DA727BB15B100E486C7 /* PublicProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +655,7 @@
 				CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */,
 				8CAD48EC27E030B200304CF8 /* SearchResultsTableViewController.swift in Sources */,
 				8C08C93027E7DC4C000406B9 /* TestViewController.swift in Sources */,
+				CE5C50C727FF92030055F779 /* EmployeeStatusViewController.swift in Sources */,
 				882783EE27F3C3100096E225 /* ChatViewController.swift in Sources */,
 				88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */,
 				BAC6A85B27BEF4A000CA66DE /* LoggedOutViewController.swift in Sources */,

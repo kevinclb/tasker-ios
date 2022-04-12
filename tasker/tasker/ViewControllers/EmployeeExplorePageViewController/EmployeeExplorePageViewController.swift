@@ -28,6 +28,12 @@ class EmployeeExplorePageViewController: UIViewController {
     @IBOutlet weak var menuProfilePic: UIImageView!
     @IBOutlet weak var profilePic: UIImageView!
     
+    // Outlets for profile info, name, rating, etc.
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var rating: UILabel!
+    
     
     let taskCollectionViewCellId = "MyCollectionViewCell"
     
@@ -93,6 +99,11 @@ class EmployeeExplorePageViewController: UIViewController {
                                     self.menuProfilePic.image = picture
                                 }
                             }
+                            self.name.text = user.firstname! + " " + user.lastname!
+                            self.email.text = user.email
+                            self.rating.text = user.rating?.description
+                            let addy = user.address
+                            self.location.text = (addy?.city)! + ", " + (addy?.state)!
                         }catch {
                             print(error)
                         }
