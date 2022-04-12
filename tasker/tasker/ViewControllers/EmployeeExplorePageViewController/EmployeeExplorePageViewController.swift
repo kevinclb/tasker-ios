@@ -6,6 +6,7 @@
 //
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 import UIKit
 
 let db = Firestore.firestore()
@@ -44,6 +45,18 @@ class EmployeeExplorePageViewController: UIViewController {
         menuScrollView.bounces = false
         menuScrollView.showsVerticalScrollIndicator = false
         menuScrollView.showsHorizontalScrollIndicator = false
+        
+        // for profile pictures
+        self.profilePic.layer.borderWidth = 1.0
+        self.profilePic.layer.masksToBounds = false
+        self.profilePic.layer.borderColor = UIColor.white.cgColor
+        self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2
+        self.profilePic.clipsToBounds = true
+        self.menuProfilePic.layer.borderWidth = 1.0
+        self.menuProfilePic.layer.masksToBounds = false
+        self.menuProfilePic.layer.borderColor = UIColor.white.cgColor
+        self.menuProfilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2
+        self.menuProfilePic.clipsToBounds = true
 
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
         leftSwipe.direction = .left
