@@ -30,18 +30,38 @@ class RateUserViewController: UIViewController {
     let maxRating: Int = 15
     var userID: String = ""
     var numOfRatings: Int = 0
-    var currentRating: Int = 0
-    var newUserRating: Int = 0
+    var currentRating: Double = 0
+    var givenRating: Double = 0
+    var newUserRating: Double = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Retrieve the user's number of ratings and current rating
         let db = Firestore.firestore()
         let docRef = db.collection("users").document(userID)
-      
-
-        // Do any additional setup after loading the view.
+        docRef.getDocument { snapshot, error in
+                    if error != nil {
+                        print("error fetching user document")
+                    } else {
+                        do {
+                            guard let user = try snapshot!.data(as: User.self) else{return}
+                                
+                            // ----- Set num of ratings
+                            self.numOfRatings = user.num_ratings!
+                            
+                            // ----- Set current ratings
+                            self.currentRating = user.rating!
+                        } catch {
+                            print("error: \(error.localizedDescription)")
+                        }
+            }
+        }
+    }
+    
+    func setUserID(userID: String) {
+        self.userID = userID
     }
     
     @IBAction func category1StarButtonTapped(_ sender: UIButton) {
@@ -58,7 +78,6 @@ class RateUserViewController: UIViewController {
                 button.setTitle("☆", for: .normal)
             }
         }
-        print("Category 1 Rating: ", category1Rating)
     }
     
     @IBAction func category2StarButtonTapped(_ sender: UIButton) {
@@ -75,7 +94,6 @@ class RateUserViewController: UIViewController {
                 button.setTitle("☆", for: .normal)
             }
         }
-        print("Category 2 Rating: ", category2Rating)
     }
     
     @IBAction func category3StarButtonTapped(_ sender: UIButton) {
@@ -92,16 +110,19 @@ class RateUserViewController: UIViewController {
                 button.setTitle("☆", for: .normal)
             }
         }
-        print("Category 3 Rating: ", category3Rating)
     }
     
     @IBAction func completeButtonTapped(_ sender: Any) {
         
         // Calculating the overall rating based on the stars pressed.
-        newUserRating = (category1Rating + category2Rating + category3Rating) / numOfCategories
+        givenRating = Double((category1Rating + category2Rating + category3Rating) / numOfCategories)
         
         // Calculating the users new rating that will be updated on the database.
-        newUserRating = (currentRating * numOfRatings) + category3Rating / (numOfRatings + 1)
+        newUserRating = ((currentRating * Double(numOfRatings)) + givenRating) / (Double(numOfRatings) + 1)
+        
+        // Update values to database
+        let db = Firestore.firestore()
+        db.collection("users").document(userID).setData(["num_ratings": (numOfRatings + 1), "rating": newUserRating], merge: true)
         
     }
     
@@ -116,22 +137,4 @@ class RateUserViewController: UIViewController {
         view.window!.layer.add(transition, forKey: kCATransition)
         dismiss(animated: false, completion: nil)
     }
-    
-    
-    
-    
-    
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
