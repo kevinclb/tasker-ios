@@ -7,13 +7,20 @@
 
 import UIKit
 
+protocol RecentTaskTableViewCellDelegate {
+    func didRateButtonPressed()
+}
+
 class RecentTaskTableViewCell: UITableViewCell {
+    
+    var delegate: RecentTaskTableViewCellDelegate?
 
     @IBOutlet weak var taskerNameLabel: UILabel!
     
     @IBOutlet weak var taskNameLabel: UILabel!
 
     @IBAction func rateButton(_ sender: UIButton) {
+        delegate?.didRateButtonPressed()
         
     }
     
