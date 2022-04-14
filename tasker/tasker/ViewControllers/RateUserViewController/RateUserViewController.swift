@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RateUserViewController: UIViewController {
     
@@ -27,10 +28,18 @@ class RateUserViewController: UIViewController {
     var category3Rating: Int  = 0
     let numOfCategories: Int = 3
     let maxRating: Int = 15
+    var userID: String = ""
+    var numOfRatings: Int = 0
+    var currentRating: Int = 0
+    var newUserRating: Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").document(userID)
+      
 
         // Do any additional setup after loading the view.
     }
@@ -87,6 +96,13 @@ class RateUserViewController: UIViewController {
     }
     
     @IBAction func completeButtonTapped(_ sender: Any) {
+        
+        // Calculating the overall rating based on the stars pressed.
+        newUserRating = (category1Rating + category2Rating + category3Rating) / numOfCategories
+        
+        // Calculating the users new rating that will be updated on the database.
+        newUserRating = (currentRating * numOfRatings) + category3Rating / (numOfRatings + 1)
+        
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
