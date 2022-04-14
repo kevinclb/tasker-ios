@@ -21,9 +21,7 @@ class RootViewController: UITabBarController {
         // Create instance of view controllers
         let homeVC = HomeExplorePageViewController()
         let messagesVC = MessagesViewController()
-        let vcc = EditProfileViewController()
-        vcc.hideBackButton()
-        let profileVC = vcc
+        let profileVC = PublicProfileViewController()
         
         homeVC.title = "Home"
         messagesVC.title = "Messages"

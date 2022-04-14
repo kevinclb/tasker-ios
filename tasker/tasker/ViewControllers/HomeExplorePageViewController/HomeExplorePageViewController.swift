@@ -48,7 +48,6 @@ class HomeExplorePageViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var cityAndState: UILabel!
     @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var rating: UILabel!
     
 
     
@@ -140,7 +139,6 @@ class HomeExplorePageViewController: UIViewController {
                             }
                             self.name.text = user.firstname! + " " + user.lastname!
                             self.email.text = user.email
-                            self.rating.text = user.rating?.description
                             let addy = user.address
                             self.cityAndState.text = (addy?.city)! + ", " + (addy?.state)!
                         }catch {

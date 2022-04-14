@@ -22,7 +22,6 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var editOrSaveButton: UIButton!
     
     @IBOutlet weak var backButton: UIButton!
-    var willbeHidden:Bool = false
     
     // outlets for components to populate
     @IBOutlet weak var profilePic: UIImageView!
@@ -69,7 +68,6 @@ class EditProfileViewController: UIViewController {
         phoneNumber.isUserInteractionEnabled = false
         editPressed = false
         
-        self.backButton.isHidden = willbeHidden
         
         editBioButton.isUserInteractionEnabled = false
         editSkillsButton.isUserInteractionEnabled = false
@@ -95,14 +93,6 @@ class EditProfileViewController: UIViewController {
                     } else {
                         do {
                             guard let user = try snapshot!.data(as: User.self) else{return}
-                            // ----- Set profile pic, check for existing, set if not empty
-                            let profilepicURL:String = user.profilePicLink ?? ""
-                            if(!profilepicURL.isEmpty){
-                                storageRef.child("UserPictures").child(profilepicURL).getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-                                    let picture = UIImage(data: data!)
-                                    self.profilePic.image = picture
-                                }
-                            }
                                 
                             // ----- Set first name
                             self.firstName.text = user.firstname
@@ -165,8 +155,20 @@ class EditProfileViewController: UIViewController {
                                 self.skills.text = "You currently do not have any skills added, add some to tell people more about your skills!"
                                 self.skills.textColor = UIColor.lightGray
                             }
-                            self.activityIndicator.stopAnimating()
 
+                            
+                            // ----- Set profile pic, check for existing, set if not empty
+                            let profilepicURL:String = user.profilePicLink ?? ""
+                            if(!profilepicURL.isEmpty){
+                                storageRef.child("UserPictures").child(profilepicURL).getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                                    let picture = UIImage(data: data!)
+                                    self.profilePic.image = picture
+                                    self.activityIndicator.stopAnimating()
+                                }
+                            }
+                            else{
+                                self.activityIndicator.stopAnimating()
+                            }
                         } catch {
                             self.activityIndicator.stopAnimating()
                             print(error)
@@ -383,13 +385,6 @@ class EditProfileViewController: UIViewController {
         // Either way, you want to hide the button and allow the user to edit the text
         self.skills.becomeFirstResponder()
         sender.isHidden = true;
-    }
-    
-    func hideBackButton(){
-        self.willbeHidden = true
-    }
-    func showBackButton(){
-        self.willbeHidden = false
     }
     
 }
