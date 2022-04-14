@@ -228,7 +228,6 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BA99A0FA2808013500BCE55E /* RateUserViewController */,
 				882783E727EFA3F60096E225 /* AcceptTaskViewController */,
 				8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */,
 				CE5C50C427FF90D20055F779 /* EmployeeStatusViewController */,
@@ -239,6 +238,7 @@
 				BAC6A85827BEF48500CA66DE /* LoggedOutViewConntroller */,
 				8C250DC927AB352E00A280B3 /* MessagesViewController */,
 				8C224DA827BB15B500E486C7 /* PublicProfileViewController */,
+				BA99A0FA2808013500BCE55E /* RateUserViewController */,
 				BAC6A85D27BEF4A600CA66DE /* RegistrationViewControllers */,
 				8C224DA927BB15C000E486C7 /* RootViewController */,
 				8C5797AE27FCE8CC006231E7 /* RecentTaskViewController */,

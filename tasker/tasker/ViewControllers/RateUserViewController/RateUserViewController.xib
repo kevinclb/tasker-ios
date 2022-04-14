@@ -42,7 +42,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0P-1i-DyE">
-                    <rect key="frame" x="30" y="94" width="44" height="34"/>
+                    <rect key="frame" x="25" y="94" width="44" height="34"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="back arrow"/>
                     <connections>
@@ -270,10 +270,10 @@
             <viewLayoutGuide key="safeArea" id="Tgr-cp-fwY"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="r0P-1i-DyE" firstAttribute="leading" secondItem="Tgr-cp-fwY" secondAttribute="leading" constant="25" id="8LG-q8-Jxw"/>
                 <constraint firstItem="waJ-KY-jCx" firstAttribute="centerX" secondItem="Uye-0j-cHm" secondAttribute="centerX" id="J01-hr-MHr"/>
                 <constraint firstItem="r0P-1i-DyE" firstAttribute="top" secondItem="Tgr-cp-fwY" secondAttribute="top" constant="50" id="YLt-aj-FlK"/>
                 <constraint firstItem="waJ-KY-jCx" firstAttribute="top" secondItem="Tgr-cp-fwY" secondAttribute="top" constant="130" id="fRL-OA-3Vl"/>
-                <constraint firstItem="r0P-1i-DyE" firstAttribute="leading" secondItem="Tgr-cp-fwY" secondAttribute="leading" constant="30" id="iPc-1k-Acl"/>
                 <constraint firstItem="waJ-KY-jCx" firstAttribute="centerX" secondItem="Uye-0j-cHm" secondAttribute="centerX" id="qnc-kf-m1k"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>

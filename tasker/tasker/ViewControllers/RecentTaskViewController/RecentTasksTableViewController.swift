@@ -128,9 +128,9 @@ extension RecentTasksTableViewController: RecentTaskTableViewCellDelegate {
 
     func didRateButtonPressed() {
           let transition = CATransition()
-          transition.duration = 0.5
+        transition.duration = 0.5
           transition.type = CATransitionType.push
-          transition.subtype = .fromRight
+        transition.subtype = .fromRight
           transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
           view.window!.layer.add(transition, forKey: kCATransition)
 
@@ -138,7 +138,7 @@ extension RecentTasksTableViewController: RecentTaskTableViewCellDelegate {
           let rateVC = RateUserViewController()
           rateVC.modalPresentationStyle = .fullScreen
           // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
-          present(rateVC, animated: true, completion: nil)
+          present(rateVC, animated: false, completion: nil)
 
       }
 }
