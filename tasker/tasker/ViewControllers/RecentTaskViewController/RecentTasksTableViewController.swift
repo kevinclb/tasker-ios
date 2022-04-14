@@ -70,6 +70,8 @@ class RecentTasksTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recentTaskCell", for: indexPath) as! RecentTaskTableViewCell
         cell.taskNameLabel.text = recentTasks[indexPath.row].taskDescription
         cell.taskerNameLabel.text = names[indexPath.row]
+        
+        cell.delegate = self
         return cell
     }
     
@@ -120,5 +122,23 @@ class RecentTasksTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+}
+
+extension RecentTasksTableViewController: RecentTaskTableViewCellDelegate {
+
+    func didRateButtonPressed() {
+          let transition = CATransition()
+          transition.duration = 0.5
+          transition.type = CATransitionType.push
+          transition.subtype = .fromRight
+          transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+          view.window!.layer.add(transition, forKey: kCATransition)
+
+          // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+          let rateVC = RateUserViewController()
+          rateVC.modalPresentationStyle = .fullScreen
+          // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+          present(rateVC, animated: true, completion: nil)
+
+      }
 }
