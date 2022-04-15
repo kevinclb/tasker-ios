@@ -115,15 +115,31 @@ class RateUserViewController: UIViewController {
     @IBAction func completeButtonTapped(_ sender: Any) {
         
         // Calculating the overall rating based on the stars pressed.
-        givenRating = Double((category1Rating + category2Rating + category3Rating) / numOfCategories)
+        givenRating = Double((category1Rating + category2Rating + category3Rating)) / Double(numOfCategories)
         
         // Calculating the users new rating that will be updated on the database.
         newUserRating = ((currentRating * Double(numOfRatings)) + givenRating) / (Double(numOfRatings) + 1)
         
+        let roundedRating = round(newUserRating * 100) / 100.0
+
+        
         // Update values to database
         let db = Firestore.firestore()
-        db.collection("users").document(userID).setData(["num_ratings": (numOfRatings + 1), "rating": newUserRating], merge: true)
+        db.collection("users").document(userID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
         
+        
+        // Transition back to recent tasks view
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = .fromLeft
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+        let recentTasksVC = RecentTasksTableViewController()
+        recentTasksVC.modalPresentationStyle = .fullScreen
+        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+        present(recentTasksVC, animated: false, completion: nil)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

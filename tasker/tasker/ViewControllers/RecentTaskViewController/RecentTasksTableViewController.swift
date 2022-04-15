@@ -131,21 +131,22 @@ class RecentTasksTableViewController: UITableViewController {
 extension RecentTasksTableViewController: RecentTaskTableViewCellDelegate {
     
     func didRateButtonPressed(_ recentTaskCell: RecentTaskTableViewCell, taskButtonTappedFor: String) {
-        print("chosen task: ", recentTaskCell.task?.taskDescription ?? "EMPTY TASK DESCRIPTION")
+        print("employeeID: ", recentTaskCell.task?.employeeID ?? "EMPTY TASK DESCRIPTION")
         //Here, Amir, you can tap into recentTaskCell.task's fields (employeeID, clientID, etc, and get whatever you need, then perform the transition below.)
         
         
-//        let transition = CATransition()
-//        transition.duration = 0.5
-//        transition.type = CATransitionType.push
-//        transition.subtype = .fromRight
-//        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-//        view.window!.layer.add(transition, forKey: kCATransition)
-//        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
-//        let rateVC = RateUserViewController()
-//        rateVC.modalPresentationStyle = .fullScreen
-//        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
-//        present(rateVC, animated: false, completion: nil)
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = .fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+        let rateVC = RateUserViewController()
+        rateVC.setUserID(userID: (recentTaskCell.task?.employeeID)!)
+        rateVC.modalPresentationStyle = .fullScreen
+        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+        present(rateVC, animated: false, completion: nil)
         
     }
 }
