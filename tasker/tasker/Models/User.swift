@@ -22,6 +22,8 @@ class User: Codable {
     var rating: Double?
     var dateOfBirth: String?
     var employeeDescription, bio, profilePicLink, city, phone, gender: String?
+    var employeeID: String?
+    var clientID: String?
     var skills: String?
     
     required init() {
