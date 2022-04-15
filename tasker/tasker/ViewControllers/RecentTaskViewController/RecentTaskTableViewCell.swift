@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 @objc protocol RecentTaskTableViewCellDelegate {
     @objc func didRateButtonPressed(_ recentTaskCell: RecentTaskTableViewCell, taskButtonTappedFor: String)
@@ -31,7 +32,9 @@ class RecentTaskTableViewCell: UITableViewCell {
 
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        print("hi from: ")
+        self.paybuttonoutlet.backgroundColor = UIColor(red: 41/255.0, green: 191/255.0, blue: 157/255.0, alpha: 1)
+        let db = Firestore.firestore()
+        //db.collection("users").document(userID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating, "employeeRated": true], merge: true)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

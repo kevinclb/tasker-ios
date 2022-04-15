@@ -12,7 +12,7 @@ import Firebase
 // MARK: - Errand
 class Errand: Codable {
     
-    @DocumentID var docid: String?
+    @DocumentID var docID: String?
     var title, category, taskDescription: String
     var price: Double?
     var negotiable, isCompleted, hasPaid, employeeRated, clientRated: Bool?

@@ -11,6 +11,7 @@ import Firebase
 class RecentTasksTableViewController: UITableViewController {
     var recentTasks = [Errand]()
     var chosenRow = Int()
+    var docID: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,19 +20,22 @@ class RecentTasksTableViewController: UITableViewController {
         //in a prod app,
         //we would put the user's client ID here instead of searhing by employee ID
         //is user on employee page or on client page?
-        collRef.whereField("employeeID", isEqualTo: "RVJioN7qcdX9G3KCugsNbJMqcJU2").getDocuments { snapshot, error in
+        collRef.whereField("employeeID", isEqualTo: "RVJioN7qcdX9G3KCugsNbJMqcJU2").getDocuments { querySnapshot, error in
             if error != nil {
                 print("error retrieving documents: \(error?.localizedDescription)")
             }
-            guard let snapshot = snapshot else {
+
+            guard let snapshot = querySnapshot else {
                 print("nil snapshot")
                 return
             }
+            
             for doc in snapshot.documents {
                 do {
                     print("doc data: ", doc.data().description)
                     let task = try doc.data(as: Errand.self)!
                     self.recentTasks.append(task)
+    
                 } catch {
                     print("error decoding doc: \(error)")
                 }
@@ -75,6 +79,24 @@ class RecentTasksTableViewController: UITableViewController {
         cell.taskNameLabel.text = recentTasks[indexPath.row].taskDescription
         cell.taskerNameLabel.text = "test name"
         cell.task = recentTasks[indexPath.row]
+        
+        if(recentTasks[indexPath.row].hasPaid != true) {
+            cell.paybuttonoutlet.backgroundColor = .gray
+            cell.paybuttonoutlet.layer.cornerRadius = 16
+        }
+        else{
+            cell.paybuttonoutlet.backgroundColor = UIColor(red: 41/255.0, green: 191/255.0, blue: 157/255.0, alpha: 1)
+            cell.paybuttonoutlet.layer.cornerRadius = 16
+        }
+        
+        if(recentTasks[indexPath.row].employeeRated != true) {
+            cell.rateButton.backgroundColor = .gray
+            cell.rateButton.layer.cornerRadius = 16
+        }
+        else{
+            cell.rateButton.backgroundColor = UIColor(red: 41/255.0, green: 191/255.0, blue: 157/255.0, alpha: 1)
+            cell.rateButton.layer.cornerRadius = 16
+        }
         cell.delegate = self
         return cell
     }
@@ -132,6 +154,7 @@ extension RecentTasksTableViewController: RecentTaskTableViewCellDelegate {
     
     func didRateButtonPressed(_ recentTaskCell: RecentTaskTableViewCell, taskButtonTappedFor: String) {
         print("employeeID: ", recentTaskCell.task?.employeeID ?? "EMPTY TASK DESCRIPTION")
+        print("DOC ID:", docID)
         //Here, Amir, you can tap into recentTaskCell.task's fields (employeeID, clientID, etc, and get whatever you need, then perform the transition below.)
         
         
@@ -143,10 +166,12 @@ extension RecentTasksTableViewController: RecentTaskTableViewCellDelegate {
         view.window!.layer.add(transition, forKey: kCATransition)
         // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
         let rateVC = RateUserViewController()
-        rateVC.setUserID(userID: (recentTaskCell.task?.employeeID)!)
+        rateVC.setEmployeeID(employeeID: (recentTaskCell.task?.employeeID)!)
+        rateVC.setTaskID(taskID: (recentTaskCell.task?.docID)!)
         rateVC.modalPresentationStyle = .fullScreen
         // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
         present(rateVC, animated: false, completion: nil)
         
     }
+    
 }

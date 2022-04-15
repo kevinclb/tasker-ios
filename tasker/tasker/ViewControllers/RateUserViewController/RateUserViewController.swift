@@ -28,19 +28,41 @@ class RateUserViewController: UIViewController {
     var category3Rating: Int  = 0
     let numOfCategories: Int = 3
     let maxRating: Int = 15
-    private var userID: String = ""
     var numOfRatings: Int = 0
     var currentRating: Double = 0
     var givenRating: Double = 0
     var newUserRating: Double = 0
+    private var employeeID: String = ""
+    private var clientID: String = ""
+    private var taskID: String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Retrieve the user's number of ratings and current rating
+        if(clientID != ""){
+            retriveClientRatings(clientID: clientID)
+        }
+        else {
+            retriveEmployeeRatings(employeeID: employeeID)
+        }
+    }
+    
+    func setEmployeeID(employeeID: String) {
+        self.employeeID = employeeID
+    }
+    
+    func setClientID(clientID: String) {
+        self.clientID = clientID
+    }
+    
+    func setTaskID(taskID: String) {
+        self.taskID = taskID
+    }
+    
+    func retriveEmployeeRatings(employeeID: String){
         let db = Firestore.firestore()
-        let docRef = db.collection("users").document(userID)
+        let docRef = db.collection("users").document(employeeID)
         docRef.getDocument { snapshot, error in
                     if error != nil {
                         print("error fetching user document")
@@ -60,8 +82,26 @@ class RateUserViewController: UIViewController {
         }
     }
     
-    func setUserID(userID: String) {
-        self.userID = userID
+    func retriveClientRatings(clientID: String){
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").document(clientID)
+        docRef.getDocument { snapshot, error in
+                    if error != nil {
+                        print("error fetching user document")
+                    } else {
+                        do {
+                            guard let user = try snapshot!.data(as: User.self) else{return}
+                                
+                            // ----- Set num of ratings
+                            self.numOfRatings = user.num_ratings!
+                            
+                            // ----- Set current ratings
+                            self.currentRating = user.rating!
+                        } catch {
+                            print("error: \(error.localizedDescription)")
+                        }
+            }
+        }
     }
     
     @IBAction func category1StarButtonTapped(_ sender: UIButton) {
@@ -125,7 +165,14 @@ class RateUserViewController: UIViewController {
         
         // Update values to database
         let db = Firestore.firestore()
-        db.collection("users").document(userID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
+        if(clientID != ""){
+            db.collection("users").document(clientID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
+        }
+        else {
+            db.collection("users").document(employeeID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
+        }
+        
+        //db.collection("tasks").document(taskID).setData(["employeeRated: (numOfRatings + 1), "rating": roundedRating, "employeeRated": true], merge: true)
         
         
         // Transition back to recent tasks view
