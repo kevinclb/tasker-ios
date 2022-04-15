@@ -37,6 +37,7 @@ class TestViewController: UIViewController {
             taskDescription: "description",
             employeeID: "1234",
             isCompleted: false,
+            hasPaid: false,
             location: Address(),
             negotiable: true,
             price: 25)

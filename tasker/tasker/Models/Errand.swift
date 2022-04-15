@@ -15,7 +15,7 @@ class Errand: Codable {
     @DocumentID var docid: String?
     var title, category, taskDescription: String
     var price: Double?
-    var negotiable, isCompleted: Bool?
+    var negotiable, isCompleted, hasPaid: Bool?
     var location: Address?
     var listingDate: Date?
     var hireDate: Date?
@@ -27,12 +27,13 @@ class Errand: Codable {
 //        case taskDescription = "description"
 //    }
 //
-    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, location: Address, negotiable: Bool, price: Double) {
+    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, location: Address, negotiable: Bool, price: Double) {
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
         self.employeeID = employeeID
         self.isCompleted = isCompleted
+        self.hasPaid = hasPaid
         self.price = price
         self.negotiable = negotiable
         self.location = location
