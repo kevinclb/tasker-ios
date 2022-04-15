@@ -38,6 +38,8 @@ class TestViewController: UIViewController {
             employeeID: "1234",
             isCompleted: false,
             hasPaid: false,
+            employeeRated: false,
+            clientRated: false,
             location: Address(),
             negotiable: true,
             price: 25)

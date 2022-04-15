@@ -42,7 +42,7 @@ class Errand: Codable {
     }
     
     
-    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?) {
+    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?) {
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
@@ -50,6 +50,7 @@ class Errand: Codable {
         self.isCompleted = isCompleted
         self.hasPaid = hasPaid
         self.employeeRated = employeeRated
+        self.clientRated = clientRated
     }
 }
 

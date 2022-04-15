@@ -28,7 +28,7 @@ class RateUserViewController: UIViewController {
     var category3Rating: Int  = 0
     let numOfCategories: Int = 3
     let maxRating: Int = 15
-    var userID: String = ""
+    private var userID: String = ""
     var numOfRatings: Int = 0
     var currentRating: Double = 0
     var givenRating: Double = 0
