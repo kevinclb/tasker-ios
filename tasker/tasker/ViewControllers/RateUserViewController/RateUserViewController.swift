@@ -40,7 +40,7 @@ class RateUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(clientID != ""){
+        if(clientID != "") {
             retriveClientRatings(clientID: clientID)
         }
         else {
@@ -60,7 +60,8 @@ class RateUserViewController: UIViewController {
         self.taskID = taskID
     }
     
-    func retriveEmployeeRatings(employeeID: String){
+    func retriveEmployeeRatings(employeeID: String) {
+        
         let db = Firestore.firestore()
         let docRef = db.collection("users").document(employeeID)
         docRef.getDocument { snapshot, error in
@@ -82,7 +83,8 @@ class RateUserViewController: UIViewController {
         }
     }
     
-    func retriveClientRatings(clientID: String){
+    func retriveClientRatings(clientID: String) {
+        
         let db = Firestore.firestore()
         let docRef = db.collection("users").document(clientID)
         docRef.getDocument { snapshot, error in
@@ -167,13 +169,12 @@ class RateUserViewController: UIViewController {
         let db = Firestore.firestore()
         if(clientID != ""){
             db.collection("users").document(clientID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
+            db.collection("tasks").document(taskID).setData(["clientRated": true], merge: true)
         }
         else {
             db.collection("users").document(employeeID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
+            db.collection("tasks").document(taskID).setData(["employeeRated": true], merge: true)
         }
-        
-        db.collection("tasks").document(taskID).setData(["employeeRated": true], merge: true)
-        
         
         // Transition back to recent tasks view
         let transition = CATransition()
