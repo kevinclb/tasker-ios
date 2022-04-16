@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import Firebase
 
 @objc protocol RecentTaskTableViewCellDelegate {
     @objc func didRateButtonPressed(_ recentTaskCell: RecentTaskTableViewCell, taskButtonTappedFor: String)
+    @objc func didPayButtonPressed(_ recentTaskCell: RecentTaskTableViewCell, taskButtonTappedFor: String)
 }
 
 class RecentTaskTableViewCell: UITableViewCell {
@@ -22,8 +22,8 @@ class RecentTaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var paybuttonoutlet: UIButton!
+    
     @IBAction func rateButtonTapped(_ sender: UIButton) {
-        print("rate button tapped")
             self.delegate?.didRateButtonPressed(self, taskButtonTappedFor: task!.taskDescription)
         }
 //        delegate?.didRateButtonPressed()
@@ -32,9 +32,7 @@ class RecentTaskTableViewCell: UITableViewCell {
 
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        self.paybuttonoutlet.backgroundColor = UIColor(red: 41/255.0, green: 191/255.0, blue: 157/255.0, alpha: 1)
-        let db = Firestore.firestore()
-        //db.collection("users").document(userID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating, "employeeRated": true], merge: true)
+       self.delegate?.didPayButtonPressed(self, taskButtonTappedFor: task!.taskDescription)
     }
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,5 +45,4 @@ class RecentTaskTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
 }

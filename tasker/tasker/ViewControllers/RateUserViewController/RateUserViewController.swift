@@ -172,7 +172,7 @@ class RateUserViewController: UIViewController {
             db.collection("users").document(employeeID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
         }
         
-        //db.collection("tasks").document(taskID).setData(["employeeRated: (numOfRatings + 1), "rating": roundedRating, "employeeRated": true], merge: true)
+        db.collection("tasks").document(taskID).setData(["employeeRated": true], merge: true)
         
         
         // Transition back to recent tasks view

@@ -11,7 +11,7 @@ import Firebase
 class RecentTasksTableViewController: UITableViewController {
     var recentTasks = [Errand]()
     var chosenRow = Int()
-    var docID: String = ""
+    var taskID: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +87,7 @@ class RecentTasksTableViewController: UITableViewController {
         else{
             cell.paybuttonoutlet.backgroundColor = UIColor(red: 41/255.0, green: 191/255.0, blue: 157/255.0, alpha: 1)
             cell.paybuttonoutlet.layer.cornerRadius = 16
+            cell.paybuttonoutlet.isUserInteractionEnabled = false
         }
         
         if(recentTasks[indexPath.row].employeeRated != true) {
@@ -96,6 +97,7 @@ class RecentTasksTableViewController: UITableViewController {
         else{
             cell.rateButton.backgroundColor = UIColor(red: 41/255.0, green: 191/255.0, blue: 157/255.0, alpha: 1)
             cell.rateButton.layer.cornerRadius = 16
+            cell.rateButton.isUserInteractionEnabled = false
         }
         cell.delegate = self
         return cell
@@ -104,6 +106,7 @@ class RecentTasksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
     }
+    
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -153,8 +156,9 @@ class RecentTasksTableViewController: UITableViewController {
 extension RecentTasksTableViewController: RecentTaskTableViewCellDelegate {
     
     func didRateButtonPressed(_ recentTaskCell: RecentTaskTableViewCell, taskButtonTappedFor: String) {
+        
         print("employeeID: ", recentTaskCell.task?.employeeID ?? "EMPTY TASK DESCRIPTION")
-        print("DOC ID:", docID)
+        print("Task ID:", taskID)
         //Here, Amir, you can tap into recentTaskCell.task's fields (employeeID, clientID, etc, and get whatever you need, then perform the transition below.)
         
         
@@ -167,11 +171,28 @@ extension RecentTasksTableViewController: RecentTaskTableViewCellDelegate {
         // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
         let rateVC = RateUserViewController()
         rateVC.setEmployeeID(employeeID: (recentTaskCell.task?.employeeID)!)
-        rateVC.setTaskID(taskID: (recentTaskCell.task?.docID)!)
+        rateVC.setTaskID(taskID: (recentTaskCell.task?.taskID)!)
+        print("EMPLOYEE ID: ", (recentTaskCell.task?.employeeID)!)
+        print("TASK ID: ", (recentTaskCell.task?.taskID)!)
         rateVC.modalPresentationStyle = .fullScreen
         // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
         present(rateVC, animated: false, completion: nil)
         
     }
     
+    func didPayButtonPressed(_ recentTaskCell: RecentTaskTableViewCell, taskButtonTappedFor: String) {
+        
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = .fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+        let payVC = PaidMechanismViewController()
+        payVC.setTaskID(taskID: (recentTaskCell.task?.taskID)!)
+        print("TASK ID: ", (recentTaskCell.task?.taskID)!)
+        payVC.modalPresentationStyle = .fullScreen
+        present(payVC, animated: false, completion: nil)
+    }
 }
