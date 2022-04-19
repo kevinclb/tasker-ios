@@ -53,6 +53,8 @@
 		8CD95D3327E6D1D9003F7360 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD95D3227E6D1D9003F7360 /* Credentials.swift */; };
 		8CD95D3727E6D9FC003F7360 /* ListTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD95D3527E6D9FC003F7360 /* ListTaskViewController.swift */; };
 		8CD95D3827E6D9FC003F7360 /* ListTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD95D3627E6D9FC003F7360 /* ListTaskViewController.xib */; };
+		BA1DED24280A38B500A74FAF /* PaidMechanismViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1DED22280A38B500A74FAF /* PaidMechanismViewController.swift */; };
+		BA1DED25280A38B500A74FAF /* PaidMechanismViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1DED23280A38B500A74FAF /* PaidMechanismViewController.xib */; };
 		BA1DF53C27D02222000F292E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1DF53B27D02222000F292E /* Utilities.swift */; };
 		BA99A0FD2808014D00BCE55E /* RateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99A0FB2808014D00BCE55E /* RateUserViewController.swift */; };
 		BA99A0FE2808014D00BCE55E /* RateUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA99A0FC2808014D00BCE55E /* RateUserViewController.xib */; };
@@ -139,6 +141,8 @@
 		8CD95D3527E6D9FC003F7360 /* ListTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTaskViewController.swift; sourceTree = "<group>"; };
 		8CD95D3627E6D9FC003F7360 /* ListTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTaskViewController.xib; sourceTree = "<group>"; };
 		B7F263A0E495878F4758FEE1 /* Pods-tasker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasker.debug.xcconfig"; path = "Target Support Files/Pods-tasker/Pods-tasker.debug.xcconfig"; sourceTree = "<group>"; };
+		BA1DED22280A38B500A74FAF /* PaidMechanismViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidMechanismViewController.swift; sourceTree = "<group>"; };
+		BA1DED23280A38B500A74FAF /* PaidMechanismViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaidMechanismViewController.xib; sourceTree = "<group>"; };
 		BA1DF53B27D02222000F292E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		BA99A0FB2808014D00BCE55E /* RateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUserViewController.swift; sourceTree = "<group>"; };
 		BA99A0FC2808014D00BCE55E /* RateUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateUserViewController.xib; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BA1DED1D280A387500A74FAF /* PaidMechanismViewController */,
 				882783E727EFA3F60096E225 /* AcceptTaskViewController */,
 				8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */,
 				CE5C50C427FF90D20055F779 /* EmployeeStatusViewController */,
@@ -362,6 +367,15 @@
 				7BDF5D68BCEF519EC1696766 /* Pods-tasker.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA1DED1D280A387500A74FAF /* PaidMechanismViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BA1DED22280A38B500A74FAF /* PaidMechanismViewController.swift */,
+				BA1DED23280A38B500A74FAF /* PaidMechanismViewController.xib */,
+			);
+			path = PaidMechanismViewController;
 			sourceTree = "<group>";
 		};
 		BA1DF53A27D021F2000F292E /* Helpers */ = {
@@ -596,6 +610,7 @@
 				CEF81B3327E3285400CE0340 /* AboutUsViewController.xib in Resources */,
 				8CD95D3827E6D9FC003F7360 /* ListTaskViewController.xib in Resources */,
 				8C250DBF27AB34CE00A280B3 /* HomeExplorePageViewController.xib in Resources */,
+				BA1DED25280A38B500A74FAF /* PaidMechanismViewController.xib in Resources */,
 				882783F327F3C3640096E225 /* ChatCellTableViewCell.xib in Resources */,
 				CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */,
 				8C224DA327BB14AA00E486C7 /* RootViewController.xib in Resources */,
@@ -698,6 +713,7 @@
 				CE0555C427BF0DC700877325 /* MyCollectionViewCell.swift in Sources */,
 				8C250DD727AB380E00A280B3 /* EditProfileViewController.swift in Sources */,
 				882783EA27EFA44C0096E225 /* AcceptTaskViewController.swift in Sources */,
+				BA1DED24280A38B500A74FAF /* PaidMechanismViewController.swift in Sources */,
 				CEF81B3227E3285400CE0340 /* AboutUsViewController.swift in Sources */,
 				8C2DC0AC27C6FA070026FF11 /* Message.swift in Sources */,
 				8CD95D3327E6D1D9003F7360 /* Credentials.swift in Sources */,

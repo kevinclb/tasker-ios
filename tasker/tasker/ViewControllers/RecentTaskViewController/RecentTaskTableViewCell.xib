@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -60,21 +59,20 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2aw-wg-ODg">
-                        <rect key="frame" x="229" y="91" width="118" height="31"/>
+                        <rect key="frame" x="219" y="91" width="130" height="31"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8i-EK-O2D">
-                                <rect key="frame" x="0.0" y="0.0" width="54" height="31"/>
+                                <rect key="frame" x="0.0" y="0.0" width="61" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="QLb-k5-9F1"/>
-                                    <constraint firstAttribute="width" constant="54" id="pUV-AN-aR2"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="ecw-Aw-3Ib"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Rate">
+                                <buttonConfiguration key="configuration" style="plain" title="Rated">
                                     <backgroundConfiguration key="background" cornerRadius="34">
-                                        <color key="backgroundColor" red="0.16133402799999999" green="0.75088595359999999" blue="0.61586794450000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="strokeColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -82,18 +80,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1S-VK-Oj5">
-                                <rect key="frame" x="62" y="0.0" width="56" height="31"/>
+                                <rect key="frame" x="69" y="0.0" width="61" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="4XO-K0-FvB"/>
                                     <constraint firstAttribute="height" constant="31" id="aNc-Vd-xbU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="jJp-SI-ib0"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Pay">
+                                <buttonConfiguration key="configuration" style="plain" title="Paid">
                                     <backgroundConfiguration key="background" cornerRadius="34">
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="strokeColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -101,6 +98,9 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="TcX-B9-1Mt"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -108,7 +108,7 @@
                     <constraint firstItem="ufj-yG-sgI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0s7-aR-3Aa"/>
                     <constraint firstAttribute="trailing" secondItem="ufj-yG-sgI" secondAttribute="trailing" id="Hbx-HU-c5P"/>
                     <constraint firstItem="e9Q-B9-06v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="55" id="KRq-ns-SQK"/>
-                    <constraint firstItem="2aw-wg-ODg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="209" id="NOp-ja-fUt"/>
+                    <constraint firstItem="2aw-wg-ODg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="199" id="KeZ-bD-TMX"/>
                     <constraint firstItem="2aw-wg-ODg" firstAttribute="top" secondItem="e9Q-B9-06v" secondAttribute="bottom" constant="8" symbolic="YES" id="d6Q-uo-i8a"/>
                     <constraint firstItem="ufj-yG-sgI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jsA-gs-zOg"/>
                     <constraint firstItem="2aw-wg-ODg" firstAttribute="top" secondItem="e9Q-B9-06v" secondAttribute="bottom" constant="8" symbolic="YES" id="kw0-Ij-gWH"/>
@@ -130,8 +130,5 @@
     <resources>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="post rectangle1" width="373" height="177"/>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

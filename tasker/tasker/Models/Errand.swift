@@ -12,10 +12,10 @@ import Firebase
 // MARK: - Errand
 class Errand: Codable {
     
-    @DocumentID var docid: String?
-    var title, category, taskDescription: String
+    @DocumentID var docID: String?
+    var taskID, title, category, taskDescription: String
     var price: Double?
-    var negotiable, isCompleted, hasPaid: Bool?
+    var negotiable, isCompleted, hasPaid, employeeRated, clientRated: Bool?
     var location: Address?
     var listingDate: Date?
     var hireDate: Date?
@@ -27,25 +27,32 @@ class Errand: Codable {
 //        case taskDescription = "description"
 //    }
 //
-    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, location: Address, negotiable: Bool, price: Double) {
+    init(taskID: String, title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?, location: Address, negotiable: Bool, price: Double) {
+        self.taskID = taskID
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
         self.employeeID = employeeID
         self.isCompleted = isCompleted
         self.hasPaid = hasPaid
+        self.employeeRated = employeeRated
+        self.clientRated = clientRated
         self.price = price
         self.negotiable = negotiable
         self.location = location
     }
     
     
-    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?) {
+    init(taskID: String, title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?) {
+        self.taskID = taskID
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
         self.employeeID = employeeID
         self.isCompleted = isCompleted
+        self.hasPaid = hasPaid
+        self.employeeRated = employeeRated
+        self.clientRated = clientRated
     }
 }
 

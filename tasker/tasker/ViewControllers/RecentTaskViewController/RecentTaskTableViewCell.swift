@@ -9,6 +9,7 @@ import UIKit
 
 @objc protocol RecentTaskTableViewCellDelegate {
     @objc func didRateButtonPressed(_ recentTaskCell: RecentTaskTableViewCell, taskButtonTappedFor: String)
+    @objc func didPayButtonPressed(_ recentTaskCell: RecentTaskTableViewCell, taskButtonTappedFor: String)
 }
 
 class RecentTaskTableViewCell: UITableViewCell {
@@ -21,8 +22,8 @@ class RecentTaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var paybuttonoutlet: UIButton!
+    
     @IBAction func rateButtonTapped(_ sender: UIButton) {
-        print("rate button tapped")
             self.delegate?.didRateButtonPressed(self, taskButtonTappedFor: task!.taskDescription)
         }
 //        delegate?.didRateButtonPressed()
@@ -31,7 +32,7 @@ class RecentTaskTableViewCell: UITableViewCell {
 
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        print("hi from: ")
+       self.delegate?.didPayButtonPressed(self, taskButtonTappedFor: task!.taskDescription)
     }
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,5 +45,4 @@ class RecentTaskTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
 }
