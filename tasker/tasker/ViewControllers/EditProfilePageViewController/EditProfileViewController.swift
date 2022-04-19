@@ -21,6 +21,8 @@ class EditProfileViewController: UIViewController {
     var editPressed:Bool = false;
     @IBOutlet weak var editOrSaveButton: UIButton!
     
+    @IBOutlet weak var backButton: UIButton!
+    
     // outlets for components to populate
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var firstName: UITextField!
@@ -36,8 +38,6 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var phoneNumber: UITextField!
     
-    var employeeOrNot:Bool = false
-    var email:String = ""
     var linkToImg = ""
 
     // Edit bio and skills buttons
@@ -91,14 +91,6 @@ class EditProfileViewController: UIViewController {
                     } else {
                         do {
                             guard let user = try snapshot!.data(as: User.self) else{return}
-                            // ----- Set profile pic, check for existing, set if not empty
-                            let profilepicURL:String = user.profilePicLink ?? ""
-                            if(!profilepicURL.isEmpty){
-                                storageRef.child("UserPictures").child(profilepicURL).getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-                                    let picture = UIImage(data: data!)
-                                    self.profilePic.image = picture
-                                }
-                            }
                                 
                             // ----- Set first name
                             self.firstName.text = user.firstname
@@ -109,11 +101,6 @@ class EditProfileViewController: UIViewController {
                             // ----- Set dob
                             self.dob.text = user.dateOfBirth
                             
-                            // ----- Set employee or not
-                            self.employeeOrNot = user.employee ?? false
-                            
-                            // ----- Set email field
-                            self.email = user.email ?? ""
                             
                             // ----- Set phone number
                             self.phoneNumber.text = user.phone
@@ -161,8 +148,20 @@ class EditProfileViewController: UIViewController {
                                 self.skills.text = "You currently do not have any skills added, add some to tell people more about your skills!"
                                 self.skills.textColor = UIColor.lightGray
                             }
-                            self.activityIndicator.stopAnimating()
 
+                            
+                            // ----- Set profile pic, check for existing, set if not empty
+                            let profilepicURL:String = user.profilePicLink ?? ""
+                            if(!profilepicURL.isEmpty){
+                                storageRef.child("UserPictures").child(profilepicURL).getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                                    let picture = UIImage(data: data!)
+                                    self.profilePic.image = picture
+                                    self.activityIndicator.stopAnimating()
+                                }
+                            }
+                            else{
+                                self.activityIndicator.stopAnimating()
+                            }
                         } catch {
                             self.activityIndicator.stopAnimating()
                             print(error)
@@ -232,11 +231,18 @@ class EditProfileViewController: UIViewController {
                 if(bioContent=="You currently do not have a bio, add one to tell people more about you!"){
                     bioContent = ""
                 }
-                let skillsContent = skills.text!
+                var skillsContent = skills.text!
+                skillsContent = skillsContent.trimmingCharacters(in: .whitespacesAndNewlines)
+                if(skillsContent=="You currently do not have skills added, add one to tell people more about you!"){
+                    skillsContent = ""
+                }
                 let number = phoneNumber.text!
                 
-                self.updateUserInfo(fname: fname, lname: lname, dateb: dateb, city: cityName, country: countryName, street: streetNum, state: stateName, zip: zip!, bio: bioContent, skills: skillsContent, employeeOrNot: employeeOrNot, eamil: email, phone:number, linkToImg: linkToImg)
+                self.updateUserInfo(fname: fname, lname: lname, dateb: dateb, city: cityName, country: countryName, street: streetNum, state: stateName, zip: zip!, bio: bioContent, skills: skillsContent, phone:number, linkToImg: linkToImg)
             }
+            editPressed = false
+            let image = UIImage(named: "viewProfileEditProfile") as UIImage?
+            editOrSaveButton.setImage(image, for: .normal)
         }
         // User just pressed the edit button to edit
         else{
@@ -251,7 +257,7 @@ class EditProfileViewController: UIViewController {
             state.isUserInteractionEnabled = true
             zipCode.isUserInteractionEnabled = true
             phoneNumber.isUserInteractionEnabled = true
-            
+            dob.isUserInteractionEnabled = true
             editBioButton.isUserInteractionEnabled = true
             editSkillsButton.isUserInteractionEnabled = true
             
@@ -261,10 +267,10 @@ class EditProfileViewController: UIViewController {
         }
     }
     
-    func updateUserInfo(fname:String, lname:String, dateb:String, city:String, country:String, street:String, state:String, zip:Int, bio:String, skills:String, employeeOrNot:Bool, eamil:String, phone:String, linkToImg:String){
+    func updateUserInfo(fname:String, lname:String, dateb:String, city:String, country:String, street:String, state:String, zip:Int, bio:String, skills:String, phone:String, linkToImg:String){
         let db = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {return}
-        db.collection("users").document(userID).setData(
+        db.collection("users").document(userID).updateData(
             ["firstname": fname,
              "lastname": lname,
              "dateOfBirth": dateb,
@@ -275,17 +281,10 @@ class EditProfileViewController: UIViewController {
                 "state": state,
                 "zipcode": zip
              ],
-             "rating": 0,
              "phone": phone,
              "bio": bio,
-             "employeeDescription": "",
              "skills": skills,
-             "employee": employeeOrNot,
-             "uid": userID,
-             "email": eamil,
-             "gender": "",
-             "profilePicLink":linkToImg,
-             "num_ratings": 0,
+             "profilePicLink":linkToImg
             ]) { (error) in
                 // Dismiss loading bar
                 self.activityIndicator.stopAnimating()
@@ -309,6 +308,8 @@ class EditProfileViewController: UIViewController {
         if firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             dob.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            city.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            state.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             zipCode.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
             return "Please fill in all required fields."
@@ -375,7 +376,6 @@ class EditProfileViewController: UIViewController {
         self.skills.becomeFirstResponder()
         sender.isHidden = true;
     }
-    
     
 }
 
