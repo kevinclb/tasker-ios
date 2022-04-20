@@ -17,13 +17,10 @@ class SettingsPageViewController: UIViewController {
     }
    
     @IBAction func accountSettingsTapped(_ sender: Any) {
-        print("Account Settings Tapped")
+        navigateTo(newViewController: AccountSettingsViewController(), transitionFrom: .fromRight)
     }
     @IBAction func editProfileTapped(_ sender: Any) {
         navigateTo(newViewController: EditProfileViewController(), transitionFrom: .fromRight)
-    }
-    @IBAction func paymentInfoTapped(_ sender: Any) {
-        print("Payment Info Tapped")
     }
     @IBAction func appNotifTapped(_ sender: Any) {
         print("App Notifications Tapped")

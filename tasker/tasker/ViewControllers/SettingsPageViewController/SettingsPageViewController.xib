@@ -69,16 +69,8 @@
                                         <action selector="employeeStatusTapped:" destination="-1" eventType="touchUpInside" id="X3s-J3-Oa1"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9c-cp-doh" userLabel="paymentInfo">
-                                    <rect key="frame" x="54" y="270" width="321" height="63"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="Payment Informations"/>
-                                    <connections>
-                                        <action selector="paymentInfoTapped:" destination="-1" eventType="touchUpInside" id="rDd-Pm-A9m"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De0-Wa-GDq" userLabel="appNotifications">
-                                    <rect key="frame" x="54" y="341" width="321" height="63"/>
+                                    <rect key="frame" x="54" y="270" width="321" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="App Notifications"/>
                                     <connections>
@@ -86,7 +78,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLj-B1-XqA" userLabel="help">
-                                    <rect key="frame" x="54" y="412" width="321" height="63"/>
+                                    <rect key="frame" x="54" y="341" width="321" height="63"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="Help"/>
                                     <connections>
@@ -112,18 +104,14 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="p9c-cp-doh" firstAttribute="leading" secondItem="jyE-lI-IIc" secondAttribute="leading" id="2E8-z5-FHp"/>
                                 <constraint firstItem="nLj-B1-XqA" firstAttribute="leading" secondItem="jyE-lI-IIc" secondAttribute="leading" id="54I-J0-esz"/>
-                                <constraint firstAttribute="trailing" secondItem="p9c-cp-doh" secondAttribute="trailing" constant="39" id="5St-6C-8v4"/>
                                 <constraint firstItem="De0-Wa-GDq" firstAttribute="leading" secondItem="jyE-lI-IIc" secondAttribute="leading" id="68K-CT-Tvm"/>
                                 <constraint firstItem="rDf-iP-aO8" firstAttribute="trailing" secondItem="nLj-B1-XqA" secondAttribute="trailing" id="8Sx-hX-X0a"/>
                                 <constraint firstItem="1Nr-gt-vwZ" firstAttribute="leading" secondItem="9If-Nh-2QX" secondAttribute="leading" constant="54" id="9xe-Oj-9BX"/>
-                                <constraint firstItem="p9c-cp-doh" firstAttribute="top" secondItem="FDs-1i-OO0" secondAttribute="bottom" constant="8" symbolic="YES" id="GCG-lu-avr"/>
                                 <constraint firstItem="jyE-lI-IIc" firstAttribute="leading" secondItem="1Nr-gt-vwZ" secondAttribute="leading" id="GsL-vv-ml8"/>
                                 <constraint firstAttribute="trailing" secondItem="De0-Wa-GDq" secondAttribute="trailing" constant="39" id="JQm-RC-bmL"/>
                                 <constraint firstItem="nLj-B1-XqA" firstAttribute="top" secondItem="De0-Wa-GDq" secondAttribute="bottom" constant="8" symbolic="YES" id="KbZ-hY-4gQ"/>
                                 <constraint firstItem="FDs-1i-OO0" firstAttribute="leading" secondItem="jyE-lI-IIc" secondAttribute="leading" id="LKG-65-uiY"/>
-                                <constraint firstItem="De0-Wa-GDq" firstAttribute="top" secondItem="p9c-cp-doh" secondAttribute="bottom" constant="8" symbolic="YES" id="MCm-nd-X9A"/>
                                 <constraint firstItem="ZqE-LO-5i5" firstAttribute="leading" secondItem="jyE-lI-IIc" secondAttribute="leading" id="Sl2-7n-aSf"/>
                                 <constraint firstItem="fg6-dF-0Kr" firstAttribute="top" secondItem="jyE-lI-IIc" secondAttribute="bottom" constant="8" symbolic="YES" id="Srm-Io-6RE"/>
                                 <constraint firstItem="rDf-iP-aO8" firstAttribute="leading" secondItem="nLj-B1-XqA" secondAttribute="leading" id="TfF-OO-V4e"/>
@@ -133,6 +121,7 @@
                                 <constraint firstItem="FDs-1i-OO0" firstAttribute="top" secondItem="ZqE-LO-5i5" secondAttribute="bottom" constant="8" symbolic="YES" id="gwL-wF-y7F"/>
                                 <constraint firstAttribute="trailing" secondItem="fg6-dF-0Kr" secondAttribute="trailing" constant="42" id="hIU-33-Kfz"/>
                                 <constraint firstItem="fg6-dF-0Kr" firstAttribute="leading" secondItem="1Nr-gt-vwZ" secondAttribute="leading" id="hZb-jR-bZO"/>
+                                <constraint firstItem="De0-Wa-GDq" firstAttribute="top" secondItem="FDs-1i-OO0" secondAttribute="bottom" constant="8" symbolic="YES" id="ofE-oP-TNm"/>
                                 <constraint firstItem="jyE-lI-IIc" firstAttribute="top" secondItem="1Nr-gt-vwZ" secondAttribute="bottom" id="pYj-dk-Dbz"/>
                                 <constraint firstAttribute="height" constant="779" id="qdu-0x-2C8"/>
                                 <constraint firstAttribute="trailing" secondItem="ZqE-LO-5i5" secondAttribute="trailing" constant="39" id="w5e-Ih-FuP"/>
@@ -177,7 +166,6 @@
         <image name="App Notifications" width="313" height="49"/>
         <image name="Edit profile info" width="313" height="49"/>
         <image name="Help" width="313" height="49"/>
-        <image name="Payment Informations" width="313" height="49"/>
         <image name="arrow_back_ios_24px" width="20" height="20"/>
         <image name="blackDivider" width="293" height="1"/>
         <image name="employeeStatus" width="313" height="49"/>

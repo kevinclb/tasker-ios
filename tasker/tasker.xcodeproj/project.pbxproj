@@ -73,6 +73,8 @@
 		CE0555C827BF0DC700877325 /* EmployeeExplorePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */; };
 		CE10019027CD6171007767AC /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10018E27CD6170007767AC /* HelpViewController.swift */; };
 		CE10019127CD6171007767AC /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10018F27CD6170007767AC /* HelpViewController.xib */; };
+		CE3B4081280F5C6D00F299A0 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B407F280F5C6D00F299A0 /* AccountSettingsViewController.swift */; };
+		CE3B4082280F5C6D00F299A0 /* AccountSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3B4080280F5C6D00F299A0 /* AccountSettingsViewController.xib */; };
 		CE5C50C727FF92030055F779 /* EmployeeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C50C527FF92030055F779 /* EmployeeStatusViewController.swift */; };
 		CE5C50C827FF92030055F779 /* EmployeeStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5C50C627FF92030055F779 /* EmployeeStatusViewController.xib */; };
 		CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6427A88E0500766C59 /* AppDelegate.swift */; };
@@ -161,6 +163,8 @@
 		CE0555C327BF0DC700877325 /* EmployeeExplorePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeExplorePageViewController.xib; sourceTree = "<group>"; };
 		CE10018E27CD6170007767AC /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CE10018F27CD6170007767AC /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
+		CE3B407F280F5C6D00F299A0 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
+		CE3B4080280F5C6D00F299A0 /* AccountSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSettingsViewController.xib; sourceTree = "<group>"; };
 		CE5C50C527FF92030055F779 /* EmployeeStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeStatusViewController.swift; sourceTree = "<group>"; };
 		CE5C50C627FF92030055F779 /* EmployeeStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeStatusViewController.xib; sourceTree = "<group>"; };
 		CE641A6127A88E0500766C59 /* tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,8 +236,8 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BA1DED1D280A387500A74FAF /* PaidMechanismViewController */,
 				882783E727EFA3F60096E225 /* AcceptTaskViewController */,
+				CE3B407E280F5C2800F299A0 /* AccountSettingsViewController */,
 				8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */,
 				CE5C50C427FF90D20055F779 /* EmployeeStatusViewController */,
 				CEF81B3827E3287A00CE0340 /* Help Related Pages */,
@@ -242,6 +246,7 @@
 				BAC6A86627BEF4E300CA66DE /* LoginViewController */,
 				BAC6A85827BEF48500CA66DE /* LoggedOutViewConntroller */,
 				8C250DC927AB352E00A280B3 /* MessagesViewController */,
+				BA1DED1D280A387500A74FAF /* PaidMechanismViewController */,
 				8C224DA827BB15B500E486C7 /* PublicProfileViewController */,
 				BA99A0FA2808013500BCE55E /* RateUserViewController */,
 				BAC6A85D27BEF4A600CA66DE /* RegistrationViewControllers */,
@@ -433,6 +438,15 @@
 			path = HelpViewController;
 			sourceTree = "<group>";
 		};
+		CE3B407E280F5C2800F299A0 /* AccountSettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE3B407F280F5C6D00F299A0 /* AccountSettingsViewController.swift */,
+				CE3B4080280F5C6D00F299A0 /* AccountSettingsViewController.xib */,
+			);
+			path = AccountSettingsViewController;
+			sourceTree = "<group>";
+		};
 		CE5C50C427FF90D20055F779 /* EmployeeStatusViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +628,7 @@
 				882783F327F3C3640096E225 /* ChatCellTableViewCell.xib in Resources */,
 				CE641A6E27A88E0700766C59 /* Assets.xcassets in Resources */,
 				8C224DA327BB14AA00E486C7 /* RootViewController.xib in Resources */,
+				CE3B4082280F5C6D00F299A0 /* AccountSettingsViewController.xib in Resources */,
 				BAC6A86127BEF4CB00CA66DE /* RegistrationStep1ViewController.xib in Resources */,
 				8C5797BA27FD27D5006231E7 /* RecentTasksRootVC.xib in Resources */,
 				BAC6A85C27BEF4A000CA66DE /* LoggedOutViewController.xib in Resources */,
@@ -697,6 +712,7 @@
 				8C5797B127FCE913006231E7 /* RecentTasksTableViewController.swift in Sources */,
 				8C5797B527FCE95B006231E7 /* RecentTaskTableViewCell.swift in Sources */,
 				CE641A6727A88E0500766C59 /* SceneDelegate.swift in Sources */,
+				CE3B4081280F5C6D00F299A0 /* AccountSettingsViewController.swift in Sources */,
 				BAC6A86027BEF4CB00CA66DE /* RegistrationStep1ViewController.swift in Sources */,
 				882783F227F3C3640096E225 /* ChatCellTableViewCell.swift in Sources */,
 				8C250DD327AB37A400A280B3 /* SettingsPageViewController.swift in Sources */,
