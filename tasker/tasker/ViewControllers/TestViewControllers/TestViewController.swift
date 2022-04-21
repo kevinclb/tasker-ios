@@ -32,7 +32,6 @@ class TestViewController: UIViewController {
     
     @IBAction func createTaskButtonPressed(_ sender: UIButton) {
         self.task = Errand(
-            taskID: "432421",
             title: "title",
             category: "category",
             taskDescription: "description",
