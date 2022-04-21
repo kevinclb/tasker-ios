@@ -14,10 +14,10 @@ class PaidMechanismViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     
-    private var taskID: String = ""
+    private var docID: String = ""
     
-    func setTaskID(taskID: String) {
-        self.taskID = taskID
+    func setDocID(docID: String) {
+        self.docID = docID
     }
 
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class PaidMechanismViewController: UIViewController {
     @IBAction func confirmButtonTapped(_ sender: Any) {
         
         let db = Firestore.firestore()
-        db.collection("tasks").document(taskID).setData(["hasPaid": true], merge: true)
+        db.collection("tasks").document(docID).setData(["hasPaid": true], merge: true)
         
         let transition = CATransition()
         transition.duration = 0.5
