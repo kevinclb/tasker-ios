@@ -15,7 +15,6 @@ class EmployeeExplorePageViewController: UIViewController {
     
     public var completion:(([Errand]?) -> Void)?
     
-    
     @IBOutlet var collectionViewA: UICollectionView!
     @IBOutlet var nearByColView: UICollectionView!
     
@@ -35,12 +34,15 @@ class EmployeeExplorePageViewController: UIViewController {
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var rating: UILabel!
     
+    var userCity = ""
     
     let taskCollectionViewCellId = "MyCollectionViewCell"
     
     var tasks = [Errand]()
     var menuOut = false
     override func viewDidLoad() {
+        guard let userID = Auth.auth().currentUser?.uid else {return}
+        
         // This is for the slide out menu
         menuScrollView.bounces = false
         menuScrollView.showsVerticalScrollIndicator = false
@@ -75,6 +77,7 @@ class EmployeeExplorePageViewController: UIViewController {
         nearByColView.delegate = self
         nearByColView.dataSource = self
         
+        //gets all task
         db.collection("tasks").getDocuments { (snapshot, error) in
             if error != nil {
                 print("error retrieving task(errand) documents: \(String(describing: error?.localizedDescription))")
@@ -93,8 +96,22 @@ class EmployeeExplorePageViewController: UIViewController {
             }
         }
         
+        //Gets the Users city
+        let cityRef = db.collection("users").document(userID)
+        cityRef.getDocument{(document, error) in
+            if let document = document, document.exists{
+                let results = document.data()
+                if let addressData = results?["address"] as? [String: Any]{
+                    self.userCity = addressData["city"] as? String ?? ""
+                }
+                print ("User city is : " + self.userCity)
+            } else {
+                print ("Document does not exist")
+            }
+        }
+        
         // Code to load the profile pictures and profile info to the menu
-        guard let userID = Auth.auth().currentUser?.uid else {return}
+        //guard let userID = Auth.auth().currentUser?.uid else {return}
         let docReff = db.collection("users").document(userID)
         let storageRef = FirebaseStorage.Storage.storage().reference(forURL: "gs://developmentenvironment-224c8.appspot.com")
         docReff.getDocument { snapshot, error in
@@ -238,6 +255,7 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
             let task = tasks[indexPath.row]
             let showTaskVC = AcceptTaskViewController()
         DispatchQueue.main.async {
+            showTaskVC.dID = task.docID!
             showTaskVC.lbTitle.text = task.title
             showTaskVC.lbLocation.text = task.location?.city ?? "no city"
             showTaskVC.lbBody.text = task.taskDescription

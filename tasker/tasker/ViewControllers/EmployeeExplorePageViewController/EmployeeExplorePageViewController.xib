@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -35,14 +35,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search Task" translatesAutoresizingMaskIntoConstraints="NO" id="3VE-EB-UXS">
-                            <rect key="frame" x="16" y="121" width="280" height="51"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>Title</string>
-                                <string>Title</string>
-                            </scopeButtonTitles>
-                        </searchBar>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buV-Jq-AGr">
                             <rect key="frame" x="0.0" y="191" width="390" height="552"/>
                             <subviews>
@@ -170,14 +162,6 @@
                                 <constraint firstAttribute="height" constant="47" id="NEe-7Z-RkV"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ab-QA-FSJ" userLabel="AttibutesButton">
-                            <rect key="frame" x="296" y="125.66666666666667" width="78" height="54.333333333333329"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="78" id="E1y-lP-nl2"/>
-                            </constraints>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="filter results button"/>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L52-Ff-xvK" userLabel="MenuButton">
                             <rect key="frame" x="33" y="50" width="57" height="50"/>
                             <constraints>
@@ -193,7 +177,7 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="1XI-5Z-6mZ">
-                            <rect key="frame" x="288" y="44.000000000000007" width="80" height="65.666666666666686"/>
+                            <rect key="frame" x="288" y="43.000000000000007" width="80" height="67.666666666666686"/>
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="Ouq-rW-b4d"/>
@@ -207,24 +191,17 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tnA-mQ-iUK" secondAttribute="trailing" constant="126" id="3jl-ex-pND"/>
-                        <constraint firstItem="3ab-QA-FSJ" firstAttribute="leading" secondItem="3VE-EB-UXS" secondAttribute="trailing" id="9Mg-Vd-qT6"/>
-                        <constraint firstItem="3ab-QA-FSJ" firstAttribute="top" secondItem="1XI-5Z-6mZ" secondAttribute="bottom" constant="17" id="Fgg-0K-qDl"/>
                         <constraint firstAttribute="trailing" secondItem="buV-Jq-AGr" secondAttribute="trailing" id="G4K-Jv-BCE"/>
-                        <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3ab-QA-FSJ" secondAttribute="trailing" constant="16" id="HEW-jB-zeK"/>
                         <constraint firstAttribute="bottom" secondItem="buV-Jq-AGr" secondAttribute="bottom" constant="101" id="SRa-5R-tUI"/>
                         <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1XI-5Z-6mZ" secondAttribute="trailing" constant="22" id="aGA-pt-1q1"/>
                         <constraint firstItem="1XI-5Z-6mZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cOL-jc-OQ3"/>
                         <constraint firstItem="tnA-mQ-iUK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dOX-wr-IEU"/>
-                        <constraint firstItem="3VE-EB-UXS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dPN-dv-9cp"/>
                         <constraint firstItem="L52-Ff-xvK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="33" id="eGJ-0j-z3m"/>
-                        <constraint firstItem="3VE-EB-UXS" firstAttribute="top" secondItem="tnA-mQ-iUK" secondAttribute="bottom" constant="23" id="ebk-TC-r1X"/>
                         <constraint firstItem="tnA-mQ-iUK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="7" id="j44-pR-qbt"/>
                         <constraint firstItem="tnA-mQ-iUK" firstAttribute="leading" secondItem="L52-Ff-xvK" secondAttribute="trailing" constant="36" id="n0p-p8-rtA"/>
                         <constraint firstItem="1XI-5Z-6mZ" firstAttribute="leading" secondItem="tnA-mQ-iUK" secondAttribute="trailing" constant="24" id="qZa-Pu-uhe"/>
-                        <constraint firstItem="buV-Jq-AGr" firstAttribute="top" secondItem="3VE-EB-UXS" secondAttribute="bottom" constant="19" id="rw2-Nm-Ats"/>
                         <constraint firstItem="L52-Ff-xvK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="xTP-9e-W3n"/>
                         <constraint firstItem="buV-Jq-AGr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="191" id="xX2-JQ-ZWE"/>
-                        <constraint firstItem="buV-Jq-AGr" firstAttribute="top" secondItem="3ab-QA-FSJ" secondAttribute="bottom" constant="11" id="ycr-pL-Lez"/>
                         <constraint firstItem="buV-Jq-AGr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zrp-S6-Pgr"/>
                     </constraints>
                 </view>
@@ -475,7 +452,6 @@
     <resources>
         <image name="big divider" width="182.33332824707031" height="9"/>
         <image name="clientprofile-button" width="142" height="56"/>
-        <image name="filter results button" width="54" height="54"/>
         <image name="logo" width="219" height="64"/>
         <image name="logout-button" width="142" height="56"/>
         <image name="menu button" width="44" height="44"/>
