@@ -21,6 +21,7 @@
                 <outlet property="menuTrailing" destination="KLi-mL-SHb" id="YIR-Nf-e41"/>
                 <outlet property="name" destination="SBf-DP-DFC" id="aEu-mg-UFq"/>
                 <outlet property="nearByColView" destination="VbB-YV-1sc" id="Y7B-ab-OZb"/>
+                <outlet property="negotiableColView" destination="C7k-Bo-vy6" id="lI7-No-enp"/>
                 <outlet property="profilePic" destination="1XI-5Z-6mZ" id="qnp-h7-syE"/>
                 <outlet property="rating" destination="icf-29-TA1" id="xbe-cU-Tww"/>
                 <outlet property="view" destination="ekV-De-20f" id="qaH-Qe-ohR"/>
@@ -100,7 +101,8 @@
                                                 <constraint firstAttribute="height" constant="440" id="XCW-8F-Ndh"/>
                                             </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1vy-z4-YhH">
-                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="itemSize" width="350" height="150"/>
+                                                <size key="estimatedItemSize" width="350" height="150"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>

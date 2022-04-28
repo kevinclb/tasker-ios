@@ -17,6 +17,7 @@ class EmployeeExplorePageViewController: UIViewController {
     
     @IBOutlet var collectionViewA: UICollectionView!
     @IBOutlet var nearByColView: UICollectionView!
+    @IBOutlet var negotiableColView: UICollectionView!
     
     // Outlets for menu
     @IBOutlet weak var menuScrollView: UIScrollView!
@@ -38,6 +39,7 @@ class EmployeeExplorePageViewController: UIViewController {
     
     let taskCollectionViewCellId = "MyCollectionViewCell"
     
+    var skillsTasks = [Errand]()
     var tasks = [Errand]()
     var nearByTasks = [Errand]()
     var negotiableTasks = [Errand]()
@@ -79,6 +81,11 @@ class EmployeeExplorePageViewController: UIViewController {
         nearByColView.delegate = self
         nearByColView.dataSource = self
         
+        //Collection View for Negotiable
+        negotiableColView.register(nibCell, forCellWithReuseIdentifier: taskCollectionViewCellId)
+        negotiableColView.delegate = self
+        negotiableColView.dataSource = self
+        
         //gets all task
         db.collection("tasks").getDocuments { (snapshot, error) in
             if error != nil {
@@ -92,18 +99,35 @@ class EmployeeExplorePageViewController: UIViewController {
                     }
                 }
                 DispatchQueue.main.async {
-
+                        //tasks in users city
                         for t in self.tasks {
                             if (t.location?.city == self.userCity)
-                        {
+                            {
                             self.nearByTasks.append(t);
+                                print("Nearby count is " + String(self.nearByTasks.count))
+                            }
                         }
-                    }
+                            //tasks that are negotiable
+                            for t in self.tasks{
+                                if (t.negotiable == true)
+                                {
+                                    self.negotiableTasks.append(t)
+                                    print("Neg count is " + String(self.negotiableTasks.count))
+                                }
+                            }
+                            for t in self.tasks{
+                                if ((t.category == "Programming") || (t.category == "engineering"))
+                                {
+                                    self.skillsTasks.append(t)
+                                    print("skills count is " + String(self.skillsTasks.count))
+                                }
+                            }
                     self.collectionViewA.reloadData()
                     self.nearByColView.reloadData()
+                    self.negotiableColView.reloadData()
+                    }
                 }
             }
-        }
         
         DispatchQueue.main.async {
         //Gets the Users city
@@ -248,16 +272,19 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionViewA{
-            return tasks.count
+            return skillsTasks.count
         }
-        else{
+        else if collectionView == self.nearByColView{
             return nearByTasks.count
+        }else
+        {
+            return negotiableTasks.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.collectionViewA {
-        let task = tasks[indexPath.row]
+        let task = skillsTasks[indexPath.row]
         let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: taskCollectionViewCellId, for: indexPath) as! MyCollectionViewCell
         cellA.lbName.text = task.title
         cellA.lbCity.text = task.location?.city ?? "no city"
@@ -267,7 +294,7 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
             
         return cellA
         }
-        else {
+        else if collectionView == self.nearByColView{
             let task = nearByTasks[indexPath.row]
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: taskCollectionViewCellId, for: indexPath) as! MyCollectionViewCell
             cellB.lbName.text = task.title
@@ -278,12 +305,22 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
                 
             return cellB
         }
-        
+        else{
+            let task = negotiableTasks[indexPath.row]
+            let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: taskCollectionViewCellId, for: indexPath) as! MyCollectionViewCell
+            cellC.lbName.text = task.title
+            cellC.lbCity.text = task.location?.city ?? "no city"
+            cellC.lbDesc.text = task.taskDescription
+            cellC.lbPrice.text = "$" + String(task.price!) + "0"
+            cellC.lbCategory.text = task.category
+            
+            return cellC
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionViewA{
-            let task = tasks[indexPath.row]
+            let task = skillsTasks[indexPath.row]
             let showTaskVC = AcceptTaskViewController()
         DispatchQueue.main.async {
             showTaskVC.dID = task.docID!
@@ -294,8 +331,20 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
         }
         navigateToListTaskVC(showTaskVC, .fromRight)
         }
-        else {
+        else if collectionView == nearByColView{
             let task = nearByTasks[indexPath.row]
+            let showTaskVC = AcceptTaskViewController()
+        DispatchQueue.main.async {
+            showTaskVC.dID = task.docID!
+            showTaskVC.lbTitle.text = task.title
+            showTaskVC.lbLocation.text = task.location?.city ?? "no city"
+            showTaskVC.lbBody.text = task.taskDescription
+            showTaskVC.lbRate.text = "$" + String( task.price!) + "0"
+        }
+        navigateToListTaskVC(showTaskVC, .fromRight)
+        }
+        else{
+            let task = negotiableTasks[indexPath.row]
             let showTaskVC = AcceptTaskViewController()
         DispatchQueue.main.async {
             showTaskVC.dID = task.docID!
