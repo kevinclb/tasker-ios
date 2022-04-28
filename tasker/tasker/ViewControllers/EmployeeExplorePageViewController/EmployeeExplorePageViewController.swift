@@ -39,6 +39,8 @@ class EmployeeExplorePageViewController: UIViewController {
     let taskCollectionViewCellId = "MyCollectionViewCell"
     
     var tasks = [Errand]()
+    var nearByTasks = [Errand]()
+    var negotiableTasks = [Errand]()
     var menuOut = false
     override func viewDidLoad() {
         guard let userID = Auth.auth().currentUser?.uid else {return}
@@ -90,12 +92,20 @@ class EmployeeExplorePageViewController: UIViewController {
                     }
                 }
                 DispatchQueue.main.async {
+
+                        for t in self.tasks {
+                            if (t.location?.city == self.userCity)
+                        {
+                            self.nearByTasks.append(t);
+                        }
+                    }
                     self.collectionViewA.reloadData()
                     self.nearByColView.reloadData()
                 }
             }
         }
         
+        DispatchQueue.main.async {
         //Gets the Users city
         let cityRef = db.collection("users").document(userID)
         cityRef.getDocument{(document, error) in
@@ -108,6 +118,7 @@ class EmployeeExplorePageViewController: UIViewController {
             } else {
                 print ("Document does not exist")
             }
+        }
         }
         
         // Code to load the profile pictures and profile info to the menu
@@ -236,22 +247,42 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tasks.count
+        if collectionView == self.collectionViewA{
+            return tasks.count
+        }
+        else{
+            return nearByTasks.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == self.collectionViewA {
         let task = tasks[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: taskCollectionViewCellId, for: indexPath) as! MyCollectionViewCell
-        cell.lbName.text = task.title
-        cell.lbCity.text = task.location?.city ?? "no city"
-        cell.lbDesc.text = task.taskDescription
-        cell.lbPrice.text = "$" + String(task.price!) + "0"
-        cell.lbCategory.text = task.category
+        let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: taskCollectionViewCellId, for: indexPath) as! MyCollectionViewCell
+        cellA.lbName.text = task.title
+        cellA.lbCity.text = task.location?.city ?? "no city"
+        cellA.lbDesc.text = task.taskDescription
+        cellA.lbPrice.text = "$" + String(task.price!) + "0"
+        cellA.lbCategory.text = task.category
             
-        return cell
+        return cellA
+        }
+        else {
+            let task = nearByTasks[indexPath.row]
+            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: taskCollectionViewCellId, for: indexPath) as! MyCollectionViewCell
+            cellB.lbName.text = task.title
+            cellB.lbCity.text = task.location?.city ?? "no city"
+            cellB.lbDesc.text = task.taskDescription
+            cellB.lbPrice.text = "$" + String(task.price!) + "0"
+            cellB.lbCategory.text = task.category
+                
+            return cellB
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == collectionViewA{
             let task = tasks[indexPath.row]
             let showTaskVC = AcceptTaskViewController()
         DispatchQueue.main.async {
@@ -262,6 +293,19 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
             showTaskVC.lbRate.text = "$" + String( task.price!) + "0"
         }
         navigateToListTaskVC(showTaskVC, .fromRight)
+        }
+        else {
+            let task = nearByTasks[indexPath.row]
+            let showTaskVC = AcceptTaskViewController()
+        DispatchQueue.main.async {
+            showTaskVC.dID = task.docID!
+            showTaskVC.lbTitle.text = task.title
+            showTaskVC.lbLocation.text = task.location?.city ?? "no city"
+            showTaskVC.lbBody.text = task.taskDescription
+            showTaskVC.lbRate.text = "$" + String( task.price!) + "0"
+        }
+        navigateToListTaskVC(showTaskVC, .fromRight)
+        }
 
     func navigateToListTaskVC(_ newViewController: UIViewController, _ transitionFrom:CATransitionSubtype) {
         let transition = CATransition()
