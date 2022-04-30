@@ -19,7 +19,7 @@ class MessagesViewController: UIViewController {
         navigateToListTaskVC(newMsgVC, .fromRight)
     }
     
-    var messages = [Message]()
+    var conversations = [Conversation]()
     override func viewDidLoad() {
         super.viewDidLoad()
         uid = Utilities.getUid()
@@ -29,9 +29,39 @@ class MessagesViewController: UIViewController {
         messageViewCollection.dataSource = self
         messageViewCollection.awakeFromNib()
         
-        for i in 1...35{
-            var message1 = Message(body: "Message will go here", sender:User.init())
-            messages.append(message1)
+        let convRef = db.collection("conversations")
+        convRef.whereField("user1ID", isEqualTo: uid).getDocuments { (snapshot, error) in
+            if error != nil {
+                print("error retrieving conversation documents: \(String(describing: error?.localizedDescription))")
+            } else {
+                for d in (snapshot!.documents) {
+                    do {
+                        try self.conversations.append(d.data(as: Conversation.self)!)
+                    } catch {
+                        print("error decoding conversation(errand) document")
+                    }
+                }
+//                DispatchQueue.main.async {
+//                    self.messageViewCollection.reloadData()
+//                }
+            }
+        }
+        
+        convRef.whereField("user2ID", isEqualTo: uid).getDocuments { (snapshot, error) in
+            if error != nil {
+                print("error retrieving conversation documents: \(String(describing: error?.localizedDescription))")
+            } else {
+                for d in (snapshot!.documents) {
+                    do {
+                        try self.conversations.append(d.data(as: Conversation.self)!)
+                    } catch {
+                        print("error decoding conversation(errand) document")
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.messageViewCollection.reloadData()
+                }
+            }
         }
         
     }
@@ -56,20 +86,24 @@ class MessagesViewController: UIViewController {
 extension MessagesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 35
+        return conversations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: messageCollectionViewCellId, for: indexPath) as! MessageViewCell
-        let message = messages[indexPath.row]
-        cell.lbName.text = message.sender.firstname
-        cell.lbMessage.text = message.body
+        let convo = conversations[indexPath.row]
+        let lastMessageCount = convo.messages.count
+        cell.lbName.text = "Name will go here"
+        cell.lbMessage.text = convo.messages[lastMessageCount-1].body
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         let showChatVC = ChatViewController()
+        DispatchQueue.main.async {
+            showChatVC.messages = self.conversations[indexPath.row].messages
+        }
         navigateTo(showChatVC, .fromRight)
         func navigateTo(_ newViewController: UIViewController, _ transitionFrom:CATransitionSubtype) {
             let transition = CATransition()

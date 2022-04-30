@@ -29,7 +29,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="ekV-De-20f" userLabel="EmployeeExplorePageViewController">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="1107"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
@@ -447,7 +447,6 @@
                 <constraint firstItem="KeQ-3u-BQF" firstAttribute="bottom" secondItem="p0r-vc-oli" secondAttribute="bottom" id="viW-b6-bQs"/>
                 <constraint firstItem="KeQ-3u-BQF" firstAttribute="leading" secondItem="p0r-vc-oli" secondAttribute="leading" id="vmt-NY-3OH"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="730.76923076923072" y="72.867298578199055"/>
         </view>
     </objects>
