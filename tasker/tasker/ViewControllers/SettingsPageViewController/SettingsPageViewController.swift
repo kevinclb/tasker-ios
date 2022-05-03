@@ -23,7 +23,7 @@ class SettingsPageViewController: UIViewController {
         navigateTo(newViewController: EditProfileViewController(), transitionFrom: .fromRight)
     }
     @IBAction func appNotifTapped(_ sender: Any) {
-        print("App Notifications Tapped")
+        navigateTo(newViewController: NotificationSettingsViewController(), transitionFrom: .fromRight)
     }
     @IBAction func helpTapped(_ sender: Any) {
         navigateTo(newViewController: HelpViewController(), transitionFrom: .fromRight)
