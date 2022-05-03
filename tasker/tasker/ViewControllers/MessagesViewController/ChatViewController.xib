@@ -24,9 +24,8 @@
                     <rect key="frame" x="0.0" y="124" width="390" height="579"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IV3-Mu-s2X">
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IV3-Mu-s2X">
                     <rect key="frame" x="0.0" y="701" width="390" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Message" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUu-MI-ifu">
                             <rect key="frame" x="63" y="47" width="264" height="34"/>
@@ -37,19 +36,34 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhX-hS-fXo">
+                    <rect key="frame" x="16" y="93" width="44" height="34"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="arrow_back_ios_24px">
+                        <backgroundConfiguration key="background"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="backToConversations:" destination="-1" eventType="touchUpInside" id="GWp-lH-8Ne"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="PhX-hS-fXo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="49" id="0nM-YH-2dY"/>
+                <constraint firstItem="PhX-hS-fXo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3VT-4I-CZA"/>
+                <constraint firstItem="IV3-Mu-s2X" firstAttribute="top" secondItem="PhX-hS-fXo" secondAttribute="bottom" constant="574" id="BcJ-gG-w1w"/>
                 <constraint firstItem="mWX-3x-YRj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PdE-O1-vc9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PhX-hS-fXo" secondAttribute="trailing" constant="330" id="V4Q-Vo-Thx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mWX-3x-YRj" secondAttribute="bottom" constant="107" id="Z2W-5W-GXP"/>
                 <constraint firstItem="mWX-3x-YRj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="lux-4N-7GX"/>
                 <constraint firstItem="mWX-3x-YRj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="mCe-9P-s1f"/>
             </constraints>
-            <point key="canvasLocation" x="-4268" y="-74"/>
+            <point key="canvasLocation" x="-4269.2307692307695" y="-74.644549763033169"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow_back_ios_24px" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

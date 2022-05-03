@@ -32,6 +32,9 @@
                     <buttonConfiguration key="configuration" style="filled" title="Accept" cornerStyle="capsule">
                         <color key="baseBackgroundColor" red="0.32813924550000001" green="0.62398320439999999" blue="0.58823502059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="acceptClicked:" destination="-1" eventType="touchUpInside" id="uBM-DX-aG3"/>
+                    </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="9mm-L1-FPo">
                     <rect key="frame" x="98" y="44" width="195" height="64"/>
@@ -49,7 +52,7 @@
                         <constraint firstAttribute="width" constant="178" id="gcR-37-UAM"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Cancel" cornerStyle="capsule">
+                    <buttonConfiguration key="configuration" style="filled" title="Decline" cornerStyle="capsule">
                         <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                     </buttonConfiguration>
                     <connections>

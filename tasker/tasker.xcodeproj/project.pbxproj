@@ -17,6 +17,7 @@
 		8850A1E027F666880039C95E /* NewMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8850A1DE27F666880039C95E /* NewMessageViewController.xib */; };
 		88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88616E7527C5C228002A1F72 /* MessageViewCell.swift */; };
 		88616E7827C5C228002A1F72 /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88616E7627C5C228002A1F72 /* MessageViewCell.xib */; };
+		88B5673B281B43EC006C84DA /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5673A281B43EC006C84DA /* Conversation.swift */; };
 		8C08C93027E7DC4C000406B9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08C92E27E7DC4C000406B9 /* TestViewController.swift */; };
 		8C08C93127E7DC4C000406B9 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C08C92F27E7DC4C000406B9 /* TestViewController.xib */; };
 		8C224DA227BB14AA00E486C7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C224DA027BB14AA00E486C7 /* RootViewController.swift */; };
@@ -108,6 +109,7 @@
 		8850A1DE27F666880039C95E /* NewMessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewMessageViewController.xib; sourceTree = "<group>"; };
 		88616E7527C5C228002A1F72 /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		88616E7627C5C228002A1F72 /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
+		88B5673A281B43EC006C84DA /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		8C08C92E27E7DC4C000406B9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		8C08C92F27E7DC4C000406B9 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		8C224DA027BB14AA00E486C7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				8C2DC0AB27C6FA070026FF11 /* Message.swift */,
 				8CD95D3227E6D1D9003F7360 /* Credentials.swift */,
 				8C6F7E5127E7E34B00495DF1 /* Address.swift */,
+				88B5673A281B43EC006C84DA /* Conversation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */,
 				8CAD48EC27E030B200304CF8 /* SearchResultsTableViewController.swift in Sources */,
 				8C08C93027E7DC4C000406B9 /* TestViewController.swift in Sources */,
+				88B5673B281B43EC006C84DA /* Conversation.swift in Sources */,
 				CE5C50C727FF92030055F779 /* EmployeeStatusViewController.swift in Sources */,
 				882783EE27F3C3100096E225 /* ChatViewController.swift in Sources */,
 				88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */,

@@ -7,16 +7,13 @@
 
 import Foundation
 
-struct Message {
+class Message: Codable {
     var body: String
-    var metadata: Metadata?
-    let sender: User
-}
-
-
-extension Message {
-    struct Metadata {
-        let date: Date
-        var replySent: Bool
+    var sender: String
+    
+    init(body: String, sender: String)
+    {
+        self.body = body
+        self.sender = sender
     }
 }
