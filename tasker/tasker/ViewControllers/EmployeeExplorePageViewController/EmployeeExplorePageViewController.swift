@@ -104,7 +104,8 @@ class EmployeeExplorePageViewController: UIViewController {
         }
         
         //gets all task
-        db.collection("tasks").getDocuments { (snapshot, error) in
+        //.wherefield if uncommented will only get tasks that do not have an employee assigned
+        db.collection("tasks")/*.whereField("employeeID", isEqualTo: "")*/.getDocuments { (snapshot, error) in
             if error != nil {
                 print("error retrieving task(errand) documents: \(String(describing: error?.localizedDescription))")
             } else {
@@ -329,6 +330,7 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
             let task = skillsTasks[indexPath.row]
             let showTaskVC = AcceptTaskViewController()
         DispatchQueue.main.async {
+            showTaskVC.taskClientID = task.clientID!
             showTaskVC.dID = task.docID!
             showTaskVC.lbTitle.text = task.title
             showTaskVC.lbLocation.text = task.location?.city ?? "no city"
@@ -341,6 +343,7 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
             let task = nearByTasks[indexPath.row]
             let showTaskVC = AcceptTaskViewController()
         DispatchQueue.main.async {
+            showTaskVC.taskClientID = task.clientID!
             showTaskVC.dID = task.docID!
             showTaskVC.lbTitle.text = task.title
             showTaskVC.lbLocation.text = task.location?.city ?? "no city"
@@ -353,6 +356,7 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
             let task = negotiableTasks[indexPath.row]
             let showTaskVC = AcceptTaskViewController()
         DispatchQueue.main.async {
+            showTaskVC.taskClientID = task.clientID!
             showTaskVC.dID = task.docID!
             showTaskVC.lbTitle.text = task.title
             showTaskVC.lbLocation.text = task.location?.city ?? "no city"

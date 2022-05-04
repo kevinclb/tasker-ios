@@ -11,12 +11,18 @@ import Firebase
 class NewMessageViewController: UIViewController {
     
     var messageToSend = ""
+    var sendToID = ""
     var convo = Conversation(user1ID: "", user2ID: "", messages: [Message(body: "", sender: "")])
     @IBOutlet var messageField: UITextField!
     
     @IBAction func backBTN(_ sender: Any) {
-        let backToMsgsVC = MessagesViewController()
-        navigateToListTaskVC(backToMsgsVC, .fromRight)
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = .fromLeft
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        dismiss(animated: false, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +31,7 @@ class NewMessageViewController: UIViewController {
 
     @IBAction func sendPressed(_ sender: Any) {
         messageToSend = messageField.text!
-        convo = Conversation(user1ID: Utilities.getUid(), user2ID: "", messages: [Message(body: messageToSend, sender: Utilities.getUid())])
+        convo = Conversation(user1ID: Utilities.getUid(), user2ID: sendToID, messages: [Message(body: messageToSend, sender: Utilities.getUid())])
         do {
            print(try db.collection("conversations").addDocument(from: self.convo.self))
             let backToMsgsVC = MessagesViewController()
