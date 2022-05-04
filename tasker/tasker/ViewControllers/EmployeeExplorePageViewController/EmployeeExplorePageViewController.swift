@@ -86,6 +86,23 @@ class EmployeeExplorePageViewController: UIViewController {
         negotiableColView.delegate = self
         negotiableColView.dataSource = self
         
+        DispatchQueue.main.async {
+        //Gets the Users city
+        let cityRef = db.collection("users").document(userID)
+        cityRef.getDocument{(document, error) in
+            if let document = document, document.exists{
+                let results = document.data()
+                if let addressData = results?["address"] as? [String: Any]{
+                    self.userCity = addressData["city"] as? String ?? "Washington"
+                }
+                print ("User city is : " + self.userCity)
+                print ("User id is:" + userID)
+            } else {
+                print ("Document does not exist")
+            }
+        }
+        }
+        
         //gets all task
         db.collection("tasks").getDocuments { (snapshot, error) in
             if error != nil {
@@ -101,10 +118,16 @@ class EmployeeExplorePageViewController: UIViewController {
                 DispatchQueue.main.async {
                         //tasks in users city
                         for t in self.tasks {
+                            print("this is the city" + self.userCity)
                             if (t.location?.city == self.userCity)
                             {
                             self.nearByTasks.append(t);
                                 print("Nearby count is " + String(self.nearByTasks.count))
+                            }
+                            else if(t.location?.city == "Washington")
+                            {
+                                self.nearByTasks.append(t);
+                                    print("Nearby count is " + String(self.nearByTasks.count))
                             }
                         }
                             //tasks that are negotiable
@@ -128,22 +151,6 @@ class EmployeeExplorePageViewController: UIViewController {
                     }
                 }
             }
-        
-        DispatchQueue.main.async {
-        //Gets the Users city
-        let cityRef = db.collection("users").document(userID)
-        cityRef.getDocument{(document, error) in
-            if let document = document, document.exists{
-                let results = document.data()
-                if let addressData = results?["address"] as? [String: Any]{
-                    self.userCity = addressData["city"] as? String ?? ""
-                }
-                print ("User city is : " + self.userCity)
-            } else {
-                print ("Document does not exist")
-            }
-        }
-        }
         
         // Code to load the profile pictures and profile info to the menu
         //guard let userID = Auth.auth().currentUser?.uid else {return}
@@ -302,7 +309,6 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
             cellB.lbDesc.text = task.taskDescription
             cellB.lbPrice.text = "$" + String(task.price!) + "0"
             cellB.lbCategory.text = task.category
-                
             return cellB
         }
         else{

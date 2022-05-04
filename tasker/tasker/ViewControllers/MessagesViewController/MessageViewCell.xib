@@ -52,6 +52,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="382" height="72"/>
             <connections>
+                <outlet property="avatar" destination="wU7-nZ-O7E" id="0r5-kG-hWh"/>
                 <outlet property="lbMessage" destination="eyc-Kt-ImK" id="jfo-0v-PGR"/>
                 <outlet property="lbName" destination="K7C-gf-Q8T" id="Qay-VS-1pv"/>
             </connections>
