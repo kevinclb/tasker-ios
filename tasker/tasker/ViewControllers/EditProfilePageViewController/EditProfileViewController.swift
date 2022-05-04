@@ -284,7 +284,7 @@ class EditProfileViewController: UIViewController {
              "phone": phone,
              "bio": bio,
              "skills": skills,
-             "profilePicLink":linkToImg
+             "profilePicLink":linkToImg,
             ]) { (error) in
                 // Dismiss loading bar
                 self.activityIndicator.stopAnimating()
