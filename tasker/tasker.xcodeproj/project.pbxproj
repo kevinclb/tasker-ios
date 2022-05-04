@@ -77,6 +77,8 @@
 		CE10019127CD6171007767AC /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE10018F27CD6170007767AC /* HelpViewController.xib */; };
 		CE3B4081280F5C6D00F299A0 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B407F280F5C6D00F299A0 /* AccountSettingsViewController.swift */; };
 		CE3B4082280F5C6D00F299A0 /* AccountSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3B4080280F5C6D00F299A0 /* AccountSettingsViewController.xib */; };
+		CE3F1EE52820B39500F194AA /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F1EE32820B39500F194AA /* NotificationSettingsViewController.swift */; };
+		CE3F1EE62820B39500F194AA /* NotificationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3F1EE42820B39500F194AA /* NotificationSettingsViewController.xib */; };
 		CE5C50C727FF92030055F779 /* EmployeeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C50C527FF92030055F779 /* EmployeeStatusViewController.swift */; };
 		CE5C50C827FF92030055F779 /* EmployeeStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5C50C627FF92030055F779 /* EmployeeStatusViewController.xib */; };
 		CE641A6527A88E0500766C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE641A6427A88E0500766C59 /* AppDelegate.swift */; };
@@ -169,6 +171,8 @@
 		CE10018F27CD6170007767AC /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
 		CE3B407F280F5C6D00F299A0 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
 		CE3B4080280F5C6D00F299A0 /* AccountSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSettingsViewController.xib; sourceTree = "<group>"; };
+		CE3F1EE32820B39500F194AA /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
+		CE3F1EE42820B39500F194AA /* NotificationSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingsViewController.xib; sourceTree = "<group>"; };
 		CE5C50C527FF92030055F779 /* EmployeeStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeStatusViewController.swift; sourceTree = "<group>"; };
 		CE5C50C627FF92030055F779 /* EmployeeStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeStatusViewController.xib; sourceTree = "<group>"; };
 		CE641A6127A88E0500766C59 /* tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,7 +252,11 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				88FDA45E28231EC000017275 /* EmployeeRootViewController */,
+=======
+				CE3F1EE22820B38200F194AA /* NotificationSettingsViewController */,
+>>>>>>> main
 				882783E727EFA3F60096E225 /* AcceptTaskViewController */,
 				CE3B407E280F5C2800F299A0 /* AccountSettingsViewController */,
 				8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */,
@@ -461,6 +469,15 @@
 			path = AccountSettingsViewController;
 			sourceTree = "<group>";
 		};
+		CE3F1EE22820B38200F194AA /* NotificationSettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE3F1EE32820B39500F194AA /* NotificationSettingsViewController.swift */,
+				CE3F1EE42820B39500F194AA /* NotificationSettingsViewController.xib */,
+			);
+			path = NotificationSettingsViewController;
+			sourceTree = "<group>";
+		};
 		CE5C50C427FF90D20055F779 /* EmployeeStatusViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C5797B627FCE95B006231E7 /* RecentTaskTableViewCell.xib in Resources */,
+				CE3F1EE62820B39500F194AA /* NotificationSettingsViewController.xib in Resources */,
 				88616E7827C5C228002A1F72 /* MessageViewCell.xib in Resources */,
 				8C250DD827AB380E00A280B3 /* EditProfileViewController.xib in Resources */,
 				8C250DC827AB351B00A280B3 /* MessagesViewController.xib in Resources */,
@@ -738,6 +756,7 @@
 				8C250DC727AB351B00A280B3 /* MessagesViewController.swift in Sources */,
 				CEF81B2A27E2516F00CE0340 /* ContactUsViewController.swift in Sources */,
 				8C2DC0AA27C6F9F90026FF11 /* Post.swift in Sources */,
+				CE3F1EE52820B39500F194AA /* NotificationSettingsViewController.swift in Sources */,
 				BA1DF53C27D02222000F292E /* Utilities.swift in Sources */,
 				BAC6A86927BEF4F600CA66DE /* LoginViewController.swift in Sources */,
 				8C5797B927FD27D5006231E7 /* RecentTasksRootVC.swift in Sources */,

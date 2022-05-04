@@ -254,6 +254,7 @@ class SetupPageViewController: UIViewController {
              "gender": "",
              "profilePicLink":"",
              "num_ratings": 0,
+             "notifications":true
             ]) { (error) in
                 
                 if error != nil {
