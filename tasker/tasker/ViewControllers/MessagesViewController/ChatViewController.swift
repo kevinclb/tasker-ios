@@ -6,8 +6,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
 
 class ChatViewController: UIViewController, UITableViewDataSource {
+    @IBOutlet var messageField: UITextField!
+    @IBAction func sendPressed(_ sender: Any) {
+        let text = messageField.text
+        let newMessage = ["body": text ?? "", "sender": Utilities.getUid()]
+        db.collection("conversations").document(convos.docID!).updateData(["messages": FieldValue.arrayUnion([newMessage])])
+        
+    }
     @IBAction func backToConversations(_ sender: Any) {
         
         let showConv = RootViewController()
@@ -29,13 +38,12 @@ class ChatViewController: UIViewController, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("the count for messages is " + String(messages.count))
-        return messages.count
+        return convos.messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = chatTableView.dequeueReusableCell(withIdentifier: chatCellViewId, for: indexPath) as! ChatCellTableViewCell
-        if (messages[indexPath.row].sender != Utilities.getUid())
+        if (convos.messages[indexPath.row].sender != Utilities.getUid())
         {
             cell.leftAvatar.isHidden = false
             cell.rightAvatar.isHidden = true
@@ -44,20 +52,20 @@ class ChatViewController: UIViewController, UITableViewDataSource {
             cell.chatBubble.adjustsFontSizeToFitWidth = true
             cell.chatBubble.minimumScaleFactor = 0.5
             cell.chatBubble.numberOfLines = 0
-            cell.chatBubble.text = messages[indexPath.row].body
+            cell.chatBubble.text = convos.messages[indexPath.row].body
+            print("This is the DocID in chat view controller" + convos.docID!)
         }
         else
         {
             cell.leftAvatar.isHidden = true
             cell.rightAvatar.isHidden = false
-            cell.chatBubble.text = messages[indexPath.row].body
-            
+            cell.chatBubble.text = convos.messages[indexPath.row].body
         }
         
         return cell
     }
     
-    var messages = [Message]()
+    var convos = Conversation()
     @IBOutlet weak var messageInput: UITextField!
     @IBOutlet weak var chatTableView: UITableView!
     

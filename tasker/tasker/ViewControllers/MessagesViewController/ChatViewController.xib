@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="tasker" customModuleProvider="target">
             <connections>
                 <outlet property="chatTableView" destination="mWX-3x-YRj" id="opu-Zn-Rd3"/>
+                <outlet property="messageField" destination="GUu-MI-ifu" id="d0I-UH-5xn"/>
                 <outlet property="messageInput" destination="GUu-MI-ifu" id="og2-WJ-ZrV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,18 +22,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="50" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mWX-3x-YRj">
-                    <rect key="frame" x="0.0" y="124" width="390" height="579"/>
+                    <rect key="frame" x="0.0" y="124" width="390" height="555"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IV3-Mu-s2X">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IV3-Mu-s2X">
                     <rect key="frame" x="0.0" y="701" width="390" height="128"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Message" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUu-MI-ifu">
-                            <rect key="frame" x="63" y="47" width="264" height="34"/>
+                            <rect key="frame" x="19" y="35" width="221" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUL-Aw-XJi">
+                            <rect key="frame" x="273" y="38" width="83" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Send"/>
+                            <connections>
+                                <action selector="sendPressed:" destination="-1" eventType="touchUpInside" id="uhX-lk-cAq"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
@@ -53,13 +63,16 @@
                 <constraint firstItem="PhX-hS-fXo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="49" id="0nM-YH-2dY"/>
                 <constraint firstItem="PhX-hS-fXo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3VT-4I-CZA"/>
                 <constraint firstItem="IV3-Mu-s2X" firstAttribute="top" secondItem="PhX-hS-fXo" secondAttribute="bottom" constant="574" id="BcJ-gG-w1w"/>
+                <constraint firstItem="IV3-Mu-s2X" firstAttribute="top" secondItem="mWX-3x-YRj" secondAttribute="bottom" constant="22" id="M4h-1K-iip"/>
+                <constraint firstAttribute="bottom" secondItem="IV3-Mu-s2X" secondAttribute="bottom" constant="15" id="OMv-TM-PyY"/>
+                <constraint firstItem="IV3-Mu-s2X" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PVP-aS-qwU"/>
                 <constraint firstItem="mWX-3x-YRj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PdE-O1-vc9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PhX-hS-fXo" secondAttribute="trailing" constant="330" id="V4Q-Vo-Thx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mWX-3x-YRj" secondAttribute="bottom" constant="107" id="Z2W-5W-GXP"/>
+                <constraint firstItem="IV3-Mu-s2X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a5a-3A-Hfx"/>
                 <constraint firstItem="mWX-3x-YRj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="lux-4N-7GX"/>
                 <constraint firstItem="mWX-3x-YRj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="mCe-9P-s1f"/>
             </constraints>
-            <point key="canvasLocation" x="-4269.2307692307695" y="-74.644549763033169"/>
+            <point key="canvasLocation" x="-4270.7692307692305" y="-74.644549763033169"/>
         </view>
     </objects>
     <resources>

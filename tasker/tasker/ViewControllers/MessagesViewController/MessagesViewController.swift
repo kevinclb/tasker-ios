@@ -13,11 +13,6 @@ class MessagesViewController: UIViewController {
     let messageCollectionViewCellId = "MessageViewCell"
     
     @IBOutlet var messageViewCollection: UICollectionView!
-    @IBAction func newMessage(_ sender: Any) {
-        
-        let newMsgVC = NewMessageViewController()
-        navigateToListTaskVC(newMsgVC, .fromRight)
-    }
     
     var conversations = [Conversation]()
     override func viewDidLoad() {
@@ -63,6 +58,7 @@ class MessagesViewController: UIViewController {
                 }
             }
         }
+        self.messageViewCollection.reloadData()
         
     }
     
@@ -95,6 +91,7 @@ extension MessagesViewController: UICollectionViewDelegate, UICollectionViewData
         let lastMessageCount = convo.messages.count
         cell.lbName.text = "Name will go here"
         cell.lbMessage.text = convo.messages[lastMessageCount-1].body
+        print("document ID is" + convo.docID!)
         return cell
     }
     
@@ -102,7 +99,7 @@ extension MessagesViewController: UICollectionViewDelegate, UICollectionViewData
         print(indexPath.row)
         let showChatVC = ChatViewController()
         DispatchQueue.main.async {
-            showChatVC.messages = self.conversations[indexPath.row].messages
+            showChatVC.convos = self.conversations[indexPath.row]
         }
         navigateTo(showChatVC, .fromRight)
         func navigateTo(_ newViewController: UIViewController, _ transitionFrom:CATransitionSubtype) {
