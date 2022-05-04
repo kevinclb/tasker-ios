@@ -252,11 +252,8 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				88FDA45E28231EC000017275 /* EmployeeRootViewController */,
-=======
 				CE3F1EE22820B38200F194AA /* NotificationSettingsViewController */,
->>>>>>> main
 				882783E727EFA3F60096E225 /* AcceptTaskViewController */,
 				CE3B407E280F5C2800F299A0 /* AccountSettingsViewController */,
 				8C250DC427AB34F100A280B3 /* EmployeeExplorePageViewController */,
