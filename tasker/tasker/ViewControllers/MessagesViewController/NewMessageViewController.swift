@@ -13,6 +13,10 @@ class NewMessageViewController: UIViewController {
     var messageToSend = ""
     var sendToID = ""
     var convo = Conversation(user1ID: "", user2ID: "", messages: [Message(body: "", sender: "")])
+    var docID = ""
+    var usersSorted = [""]
+    var users  = [""]
+    
     @IBOutlet var messageField: UITextField!
     
     @IBAction func backBTN(_ sender: Any) {
@@ -26,22 +30,37 @@ class NewMessageViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        var users = [Utilities.getUid(), sendToID]
+        usersSorted = users.sorted{$0.localizedCompare($1) == .orderedAscending}
+            db.collection("conversations").whereField("user1ID", isEqualTo: usersSorted[0]).whereField("user2ID", isEqualTo: usersSorted[1]).getDocuments() { (querySnapshot, error) in
+                if let querySnapshot = querySnapshot {
+                    for document in querySnapshot.documents {
+                        self.docID = document.documentID
+                        print("Found docID = " + self.docID)
+                    }
+                }
+            }
         // Do any additional setup after loading the view.
     }
 
     @IBAction func sendPressed(_ sender: Any) {
         messageToSend = messageField.text!
-        convo = Conversation(user1ID: Utilities.getUid(), user2ID: sendToID, messages: [Message(body: messageToSend, sender: Utilities.getUid())])
-        do {
-           print(try db.collection("conversations").addDocument(from: self.convo.self))
-            let backToMsgsVC = MessagesViewController()
-            navigateToListTaskVC(backToMsgsVC, .fromRight)
-        }catch{
-            print("Error adding document")
+        if(docID == "")
+        {
+            convo = Conversation(user1ID: users[0], user2ID: users[1], messages: [Message(body: messageToSend, sender: Utilities.getUid())])
+            do {
+               print(try db.collection("conversations").addDocument(from: self.convo.self))
+                let backToMsgsVC = MessagesViewController()
+                navigateToListTaskVC(backToMsgsVC, .fromRight)
+            }catch{
+                print("Error adding document")
+            }
         }
-        print(messageToSend)
-
-        
+        else
+        {
+            let newMessage = ["body": messageToSend, "sender": Utilities.getUid()]
+            db.collection("conversations").document(docID).updateData(["messages": FieldValue.arrayUnion([newMessage])])
+        }
     }
     func navigateToListTaskVC(_ newViewController: UIViewController, _ transitionFrom:CATransitionSubtype) {
         let transition = CATransition()

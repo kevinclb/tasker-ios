@@ -15,6 +15,7 @@ class ChatViewController: UIViewController, UITableViewDataSource {
         let text = messageField.text
         let newMessage = ["body": text ?? "", "sender": Utilities.getUid()]
         db.collection("conversations").document(convos.docID!).updateData(["messages": FieldValue.arrayUnion([newMessage])])
+        
         db.collection("conversations").document((convos.docID)!).getDocument() {
                 (document, error) in
                 let result = Result {
