@@ -20,6 +20,7 @@ class Errand: Codable {
     var listingDate: Date?
     var hireDate: Date?
     var employeeID: String?
+    var clientID: String?
     private var errand: Errand?
 //
 //    enum CodingKeys: String, CodingKey {
@@ -27,11 +28,12 @@ class Errand: Codable {
 //        case taskDescription = "description"
 //    }
 //
-    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?, location: Address, negotiable: Bool, price: Double) {
+    init(title: String, category: String, taskDescription: String, employeeID: String, clientID:String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?, location: Address, negotiable: Bool, price: Double) {
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
         self.employeeID = employeeID
+        self.clientID = clientID
         self.isCompleted = isCompleted
         self.hasPaid = hasPaid
         self.employeeRated = employeeRated
@@ -42,11 +44,12 @@ class Errand: Codable {
     }
     
     
-    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?) {
+    init(title: String, category: String, taskDescription: String, employeeID: String, clientID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?) {
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
         self.employeeID = employeeID
+        self.clientID = clientID
         self.isCompleted = isCompleted
         self.hasPaid = hasPaid
         self.employeeRated = employeeRated

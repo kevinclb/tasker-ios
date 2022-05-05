@@ -16,4 +16,10 @@ class Message: Codable {
         self.body = body
         self.sender = sender
     }
+    
+    init()
+    {
+        self.body = ""
+        self.sender = ""
+    }
 }

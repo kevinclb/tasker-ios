@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 class Conversation: Codable {
+    @DocumentID var docID: String?
     var user1ID: String
     var user2ID: String
     var messages: [Message]
@@ -17,5 +19,12 @@ class Conversation: Codable {
         self.user1ID = user1ID
         self.user2ID = user2ID
         self.messages = messages
+    }
+    
+    init()
+    {
+        self.user1ID = ""
+        self.user2ID = ""
+        self.messages = [Message.init()]
     }
 }

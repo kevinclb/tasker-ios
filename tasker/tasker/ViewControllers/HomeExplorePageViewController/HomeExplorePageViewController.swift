@@ -211,7 +211,7 @@ class HomeExplorePageViewController: UIViewController {
     }
     
     @IBAction func employeeProfileTapped(_ sender: Any) {
-        navigateTo(newViewController: EmployeeExplorePageViewController(), transitionFrom: .fromRight)
+        navigateTo(newViewController: EmployeeRootViewController(), transitionFrom: .fromRight)
     }
     
     @IBAction func settingsTapped(_ sender: Any) {
