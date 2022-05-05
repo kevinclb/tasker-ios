@@ -115,7 +115,7 @@ extension SubmitTaskViewController {
             
             print("post task button pressed")
             do {
-                print("docRef:", try db.collection("tasks").addDocument(from: self.task.self!))
+                print("docRef:", try db.collection("tasks").addDocument(from: task.self))
                 errorLabel.textColor = .systemGreen
                 errorLabel.text = "Task posted successfully! (segue back)"
                 //TODO: add segue back to home page view controller.
