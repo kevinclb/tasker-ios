@@ -12,11 +12,17 @@ import FirebaseAuth
 class AcceptTaskViewController: UIViewController {
     let userID = Auth.auth().currentUser?.uid
     var dID = ""
-    let backToEmpVC = EmployeeExplorePageViewController()
+    var taskClientID = ""
+    let backToEmpVC = EmployeeRootViewController()
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbLocation: UILabel!
     @IBOutlet weak var lbBody: UILabel!
     @IBOutlet weak var lbRate: UILabel!
+    @IBAction func sendMessageClicked(_ sender: Any) {
+        let newMessageVC = NewMessageViewController()
+        newMessageVC.sendToID = taskClientID
+        navigateToListTaskVC(newMessageVC, .fromRight)
+    }
     @IBAction func acceptClicked(_ sender: Any) {
         print("You pressed on DocID = " + dID)
         db.collection("tasks").document(dID).updateData(["employeeID": userID!

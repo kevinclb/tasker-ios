@@ -36,6 +36,7 @@ class TestViewController: UIViewController {
             category: "category",
             taskDescription: "description",
             employeeID: "1234",
+            clientID: "1234",
             isCompleted: false,
             hasPaid: false,
             employeeRated: false,

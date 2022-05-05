@@ -13,11 +13,6 @@ class MessagesViewController: UIViewController {
     let messageCollectionViewCellId = "MessageViewCell"
     
     @IBOutlet var messageViewCollection: UICollectionView!
-    @IBAction func newMessage(_ sender: Any) {
-        
-        let newMsgVC = NewMessageViewController()
-        navigateToListTaskVC(newMsgVC, .fromRight)
-    }
     
     var conversations = [Conversation]()
     override func viewDidLoad() {
@@ -63,6 +58,7 @@ class MessagesViewController: UIViewController {
                 }
             }
         }
+        self.messageViewCollection.reloadData()
         
     }
     
@@ -86,25 +82,49 @@ class MessagesViewController: UIViewController {
 extension MessagesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return conversations.count
+        if (conversations.count > 0)
+        {
+            return conversations.count
+        }
+        else{
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: messageCollectionViewCellId, for: indexPath) as! MessageViewCell
+        if (conversations.count > 0)
+        {
+            cell.avatar.isHidden = false
+            cell.lbMessage.isHidden = false
         let convo = conversations[indexPath.row]
         let lastMessageCount = convo.messages.count
         cell.lbName.text = "Name will go here"
         cell.lbMessage.text = convo.messages[lastMessageCount-1].body
+        print("document ID is" + convo.docID!)
         return cell
+        }
+        else
+        {
+            cell.avatar.isHidden = true
+            cell.lbMessage.isHidden = true
+            cell.lbName.text = "No Messages"
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+        if (conversations.count > 0){
         let showChatVC = ChatViewController()
         DispatchQueue.main.async {
-            showChatVC.messages = self.conversations[indexPath.row].messages
+            showChatVC.convos = self.conversations[indexPath.row]
         }
         navigateTo(showChatVC, .fromRight)
+        }
+        else{
+            print("No messages")
+        }
         func navigateTo(_ newViewController: UIViewController, _ transitionFrom:CATransitionSubtype) {
             let transition = CATransition()
             transition.duration = 0.5

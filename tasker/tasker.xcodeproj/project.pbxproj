@@ -18,6 +18,7 @@
 		88616E7727C5C228002A1F72 /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88616E7527C5C228002A1F72 /* MessageViewCell.swift */; };
 		88616E7827C5C228002A1F72 /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88616E7627C5C228002A1F72 /* MessageViewCell.xib */; };
 		88B5673B281B43EC006C84DA /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5673A281B43EC006C84DA /* Conversation.swift */; };
+		88FDA46028231EE900017275 /* EmployeeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FDA45F28231EE900017275 /* EmployeeRootViewController.swift */; };
 		8C08C93027E7DC4C000406B9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08C92E27E7DC4C000406B9 /* TestViewController.swift */; };
 		8C08C93127E7DC4C000406B9 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C08C92F27E7DC4C000406B9 /* TestViewController.xib */; };
 		8C224DA227BB14AA00E486C7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C224DA027BB14AA00E486C7 /* RootViewController.swift */; };
@@ -110,6 +111,7 @@
 		88616E7527C5C228002A1F72 /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		88616E7627C5C228002A1F72 /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
 		88B5673A281B43EC006C84DA /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		88FDA45F28231EE900017275 /* EmployeeRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeRootViewController.swift; sourceTree = "<group>"; };
 		8C08C92E27E7DC4C000406B9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		8C08C92F27E7DC4C000406B9 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		8C224DA027BB14AA00E486C7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,14 @@
 			path = AcceptTaskViewController;
 			sourceTree = "<group>";
 		};
+		88FDA45E28231EC000017275 /* EmployeeRootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				88FDA45F28231EE900017275 /* EmployeeRootViewController.swift */,
+			);
+			path = EmployeeRootViewController;
+			sourceTree = "<group>";
+		};
 		8C08C93227E7DED5000406B9 /* TestViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +252,7 @@
 		8C250DB327AB338C00A280B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				88FDA45E28231EC000017275 /* EmployeeRootViewController */,
 				CE3F1EE22820B38200F194AA /* NotificationSettingsViewController */,
 				882783E727EFA3F60096E225 /* AcceptTaskViewController */,
 				CE3B407E280F5C2800F299A0 /* AccountSettingsViewController */,
@@ -756,6 +767,7 @@
 				8C224DA627BB15B100E486C7 /* PublicProfileViewController.swift in Sources */,
 				CEF81B3627E3286700CE0340 /* SupportUsViewController.swift in Sources */,
 				CE0555C527BF0DC700877325 /* EmployeeExplorePageViewController.swift in Sources */,
+				88FDA46028231EE900017275 /* EmployeeRootViewController.swift in Sources */,
 				CE65BE7127CEFE4A00BD09FB /* FAQViewController.swift in Sources */,
 				CE10019027CD6171007767AC /* HelpViewController.swift in Sources */,
 				BA99A0FD2808014D00BCE55E /* RateUserViewController.swift in Sources */,
