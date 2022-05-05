@@ -235,10 +235,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5m-Kx-boj" userLabel="CityBox">
-                                            <rect key="frame" x="18.999999999999993" y="111" width="114.33333333333331" height="67"/>
+                                            <rect key="frame" x="18.999999999999993" y="111" width="102.33333333333331" height="67"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="city" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LEG-Zu-zjZ">
-                                                    <rect key="frame" x="0.0" y="25" width="114.33333333333333" height="34"/>
+                                                    <rect key="frame" x="0.0" y="25" width="102.33333333333333" height="34"/>
                                                     <attributedString key="attributedText"/>
                                                     <textInputTraits key="textInputTraits" textContentType="address-level1"/>
                                                     <connections>
@@ -246,9 +246,9 @@
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUx-b2-4cJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="28" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="21"/>
                                                     <attributedString key="attributedText">
-                                                        <fragment content="city">
+                                                        <fragment content="* city">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.26981314432989689" green="0.26981314432989689" blue="0.26981314432989689" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" metaFont="system" size="17"/>
@@ -270,7 +270,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqC-pl-8Cl" userLabel="ZipBox">
-                                            <rect key="frame" x="142.33333333333334" y="111" width="116.66666666666666" height="67"/>
+                                            <rect key="frame" x="130.33333333333334" y="111" width="116.66666666666666" height="67"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="zip" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGN-yu-hC6">
                                                     <rect key="frame" x="0.0" y="25" width="116.66666666666667" height="34"/>
@@ -305,10 +305,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbi-1H-u5b" userLabel="StateBox">
-                                            <rect key="frame" x="267" y="110" width="115" height="79"/>
+                                            <rect key="frame" x="255" y="110" width="127" height="79"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="state" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkG-3q-Bos">
-                                                    <rect key="frame" x="0.0" y="25" width="105" height="34"/>
+                                                    <rect key="frame" x="0.0" y="25" width="117" height="34"/>
                                                     <attributedString key="attributedText"/>
                                                     <textInputTraits key="textInputTraits" textContentType="address-level1"/>
                                                     <connections>
@@ -316,9 +316,9 @@
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dC-zX-qmN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="38" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="21"/>
                                                     <attributedString key="attributedText">
-                                                        <fragment content="state">
+                                                        <fragment content="* state">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.41176399590000001" green="0.43529450889999999" blue="0.47450906040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" metaFont="system" size="17"/>
@@ -438,7 +438,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHV-so-Dlg">
                                             <rect key="frame" x="20" y="342" width="303" height="63"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="optional" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQg-F2-AgO">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Required" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQg-F2-AgO">
                                                     <rect key="frame" x="8" y="37" width="280" height="34"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -447,7 +447,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0H-cM-amO">
                                                     <rect key="frame" x="8" y="8" width="303" height="21"/>
                                                     <attributedString key="attributedText">
-                                                        <fragment content="provide one word &quot;skills&quot; (keywords)">
+                                                        <fragment content="* provide one word &quot;skills&quot; (keywords)">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.411719799" green="0.43532106279999999" blue="0.47444945570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" metaFont="system" size="17"/>
@@ -509,6 +509,14 @@
                                                 <constraint firstItem="fCD-Hf-eny" firstAttribute="leading" secondItem="dOA-hk-Sle" secondAttribute="trailing" constant="8" symbolic="YES" id="wYx-K6-mEt"/>
                                             </constraints>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9t-AA-8Dy" userLabel="picButton">
+                                            <rect key="frame" x="20" y="17" width="78.333333333333329" height="68.666666666666671"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain"/>
+                                            <connections>
+                                                <action selector="picButtonPressed:" destination="-1" eventType="touchUpInside" id="9ei-rH-XfY"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -516,11 +524,15 @@
                                         <constraint firstItem="tEE-3P-JbL" firstAttribute="top" secondItem="TAl-jq-vxT" secondAttribute="bottom" constant="8.0000000000000284" id="7Bu-w7-xeR"/>
                                         <constraint firstAttribute="trailing" secondItem="jHV-so-Dlg" secondAttribute="trailing" constant="67" id="9Bv-vf-nAZ"/>
                                         <constraint firstItem="nql-GC-vNL" firstAttribute="top" secondItem="h93-SP-aOp" secondAttribute="bottom" constant="59.666666666666629" id="9nb-L1-Mz8"/>
+                                        <constraint firstItem="O9t-AA-8Dy" firstAttribute="top" secondItem="TAl-jq-vxT" secondAttribute="top" id="CB0-na-tJg"/>
                                         <constraint firstItem="o6y-jr-hWj" firstAttribute="top" secondItem="nql-GC-vNL" secondAttribute="bottom" constant="8" symbolic="YES" id="DS2-uV-U2i"/>
+                                        <constraint firstItem="O9t-AA-8Dy" firstAttribute="trailing" secondItem="TAl-jq-vxT" secondAttribute="trailing" id="Drh-We-svG"/>
+                                        <constraint firstItem="O9t-AA-8Dy" firstAttribute="bottom" secondItem="TAl-jq-vxT" secondAttribute="bottom" id="Jz4-J2-4Bf"/>
                                         <constraint firstAttribute="trailing" secondItem="nql-GC-vNL" secondAttribute="trailing" constant="47" id="KDA-hx-M6v"/>
                                         <constraint firstItem="nql-GC-vNL" firstAttribute="top" secondItem="tEE-3P-JbL" secondAttribute="bottom" constant="5" id="Kq0-YC-D02"/>
                                         <constraint firstItem="TAl-jq-vxT" firstAttribute="leading" secondItem="ccZ-fg-Uqc" secondAttribute="leading" constant="19.999999999999996" id="PeF-u8-2S4"/>
                                         <constraint firstItem="tEE-3P-JbL" firstAttribute="leading" secondItem="nql-GC-vNL" secondAttribute="leading" id="QkJ-qi-GNL"/>
+                                        <constraint firstItem="O9t-AA-8Dy" firstAttribute="leading" secondItem="TAl-jq-vxT" secondAttribute="leading" id="S6X-Fd-Ssy"/>
                                         <constraint firstAttribute="bottom" secondItem="jHV-so-Dlg" secondAttribute="bottom" constant="37" id="URk-aB-BVB"/>
                                         <constraint firstItem="jHV-so-Dlg" firstAttribute="top" secondItem="o6y-jr-hWj" secondAttribute="bottom" constant="21" id="WoM-cE-HVe"/>
                                         <constraint firstItem="TAl-jq-vxT" firstAttribute="top" secondItem="ccZ-fg-Uqc" secondAttribute="top" constant="16.999999999999964" id="WvG-G2-hmV"/>
