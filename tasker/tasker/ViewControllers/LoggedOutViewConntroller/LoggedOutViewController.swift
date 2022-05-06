@@ -2,7 +2,7 @@
 //  LoggedOutViewController.swift
 //  tasker
 //
-//  Created by Kevin Babou on 2/2/22.
+//  Created by Amir Hammoud on 2/2/22.
 //
 
 //note: this should be the root view controller
@@ -22,7 +22,7 @@ class LoggedOutViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    // Check for auth status some where
+    // Check for auth status.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -39,19 +39,20 @@ class LoggedOutViewController: UIViewController {
         }
     }
 
-    // Remove the listener once it's no longer needed
+    // Remove the listener once it's no longer needed.
     deinit {
         if let listener = authListener {
             Auth.auth().removeStateDidChangeListener(authListener as! NSObjectProtocol)
         }
     }
 
-    
+    // Segue to login view controller when the login button is pressed.
     @IBAction func loginPressed(_ sender: Any) {
         let loginVC = LoginViewController()
         present(loginVC, animated: true, completion: nil)
     }
     
+    // Segue to registration view controller when the register button is pressed.
     @IBAction func registerPressed(_ sender: Any) {
         let registerStep1VC = RegistrationStep1ViewController()
         present(registerStep1VC, animated: true, completion: nil)

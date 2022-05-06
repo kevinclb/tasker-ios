@@ -30,14 +30,11 @@ class SetupPageViewController: UIViewController {
     @IBOutlet weak var bioTextField: UITextField!
     @IBOutlet weak var yourNameTextLabel: UILabel!
     
-    
-    
     var fromThirdParty: Bool!
     var givenName: String!
     var familyName: String!
     var imagePicker:UIImagePickerController!
     var picTemp = ""
-
 
     @IBOutlet weak var avatarImage: UIImageView!
     
@@ -87,7 +84,7 @@ class SetupPageViewController: UIViewController {
         avatarImage.clipsToBounds = true
     }
     
-    
+    // Setters & getters for data received from registration step 1.
     func setEmail(email: String) {
         self.email = email
     }
@@ -124,8 +121,6 @@ class SetupPageViewController: UIViewController {
         
     }
     
-    
-    
     func validateFields() -> String? {
         
         // Checking if all fields are filled in.
@@ -139,8 +134,6 @@ class SetupPageViewController: UIViewController {
             
             return "Please fill in all required fields."
         }
-        
-        // TODO: Checking if their date of birth is valid
         
         let cleanedDateOfBirth = dateOfBirthTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedZipCode = zipCodeTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -165,7 +158,7 @@ class SetupPageViewController: UIViewController {
         self.resignFirstResponder()
     }
     
-    
+    // Function for when the continue button is pressed.
     @IBAction func continuePressed(_ sender: Any) {
         
         // Validate fields
@@ -195,17 +188,18 @@ class SetupPageViewController: UIViewController {
             
             // Check to see if this is a standard registration or Google registration
             if password != "" {
-                // Regular Registration
+                
+                // Standard registration.
                 Auth.auth().createUser(withEmail: getEmail(), password: getPassword()) { (result, err) in
                     
-                    // Check for errors
+                    // Checking for errors.
                     if err != nil{
                         let errMessage = "Error creating user: " + err!.localizedDescription
                         Utilities.showError(message: errMessage, errorLabel: self.errorLabel)
                         
                     }
                     else {
-                        // User was created successfully, now store the data
+                        // User was created successfully, now store the data.
                         let userID = result!.user.uid
                         guard let image = self.avatarImage.image else {return}
                         if(!image.isSymbolImage){
@@ -242,7 +236,7 @@ class SetupPageViewController: UIViewController {
                 }
             }
             else{
-                // Registering with third party (Google or Facebook)
+                // Registering with third party (Google or Facebook).
                 Auth.auth().signIn(with: self.credentials!) { result, err in
                     
                     // Check for errors
@@ -251,6 +245,7 @@ class SetupPageViewController: UIViewController {
                     }
                     
                     else {
+                        
                         // User was created successfully, now store the data
                         let userID = result!.user.uid
                         guard let image = self.avatarImage.image else {return}

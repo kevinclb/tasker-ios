@@ -12,16 +12,13 @@ class RateUserViewController: UIViewController {
     
     @IBOutlet weak var category1Label: UILabel!
     @IBOutlet var category1StarButtons: [UIButton]!
-    
     @IBOutlet weak var category2Label: UILabel!
     @IBOutlet var category2StarButtons: [UIButton]!
-    
     @IBOutlet weak var category3Label: UILabel!
     @IBOutlet var category3StarButtons: [UIButton]!
-    
     @IBOutlet weak var completeButton: UIButton!
-    
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var category1Rating: Int = 0
     var category2Rating: Int = 0
@@ -40,6 +37,7 @@ class RateUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Based on what data is passed in (and what type of user we are rating) retrieve the user's current data for their rating.
         if(clientID != "") {
             retriveClientRatings(clientID: clientID)
         }
@@ -48,6 +46,7 @@ class RateUserViewController: UIViewController {
         }
     }
     
+    // Setters for data passed in to the rate view controller.
     func setEmployeeID(employeeID: String) {
         self.employeeID = employeeID
     }
@@ -60,6 +59,7 @@ class RateUserViewController: UIViewController {
         self.docID = docID
     }
     
+    // Function to retrive an employee's current rating data.
     func retriveEmployeeRatings(employeeID: String) {
         
         let db = Firestore.firestore()
@@ -83,6 +83,7 @@ class RateUserViewController: UIViewController {
         }
     }
     
+    // Function to retrive a client's current rating data.
     func retriveClientRatings(clientID: String) {
         
         let db = Firestore.firestore()
@@ -106,6 +107,7 @@ class RateUserViewController: UIViewController {
         }
     }
     
+    // Function that animates a 5 star rating for the first category and sets the numeric value (1-5) based on what star the user selects.
     @IBAction func category1StarButtonTapped(_ sender: UIButton) {
         
         let tag = sender.tag
@@ -122,6 +124,7 @@ class RateUserViewController: UIViewController {
         }
     }
     
+    // Function that animates a 5 star rating for the second category and sets the numeric value (1-5) based on what star the user selects.
     @IBAction func category2StarButtonTapped(_ sender: UIButton) {
         
         let tag = sender.tag
@@ -138,6 +141,7 @@ class RateUserViewController: UIViewController {
         }
     }
     
+    // Function that animates a 5 star rating for the third category and sets the numeric value (1-5) based on what star the user selects.
     @IBAction func category3StarButtonTapped(_ sender: UIButton) {
         
         let tag = sender.tag
@@ -154,6 +158,17 @@ class RateUserViewController: UIViewController {
         }
     }
     
+    func validateFields() -> String? {
+        
+        // Prompting the user to select rating if any are left blank.
+        if ((category1Rating == 0) || (category2Rating == 0) || category3Rating == 0) {
+            
+            return "You've left a category unrated."
+        }
+        
+        return nil
+    }
+    
     @IBAction func completeButtonTapped(_ sender: Any) {
         
         // Calculating the overall rating based on the stars pressed.
@@ -165,31 +180,40 @@ class RateUserViewController: UIViewController {
         let roundedRating = round(newUserRating * 100) / 100.0
 
         
-        // Update values to database
-        let db = Firestore.firestore()
-        if(clientID != ""){
-            db.collection("users").document(clientID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
-            db.collection("tasks").document(docID).setData(["clientRated": true], merge: true)
+        let error = validateFields()
+        
+        if error != nil {
+            // There was something wrong with the rating, show error message
+            Utilities.showError(message: error!, errorLabel: self.errorLabel)
         }
         else {
-            db.collection("users").document(employeeID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
-            db.collection("tasks").document(docID).setData(["employeeRated": true], merge: true)
+            // Update values to database
+            let db = Firestore.firestore()
+            if(clientID != ""){
+                db.collection("users").document(clientID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
+                db.collection("tasks").document(docID).setData(["clientRated": true], merge: true)
+            }
+            else {
+                db.collection("users").document(employeeID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
+                db.collection("tasks").document(docID).setData(["employeeRated": true], merge: true)
+            }
+            
+            // Transition back to recent tasks view
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.type = CATransitionType.push
+            transition.subtype = .fromLeft
+            transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+            view.window!.layer.add(transition, forKey: kCATransition)
+            // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
+            let recentTasksVC = RecentTasksTableViewController()
+            recentTasksVC.modalPresentationStyle = .fullScreen
+            // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
+            present(recentTasksVC, animated: false, completion: nil)
         }
-        
-        // Transition back to recent tasks view
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = CATransitionType.push
-        transition.subtype = .fromLeft
-        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        view.window!.layer.add(transition, forKey: kCATransition)
-        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
-        let recentTasksVC = RecentTasksTableViewController()
-        recentTasksVC.modalPresentationStyle = .fullScreen
-        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
-        present(recentTasksVC, animated: false, completion: nil)
     }
     
+    // Function to go back to the recent tasks page in case the user doesn't want to leave a rating yet.
     @IBAction func backButtonTapped(_ sender: Any) {
         
         // This code here is to present from right to left instead of bottom to top

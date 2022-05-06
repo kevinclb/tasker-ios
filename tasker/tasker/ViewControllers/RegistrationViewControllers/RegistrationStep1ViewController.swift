@@ -13,27 +13,17 @@ import FBSDKLoginKit
 class RegistrationStep1ViewController: UIViewController {
     
     @IBOutlet weak var emailAddressLabel: UILabel!
-    
     @IBOutlet weak var emailAddressTextField: UITextField!
-    
     @IBOutlet weak var passwordLabel: UILabel!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var confirmPasswordLabel: UILabel!
-    
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-    
     @IBOutlet weak var continueButton: UIButton!
-    
     @IBOutlet weak var errorLabel: UILabel!
-    
     @IBOutlet weak var registerWithGoogleButton: UIButton!
-    
     @IBOutlet weak var registerWithFacebookButton: UIButton!
     
     var email: String = ""
-    
     var password: String = ""
     
     override func viewDidLoad() {
@@ -44,9 +34,10 @@ class RegistrationStep1ViewController: UIViewController {
     @IBAction func dismissKeyboard(_ sender: Any) {
         self.resignFirstResponder()
     }
+    
     func validateFields() -> String? {
         
-        // Checking if all fields are filled in.
+        // Prompting the user to fill in all text fields if any are left blank.
         if emailAddressTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             confirmPasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
@@ -80,7 +71,7 @@ class RegistrationStep1ViewController: UIViewController {
         return nil
     }
     
-    
+    // Function for when the continue button is tapped.
     @IBAction func continueTapped(_ sender: Any) {
         
         let error = validateFields()
@@ -94,7 +85,7 @@ class RegistrationStep1ViewController: UIViewController {
             self.email = emailAddressTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             self.password = confirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            // Segue to step 2 of the registration process
+            // Segueing and sending data to the setup page view controller.
             let setupPageVC = SetupPageViewController()
             self.present(setupPageVC, animated: true, completion: {
                 setupPageVC.setEmail(email: self.email);
@@ -103,6 +94,7 @@ class RegistrationStep1ViewController: UIViewController {
         }
     }
     
+    // Function for when the register with Google button is tapped.
     @IBAction func registerWithGoogleTapped(_ sender: Any) {
         
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
@@ -145,6 +137,7 @@ class RegistrationStep1ViewController: UIViewController {
                     // New user, have them fill out additional info, transfer data and segue to setup view
                     let setupPageVC = SetupPageViewController(fromThirdParty: true, givenName: user?.profile?.givenName! ?? "", familyName: user?.profile?.familyName! ?? "")
 
+                    // Segueing and sending data to the setup page view controller.
                     self.present(setupPageVC, animated: true, completion: nil)
                     setupPageVC.firstNameTextField.text = user?.profile?.givenName
                     setupPageVC.lastNameTextField.text = user?.profile?.familyName
@@ -171,6 +164,7 @@ class RegistrationStep1ViewController: UIViewController {
         }
     }
     
+    // Function for when the register with Facebook button is tapped.
     @IBAction func registerWithFacebookTapped(_ sender: Any) {
 
         // Start the Facebook sign in flow.
@@ -215,6 +209,7 @@ class RegistrationStep1ViewController: UIViewController {
                         fromThirdParty: true, givenName: data["first_name"] as? String,
                         familyName: data["last_name"] as? String)
 
+                      // Segueing and sending data to the setup page view controller.
                       self.present(setupPageVC, animated: true, completion: nil)
                       setupPageVC.firstNameTextField.text = data["first_name"] as? String
                       setupPageVC.lastNameTextField.text = data["last_name"] as? String
@@ -246,7 +241,7 @@ class RegistrationStep1ViewController: UIViewController {
 
     
     func segueToHomeVC() {
-        // Segue to home explore page and programatically change root view controller to home explore page
+        // Segue to home explore page and programatically
         
         let homePageVC = HomeExplorePageViewController()
 
