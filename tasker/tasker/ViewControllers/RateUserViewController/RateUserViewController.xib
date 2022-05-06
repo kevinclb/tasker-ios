@@ -269,7 +269,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeB-Sp-5B9">
                             <rect key="frame" x="0.0" y="530.5" width="350" height="60"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="Complete Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="complete button"/>
                             <connections>
                                 <action selector="completeButtonTapped:" destination="-1" eventType="touchUpInside" id="spW-VH-t72"/>
                             </connections>
@@ -290,8 +290,8 @@
         </view>
     </objects>
     <resources>
-        <image name="Complete Button" width="308" height="46"/>
         <image name="back arrow" width="20" height="20"/>
+        <image name="complete button" width="308" height="46"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
