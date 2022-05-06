@@ -171,9 +171,9 @@ extension RecentTasksTableViewController: RecentTaskTableViewCellDelegate {
         // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
         let rateVC = RateUserViewController()
         rateVC.setEmployeeID(employeeID: (recentTaskCell.task?.employeeID)!)
-        rateVC.setDocID(docID: (recentTaskCell.task?.docID)!)
+        rateVC.setTaskID(taskID: (recentTaskCell.task?.taskID)!)
         print("EMPLOYEE ID: ", (recentTaskCell.task?.employeeID)!)
-        print("DOC ID: ", (recentTaskCell.task?.docID)!)
+        print("TASK ID: ", (recentTaskCell.task?.taskID)!)
         rateVC.modalPresentationStyle = .fullScreen
         // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
         present(rateVC, animated: false, completion: nil)
@@ -190,8 +190,8 @@ extension RecentTasksTableViewController: RecentTaskTableViewCellDelegate {
         view.window!.layer.add(transition, forKey: kCATransition)
         // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
         let payVC = PaidMechanismViewController()
-        payVC.setDocID(docID: (recentTaskCell.task?.docID)!)
-        print("DOC ID: ", (recentTaskCell.task?.docID)!)
+        payVC.setTaskID(taskID: (recentTaskCell.task?.taskID)!)
+        print("TASK ID: ", (recentTaskCell.task?.taskID)!)
         payVC.modalPresentationStyle = .fullScreen
         present(payVC, animated: false, completion: nil)
     }

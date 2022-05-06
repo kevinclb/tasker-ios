@@ -13,7 +13,7 @@ import Firebase
 class Errand: Codable {
     
     @DocumentID var docID: String?
-    var title, category, taskDescription: String
+    var taskID, title, category, taskDescription: String
     var price: Double?
     var negotiable, isCompleted, hasPaid, employeeRated, clientRated: Bool?
     var location: Address?
@@ -27,7 +27,8 @@ class Errand: Codable {
 //        case taskDescription = "description"
 //    }
 //
-    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?, location: Address, negotiable: Bool, price: Double) {
+    init(taskID: String, title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?, location: Address, negotiable: Bool, price: Double) {
+        self.taskID = taskID
         self.title = title
         self.category = category
         self.taskDescription = taskDescription
@@ -42,7 +43,8 @@ class Errand: Codable {
     }
     
     
-    init(title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?) {
+    init(taskID: String, title: String, category: String, taskDescription: String, employeeID: String, isCompleted: Bool?, hasPaid: Bool?, employeeRated: Bool?, clientRated: Bool?) {
+        self.taskID = taskID
         self.title = title
         self.category = category
         self.taskDescription = taskDescription

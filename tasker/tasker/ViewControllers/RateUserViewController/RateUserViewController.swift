@@ -34,7 +34,7 @@ class RateUserViewController: UIViewController {
     var newUserRating: Double = 0
     private var employeeID: String = ""
     private var clientID: String = ""
-    private var docID: String = ""
+    private var taskID: String = ""
     
     
     override func viewDidLoad() {
@@ -56,8 +56,8 @@ class RateUserViewController: UIViewController {
         self.clientID = clientID
     }
     
-    func setDocID(docID: String) {
-        self.docID = docID
+    func setTaskID(taskID: String) {
+        self.taskID = taskID
     }
     
     func retriveEmployeeRatings(employeeID: String) {
@@ -169,11 +169,11 @@ class RateUserViewController: UIViewController {
         let db = Firestore.firestore()
         if(clientID != ""){
             db.collection("users").document(clientID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
-            db.collection("tasks").document(docID).setData(["clientRated": true], merge: true)
+            db.collection("tasks").document(taskID).setData(["clientRated": true], merge: true)
         }
         else {
             db.collection("users").document(employeeID).setData(["num_ratings": (numOfRatings + 1), "rating": roundedRating], merge: true)
-            db.collection("tasks").document(docID).setData(["employeeRated": true], merge: true)
+            db.collection("tasks").document(taskID).setData(["employeeRated": true], merge: true)
         }
         
         // Transition back to recent tasks view
