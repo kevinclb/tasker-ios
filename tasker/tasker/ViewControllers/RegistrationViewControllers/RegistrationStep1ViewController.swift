@@ -248,5 +248,4 @@ class RegistrationStep1ViewController: UIViewController {
         homePageVC.modalPresentationStyle = .fullScreen
         self.present(homePageVC, animated: true, completion: nil)
     }
-    
 }
