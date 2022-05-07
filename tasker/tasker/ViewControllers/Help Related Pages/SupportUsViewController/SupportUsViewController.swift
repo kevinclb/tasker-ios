@@ -16,6 +16,7 @@ class SupportUsViewController: UIViewController {
     }
     
     @IBAction func contactUsTapped(_ sender: Any) {
+        // when user wants to get in touch we'll load the contact us view controller
         let vc = ContactUsViewController()
         present(vc, animated: true, completion: nil)
     }

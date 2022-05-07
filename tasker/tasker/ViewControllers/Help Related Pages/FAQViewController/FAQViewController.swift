@@ -37,6 +37,9 @@ class FAQViewController: UIViewController {
     }
 
 
+    // The following ib action functions are for expanding and collapsing the answers
+    
+    
     @IBAction func whatsTaskerClicked(_ sender: UIButton) {
         if(!whtTskr){
             whatsTasker.text = taskerAns

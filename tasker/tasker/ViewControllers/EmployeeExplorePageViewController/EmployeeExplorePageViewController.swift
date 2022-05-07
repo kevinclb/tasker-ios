@@ -52,7 +52,8 @@ class EmployeeExplorePageViewController: UIViewController {
         menuScrollView.showsVerticalScrollIndicator = false
         menuScrollView.showsHorizontalScrollIndicator = false
         
-        // for profile pictures
+        // for profile pictures, the one on the menu and the one on the main page
+        // We want to show them rounded instead of rectangle
         self.profilePic.layer.borderWidth = 1.0
         self.profilePic.layer.masksToBounds = false
         self.profilePic.layer.borderColor = UIColor.white.cgColor
@@ -64,6 +65,7 @@ class EmployeeExplorePageViewController: UIViewController {
         self.menuProfilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2
         self.menuProfilePic.clipsToBounds = true
 
+        // This is for the user to be able to swipe left to close the menu
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
         leftSwipe.direction = .left
         view.addGestureRecognizer(leftSwipe)
@@ -200,12 +202,14 @@ class EmployeeExplorePageViewController: UIViewController {
         }
     }
     
+    // function which will hide/show the menu
     func setView(view: UIScrollView, hidden: Bool) {
         UIScrollView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
             view.isHidden = hidden
         })
     }
     
+    // function to handle swiping left on the menu to close it
     @objc func handleSwipe(sender: UISwipeGestureRecognizer){
         if sender.state == .ended {
             if(sender.direction == .left){
@@ -383,7 +387,5 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
     }
         
     }
-    
-    //fixing an issue
     
 }

@@ -36,6 +36,11 @@ class HelpViewController: UIViewController {
         
     }
     
+    
+    
+    // The following ib action functions are for expanding and collapsing the answers
+    
+    
     @IBAction func abtAppTapped(_ sender: UIButton) {
         if(!abtApp){
             abtAppAns.text = abtAnswer
@@ -147,6 +152,8 @@ class HelpViewController: UIViewController {
         }
         pmntRcvdAns.numberOfLines = 0
     }
+    
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         // this code here is to present from right to left instead of bottom to top
         let transition = CATransition()

@@ -267,6 +267,7 @@ class EditProfileViewController: UIViewController {
         }
     }
     
+    // function to update user information
     func updateUserInfo(fname:String, lname:String, dateb:String, city:String, country:String, street:String, state:String, zip:Int, bio:String, skills:String, phone:String, linkToImg:String){
         let db = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {return}
@@ -398,6 +399,8 @@ extension EditProfileViewController:UIImagePickerControllerDelegate, UINavigatio
     
 }
 
+
+// class to handle updating the profile picture to the storage
 class StorageManagager {
 
 
