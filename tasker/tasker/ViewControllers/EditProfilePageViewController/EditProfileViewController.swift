@@ -311,6 +311,7 @@ class EditProfileViewController: UIViewController {
             dob.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             city.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             state.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            skills.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             zipCode.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
             return "Please fill in all required fields."
