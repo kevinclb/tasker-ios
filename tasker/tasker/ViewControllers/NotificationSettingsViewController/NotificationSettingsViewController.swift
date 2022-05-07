@@ -18,6 +18,7 @@ class NotificationSettingsViewController: UIViewController {
         guard let userID = Auth.auth().currentUser?.uid else {return}
         let docRef = db.collection("users").document(userID)
 
+        // check the notification variable for the user in the database so we know how to initialize the toggle, in the on or off position
         docRef.getDocument(source: .cache) { (document, error) in
             if let document = document {
                 let data = document.data()

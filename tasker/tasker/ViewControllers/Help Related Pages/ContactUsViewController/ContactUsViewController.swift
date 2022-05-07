@@ -42,14 +42,17 @@ class ContactUsViewController: UIViewController, MFMailComposeViewControllerDele
         let messageBody = message.text!
         let emailField = email.text!
         let subjectField = subject.text!
+        // Check the fields to ensure none were empty
         if(messageBody.isEmpty || emailField.isEmpty || subjectField.isEmpty){
             errorLabel.text = "One or more fields is empty, please make sure all fields are filled"
             return
         }
         Utilities.showError(message: "", errorLabel: errorLabel)
+        // This is the support email for the developer team which the message will be sent to
         let toRecipients = ["taskersup@gmail.com"]
         let userID : String = (Auth.auth().currentUser?.uid)!
         var name : String = ""
+        // Get information about the user to include it in the body of the email
         db.collection("users").document(userID).getDocument { (snapshot, error) in
                     if error != nil {
                         print(error ?? "An error occured")
@@ -68,6 +71,7 @@ class ContactUsViewController: UIViewController, MFMailComposeViewControllerDele
                         }
                     }
         }
+        // This is the view controller which will be used from the mail app to send a message to development team, we initialize and populate it then present it
         let mc:MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self
         mc.setToRecipients(toRecipients)
