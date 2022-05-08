@@ -30,12 +30,12 @@ class SetupPageViewController: UIViewController {
     @IBOutlet weak var bioTextField: UITextField!
     @IBOutlet weak var yourNameTextLabel: UILabel!
     
-    
-    
     var fromThirdParty: Bool!
     var givenName: String!
     var familyName: String!
-    
+    var imagePicker:UIImagePickerController!
+    var picTemp = ""
+
     @IBOutlet weak var avatarImage: UIImageView!
     
     var name = ["Your", "Name"]
@@ -74,9 +74,17 @@ class SetupPageViewController: UIViewController {
         if fromThirdParty {
             yourNameTextLabel.text = self.givenName + " " + self.familyName
         }
+        
+        // This is for the image stuff
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        avatarImage.layer.cornerRadius = avatarImage.bounds.height / 2
+        avatarImage.clipsToBounds = true
     }
     
-    
+    // Setters & getters for data received from registration step 1.
     func setEmail(email: String) {
         self.email = email
     }
@@ -113,20 +121,19 @@ class SetupPageViewController: UIViewController {
         
     }
     
-    
-    
     func validateFields() -> String? {
         
         // Checking if all fields are filled in.
         if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             dateOfBirthTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            cityTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            stateTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            skillsTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             zipCodeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
             return "Please fill in all required fields."
         }
-        
-        // TODO: Checking if their date of birth is valid
         
         let cleanedDateOfBirth = dateOfBirthTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedZipCode = zipCodeTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -151,7 +158,7 @@ class SetupPageViewController: UIViewController {
         self.resignFirstResponder()
     }
     
-    
+    // Function for when the continue button is pressed.
     @IBAction func continuePressed(_ sender: Any) {
         
         // Validate fields
@@ -181,27 +188,55 @@ class SetupPageViewController: UIViewController {
             
             // Check to see if this is a standard registration or Google registration
             if password != "" {
-                // Regular Registration
+                
+                // Standard registration.
                 Auth.auth().createUser(withEmail: getEmail(), password: getPassword()) { (result, err) in
                     
-                    // Check for errors
+                    // Checking for errors.
                     if err != nil{
                         let errMessage = "Error creating user: " + err!.localizedDescription
                         Utilities.showError(message: errMessage, errorLabel: self.errorLabel)
                         
                     }
                     else {
-                        // User was created successfully, now store the data
+                        // User was created successfully, now store the data.
                         let userID = result!.user.uid
-                        self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
-                        // Direct to home view
-                        self.segueToHomeVC()
+                        guard let image = self.avatarImage.image else {return}
+                        if(!image.isSymbolImage){
+                            guard let image = self.avatarImage.image else {return}
+                            guard let imageData = image.jpegData(compressionQuality: 0.75)else {return}
+                            
+                            let storageRef = Storage.storage().reference(forURL: "gs://developmentenvironment-224c8.appspot.com")
+                            
+                            let storageRefer = storageRef.child("UserPictures")
+                            
+                            let metaData = StorageMetadata()
+                            metaData.contentType = "image/jpg"
+                            
+                            storageRefer.child(userID).putData(imageData, metadata: metaData) { metaData, error in
+                                // first we check if the error is nil
+                                if let error = error {
+                                    return
+                                }
+                                // then we check if the metadata and path exists
+                                // if the error was nil, we expect the metadata and path to exist
+                                // therefore if not, we return an error
+                                guard let metadata = metaData, let _ = metadata.path else {
+                                    return
+                                }
+                                self.picTemp = userID
+                                self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
+                            }
+                        }
+                        else{
+                            self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
+                        }
                     }
                     
                 }
             }
             else{
-                // Registering with third party (Google or Facebook)
+                // Registering with third party (Google or Facebook).
                 Auth.auth().signIn(with: self.credentials!) { result, err in
                     
                     // Check for errors
@@ -210,12 +245,39 @@ class SetupPageViewController: UIViewController {
                     }
                     
                     else {
+                        
                         // User was created successfully, now store the data
                         let userID = result!.user.uid
-                        self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
-                        // Direct to home view
-                        self.segueToHomeVC()
-                        
+                        guard let image = self.avatarImage.image else {return}
+                        if(!image.isSymbolImage){
+                            guard let image = self.avatarImage.image else {return}
+                            guard let imageData = image.jpegData(compressionQuality: 0.75)else {return}
+                            
+                            let storageRef = Storage.storage().reference(forURL: "gs://developmentenvironment-224c8.appspot.com")
+                            
+                            let storageRefer = storageRef.child("UserPictures")
+                            
+                            let metaData = StorageMetadata()
+                            metaData.contentType = "image/jpg"
+                            
+                            storageRefer.child(userID).putData(imageData, metadata: metaData) { metaData, error in
+                                // first we check if the error is nil
+                                if let error = error {
+                                    return
+                                }
+                                // then we check if the metadata and path exists
+                                // if the error was nil, we expect the metadata and path to exist
+                                // therefore if not, we return an error
+                                guard let metadata = metaData, let _ = metadata.path else {
+                                    return
+                                }
+                                self.picTemp = userID
+                                self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
+                            }
+                        }
+                        else{
+                            self.setUserData(userID: userID, firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, city: city, street: street, zipCode: zipCode!, bio: bio, state: state)
+                        }
                         
                     }
                     
@@ -230,6 +292,7 @@ class SetupPageViewController: UIViewController {
     //TODO: Try to implement this function to clean up some code
     func setUserData(userID: String, firstName: String, lastName: String, dateOfBirth: String, city: String, street: String, zipCode: Int, bio: String, state: String) {
         let db = Firestore.firestore()
+        
         
         db.collection("users").document(userID).setData(
             ["firstname": firstName,
@@ -252,7 +315,7 @@ class SetupPageViewController: UIViewController {
              "uid": userID,
              "email": self.getEmail(),
              "gender": "",
-             "profilePicLink":"",
+             "profilePicLink":picTemp,
              "num_ratings": 0,
              "notifications":true
             ]) { (error) in
@@ -263,12 +326,22 @@ class SetupPageViewController: UIViewController {
                     
                 }
             }
+        // Direct to home view
+        self.segueToHomeVC()
+        
+        
     }
+
+    
+    @IBAction func picButtonPressed(_ sender: Any) {
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
     
     func segueToHomeVC() {
         // Segue to home explore page and programatically change root view controller to home explore page
         
-        let homePageVC = HomeExplorePageViewController()
+        let homePageVC = RootViewController()
         
         homePageVC.modalPresentationStyle = .fullScreen
         self.present(homePageVC, animated: true, completion: nil)
@@ -281,4 +354,22 @@ extension SetupPageViewController {
         print("checkBoxPressed")
         self.isEmployee = !self.isEmployee
     }
+}
+
+extension SetupPageViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+            self.avatarImage.image = pickedImage
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
 }

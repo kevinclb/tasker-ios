@@ -14,19 +14,12 @@ import FBSDKLoginKit
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailAddressLabel: UILabel!
-    
     @IBOutlet weak var emailAddressTextField: UITextField!
-    
     @IBOutlet weak var passwordLabel: UILabel!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var continueButton: UIButton!
-    
     @IBOutlet weak var loginWithGoogleButton: UIButton!
- 
     @IBOutlet weak var loginWithFacebookButton: UIButton!
-    
     @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
@@ -37,13 +30,11 @@ class LoginViewController: UIViewController {
         }
         else {
             self.present(LoggedOutViewController(), animated: true, completion: nil)      }
-
-        // Do any additional setup after loading the view.
     }
     
     func validateFields() -> String? {
         
-        // Checking if all fields are filled in.
+        // Prompting the user to fill in all text fields if any are left blank.
         if emailAddressTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
@@ -52,18 +43,9 @@ class LoginViewController: UIViewController {
         
         return nil
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
+    
+    // Function for when the continue button is tapped
     @IBAction func continueTapped(_ sender: Any) {
         
         // Validate fields
@@ -93,6 +75,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // Function for when the login with Google button is tapped.
     @IBAction func loginWithGoogleTapped(_ sender: Any) {
         
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
@@ -134,7 +117,8 @@ class LoginViewController: UIViewController {
                     
                     // New user, have them fill out additional info, transfer data and segue to setup view
                     let setupPageVC = SetupPageViewController(fromThirdParty: true, givenName: user?.profile?.givenName! ?? "", familyName: user?.profile?.familyName! ?? "")
-
+                    
+                    // Segueing and sending data to the setup page view controller.
                     self.present(setupPageVC, animated: true, completion: nil)
                     setupPageVC.firstNameTextField.text = user?.profile?.givenName
                     setupPageVC.lastNameTextField.text = user?.profile?.familyName
@@ -143,7 +127,7 @@ class LoginViewController: UIViewController {
                    
                     let user = Auth.auth().currentUser
 
-                    // Delete user from database if they do not complete the setup page
+                    // Delete user from database if they do not complete the setup page.
                     user?.delete { error in
                       if let err = err {
                           Utilities.showError(message: err.localizedDescription, errorLabel: self.errorLabel)
@@ -161,6 +145,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // Function for when the login with Facebook button is tapped.
     @IBAction func loginWithFacebookTapped(_ sender: Any) {
         
         // Start the Facebook sign in flow.
@@ -204,7 +189,8 @@ class LoginViewController: UIViewController {
                       let setupPageVC = SetupPageViewController(
                         fromThirdParty: true, givenName: data["first_name"] as? String,
                         familyName: data["last_name"] as? String)
-
+                        
+                      // Segueing and sending data to the setup page view controller.
                       self.present(setupPageVC, animated: true, completion: nil)
                       setupPageVC.firstNameTextField.text = data["first_name"] as? String
                       setupPageVC.lastNameTextField.text = data["last_name"] as? String

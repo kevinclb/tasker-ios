@@ -16,6 +16,7 @@ class EmployeeStatusViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // This is to initialize the employee status variable
         let db = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {return}
         db.collection("users").document(userID).getDocument  { snapshot, error in
@@ -32,6 +33,7 @@ class EmployeeStatusViewController: UIViewController {
     }
 
     @IBAction func signUpTapped(_ sender: Any) {
+        // User wants to sign up for an employee profile, we will check if they already have one or not, if they do then nothing happens, if they didn't have one then we make them one
         let db = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {return}
         db.collection("users").document(userID).getDocument  { snapshot, error in
@@ -40,6 +42,7 @@ class EmployeeStatusViewController: UIViewController {
             } else {
                 let employOrNot = snapshot?.get("employee") as! Bool
                 if(employOrNot == false){
+                    // we sign up for an employee profile by just changing the employee variable of the user
                     db.collection("users").document(userID).updateData(["employee":true])
                     self.errorMessage.text = "You have successfully signed up for an employee account."
                     self.employeeStatus.text = "Active"

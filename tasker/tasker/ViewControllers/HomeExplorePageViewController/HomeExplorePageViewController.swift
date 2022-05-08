@@ -66,7 +66,8 @@ class HomeExplorePageViewController: UIViewController {
         menuScroll.showsHorizontalScrollIndicator = false
         
         
-        // for profile pictures
+        // for profile pictures, the one on the menu and the one on the main page
+        // We want to show them rounded instead of rectangle
         self.profPic.layer.borderWidth = 1.0
         self.profPic.layer.masksToBounds = false
         self.profPic.layer.borderColor = UIColor.white.cgColor
@@ -89,7 +90,7 @@ class HomeExplorePageViewController: UIViewController {
         //MARK: searchbar delegate
         searchBar.delegate = self
         
-        //MARK: swipe gesture recognizer
+        //MARK: swipe gesture recognizer to handle closing the menu when user swipes left on it
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
         leftSwipe.direction = .left
         view.addGestureRecognizer(leftSwipe)
@@ -165,12 +166,16 @@ class HomeExplorePageViewController: UIViewController {
         }
         
     }
+    
+    // function which will hide/show the menu
+
     func setView(view: UIScrollView, hidden: Bool) {
         UIScrollView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
             view.isHidden = hidden
         })
     }
     
+    // function to handle swiping left on the menu to close it
     @objc func handleSwipe(sender: UISwipeGestureRecognizer){
         if sender.state == .ended {
             if(sender.direction == .left){
@@ -183,6 +188,8 @@ class HomeExplorePageViewController: UIViewController {
             }
         }
     }
+    
+    // IB Actions for menu buttons
     
     @IBAction func helpCenterTapped(_ sender: Any) {
         navigateTo(newViewController: HelpViewController(), transitionFrom: .fromRight)
