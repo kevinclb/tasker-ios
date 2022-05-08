@@ -32,6 +32,7 @@ class NewMessageViewController: UIViewController {
         super.viewDidLoad()
         var users = [Utilities.getUid(), sendToID]
         usersSorted = users.sorted{$0.localizedCompare($1) == .orderedAscending}
+        print("user 1 " + users[0] + " User 2 " + users[1])
             db.collection("conversations").whereField("user1ID", isEqualTo: usersSorted[0]).whereField("user2ID", isEqualTo: usersSorted[1]).getDocuments() { (querySnapshot, error) in
                 if let querySnapshot = querySnapshot {
                     for document in querySnapshot.documents {
@@ -47,7 +48,7 @@ class NewMessageViewController: UIViewController {
         messageToSend = messageField.text!
         if(docID == "")
         {
-            convo = Conversation(user1ID: users[0], user2ID: users[1], messages: [Message(body: messageToSend, sender: Utilities.getUid())])
+            convo = Conversation(user1ID: usersSorted[0], user2ID: usersSorted[1], messages: [Message(body: messageToSend, sender: Utilities.getUid())])
             do {
                print(try db.collection("conversations").addDocument(from: self.convo.self))
             }catch{

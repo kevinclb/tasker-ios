@@ -331,6 +331,7 @@ extension EmployeeExplorePageViewController : UICollectionViewDelegate, UICollec
             let showTaskVC = AcceptTaskViewController()
         DispatchQueue.main.async {
             showTaskVC.taskClientID = task.clientID!
+            print("Client ID in employee task is  " + task.clientID!)
             showTaskVC.dID = task.docID!
             showTaskVC.lbTitle.text = task.title
             showTaskVC.lbLocation.text = task.location?.city ?? "no city"

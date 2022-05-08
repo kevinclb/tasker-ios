@@ -21,6 +21,7 @@ class AcceptTaskViewController: UIViewController {
     @IBAction func sendMessageClicked(_ sender: Any) {
         let newMessageVC = NewMessageViewController()
         newMessageVC.sendToID = taskClientID
+        print("Client ID  in accept task is  " + taskClientID)
         navigateToListTaskVC(newMessageVC, .fromRight)
     }
     @IBAction func acceptClicked(_ sender: Any) {
