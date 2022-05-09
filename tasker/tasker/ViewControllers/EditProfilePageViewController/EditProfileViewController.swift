@@ -188,6 +188,7 @@ class EditProfileViewController: UIViewController {
             if error != nil {
                 // There was something wrong with the fields, show error message
                 errorMessage.text = error!
+                resignFirstResponder()
             }
             else{
                 errorMessage.text = ""
@@ -239,10 +240,26 @@ class EditProfileViewController: UIViewController {
                 let number = phoneNumber.text!
                 
                 self.updateUserInfo(fname: fname, lname: lname, dateb: dateb, city: cityName, country: countryName, street: streetNum, state: stateName, zip: zip!, bio: bioContent, skills: skillsContent, phone:number, linkToImg: linkToImg)
+                
+                // everything went well, resign text editing, change the image of the button to say edit and set all the fields as uneditable
+                resignFirstResponder()
+                editPressed = false
+                let btnimage = UIImage(named: "viewProfileEditProfile") as UIImage?
+                editOrSaveButton.setImage(btnimage, for: .normal)
+                
+                bioTextfield.isEditable = false
+                skills.isEditable = false
+                firstName.isUserInteractionEnabled = false
+                lastName.isUserInteractionEnabled = false
+                street.isUserInteractionEnabled = false
+                city.isUserInteractionEnabled = false
+                state.isUserInteractionEnabled = false
+                zipCode.isUserInteractionEnabled = false
+                phoneNumber.isUserInteractionEnabled = false
+                dob.isUserInteractionEnabled = false
+                editBioButton.isUserInteractionEnabled = false
+                editSkillsButton.isUserInteractionEnabled = false
             }
-            editPressed = false
-            let image = UIImage(named: "viewProfileEditProfile") as UIImage?
-            editOrSaveButton.setImage(image, for: .normal)
         }
         // User just pressed the edit button to edit
         else{
@@ -311,6 +328,7 @@ class EditProfileViewController: UIViewController {
             dob.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             city.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             state.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            skills.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             zipCode.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
             return "Please fill in all required fields."
