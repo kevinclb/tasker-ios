@@ -4,7 +4,6 @@
 //
 //  Created by Jeffrey Viramontes on 3/31/22.
 //
-
 import UIKit
 import Firebase
 
@@ -32,6 +31,7 @@ class NewMessageViewController: UIViewController {
         super.viewDidLoad()
         var users = [Utilities.getUid(), sendToID]
         usersSorted = users.sorted{$0.localizedCompare($1) == .orderedAscending}
+        print("user 1 " + users[0] + " User 2 " + users[1])
             db.collection("conversations").whereField("user1ID", isEqualTo: usersSorted[0]).whereField("user2ID", isEqualTo: usersSorted[1]).getDocuments() { (querySnapshot, error) in
                 if let querySnapshot = querySnapshot {
                     for document in querySnapshot.documents {
@@ -47,11 +47,9 @@ class NewMessageViewController: UIViewController {
         messageToSend = messageField.text!
         if(docID == "")
         {
-            convo = Conversation(user1ID: users[0], user2ID: users[1], messages: [Message(body: messageToSend, sender: Utilities.getUid())])
+            convo = Conversation(user1ID: usersSorted[0], user2ID: usersSorted[1], messages: [Message(body: messageToSend, sender: Utilities.getUid())])
             do {
                print(try db.collection("conversations").addDocument(from: self.convo.self))
-                let backToMsgsVC = MessagesViewController()
-                navigateToListTaskVC(backToMsgsVC, .fromRight)
             }catch{
                 print("Error adding document")
             }
@@ -61,31 +59,13 @@ class NewMessageViewController: UIViewController {
             let newMessage = ["body": messageToSend, "sender": Utilities.getUid()]
             db.collection("conversations").document(docID).updateData(["messages": FieldValue.arrayUnion([newMessage])])
         }
-    }
-    func navigateToListTaskVC(_ newViewController: UIViewController, _ transitionFrom:CATransitionSubtype) {
+        
         let transition = CATransition()
         transition.duration = 0.5
-        transition.type = CATransitionType.reveal
-        transition.subtype = transitionFrom
+        transition.type = CATransitionType.push
+        transition.subtype = .fromLeft
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         view.window!.layer.add(transition, forKey: kCATransition)
-
-
-        // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
-        let newVC = newViewController
-        newVC.modalPresentationStyle = .fullScreen
-        // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
-        self.present(newVC, animated: false, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
