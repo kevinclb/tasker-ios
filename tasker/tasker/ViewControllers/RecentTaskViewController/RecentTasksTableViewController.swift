@@ -82,7 +82,7 @@ class RecentTasksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recentTaskCell", for: indexPath) as! RecentTaskTableViewCell
         cell.taskNameLabel.text = recentTasks[indexPath.row].taskDescription
-        cell.taskerNameLabel.text = "test name"
+        cell.taskerNameLabel.text = recentTasks[indexPath.row].title
         cell.task = recentTasks[indexPath.row]
         
         // If client has not paid this employee, make button Tasker green and clickable.
