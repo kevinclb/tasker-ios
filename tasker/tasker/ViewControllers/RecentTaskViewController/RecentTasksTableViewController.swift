@@ -20,7 +20,9 @@ class RecentTasksTableViewController: UITableViewController {
         //in a prod app,
         //we would put the user's client ID here instead of searhing by employee ID
         //is user on employee page or on client page?
-        collRef.whereField("employeeID", isEqualTo: "RVJioN7qcdX9G3KCugsNbJMqcJU2").getDocuments { querySnapshot, error in
+        guard let userID = Auth.auth().currentUser?.uid else {return}
+
+        collRef.whereField("clientID", isEqualTo: userID).getDocuments { querySnapshot, error in
             if error != nil {
                 print("error retrieving documents: \(error?.localizedDescription)")
             }
@@ -34,7 +36,10 @@ class RecentTasksTableViewController: UITableViewController {
                 do {
                     print("doc data: ", doc.data().description)
                     let task = try doc.data(as: Errand.self)!
-                    self.recentTasks.append(task)
+                    let employeename:String = task.employeeID ?? ""
+                    if(!employeename.isEmpty){
+                        self.recentTasks.append(task)
+                    }
     
                 } catch {
                     print("error decoding doc: \(error)")
