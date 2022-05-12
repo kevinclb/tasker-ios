@@ -27,7 +27,7 @@ class RecentTasksRootVC: UINavigationController {
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         view.window!.layer.add(transition, forKey: kCATransition)
         // this code here is to make the viewcontroller we're presenting and make it show full screen then present it
-        let homeVC = HomeExplorePageViewController()
+        let homeVC = RootViewController()
         homeVC.modalPresentationStyle = .fullScreen
         // the app will automatically know how to animate the presentation, it will use the transition we made above on its own so that's why we set animated to false
         present(homeVC, animated: false, completion: nil)
